@@ -26,6 +26,7 @@ a {
   --maxText:14px;
   --minText:16px;
   --btnText:21.6667px;
+  --otherText:20px;
   --menuText:16px;
   --primaryColor:#ffffff;
   --elementColor:#000000;
@@ -34,6 +35,7 @@ a {
   --gradiantOne:#F65D61;
   --gradiantTwo:#F16684;
   --gradiantThree:#FA9A64;
+  --textGradiant:-webkit-linear-gradient(90deg, #F65C60 0%, #F16583 50%, #FB9C64 100%);
 }
 
 

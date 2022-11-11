@@ -1,0 +1,26 @@
+.FooterCover{
+    background: var(--sideColor);
+}
+.LogoText{
+    font-size: var(--otherText);
+}
+.IconCol{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.IconCover{
+    margin-left: 2rem;
+}
+.Links{
+    text-decoration: none;
+    font-size: var(--menuText);
+    font-weight: 400;
+    color: var(--elementColor);
+}
+.Links:hover{
+    color: var(--gradiantTwo);
+}
+.LinkSpan{
+    margin: 0 0.7rem;
+}

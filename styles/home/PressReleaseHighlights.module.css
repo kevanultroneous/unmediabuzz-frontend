@@ -1,0 +1,29 @@
+.ContainerWrraperHighlight{
+    padding: 0rem 0 3rem 0;
+}
+.HighlightHeadCover{
+    padding: 4rem 0;
+}
+.HighlightsWrraper{
+    display: flex;
+    justify-content: space-between;
+}
+.HighlightImage{
+    width: fit-content;
+}
+.Highlights{
+    padding:var(--layoutSpace);
+    background: var(--sideColor);
+}
+.HighlightHeading{
+    font-size: var(--mainHeading);
+    font-weight: 800;
+    text-align: center;
+}
+.BrushSetup{
+    position: absolute;
+    z-index: -1;
+}
+.UniqueLabel{
+    color: var(--primaryColor);
+}

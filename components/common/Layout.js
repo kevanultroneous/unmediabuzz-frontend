@@ -1,4 +1,5 @@
 import Head from "next/head"
+import Footer from "./Footer"
 
 const Layout = ({
     title,
@@ -23,9 +24,10 @@ const Layout = ({
           />
           </Head>
           <div>{children}</div>
+          <Footer/>
       </div>
     )
-    
+
 }
 
 Layout.defaultProps = {

@@ -1,0 +1,42 @@
+.GettingStartedCard{
+    background: var(--elementColor);
+    border-radius: 30px;
+}
+.SimpleHeading{
+    font-size: var(--mainHeading);
+    margin: 0%;
+    font-weight: 800;
+    color: var(--primaryColor);
+}
+.GradiantHeading{
+    font-size: var(--mainHeading);
+    margin: 0%;
+    font-weight: 800;
+    background: var(--textGradiant);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.LeftSideMainWrraper{
+    display: flex;
+}
+.DiscriptionWrapper{
+    padding: 4.5rem 0rem 0rem 3rem;
+}
+.RightCurve{
+    position: relative;
+    top: 8rem;
+    left: 1rem;
+}
+.ButtonsMainWrraper{
+    display: flex;
+    margin-left: 5rem;
+    padding-top: 3.5rem;
+    padding-bottom: 5.5rem;
+}
+.ButtonCover{
+    margin-right: 2.5rem;
+}
+.ContainerWrraperSpaces{
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+}

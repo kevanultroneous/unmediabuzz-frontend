@@ -1,12 +1,13 @@
 import ContainerWrraper from '@/components/common/ContainerWrraper'
+import GettingStarted from '@/components/common/GettingStarted'
 import Layout from '@/components/common/Layout'
+import PressReleaseHighlights from '@/components/Home/PressReleaseHighlights'
 
 export default function Home() {
   return (
       <Layout>
-        <ContainerWrraper>
-          {/* write code */}
-        </ContainerWrraper>
+        <PressReleaseHighlights/>
+        <GettingStarted/>
       </Layout>
   )
 }
