@@ -5,7 +5,7 @@ export default function Home() {
   return (
       <Layout>
         <ContainerWrraper>
-          <h1>jhsdf</h1>
+          {/* write code */}
         </ContainerWrraper>
       </Layout>
   )
