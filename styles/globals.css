@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 a {
@@ -13,7 +14,28 @@ a {
 
 * {
   box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
 }
+
+:root{
+  --layoutSpace:3rem 2.5rem;
+  --mainHeading:48px;
+  --subHeading:28px;
+  --bigParagraph:18px;
+  --smallParagraph:16px;
+  --maxText:14px;
+  --minText:16px;
+  --btnText:21.6667px;
+  --menuText:16px;
+  --primaryColor:#ffffff;
+  --elementColor:#000000;
+  --sideColor:#fff9f9;
+  --sideColor2:rgba(244, 96, 108, 0.04);
+  --gradiantOne:#F65D61;
+  --gradiantTwo:#F16684;
+  --gradiantThree:#FA9A64;
+}
+
 
 @media (prefers-color-scheme: dark) {
   html {
