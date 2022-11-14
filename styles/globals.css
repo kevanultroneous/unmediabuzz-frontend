@@ -18,7 +18,7 @@ a {
 }
 
 :root{
-  --layoutSpace:3rem 2.5rem;
+  --layoutSpace:3rem 3rem;
   --mainHeading:48px;
   --subHeading:28px;
   --bigParagraph:18px;

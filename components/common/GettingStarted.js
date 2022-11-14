@@ -2,8 +2,12 @@ import ContainerWrraper from "./ContainerWrraper"
 import {Row,Col,Image,Button} from "react-bootstrap"
 import styles from "@/styles/common/GettingStarted.module.css"
 import ToggleUiButton from "./ToggleUiButton"
+import { ButtonsList } from "utils/ButtonsList"
 
 const GettingStarted  = () =>{
+
+    
+
     return (
             <ContainerWrraper customClass={`${styles.ContainerWrraperSpaces}`}>
                 <Row className={styles.GettingStartedCard}>
@@ -21,21 +25,14 @@ const GettingStarted  = () =>{
                             </div>
 
                             <div className={styles.ButtonsMainWrraper}>
-                                <div className={styles.ButtonCover}>
-                                    <ToggleUiButton 
-                                            text={<span><Image src="/assets/icons/press-release.svg" alt="press-release" fluid />
-                                            &nbsp;&nbsp;
-                                            Press Release
-                                            </span>}
-                                    />
-                                </div>    
-                                <div className={styles.ButtonCover}>
-                                    <ToggleUiButton 
-                                            text={<span><Image src="/assets/icons/blog-post.svg" alt="press-release" height={25}/> &nbsp;
-                                           Post Blogs
-                                           </span>}
-                                    />
-                                </div>
+                                {
+                                    ButtonsList.GettingStartedButtonList.map((button,index)=>
+                                        <div className={styles.ButtonCover} key={index+1}>
+                                            <ToggleUiButton 
+                                                text={button.source}/>
+                                        </div>    
+                                    )
+                                }
                             </div>
                         </Col>
                        
