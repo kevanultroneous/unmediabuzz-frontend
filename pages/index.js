@@ -1,6 +1,7 @@
 import ContainerWrraper from "@/components/common/ContainerWrraper";
 import GettingStarted from "@/components/common/GettingStarted";
 import Layout from "@/components/common/Layout";
+import RecentItems from "@/components/common/RecentItems";
 import Testimonial from "@/components/common/Testimonial";
 import Faq from "@/components/Home/Faq";
 import Introduction from "@/components/Home/Introduction";
@@ -12,6 +13,7 @@ export default function Home() {
     <Layout>
       <Introduction />
       <WhyWeAreDifferent />
+      <RecentItems />
       <Faq />
       <PressReleaseHighlights />
       <Testimonial />
