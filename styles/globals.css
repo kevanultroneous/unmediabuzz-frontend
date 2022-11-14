@@ -35,10 +35,32 @@ a {
   --gradiantOne:#F65D61;
   --gradiantTwo:#F16684;
   --gradiantThree:#FA9A64;
-  --textGradiant:-webkit-linear-gradient(90deg, #F65C60 0%, #F16583 50%, #FB9C64 100%);
+  --textGradiant:-webkit-linear-gradient(75deg, #F65C60 0%, #F16583 50%, #FB9C64 100%);
+  --textGradiantSecond:linear-gradient(180deg, #F65C60 0%, #F16583 50%, #FB9C64 100%);
 }
-
-
+.accordion-button::after{
+  margin-left: 0% !important; 
+  margin-right: 0%;
+  background-image: url('/assets/icons/plus.svg') !important;
+}
+.accordion-button:not(.collapsed)::after {
+  background-image: url('/assets/icons/minus.svg') !important;
+  margin-bottom: 1rem;
+}
+.accordion-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: left;
+}
+.accordion-button:not(.collapsed) {
+  color:var(--elementColor) !important;
+  background: transparent !important;
+}
+.accordion-button:focus {
+  box-shadow: none !important;
+}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

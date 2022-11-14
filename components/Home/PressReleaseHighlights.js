@@ -32,7 +32,7 @@ const PressReleaseHighlights = () =>{
                 <div className={styles.Highlights}>
                     <div className={styles.HighlightsWrraper}>
                         {
-                            imagedata.map((image,index)=>
+                            imagedata?.map((image,index)=>
                             <div key={index+1} className={styles.HighlightImage}>
                                     <Image src={image} alt="highlight-image" fluid/>
                                 </div>

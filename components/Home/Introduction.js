@@ -54,7 +54,7 @@ const Introduction = () =>{
 
                 <div className={styles.ButtonsWrraper}>
                     {
-                        ButtonsList.IntroButtonList.map((button,index)=>
+                        ButtonsList?.IntroButtonList?.map((button,index)=>
                             <div className={styles.ButtonSpaces} key={index+1}>
                                 <ToggleUiButton 
                                     dark
@@ -68,7 +68,7 @@ const Introduction = () =>{
             <Col xs={12} sm={12} md={12} lg={12} xl={12}>
                 <div className={styles.ProcessWrraper}>
                     {
-                        ProcessList.map((process,index)=>
+                        ProcessList?.map((process,index)=>
                             <Process 
                                 key={index+1}
                                 index={index}

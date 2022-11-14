@@ -1,0 +1,34 @@
+.MainHeading{
+    font-size: var(--mainHeading);
+    font-weight: 800;
+}
+.MainParagraph{
+    font-size: var(--smallParagraph);
+    font-weight: 400;
+    width: 27.125rem;
+    margin-top: 1.5rem;
+}
+/* .FaqQuestion{
+
+} */
+.FaqAnswer{
+padding-top: 0%;
+}
+.FaqQuestionText{
+    margin: 0%;
+    margin-left: 1rem;
+    font-size: var(--smallParagraph);
+    font-weight: 400;
+}
+.FaqAnswerText{
+    margin: 0%;
+    margin-left: 2rem;
+    font-weight: 400;
+    font-size: 14px;
+}
+.AccordianSpace{
+    margin-bottom: 1rem;
+    padding: 0.3rem;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-radius: 8px !important;
+}
