@@ -5,7 +5,7 @@ import ToggleUiButton from "../common/ToggleUiButton"
 import { ButtonsList } from "utils/ButtonsList"
 import { ProcessList } from "utils/Anonymous"
 
-
+// Process card component
 const Process = ({ProcessList,title,icon,desc ,index}) =>{
     return (
         <div className="d-flex">
@@ -26,9 +26,8 @@ const Process = ({ProcessList,title,icon,desc ,index}) =>{
     )
 }
 
-
+// Full introduction component
 const Introduction = () =>{
-
     return (
      <ContainerWrraper>
         <Row>

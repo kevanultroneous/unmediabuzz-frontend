@@ -40,9 +40,7 @@ display: flex;
 padding-top: 10rem;
 justify-content: center;
 }
-.ProcessCover{
-
-}
+/* .ProcessCover{} */
 .ProcessTitle{
     margin:1rem 0 0.8rem;
     text-align: center;
