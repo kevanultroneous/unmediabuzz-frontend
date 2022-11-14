@@ -1,31 +1,9 @@
 import { Accordion, Col, Row } from "react-bootstrap";
 import ContainerWrraper from "../common/ContainerWrraper";
 import styles from "@/styles/home/Faq.module.css";
+import { Faqdata } from "utils/Anonymous";
 
 const Faq = () => {
-  const faqdata = [
-    {
-      que: "How much it would take to make my PR live?",
-      ans: "In Tier 1 Pro distribution package - you get 225 media outlets distribution with Google News, Marketwatch, Financial Network Distribution, Marketmedia Distribution, Google News Network Distribution, 9K-15K extra impression in popular sites -",
-    },
-    {
-      que: "What is the difference between Tier 1, Tier 1 Pro, and Tier 2, Tier 2 Pro?",
-      ans: "In Tier 1 Pro distribution package - you get 225 media outlets distribution with Google News, Marketwatch, Financial Network Distribution, Marketmedia Distribution, Google News Network Distribution, 9K-15K extra impression in popular sites -",
-    },
-    {
-      que: "How much it would take to make my PR live?",
-      ans: "In Tier 1 Pro distribution package - you get 225 media outlets distribution with Google News, Marketwatch, Financial Network Distribution, Marketmedia Distribution, Google News Network Distribution, 9K-15K extra impression in popular sites -",
-    },
-    {
-      que: "What is the difference between Tier 1, Tier 1 Pro, and Tier 2, Tier 2 Pro?",
-      ans: "In Tier 1 Pro distribution package - you get 225 media outlets distribution with Google News, Marketwatch, Financial Network Distribution, Marketmedia Distribution, Google News Network Distribution, 9K-15K extra impression in popular sites -",
-    },
-    {
-      que: "How much it would take to make my PR live?",
-      ans: "In Tier 1 Pro distribution package - you get 225 media outlets distribution with Google News, Marketwatch, Financial Network Distribution, Marketmedia Distribution, Google News Network Distribution, 9K-15K extra impression in popular sites -",
-    },
-  ];
-
   return (
     <ContainerWrraper>
       <Row>
@@ -41,7 +19,7 @@ const Faq = () => {
         </Col>
         <Col xs={12} sm={12} md={7} lg={7} xl={7}>
           <Accordion>
-            {faqdata.map((faqs, index) => (
+            {Faqdata.map((faqs, index) => (
               <Accordion.Item
                 eventKey={index}
                 key={index}

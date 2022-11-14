@@ -1,0 +1,49 @@
+.ContainerWrraperTestimonial{
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+}
+.MainHeading{
+    font-size: var(--mainHeading);
+    font-weight: 800;
+    text-align: center;
+    overflow: hidden;
+    padding-bottom: 3rem;
+}
+.Profile{
+    display: flex;
+    padding-bottom: 1rem;
+}
+.UserName{
+    font-size: var(--minText);
+    font-weight: 600;
+    margin: 0%;
+}
+.Designation{
+    font-weight: 600;
+    font-size: var(--maxText);
+    font-style: italic;
+    margin: 0%;
+    color: rgba(0, 0, 0, 0.5);
+}
+.ProfileDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 1rem;
+}
+.TestimonialCard{
+    padding: 2rem;
+    border: 1px solid #F65D61;
+    border-radius: 20px;
+}
+.ProfileDescription{
+    padding-top: 1rem;
+    font-weight: 700;
+    font-size: 18px;
+}
+.MainHeadingBrush{
+        display: block;
+    position: relative;
+    left: 10rem;
+    top: -1rem;
+}
