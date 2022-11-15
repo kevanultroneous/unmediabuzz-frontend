@@ -1,3 +1,6 @@
+.IntroContainerWrraper{
+    padding-top: 5rem;
+}
 .TitleText{
     font-size: var(--mainHeading);
     font-weight: 800;

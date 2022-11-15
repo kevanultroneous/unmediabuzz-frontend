@@ -1,6 +1,6 @@
 .ContainerWrraperTestimonial{
-    padding-top: 8rem;
-    padding-bottom: 8rem;
+    padding-top: 7rem;
+    padding-bottom: 6rem;
 }
 .MainHeading{
     font-size: var(--mainHeading);
@@ -32,16 +32,16 @@
     margin-left: 1rem;
 }
 .TestimonialCard{
-    padding: 2rem;
+    padding: 1.3rem;
     border: 1px solid #F65D61;
     border-radius: 20px;
     margin-right: 1rem;
-    margin-left: 1rem;
+    /* margin-left: 1rem; */
 }
 .ProfileDescription{
     padding-top: 1rem;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
 }
 .MainHeadingBrush{
         display: block;

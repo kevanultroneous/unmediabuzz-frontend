@@ -10,6 +10,7 @@
 }
 .ContainerWrraperCardModel{
     padding-left: 1rem;
+    padding-top: 4rem;
     padding-right: 0%;
     padding-bottom: 0%;
 }
@@ -33,10 +34,11 @@
     margin: 0%;
 }
 .PostDetails{
-    padding-left: 0rem !important;
+    padding-left: 2.5rem !important;
 }
 .CardModelRow{
     margin-bottom: 2rem;
+    margin-right: 4rem;
 }
 .LineHorizontal{
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -45,4 +47,47 @@
 .ButtonOutCover{
     padding-top: 3rem;
     padding-left: 0.3rem;
+}
+.PostImage{
+    max-width: 14rem;
+}
+.BlogsCard{
+display: flex;
+}
+.BlogImageCover{
+    width: 23%;
+}
+.BlogImg{
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
+}
+.BlogPostDetails{
+    
+}
+.BlogPostTitle{
+    width: 19rem;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0%;
+}
+.BlogPostDate{
+    font-weight: 600;
+    font-size: 14px;
+    color: rgba(33, 37, 41, 0.4);
+    margin-top: 0.4rem;
+}
+.ContainerWrraperBlogCardModel{
+    background: var(--sideColor);
+    border-radius: 10px;
+    margin-top: 5rem;
+}
+.BlogLineHorizontal{
+    border: 1px solid var(--primaryColor);
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+.ContainerWrraperRecentItems{
+    padding-top: 12rem;
+    padding-bottom: 7rem;
 }

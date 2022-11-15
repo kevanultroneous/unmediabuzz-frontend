@@ -14,6 +14,15 @@ export const ButtonsList = {
     ),
     link: "",
   },
+  blogpostCommon: {
+    source: (
+      <span>
+        <Image src="/assets/icons/white-blog-icon.svg" alt="press-release" />{" "}
+        &nbsp; Post Blogs
+      </span>
+    ),
+    link: "",
+  },
   GettingStartedButtonList: [
     {
       source: (

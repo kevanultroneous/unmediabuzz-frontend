@@ -41,7 +41,7 @@ const Process = ({ ProcessList, title, icon, desc, index }) => {
 // Full introduction component
 const Introduction = () => {
   return (
-    <ContainerWrraper>
+    <ContainerWrraper customClass={`${styles.IntroContainerWrraper}`}>
       <Row>
         <Col
           xs={12}

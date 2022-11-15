@@ -95,7 +95,7 @@ const WhyWeAreDifferent = () => {
           xl={12}
           className={`${styles.LastBigImage} ColPaddingRemove`}
         >
-          <div>
+          <div className={styles.BigImage}>
             <Image src="/assets/images/about-pr.png" alt="about-pr" fluid />
           </div>
         </Col>

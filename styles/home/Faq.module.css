@@ -1,3 +1,6 @@
+.FaqContainerWrraper{
+    padding-bottom: 7.5rem;
+}
 .MainHeading{
     font-size: var(--mainHeading);
     font-weight: 800;

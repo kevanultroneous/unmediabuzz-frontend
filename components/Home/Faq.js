@@ -5,7 +5,7 @@ import { Faqdata } from "utils/Anonymous";
 
 const Faq = () => {
   return (
-    <ContainerWrraper>
+    <ContainerWrraper customClass={`${styles.FaqContainerWrraper}`}>
       <Row>
         <Col
           xs={12}

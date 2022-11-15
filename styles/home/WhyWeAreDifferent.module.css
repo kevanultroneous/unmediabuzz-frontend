@@ -63,8 +63,12 @@ padding:4rem 0 14rem;
     justify-content: center;
 }
 .ButtonCover{
-    padding-bottom: 6rem;
+    padding-bottom: 4rem;
 }
 .LastBigImage{
     text-align: center;
+}
+.BigImage{
+    position: relative;
+    top: 0.3rem;
 }

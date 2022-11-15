@@ -19,7 +19,7 @@
 .Links{
     text-decoration: none;
     font-size: var(--menuText);
-    font-weight: 600;
+    font-weight: 400;
     color: var(--elementColor);
 }
 .SelectedLink{
@@ -27,6 +27,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+
 }
 .Links:hover{
     font-weight: 600;
