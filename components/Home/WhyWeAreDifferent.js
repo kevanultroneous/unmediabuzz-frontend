@@ -28,7 +28,7 @@ const WhyWeAreDifferent = () => {
           md={12}
           lg={12}
           xl={12}
-          className={styles.MainIntroAndDiscription}
+          className={`${styles.MainIntroAndDiscription} ColPaddingRemove`}
         >
           <p className={styles.MainTitle}>Why we are Different?</p>
           <div className={styles.SpanImage}>
@@ -56,7 +56,7 @@ const WhyWeAreDifferent = () => {
             lg={4}
             xl={4}
             key={index}
-            className={styles.DigitWrraper}
+            className={`${styles.DigitWrraper} ColPaddingRemove`}
           >
             <h6 className={styles.Digit}>{cards.number}</h6>
             <p className={styles.DigitText}>{cards.text}</p>
@@ -70,20 +70,22 @@ const WhyWeAreDifferent = () => {
           md={12}
           lg={12}
           xl={12}
-          className={styles.CenterButtonWrraper}
+          className={`${styles.CenterButtonWrraper} ColPaddingRemove`}
         >
-          <ToggleUiButton
-            text={
-              <span>
-                <Image
-                  src="/assets/icons/send-icon.svg"
-                  alt="press-release"
-                  fluid
-                />
-                &nbsp; Let’s Start Now
-              </span>
-            }
-          />
+          <div className={`${styles.ButtonCover}`}>
+            <ToggleUiButton
+              text={
+                <span>
+                  <Image
+                    src="/assets/icons/send-icon.svg"
+                    alt="press-release"
+                    fluid
+                  />
+                  &nbsp; Let’s Start Now
+                </span>
+              }
+            />
+          </div>
         </Col>
         <Col
           xs={12}
@@ -91,7 +93,7 @@ const WhyWeAreDifferent = () => {
           md={12}
           lg={12}
           xl={12}
-          className={styles.LastBigImage}
+          className={`${styles.LastBigImage} ColPaddingRemove`}
         >
           <div>
             <Image src="/assets/images/about-pr.png" alt="about-pr" fluid />

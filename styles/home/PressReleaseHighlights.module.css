@@ -13,6 +13,8 @@
 }
 .Highlights{
     padding:var(--layoutSpace);
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
     background: var(--sideColor);
 }
 .HighlightHeading{

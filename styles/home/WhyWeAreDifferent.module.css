@@ -61,6 +61,8 @@ padding:4rem 0 14rem;
 .CenterButtonWrraper{
     display: flex;
     justify-content: center;
+}
+.ButtonCover{
     padding-bottom: 6rem;
 }
 .LastBigImage{

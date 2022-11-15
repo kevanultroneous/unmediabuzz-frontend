@@ -8,7 +8,14 @@ const Testimonial = () => {
   return (
     <ContainerWrraper customClass={`${styles.ContainerWrraperTestimonial}`}>
       <Row>
-        <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+        <Col
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          className={`ColPaddingRemove`}
+        >
           <h6 className={styles.MainHeading}>
             Trusted by our Clients
             <span className={styles.MainHeadingBrush}>
@@ -17,7 +24,15 @@ const Testimonial = () => {
           </h6>
         </Col>
         {[1, 2, 3, 4].map((v, i) => (
-          <Col xs={12} sm={12} md={3} lg={3} xl={3} key={i}>
+          <Col
+            xs={12}
+            sm={12}
+            md={3}
+            lg={3}
+            xl={3}
+            key={i}
+            className={`ColPaddingRemove`}
+          >
             <div className={styles.TestimonialCard}>
               <div className={styles.Profile}>
                 <div>

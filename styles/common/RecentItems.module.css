@@ -1,0 +1,48 @@
+.ListHeading{
+    font-size: var(--mainHeading);
+    font-weight: 800;
+}
+.SpanText{
+    background: var(--textGradiantSecond);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.ContainerWrraperCardModel{
+    padding-left: 1rem;
+    padding-right: 0%;
+    padding-bottom: 0%;
+}
+.CategoryName{
+    font-size: var(--maxText);
+    color:#F65D61;
+    margin: 0%;
+    margin-bottom: 0.4rem;
+}
+.PostTitle{
+    font-size: var(--bigParagraph);
+    font-weight: 600;
+    width: 458px;
+    margin: 0%;
+    margin-bottom: 0.5rem;
+}
+.PostDate{
+    font-size: var(--maxText);
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.5);
+    margin: 0%;
+}
+.PostDetails{
+    padding-left: 0rem !important;
+}
+.CardModelRow{
+    margin-bottom: 2rem;
+}
+.LineHorizontal{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+.ButtonOutCover{
+    padding-top: 3rem;
+    padding-left: 0.3rem;
+}

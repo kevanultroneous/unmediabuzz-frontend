@@ -1,6 +1,7 @@
 .MainHeading{
     font-size: var(--mainHeading);
     font-weight: 800;
+    width: 24.375rem;
 }
 .MainParagraph{
     font-size: var(--smallParagraph);

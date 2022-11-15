@@ -37,8 +37,12 @@ a {
   --gradiantThree:#FA9A64;
   --textGradiant:-webkit-linear-gradient(75deg, #F65C60 0%, #F16583 50%, #FB9C64 100%);
   --textGradiantSecond:linear-gradient(180deg, #F65C60 0%, #F16583 50%, #FB9C64 100%);
+  --textGradiantThird:linear-gradient(180deg, #F65D61 0%, #F16684 50.52%, #FA9A64 100%);
 }
 
+.ColPaddingRemove{
+  padding: 0% !important;
+}
 
 /* -------------------------------------------------------------- accordion style ------------------------------------------------------ */
 

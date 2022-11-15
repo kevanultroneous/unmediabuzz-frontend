@@ -7,7 +7,14 @@ const Faq = () => {
   return (
     <ContainerWrraper>
       <Row>
-        <Col xs={12} sm={12} md={5} lg={5} xl={5}>
+        <Col
+          xs={12}
+          sm={12}
+          md={5}
+          lg={5}
+          xl={5}
+          className={`ColPaddingRemove`}
+        >
           <h6 className={styles.MainHeading}>
             We have all the Answers you are looking for!
           </h6>
@@ -17,7 +24,14 @@ const Faq = () => {
             ever since the 1500sed.
           </p>
         </Col>
-        <Col xs={12} sm={12} md={7} lg={7} xl={7}>
+        <Col
+          xs={12}
+          sm={12}
+          md={7}
+          lg={7}
+          xl={7}
+          className={`ColPaddingRemove`}
+        >
           <Accordion>
             {Faqdata.map((faqs, index) => (
               <Accordion.Item
