@@ -2,9 +2,7 @@ import ContainerWrraper from "@/components/common/ContainerWrraper";
 import Layout from "@/components/common/Layout";
 import { Col, Row, Image } from "react-bootstrap";
 import styles from "@/styles/ContactUs.module.css";
-import PhoneCode from "react-phone-code";
 import { countryCall } from "utils/CountryCode";
-import { useEffect } from "react";
 
 const InputController = ({ label, type, value, changeHandler }) => {
   return (
