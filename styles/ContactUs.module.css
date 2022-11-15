@@ -1,0 +1,83 @@
+.HeadingCol{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Heading{
+    font-size: var(--mainHeading);
+    font-weight: 800;
+    width: 808px;
+    text-align: center;
+    margin: 0%;
+}
+.InputWrraper{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+.InputWrraperRadio{
+    margin-bottom: 1.5rem;
+}
+.Controller{
+    outline: none;
+    border: none;
+    font-size: var(--bigParagraph);
+    border-bottom: 1px solid #e5e5e5;
+    color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+.Labels{
+    font-weight: 500;
+    font-size: var(--maxText);
+    color: rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.5rem;
+}
+.UniqueLabels{
+    font-weight: 400;
+    font-size: var(--maxText);
+    color: rgba(0, 0, 0, 0.6);
+    padding-right: 1rem;
+}
+.RadioButtonSpace{
+    margin-right: 0.5rem;   
+    accent-color: var(--elementColor);
+}
+.Textarea{
+    outline: none;
+    border: none;
+    font-size: var(--bigParagraph);
+    border-bottom: 1px solid #e5e5e5;
+    color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+.Textarea::placeholder{
+    color: rgba(0, 0, 0, 0.5);
+}
+.Options{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #e5e5e5;
+    color: rgba(0, 0, 0, 0.5);
+}
+.CountryInput{
+    display: flex;
+    width: 100%;
+}
+.BoardContainer{
+    background: url('/assets/images/black-board.svg');
+    height: 40rem;
+    width: 100%;
+    background-position: inherit;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    text-align: center;
+}
+.ImageSizes{
+    margin-left: 2rem;
+}
+.ControllersSpace{
+    padding-left: 8rem;
+}
