@@ -20,18 +20,16 @@
     display: flex;
 }
 .DiscriptionWrapper{
-    padding: 4.5rem 0rem 0rem 3rem;
+    padding: 5.5rem 0rem 0rem 3rem;
 }
 .RightCurve{
     position: relative;
-    top: 8rem;
+    top: 9rem;
     left: 1rem;
 }
 .ButtonsMainWrraper{
     display: flex;
-    margin-left: 5rem;
-    padding-top: 3.5rem;
-    padding-bottom: 5.5rem;
+    padding: 3.5rem 0 6.5rem 5rem; 
 }
 .ButtonCover{
     margin-right: 2.5rem;
@@ -39,4 +37,16 @@
 .ContainerWrraperSpaces{
     padding-top: 4rem;
     padding-bottom: 4rem;
+}
+.WorldImage{
+    padding: 0%;
+    text-align: end;
+}
+.WorldImageCover{
+    height: 100%;
+    overflow: hidden;
+}
+.WorldImageFluid{
+    max-width: 101%;
+    height: 101.5%;
 }

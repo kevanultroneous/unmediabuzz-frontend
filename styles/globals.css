@@ -38,6 +38,10 @@ a {
   --textGradiant:-webkit-linear-gradient(75deg, #F65C60 0%, #F16583 50%, #FB9C64 100%);
   --textGradiantSecond:linear-gradient(180deg, #F65C60 0%, #F16583 50%, #FB9C64 100%);
 }
+
+
+/* -------------------------------------------------------------- accordion style ------------------------------------------------------ */
+
 .accordion-button::after{
   margin-left: 0% !important; 
   margin-right: 0%;
@@ -61,6 +65,9 @@ a {
 .accordion-button:focus {
   box-shadow: none !important;
 }
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------ */
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
