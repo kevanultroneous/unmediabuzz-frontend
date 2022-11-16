@@ -10,7 +10,7 @@ const Header = () => {
   const HeaderMenu = [
     {
       name: "Press Release",
-      link: "/#",
+      link: "/press-release",
     },
     {
       name: "Blog",

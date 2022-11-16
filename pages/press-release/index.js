@@ -1,7 +1,12 @@
+import GettingStarted from "@/components/common/GettingStarted";
 import Layout from "@/components/common/Layout";
 
 const PressRelease = () => {
-  return <Layout></Layout>;
+  return (
+    <Layout>
+      <GettingStarted />
+    </Layout>
+  );
 };
 
 export default PressRelease;
