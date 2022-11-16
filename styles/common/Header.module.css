@@ -23,14 +23,13 @@
     color: var(--elementColor);
 }
 .SelectedLink{
+    font-weight: 600;
     background: linear-gradient(180deg, #F65D61 0%, #F16684 50.52%, #FA9A64 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-
 }
 .Links:hover{
-    font-weight: 600;
     background: linear-gradient(180deg, #F65D61 0%, #F16684 50.52%, #FA9A64 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -41,4 +40,32 @@
 }
 .ColPadding{
     padding: 0%;
+}
+.SearchButton{
+    background: linear-gradient(180deg, #F65D61 0%, #F16884 53.12%, #FB9C64 100%);
+    border-radius: 4px;
+    color: #fff;
+    border: none !important;
+    outline: none !important;
+    cursor: pointer;
+    width: 3rem;
+    text-align: center;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+}
+.GroupInput{
+    border: 0.5px solid #F65D61;
+    border-radius: 4px;
+    outline: none;
+    max-width: 16rem;
+}
+.FormControl{
+    box-shadow: none !important;
+    outline: none !important;
+    border: none !important;
+}
+.SearchGroup{
+    display: flex;
+    justify-content:right;
 }

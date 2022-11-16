@@ -1,8 +1,9 @@
 import ContainerWrraper from "@/components/common/ContainerWrraper";
 import Layout from "@/components/common/Layout";
-import { Col, Row, Image } from "react-bootstrap";
+import { Col, Row, Image, ToggleButton } from "react-bootstrap";
 import styles from "@/styles/ContactUs.module.css";
 import { countryCall } from "utils/CountryCode";
+import ToggleUiButton from "@/components/common/ToggleUiButton";
 
 const InputController = ({ label, type, value, changeHandler }) => {
   return (
@@ -126,6 +127,27 @@ const ContactUs = () => {
                   className={styles.Textarea}
                   placeholder="Your message will come here..."
                 ></textarea>
+              </Col>
+              <Col
+                xs={12}
+                sm={12}
+                md={12}
+                lg={12}
+                xl={12}
+                className={styles.SendButtonWrraper}
+              >
+                <ToggleUiButton
+                  dark
+                  text={
+                    <span>
+                      <Image
+                        src="/assets/icons/message-icon.svg"
+                        alt="press-release"
+                      />{" "}
+                      &nbsp; Send Message
+                    </span>
+                  }
+                />
               </Col>
             </Row>
           </Col>

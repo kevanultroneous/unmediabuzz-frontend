@@ -81,3 +81,8 @@
 .ControllersSpace{
     padding-left: 8rem;
 }
+.SendButtonWrraper{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 4rem;
+}
