@@ -4,7 +4,13 @@ import styles from "@/styles/common/RecentItems.module.css";
 import ToggleUiButton from "./ToggleUiButton";
 import { ButtonsList } from "utils/ButtonsList";
 
-const CardModel = ({ categoryname, title, date, hide }) => {
+export const CardModel = ({
+  categoryname,
+  title,
+  date,
+  hide,
+  customtitleclass,
+}) => {
   return (
     <Row className={styles.CardModelRow}>
       <Col xs={12} sm={12} md={2} lg={3} xl={3} className={`ColPaddingRemove`}>
@@ -25,7 +31,7 @@ const CardModel = ({ categoryname, title, date, hide }) => {
         className={`ColPaddingRemove ${styles.PostDetails}`}
       >
         <p className={styles.CategoryName}>{categoryname}</p>
-        <p className={styles.PostTitle}>{title}</p>
+        <p className={`${styles.PostTitle} ${customtitleclass}`}>{title}</p>
         <p className={styles.PostDate}>{date}</p>
       </Col>
       {!hide && <div className={styles.LineHorizontal}></div>}
@@ -55,7 +61,7 @@ const BlogsCardModel = ({ title, date, hide }) => {
 };
 
 const RecentItems = () => {
-  const postList = [1, 2, 3, 4, 5];
+  const postList = [1, 2, 3, 4];
 
   return (
     <ContainerWrraper customClass={`${styles.ContainerWrraperRecentItems}`}>

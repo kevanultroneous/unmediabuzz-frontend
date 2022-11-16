@@ -2,35 +2,9 @@ import ContainerWrraper from "./ContainerWrraper";
 import { Row, Col, Image } from "react-bootstrap";
 import styles from "@/styles/common/Footer.module.css";
 import Link from "next/link";
+import { FooterMenu } from "utils/Navigation.utils";
 
 const Footer = () => {
-  const FooterMenu = [
-    {
-      name: "Home",
-      link: "/",
-    },
-    {
-      name: "Press Release",
-      link: "/",
-    },
-    {
-      name: "Blog",
-      link: "/",
-    },
-    {
-      name: "Writing Guideline",
-      link: "/",
-    },
-    {
-      name: "Privacy Policy",
-      link: "/",
-    },
-    {
-      name: "Terms & Condition",
-      link: "/",
-    },
-  ];
-
   return (
     <ContainerWrraper customClass={`${styles.FooterCover}`}>
       <Row>

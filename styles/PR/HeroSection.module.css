@@ -1,0 +1,43 @@
+.MainHeading{
+    font-size: var(--mainHeading);
+    font-weight: 800;
+    text-align: center;
+}
+.HeroSectionContainerWrraper{
+    background: var(--sidebarColor);
+    padding-top: 6.5rem;
+    padding-bottom: 6rem;
+}
+.InputGroupMainWrraper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.HeroSectionChildsCol{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.InputGroup{
+    padding-top: 2rem;
+    max-width:26rem;
+}
+.GroupInput{
+    border: 0.5px solid #F65D61 !important;
+    border-radius: 4px;
+    outline: none !important;    
+    box-shadow: none !important;
+}
+.SearchButton{
+    background: linear-gradient(180deg, #F65D61 0%, #F16884 53.12%, #FB9C64 100%);
+    border-radius: 4px;
+    color: #fff;
+    border: none !important;
+    outline: none !important;
+    cursor: pointer;
+    width: 3rem;
+    text-align: center;
+    height: 3rem;
+    align-items: center;
+    justify-content: center;
+}

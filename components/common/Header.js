@@ -4,33 +4,22 @@ import ContainerWrraper from "./ContainerWrraper";
 import styles from "@/styles/common/Header.module.css";
 import { FiSearch } from "react-icons/fi";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { HeaderMenu } from "utils/Navigation.utils";
 
 const Header = () => {
-  const HeaderMenu = [
-    {
-      name: "Press Release",
-      link: "/press-release",
-    },
-    {
-      name: "Blog",
-      link: "/#",
-    },
-    {
-      name: "Writing Guideline",
-      link: "/#",
-    },
-    {
-      name: "Contact Us",
-      link: "/contact-us",
-    },
-  ];
-
+  const [showSearchInput, setShowSearchInput] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    if (router.pathname === "/") {
+      setShowSearchInput(true);
+    }
+  }, [router]);
 
   return (
     <ContainerWrraper customClass={`${styles.HeaderContainer}`}>
-      <Row>
+      <Row className={styles.MainMenuRow}>
         <Col xs={6} md={3} lg={3} xl={3} className={`ColPaddingRemove`}>
           <label className={styles.LogoText}>Logo</label>
         </Col>

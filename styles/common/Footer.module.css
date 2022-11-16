@@ -1,5 +1,5 @@
 .FooterCover{
-    background: var(--sideColor);
+    background: var(--sidebarColor);
 }
 .LogoText{
     font-size: var(--otherText);

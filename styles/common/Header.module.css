@@ -1,9 +1,9 @@
 .HeaderContainer{
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 0.4rem;
 }
 .FooterCover{
-    background: var(--sideColor);
+    background: var(--sidebarColor);
 }
 .LogoText{
     font-size: var(--otherText);
@@ -71,4 +71,7 @@
 }
 .LinksMainParent{
     text-align: center;
+}
+.MainMenuRow{
+    align-items: baseline;
 }
