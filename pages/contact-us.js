@@ -39,7 +39,7 @@ const ContactUs = () => {
           </Col>
         </Row>
       </ContainerWrraper>
-      <ContainerWrraper>
+      <ContainerWrraper customClass={`${styles.FormContainer}`}>
         <Row>
           <Col
             xs={12}
