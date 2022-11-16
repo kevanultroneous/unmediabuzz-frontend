@@ -3,7 +3,7 @@ import GettingStarted from "@/components/common/GettingStarted";
 import Layout from "@/components/common/Layout";
 import { CardModel } from "@/components/common/RecentItems";
 import HeroSection from "@/components/PR/HeroSection";
-import { Col, Row } from "react-bootstrap";
+import { Accordion, Col, Row } from "react-bootstrap";
 import styles from "@/styles/PR/index.module.css";
 
 const PressRelease = () => {
@@ -11,6 +11,7 @@ const PressRelease = () => {
   return (
     <Layout>
       <HeroSection />
+
       <ContainerWrraper>
         <Row>
           <Col xs={12} sm={12} md={7} lg={8} xl={8}>
@@ -27,7 +28,27 @@ const PressRelease = () => {
               />
             ))}
           </Col>
-          <Col xs={12} sm={12} md={5} lg={4} xl={4}></Col>
+          <Col xs={12} sm={12} md={5} lg={4} xl={4}>
+            <div className={`${styles.CategoryWrraper} CategoriesAccordion`}>
+              {/* <p>CATEGORIES</p> */}
+              <Accordion defaultActiveKey="0">
+                {[1, 2, 3, 4, 5].map((v, i) => (
+                  <Accordion.Item eventKey={i} key={i}>
+                    <Accordion.Header>Category</Accordion.Header>
+                    <Accordion.Body>
+                      <ul>
+                        <li>Subcategory</li>
+                        <li>Subcategory</li>
+                        <li>Subcategory</li>
+                        <li>Subcategory</li>
+                        <li>Subcategory</li>
+                      </ul>
+                    </Accordion.Body>
+                  </Accordion.Item>
+                ))}
+              </Accordion>
+            </div>
+          </Col>
         </Row>
       </ContainerWrraper>
       <GettingStarted />

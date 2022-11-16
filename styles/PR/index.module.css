@@ -1,3 +1,7 @@
 .ParagraphSize{
 width: auto;
 }
+.CategoryWrraper{
+    background: var(--sidebarColor);
+    border-radius: 9.63573px;
+}

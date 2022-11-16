@@ -46,30 +46,50 @@ a {
 
 /* -------------------------------------------------------------- accordion style ------------------------------------------------------ */
 
-.accordion-button::after{
+.FaqSectionHome .accordion-button::after{
   margin-left: 0% !important; 
   margin-right: 0%;
   background-image: url('/assets/icons/plus.svg') !important;
 }
-.accordion-button:not(.collapsed)::after {
+.FaqSectionHome .accordion-button:not(.collapsed)::after {
   background-image: url('/assets/icons/minus.svg') !important;
   margin-bottom: 1rem;
 }
-.accordion-button {
+.FaqSectionHome .accordion-button {
   position: relative;
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
   justify-content: left;
 }
-.accordion-button:not(.collapsed) {
+.FaqSectionHome .accordion-button:not(.collapsed) {
   color:var(--elementColor) !important;
   background: transparent !important;
 }
-.accordion-button:focus {
+.FaqSectionHome .accordion-button:focus {
   box-shadow: none !important;
 }
 
+/*  -----------------------------------  CategoriesAccordion -------------------------------------------- */
+.CategoriesAccordion .accordion-button:not(.collapsed) {
+  background-color: transparent !important;
+  box-shadow:  none !important;
+  color: #000000 !important;
+}
+.CategoriesAccordion .accordion-button:focus {
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+.CategoriesAccordion .accordion-button:not(.collapsed):focus {
+  color: #000000;
+}
+.CategoriesAccordion .accordion-item{
+  background-color:var(--sidebarColor);
+border: none;
+}
+.CategoriesAccordion .accordion-button{
+  background-color:var(--sidebarColor);
+}
 /* ------------------------------------------------------------------------------------------------------------------------------------------ */
 
 @media (prefers-color-scheme: dark) {

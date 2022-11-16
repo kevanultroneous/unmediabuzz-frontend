@@ -30,7 +30,7 @@ const Faq = () => {
           md={7}
           lg={7}
           xl={7}
-          className={`ColPaddingRemove`}
+          className={`ColPaddingRemove FaqSectionHome`}
         >
           <Accordion>
             {Faqdata.map((faqs, index) => (
