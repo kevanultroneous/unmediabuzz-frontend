@@ -2,7 +2,7 @@
   width: auto;
 }
 .CategoryWrraper {
-  height: 42rem;
+  height: 40rem;
   background: var(--sidebarColor);
   border-radius: 9.63573px;
   overflow: hidden;
@@ -10,7 +10,7 @@
 .CategoryHeadingWrrap {
   padding-top: 2.5rem;
   padding-left: 2.5rem;
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
 }
 .AllPrLabelWrap {
   padding-left: 2.5rem;
@@ -18,9 +18,12 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 }
 .CategoryHeading {
-  font-size: var(--midText);
-  font-weight: 700;
-  color: var(--midColor);
+  font-weight: 500;
+  font-size: var(--minText);
+  background: var(--textGradiantThird);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .AllPrLabel {
   font-weight: 500;
@@ -68,4 +71,14 @@
 }
 .CardModelContainerWrraper {
   padding-top: 6rem;
+}
+.SubCategoryText {
+  font-weight: 400;
+  font-size: var(--maxText);
+  color: rgba(0, 0, 0, 0.7);
+  padding-bottom: 1.5rem;
+}
+.SubCategoryWrraper {
+  padding-left: 2.5rem;
+  padding-bottom: 1rem;
 }
