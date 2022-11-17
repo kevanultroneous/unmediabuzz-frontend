@@ -56,7 +56,7 @@ const Header = () => {
           xl={3}
           className={`ColPaddingRemove ${styles.SearchGroup}`}
         >
-          <InputGroup size="sm" className={`mb-3 ${styles.GroupInput}`}>
+          <InputGroup size="sm" className={`${styles.GroupInput}`}>
             <Form.Control
               className={styles.FormControl}
               aria-label="Small"

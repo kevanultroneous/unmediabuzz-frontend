@@ -4,6 +4,8 @@ import { Col, Row, Image, ToggleButton } from "react-bootstrap";
 import styles from "@/styles/ContactUs.module.css";
 import { countryCall } from "utils/CountryCode";
 import ToggleUiButton from "@/components/common/ToggleUiButton";
+import { useState } from "react";
+import { RadioButtonsData } from "utils/Anonymous";
 
 const InputController = ({ label, type, value, changeHandler }) => {
   return (
@@ -20,6 +22,13 @@ const InputController = ({ label, type, value, changeHandler }) => {
 };
 
 const ContactUs = () => {
+  const [radioButton, setRadioButton] = useState(null);
+
+  const radiobuttonHandler = (v) => {
+    setRadioButton(null);
+    setRadioButton(v);
+  };
+
   return (
     <Layout>
       <ContainerWrraper>
@@ -102,18 +111,22 @@ const ContactUs = () => {
                     WHAT DO YOU WANNA POST
                   </label>
                   <br />
-                  <input
-                    type={"radio"}
-                    className={styles.RadioButtonSpace}
-                    name="wanna"
-                  />
-                  <label className={styles.UniqueLabels}>Press Release</label>
-                  <input
-                    type={"radio"}
-                    className={styles.RadioButtonSpace}
-                    name="wanna"
-                  />
-                  <label className={styles.UniqueLabels}>Blog Post</label>
+                  <div className={styles.RadioButtonWrraper}>
+                    {RadioButtonsData.map((radio, index) => (
+                      <div
+                        className={styles.RadioButtonCover}
+                        key={index}
+                        onClick={() => radiobuttonHandler(index)}
+                      >
+                        <div className={styles.RadioButtonParent}>
+                          {index == radioButton && (
+                            <div className={styles.RadioButtonChild}></div>
+                          )}
+                        </div>
+                        <label className={styles.UniqueLabels}>{radio}</label>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </Col>
               <Col xs={12} sm={12} md={12} lg={12} xl={12}>

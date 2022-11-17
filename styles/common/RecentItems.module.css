@@ -53,6 +53,7 @@
 }
 .BlogsCard{
 display: flex;
+padding-left: 2.5rem;
 }
 .BlogImageCover{
     width: 23%;
@@ -81,10 +82,12 @@ display: flex;
     background: var(--sidebarColor);
     border-radius: 10px;
     margin-top: 5rem;
+    padding-right: 0%;
+    padding-left: 0%;
 }
 .BlogLineHorizontal{
     border: 1px solid var(--primaryColor);
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     margin-top: 2rem;
 }
 .ContainerWrraperRecentItems{

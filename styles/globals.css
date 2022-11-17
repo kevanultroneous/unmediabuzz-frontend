@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 a {
@@ -14,45 +14,63 @@ a {
 
 * {
   box-sizing: border-box;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
-:root{
-  --layoutSpace:3rem 3rem;
-  --mainHeading:48px;
-  --subHeading:28px;
-  --bigParagraph:18px;
-  --smallParagraph:16px;
-  --maxText:14px;
-  --minText:16px;
-  --btnText:21.6667px;
-  --otherText:20px;
-  --menuText:16px;
-  --primaryColor:#ffffff;
-  --elementColor:#000000;
-  --sidebarColor:#fff9f9;
-  --sidebarColor2:rgba(244, 96, 108, 0.04);
-  --gradiantOne:#F65D61;
-  --gradiantTwo:#F16684;
-  --gradiantThree:#FA9A64;
-  --textGradiant:-webkit-linear-gradient(75deg, #F65C60 0%, #F16583 50%, #FB9C64 100%);
-  --textGradiantSecond:linear-gradient(180deg, #F65C60 0%, #F16583 50%, #FB9C64 100%);
-  --textGradiantThird:linear-gradient(180deg, #F65D61 0%, #F16684 50.52%, #FA9A64 100%);
+:root {
+  --layoutSpace: 3rem 3rem;
+  --mainHeading: 48px;
+  --subHeading: 28px;
+  --bigParagraph: 18px;
+  --smallParagraph: 16px;
+  --maxText: 14px;
+  --midText: 12px;
+  --uniqueLabel: 18px;
+  --minText: 16px;
+  --btnText: 21.6667px;
+  --otherText: 20px;
+  --menuText: 16px;
+  --primaryColor: #ffffff;
+  --elementColor: #000000;
+  --sidebarColor: #fff9f9;
+  --midColor: #ead0d0;
+  --sidebarColor2: rgba(244, 96, 108, 0.04);
+  --gradiantOne: #f65d61;
+  --gradiantTwo: #f16684;
+  --gradiantThree: #fa9a64;
+  --textGradiant: -webkit-linear-gradient(
+    75deg,
+    #f65c60 0%,
+    #f16583 50%,
+    #fb9c64 100%
+  );
+  --textGradiantSecond: linear-gradient(
+    180deg,
+    #f65c60 0%,
+    #f16583 50%,
+    #fb9c64 100%
+  );
+  --textGradiantThird: linear-gradient(
+    180deg,
+    #f65d61 0%,
+    #f16684 50.52%,
+    #fa9a64 100%
+  );
 }
 
-.ColPaddingRemove{
+.ColPaddingRemove {
   padding: 0% !important;
 }
 
 /* -------------------------------------------------------------- accordion style ------------------------------------------------------ */
 
-.FaqSectionHome .accordion-button::after{
-  margin-left: 0% !important; 
+.FaqSectionHome .accordion-button::after {
+  margin-left: 0% !important;
   margin-right: 0%;
-  background-image: url('/assets/icons/plus.svg') !important;
+  background-image: url("/assets/icons/plus.svg") !important;
 }
 .FaqSectionHome .accordion-button:not(.collapsed)::after {
-  background-image: url('/assets/icons/minus.svg') !important;
+  background-image: url("/assets/icons/minus.svg") !important;
   margin-bottom: 1rem;
 }
 .FaqSectionHome .accordion-button {
@@ -63,7 +81,7 @@ a {
   justify-content: left;
 }
 .FaqSectionHome .accordion-button:not(.collapsed) {
-  color:var(--elementColor) !important;
+  color: var(--elementColor) !important;
   background: transparent !important;
 }
 .FaqSectionHome .accordion-button:focus {
@@ -73,7 +91,7 @@ a {
 /*  -----------------------------------  CategoriesAccordion -------------------------------------------- */
 .CategoriesAccordion .accordion-button:not(.collapsed) {
   background-color: transparent !important;
-  box-shadow:  none !important;
+  box-shadow: none !important;
   color: #000000 !important;
 }
 .CategoriesAccordion .accordion-button:focus {
@@ -83,13 +101,16 @@ a {
 .CategoriesAccordion .accordion-button:not(.collapsed):focus {
   color: #000000;
 }
-.CategoriesAccordion .accordion-item{
-  background-color:var(--sidebarColor);
-border: none;
+.CategoriesAccordion .accordion-item {
+  background-color: var(--sidebarColor);
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 }
-.CategoriesAccordion .accordion-button{
-  background-color:var(--sidebarColor);
+.CategoriesAccordion .accordion-button {
+  background-color: var(--sidebarColor);
+  padding: 1.5rem 2.5rem;
 }
+
 /* ------------------------------------------------------------------------------------------------------------------------------------------ */
 
 @media (prefers-color-scheme: dark) {

@@ -1,7 +1,34 @@
-.ParagraphSize{
-width: auto;
+.ParagraphSize {
+  width: auto;
 }
-.CategoryWrraper{
-    background: var(--sidebarColor);
-    border-radius: 9.63573px;
+.CategoryWrraper {
+  height: 42rem;
+  background: var(--sidebarColor);
+  border-radius: 9.63573px;
+  overflow: hidden;
+}
+.CategoryHeadingWrrap {
+  padding-top: 2.5rem;
+  padding-left: 2.5rem;
+  padding-bottom: 1rem;
+}
+.AllPrLabelWrap {
+  padding-left: 2.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+.CategoryHeading {
+  font-size: var(--midText);
+  font-weight: 700;
+  color: var(--midColor);
+}
+.AllPrLabel {
+  font-weight: 500;
+  font-size: var(--maxText);
+  background: var(--textGradiantThird);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  cursor: pointer;
+  user-select: none;
 }

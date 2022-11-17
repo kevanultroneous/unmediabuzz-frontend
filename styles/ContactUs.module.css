@@ -32,12 +32,7 @@
     color: rgba(0, 0, 0, 0.2);
     margin-bottom: 0.5rem;
 }
-.UniqueLabels{
-    font-weight: 400;
-    font-size: var(--maxText);
-    color: rgba(0, 0, 0, 0.6);
-    padding-right: 1rem;
-}
+
 .RadioButtonSpace{
     margin-right: 0.5rem;   
     accent-color: var(--elementColor);
@@ -88,4 +83,41 @@
 }
 .FormContainer{
 padding-bottom: 7rem;
+}
+.RadioButtonParent{
+    padding: 0rem;
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.RadioButtonChild{
+    height: 12px;
+    width: 12px;
+    background-color: var(--elementColor);
+    border-radius: 100%;
+    
+}
+.InputGroups{
+display: flex;
+width: 4rem;
+}
+.RadioButtonWrraper{
+    display: flex;   
+    padding-top: 0.5rem;
+}
+.RadioButtonCover{
+    display: flex;
+    align-items: center;
+}
+.UniqueLabels{
+    font-weight: 400;
+    font-size: var(--uniqueLabel);
+    color: rgba(0, 0, 0, 0.6);
+    padding-right: 1rem;
+    margin-left: 1rem;
 }

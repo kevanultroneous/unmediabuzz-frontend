@@ -30,7 +30,12 @@ const PressRelease = () => {
           </Col>
           <Col xs={12} sm={12} md={5} lg={4} xl={4}>
             <div className={`${styles.CategoryWrraper} CategoriesAccordion`}>
-              {/* <p>CATEGORIES</p> */}
+              <div className={styles.CategoryHeadingWrrap}>
+                <p className={styles.CategoryHeading}>CATEGORIES</p>
+              </div>
+              <div className={styles.AllPrLabelWrap}>
+                <p className={styles.AllPrLabel}>All Press Release</p>
+              </div>
               <Accordion defaultActiveKey="0">
                 {[1, 2, 3, 4, 5].map((v, i) => (
                   <Accordion.Item eventKey={i} key={i}>

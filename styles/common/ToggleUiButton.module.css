@@ -1,24 +1,24 @@
-.ButtonToggle{
-    text-align: center;    
-    background: var(--primaryColor);
-    width: 14rem;
-    padding: 0.8rem 1rem;
-    font-size: var(--btnText);
-    font-weight: 600;
-    border-radius: 6.96429px;
-    user-select: none;
-    cursor: pointer;
+.ButtonToggle {
+  text-align: center;
+  background: var(--primaryColor);
+  max-width: 14rem;
+  padding: 0.8rem 1rem;
+  font-size: var(--btnText);
+  font-weight: 600;
+  border-radius: 6.96429px;
+  user-select: none;
+  cursor: pointer;
 }
 
-.ButtonToggleDark{
-    text-align: center;    
-    background: var(--elementColor);
-    color: var(--primaryColor);
-    width: 14rem;
-    padding: 0.8rem 1rem;
-    font-size: var(--btnText);
-    font-weight: 600;
-    border-radius: 6.96429px;
-    user-select: none;
-    cursor: pointer;
+.ButtonToggleDark {
+  text-align: center;
+  background: var(--elementColor);
+  color: var(--primaryColor);
+  max-width: 14rem;
+  padding: 0.8rem 1rem;
+  font-size: var(--btnText);
+  font-weight: 600;
+  border-radius: 6.96429px;
+  user-select: none;
+  cursor: pointer;
 }
