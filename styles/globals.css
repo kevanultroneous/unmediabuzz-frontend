@@ -109,8 +109,11 @@ a {
 .CategoriesAccordion .accordion-button {
   background-color: var(--sidebarColor);
   padding: 1.5rem 2.5rem;
+  font-size: var(--maxText);
 }
-
+.CategoriesAccordion .accordion-item:last-child {
+  border-bottom: none;
+}
 /* ------------------------------------------------------------------------------------------------------------------------------------------ */
 
 @media (prefers-color-scheme: dark) {

@@ -1,7 +1,6 @@
 import styles from "@/styles/common/Testimonial.module.css";
 import { Col, Image, Row } from "react-bootstrap";
 import ContainerWrraper from "./ContainerWrraper";
-import ReactStars from "react-rating-stars-component";
 import { FaRegStar } from "react-icons/fa";
 
 const Testimonial = () => {

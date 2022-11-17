@@ -1,52 +1,52 @@
-.GettingStartedCard{
-    background: var(--elementColor);
-    border-radius: 30px;
+.GettingStartedCard {
+  background: var(--elementColor);
+  border-radius: 30px;
 }
-.SimpleHeading{
-    font-size: var(--mainHeading);
-    margin: 0%;
-    font-weight: 800;
-    color: var(--primaryColor);
+.SimpleHeading {
+  font-size: var(--mainHeading);
+  margin: 0%;
+  font-weight: 800;
+  color: var(--primaryColor);
 }
-.GradiantHeading{
-    font-size: var(--mainHeading);
-    margin: 0%;
-    font-weight: 800;
-    background: var(--textGradiant);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+.GradiantHeading {
+  font-size: var(--mainHeading);
+  margin: 0%;
+  font-weight: 800;
+  background: var(--textGradiant);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-.LeftSideMainWrraper{
-    display: flex;
+.LeftSideMainWrraper {
+  display: flex;
 }
-.DiscriptionWrapper{
-    padding: 5.5rem 0rem 0rem 3rem;
+.DiscriptionWrapper {
+  padding: 5.5rem 0rem 0rem 3rem;
 }
-.RightCurve{
-    position: relative;
-    top: 9rem;
-    left: 1rem;
+.RightCurve {
+  position: relative;
+  top: 9rem;
+  left: 1.5rem;
 }
-.ButtonsMainWrraper{
-    display: flex;
-    padding: 3.5rem 0 6.5rem 5rem; 
+.ButtonsMainWrraper {
+  display: flex;
+  padding: 3.5rem 0 6.5rem 5rem;
 }
-.ButtonCover{
-    margin-right: 2.5rem;
+.ButtonCover {
+  margin-right: 2.5rem;
 }
-.ContainerWrraperSpaces{
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+.ContainerWrraperSpaces {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
-.WorldImage{
-    padding: 0%;
-    text-align: end;
+.WorldImage {
+  padding: 0%;
+  text-align: end;
 }
-.WorldImageCover{
-    height: 100%;
-    overflow: hidden;
+.WorldImageCover {
+  height: 100%;
+  overflow: hidden;
 }
-.WorldImageFluid{
-    max-width: 101%;
-    height: 101.5%;
+.WorldImageFluid {
+  max-width: 101%;
+  height: 101.5%;
 }

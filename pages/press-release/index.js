@@ -28,7 +28,14 @@ const PressRelease = () => {
               />
             ))}
           </Col>
-          <Col xs={12} sm={12} md={5} lg={4} xl={4}>
+          <Col
+            xs={12}
+            sm={12}
+            md={5}
+            lg={4}
+            xl={4}
+            className={`ColPaddingRemove`}
+          >
             <div className={`${styles.CategoryWrraper} CategoriesAccordion`}>
               <div className={styles.CategoryHeadingWrrap}>
                 <p className={styles.CategoryHeading}>CATEGORIES</p>
@@ -40,20 +47,13 @@ const PressRelease = () => {
                 {[1, 2, 3, 4, 5].map((v, i) => (
                   <Accordion.Item eventKey={i} key={i}>
                     <Accordion.Header>Category</Accordion.Header>
-                    <Accordion.Body>
-                      <ul>
-                        <li>Subcategory</li>
-                        <li>Subcategory</li>
-                        <li>Subcategory</li>
-                        <li>Subcategory</li>
-                        <li>Subcategory</li>
-                      </ul>
-                    </Accordion.Body>
+                    <Accordion.Body></Accordion.Body>
                   </Accordion.Item>
                 ))}
               </Accordion>
             </div>
           </Col>
+          <Col></Col>
         </Row>
       </ContainerWrraper>
       <GettingStarted />

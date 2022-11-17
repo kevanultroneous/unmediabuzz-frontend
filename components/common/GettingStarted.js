@@ -8,7 +8,14 @@ const GettingStarted = () => {
   return (
     <ContainerWrraper customClass={`${styles.ContainerWrraperSpaces}`}>
       <Row className={styles.GettingStartedCard}>
-        <Col xs={12} sm={12} md={7} lg={7} xl={7}>
+        <Col
+          xs={12}
+          sm={12}
+          md={7}
+          lg={7}
+          xl={7}
+          className={`ColPaddingRemove`}
+        >
           <div className={styles.LeftSideMainWrraper}>
             <div>
               <Image
@@ -34,7 +41,14 @@ const GettingStarted = () => {
           </div>
         </Col>
 
-        <Col xs={12} sm={12} md={5} lg={5} xl={5} className={styles.WorldImage}>
+        <Col
+          xs={12}
+          sm={12}
+          md={5}
+          lg={5}
+          xl={5}
+          className={`${styles.WorldImage} ColPaddingRemove`}
+        >
           <div className={styles.WorldImageCover}>
             <Image
               src="/assets/images/world-web.png"
