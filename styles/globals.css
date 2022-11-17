@@ -56,6 +56,7 @@ a {
     #f16684 50.52%,
     #fa9a64 100%
   );
+  --textGradiantFourth: linear-gradient(180deg, #f65d61 0%, #fb9c64 100%);
 }
 
 .ColPaddingRemove {
@@ -74,6 +75,9 @@ a {
   margin-bottom: 1rem;
 }
 .FaqSectionHome .accordion-button {
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--elementColor);
   position: relative;
   display: flex;
   align-items: center;
@@ -81,7 +85,8 @@ a {
   justify-content: left;
 }
 .FaqSectionHome .accordion-button:not(.collapsed) {
-  color: var(--elementColor) !important;
+  color: #606060;
+  font-weight: 400;
   background: transparent !important;
 }
 .FaqSectionHome .accordion-button:focus {

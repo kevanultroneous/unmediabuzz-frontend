@@ -1,123 +1,141 @@
-.HeadingCol{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.HeadingCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.Heading{
-    font-size: var(--mainHeading);
-    font-weight: 800;
-    width: 808px;
-    text-align: center;
-    margin: 0%;
+.Heading {
+  font-size: var(--mainHeading);
+  font-weight: 800;
+  width: 808px;
+  text-align: center;
+  margin: 0%;
 }
-.InputWrraper{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1.5rem;
+.InputWrraper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
 }
-.InputWrraperRadio{
-    margin-bottom: 1.5rem;
+.InputWrraperRadio {
+  margin-bottom: 1.5rem;
 }
-.Controller{
-    outline: none;
-    border: none;
-    font-size: var(--bigParagraph);
-    border-bottom: 1px solid #e5e5e5;
-    color: rgba(0, 0, 0, 0.5);
-    width: 100%;
+.Controller {
+  outline: none;
+  border: none;
+  font-size: var(--bigParagraph);
+  border-bottom: 1px solid #e5e5e5;
+  color: rgba(0, 0, 0, 0.5);
+  width: 100%;
 }
-.Labels{
-    font-weight: 500;
-    font-size: var(--maxText);
-    color: rgba(0, 0, 0, 0.2);
-    margin-bottom: 0.5rem;
+.Labels {
+  font-weight: 500;
+  font-size: var(--maxText);
+  color: rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.5rem;
 }
 
-.RadioButtonSpace{
-    margin-right: 0.5rem;   
-    accent-color: var(--elementColor);
+.RadioButtonSpace {
+  margin-right: 0.5rem;
+  accent-color: var(--elementColor);
 }
-.Textarea{
-    outline: none;
-    border: none;
-    font-size: var(--bigParagraph);
-    border-bottom: 1px solid #e5e5e5;
-    color: rgba(0, 0, 0, 0.5);
-    width: 100%;
+.Textarea {
+  outline: none;
+  border: none;
+  font-size: var(--bigParagraph);
+  border-bottom: 1px solid #e5e5e5;
+  color: rgba(0, 0, 0, 0.5);
+  width: 100%;
 }
-.Textarea::placeholder{
-    color: rgba(0, 0, 0, 0.5);
+.Textarea::placeholder {
+  color: rgba(0, 0, 0, 0.5);
 }
-.Options{
-    outline: none;
-    border: none;
-    background-color: transparent;
-    border-bottom: 1px solid #e5e5e5;
-    color: rgba(0, 0, 0, 0.5);
+.Options {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid #e5e5e5;
+  color: rgba(0, 0, 0, 0.5);
 }
-.CountryInput{
-    display: flex;
-    width: 100%;
+.CountryInput {
+  display: flex;
+  width: 100%;
 }
-.BoardContainer{
-    background: url('/assets/images/black-board.svg');
-    height: 40rem;
-    width: 100%;
-    background-position: inherit;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    text-align: center;
+.BoardContainer {
+  background: url("/assets/images/black-board.svg");
+  height: 40rem;
+  width: 100%;
+  background-position: inherit;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  text-align: center;
 }
-.ImageSizes{
-    margin-left: 2rem;
+.ImageSizes {
+  margin-left: 2rem;
 }
-.ControllersSpace{
-    padding-left: 8rem;
+.ControllersSpace {
+  padding-left: 8rem;
 }
-.SendButtonWrraper{
-    display: flex;
-    justify-content: flex-end;
-    padding-top: 4rem;
+.SendButtonWrraper {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 4rem;
 }
-.FormContainer{
-padding-bottom: 7rem;
+.FormContainer {
+  padding-bottom: 7rem;
 }
-.RadioButtonParent{
-    padding: 0rem;
-    width: 20px;
-    height: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.6);
-    border-radius: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+.RadioButtonParent {
+  padding: 0rem;
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
-.RadioButtonChild{
-    height: 12px;
-    width: 12px;
-    background-color: var(--elementColor);
-    border-radius: 100%;
-    
+.RadioButtonChild {
+  height: 12px;
+  width: 12px;
+  background-color: var(--elementColor);
+  border-radius: 100%;
 }
-.InputGroups{
-display: flex;
-width: 4rem;
+.InputGroups {
+  display: flex;
+  width: 4rem;
 }
-.RadioButtonWrraper{
-    display: flex;   
-    padding-top: 0.5rem;
+.RadioButtonWrraper {
+  display: flex;
+  padding-top: 0.5rem;
 }
-.RadioButtonCover{
-    display: flex;
-    align-items: center;
+.RadioButtonCover {
+  display: flex;
+  align-items: center;
 }
-.UniqueLabels{
-    font-weight: 400;
-    font-size: var(--uniqueLabel);
-    color: rgba(0, 0, 0, 0.6);
-    padding-right: 1rem;
-    margin-left: 1rem;
+.UniqueLabels {
+  font-weight: 400;
+  font-size: var(--uniqueLabel);
+  color: rgba(0, 0, 0, 0.6);
+  padding-right: 1rem;
+  margin-left: 1rem;
+}
+.HelpWrraper {
+  padding-top: 2rem;
+}
+.HelpDiscription {
+  font-size: var(--maxText);
+  font-weight: 400;
+  text-align: right;
+  margin: 0%;
+}
+.HelpContact {
+  font-size: var(--maxText);
+  font-weight: 600;
+  margin: 0%;
+  text-align: right;
+  background: var(--textGradiantFourth);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

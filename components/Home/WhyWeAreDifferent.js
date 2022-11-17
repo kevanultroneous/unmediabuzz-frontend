@@ -47,7 +47,7 @@ const WhyWeAreDifferent = () => {
           </p>
         </Col>
       </Row>
-      <Row className={styles.DigitsRow}>
+      {/* <Row className={styles.DigitsRow}>
         {MediaDistribution?.map((cards, index) => (
           <Col
             xs={12}
@@ -62,7 +62,7 @@ const WhyWeAreDifferent = () => {
             <p className={styles.DigitText}>{cards.text}</p>
           </Col>
         ))}
-      </Row>
+      </Row> */}
       <Row>
         <Col
           xs={12}

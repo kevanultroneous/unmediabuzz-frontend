@@ -1,6 +1,7 @@
 .GettingStartedCard {
   background: var(--elementColor);
   border-radius: 30px;
+  user-select: none;
 }
 .SimpleHeading {
   font-size: var(--mainHeading);

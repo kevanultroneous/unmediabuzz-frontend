@@ -97,8 +97,8 @@ const ContactUs = () => {
                       ))}
                     </select>
                     <input
-                      type={"tel"}
-                      value={""}
+                      type={"text"}
+                      // value={""}
                       // onChange={changeHandler}
                       className={styles.Controller}
                     />
@@ -162,6 +162,12 @@ const ContactUs = () => {
                   }
                 />
               </Col>
+              <div className={styles.HelpWrraper}>
+                <p className={styles.HelpDiscription}>
+                  In case of any querry, Kindly connect to this ID
+                </p>
+                <p className={styles.HelpContact}>xyz@gmail.com</p>
+              </div>
             </Row>
           </Col>
         </Row>

@@ -85,7 +85,7 @@
   padding-left: 0%;
 }
 .BlogLineHorizontal {
-  border: 1px solid var(--primaryColor);
+  border: 0.1px solid var(--primaryColor);
   margin-bottom: 3rem;
   margin-top: 2rem;
 }

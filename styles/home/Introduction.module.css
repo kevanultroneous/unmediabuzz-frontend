@@ -1,68 +1,68 @@
-.IntroContainerWrraper{
-    padding-top: 5rem;
+.IntroContainerWrraper {
+  padding-top: 5rem;
 }
-.TitleText{
-    font-size: var(--mainHeading);
-    font-weight: 800;
-    text-align: center;
-    margin: 0%;
+.TitleText {
+  font-size: var(--mainHeading);
+  font-weight: 800;
+  text-align: center;
+  margin: 0%;
 }
-.TitleTextWithBrush{
-    position: relative;
-    top: -1rem;
+.TitleTextWithBrush {
+  position: relative;
+  top: -1rem;
 }
-.TitleSpan{
-    color: var(--primaryColor);
+.TitleSpan {
+  color: var(--primaryColor);
 }
-.TitleIntro{
-    font-size: var(--bigParagraph);
-    font-weight: 400;
-    text-align: center;
-    width: 44rem;
+.TitleIntro {
+  font-size: var(--bigParagraph);
+  font-weight: 400;
+  text-align: center;
+  width: 44rem;
 }
-.BrushImage{
-    position: absolute;
-    z-index: -1;
-    width: 23rem;
-    height: 4.5rem;
+.BrushImage {
+  position: absolute;
+  z-index: -1;
+  width: 23rem;
+  height: 4.5rem;
 }
-.MainIntroductionWrraper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.MainIntroductionWrraper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.ButtonsWrraper{
-    display: flex;
-    margin-top: 1.5rem;
+.ButtonsWrraper {
+  display: flex;
+  margin-top: 1.5rem;
 }
-.ButtonSpaces{
-    margin-left: 2rem;
+.ButtonSpaces {
+  margin-left: 2rem;
 }
-.ProcessWrraper{
-display: flex;
-padding-top: 10rem;
-justify-content: center;
+.ProcessWrraper {
+  display: flex;
+  padding-top: 10rem;
+  justify-content: center;
 }
 /* .ProcessCover{} */
-.ProcessTitle{
-    margin:1rem 0 0.8rem;
-    text-align: center;
-    font-weight: 700;
+.ProcessTitle {
+  margin: 1rem 0 0.8rem;
+  text-align: center;
+  font-weight: 700;
 }
-.ProcessDesc{
-    font-size: var(--maxText);
-    font-weight: 300;
-    text-align: center;
-    width: 12.25rem;
+.ProcessDesc {
+  font-size: var(--maxText);
+  font-weight: 300;
+  text-align: center;
+  width: 12.25rem;
 }
-.ProcessImage{
-    text-align: center;
+.ProcessImage {
+  text-align: center;
 }
-.ArrowWrraper{
-    display: flex;
-    align-items: center;
-    margin-bottom: 2rem;
+.ArrowWrraper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
 }
-.ArrowWrraperUp{
-    margin-top: 1rem;
+.ArrowWrraperUp {
+  margin-top: 1rem;
 }

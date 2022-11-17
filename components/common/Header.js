@@ -21,7 +21,7 @@ const Header = () => {
     <ContainerWrraper customClass={`${styles.HeaderContainer}`}>
       <Row className={styles.MainMenuRow}>
         <Col xs={6} md={3} lg={3} xl={3} className={`ColPaddingRemove`}>
-          <label className={styles.LogoText}>Logo</label>
+          <label className={styles.LogoText}>LOGO</label>
         </Col>
         <Col xs={6} md={3} lg={6} xl={6} className={`ColPaddingRemove`}>
           <div className="text-center">

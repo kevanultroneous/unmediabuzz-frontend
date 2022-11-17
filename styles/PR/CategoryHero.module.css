@@ -1,0 +1,27 @@
+.MainHeading {
+  font-size: var(--mainHeading);
+  font-weight: 800;
+  text-align: center;
+}
+.HeroSectionContainerWrraper {
+  background: var(--sidebarColor);
+  padding-top: 6.5rem;
+  padding-bottom: 6rem;
+}
+.HeroSectionChildsCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.SmallText {
+  font-size: var(--minText);
+  font-weight: 600;
+  margin: 0%;
+  background: var(--textGradiantThird);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 0.5rem;
+}

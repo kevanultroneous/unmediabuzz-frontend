@@ -1,74 +1,75 @@
-.ContainerWrraperCustom{
-    padding-top: 7rem;
-    padding-bottom: 0%;
-    background: var(--elementColor);
+.ContainerWrraperCustom {
+  padding-top: 7rem;
+  padding-bottom: 0%;
+  background: var(--elementColor);
 }
-.MainTitle{
-    font-size: var(--mainHeading);
-    font-weight: 800;
-    color: var(--primaryColor);
-    margin: 0%;
+.MainTitle {
+  font-size: var(--mainHeading);
+  font-weight: 800;
+  color: var(--primaryColor);
+  margin: 0%;
 }
-.SpanImage{
-    text-align: right;
-    position: relative;
-    top: 0rem;
-    right: -10.5rem;
+.SpanImage {
+  text-align: right;
+  position: relative;
+  top: 0rem;
+  right: -10.5rem;
 }
-.MainIntroAndDiscription{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.MainIntroAndDiscription {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.MainParagraph{
-    font-size: var(--smallParagraph);
-    font-weight: 400;
-    color: var(--primaryColor);
-    width: 57.563rem;
-    text-align: center;
-    margin: 0%;
-    padding: 3rem 0 4rem;
+.MainParagraph {
+  font-size: var(--smallParagraph);
+  font-weight: 400;
+  color: var(--primaryColor);
+  width: 57.563rem;
+  text-align: center;
+  margin: 0%;
+  padding: 3rem 0 4rem;
 }
-.GradiantText{
-    font-weight: 800;
-    font-size: var(--subHeading);
-    background: var(--textGradiantSecond);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.GradiantText {
+  font-weight: 800;
+  font-size: var(--subHeading);
+  background: var(--textGradiantSecond);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 4rem;
 }
-.Digit{
-    font-size: 130px;
-    opacity: 1;
-    -webkit-text-stroke: 0.8px var(--primaryColor);
-    font-weight: 800;
-    color: var(--elementColor);
-    text-align: center;
+.Digit {
+  font-size: 130px;
+  opacity: 1;
+  -webkit-text-stroke: 0.8px var(--primaryColor);
+  font-weight: 800;
+  color: var(--elementColor);
+  text-align: center;
 }
-.DigitText{
-    font-size: var(--bigParagraph);
-    font-weight: 800;
-    color: var(--primaryColor);
-    width: 335px;
+.DigitText {
+  font-size: var(--bigParagraph);
+  font-weight: 800;
+  color: var(--primaryColor);
+  width: 335px;
 }
-.DigitWrraper{
-    display: flex;
-    flex-direction: column;
+.DigitWrraper {
+  display: flex;
+  flex-direction: column;
 }
-.DigitsRow{
-padding:4rem 0 14rem;
+.DigitsRow {
+  padding: 4rem 0 14rem;
 }
-.CenterButtonWrraper{
-    display: flex;
-    justify-content: center;
+.CenterButtonWrraper {
+  display: flex;
+  justify-content: center;
 }
-.ButtonCover{
-    padding-bottom: 4rem;
+.ButtonCover {
+  padding-bottom: 4rem;
 }
-.LastBigImage{
-    text-align: center;
+.LastBigImage {
+  text-align: center;
 }
-.BigImage{
-    position: relative;
-    top: 0.3rem;
+.BigImage {
+  position: relative;
+  top: 0.3rem;
 }

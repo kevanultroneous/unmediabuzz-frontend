@@ -1,51 +1,51 @@
-.ContainerWrraperTestimonial{
-    padding-top: 7rem;
-    padding-bottom: 6rem;
+.ContainerWrraperTestimonial {
+  padding-top: 7rem;
+  padding-bottom: 6rem;
 }
-.MainHeading{
-    font-size: var(--mainHeading);
-    font-weight: 800;
-    text-align: center;
-    overflow: hidden;
-    padding-bottom: 3rem;
+.MainHeading {
+  font-size: var(--mainHeading);
+  font-weight: 800;
+  text-align: center;
+  overflow: hidden;
+  padding-bottom: 3rem;
 }
-.Profile{
-    display: flex;
-    padding-bottom: 1rem;
+.Profile {
+  display: flex;
+  padding-bottom: 1rem;
 }
-.UserName{
-    font-size: var(--minText);
-    font-weight: 600;
-    margin: 0%;
+.UserName {
+  font-size: var(--minText);
+  font-weight: 600;
+  margin: 0%;
 }
-.Designation{
-    font-weight: 600;
-    font-size: var(--maxText);
-    font-style: italic;
-    margin: 0%;
-    color: rgba(0, 0, 0, 0.5);
+.Designation {
+  font-weight: 600;
+  font-size: var(--maxText);
+  font-style: italic;
+  margin: 0%;
+  color: rgba(0, 0, 0, 0.5);
 }
-.ProfileDetails{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 1rem;
+.ProfileDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 1rem;
 }
-.TestimonialCard{
-    padding: 1.3rem;
-    border: 1px solid #F65D61;
-    border-radius: 20px;
-    margin-right: 1rem;
-    /* margin-left: 1rem; */
+.TestimonialCard {
+  padding: 1.3rem;
+  border: 1px solid var(--gradiantOne);
+  border-radius: 20px;
+  margin-right: 1rem;
+  /* margin-left: 1rem; */
 }
-.ProfileDescription{
-    padding-top: 1rem;
-    font-weight: 700;
-    font-size: 16px;
+.ProfileDescription {
+  padding-top: 1rem;
+  font-weight: 700;
+  font-size: 16px;
 }
-.MainHeadingBrush{
-        display: block;
-    position: relative;
-    left: 10rem;
-    top: -1rem;
+.MainHeadingBrush {
+  display: block;
+  position: relative;
+  left: 10rem;
+  top: -1rem;
 }
