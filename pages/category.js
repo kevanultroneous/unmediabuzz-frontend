@@ -1,10 +1,10 @@
 import ContainerWrraper from "@/components/common/ContainerWrraper";
 import GettingStarted from "@/components/common/GettingStarted";
 import Layout from "@/components/common/Layout";
-import Pagination from "@/components/common/Pagination";
 import { CardModel } from "@/components/common/RecentItems";
 import CategoryHero from "@/components/PR/CategoryHero";
 import styles from "@/styles/PR/Category.module.css";
+import Pagination from "rc-pagination";
 import { useEffect, useState } from "react";
 import { Accordion, Col, Row } from "react-bootstrap";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
@@ -45,6 +45,15 @@ const Category = () => {
 
   const handlePrevious = () => setSelectedPage(selectedPage - 1);
   const handleNext = () => setSelectedPage(selectedPage + 1);
+
+  const itemRender = (current, type, element) => {
+    if (type === "page") {
+      return (
+        <label className={`${styles.PageNumber} SelectedNum`}>{current}</label>
+      );
+    }
+    return element;
+  };
 
   return (
     <Layout>
@@ -88,14 +97,7 @@ const Category = () => {
             </div>
           </Col>
           <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-            <Pagination
-              paginationData={paginationData}
-              gape={9}
-              handleNext={handleNext}
-              handlePrevious={handlePrevious}
-              selectedPage={selectedPage}
-              // handlepageclick={() => }
-            />
+            <Pagination total={32} itemRender={itemRender} />
           </Col>
         </Row>
       </ContainerWrraper>
