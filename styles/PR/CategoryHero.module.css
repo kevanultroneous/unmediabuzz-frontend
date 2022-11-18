@@ -5,8 +5,8 @@
 }
 .HeroSectionContainerWrraper {
   background: var(--sidebarColor);
-  padding-top: 6.5rem;
-  padding-bottom: 6rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 .HeroSectionChildsCol {
   display: flex;

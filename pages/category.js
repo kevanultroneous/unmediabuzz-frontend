@@ -1,6 +1,7 @@
 import ContainerWrraper from "@/components/common/ContainerWrraper";
 import GettingStarted from "@/components/common/GettingStarted";
 import Layout from "@/components/common/Layout";
+import Pagination from "@/components/common/Pagination";
 import { CardModel } from "@/components/common/RecentItems";
 import CategoryHero from "@/components/PR/CategoryHero";
 import styles from "@/styles/PR/Category.module.css";
@@ -50,7 +51,7 @@ const Category = () => {
       <CategoryHero />
       <ContainerWrraper customClass={`${styles.CardModelContainerWrraper}`}>
         <Row>
-          <Col xs={12} sm={12} md={7} lg={8} xl={8}>
+          <Col xs={12} sm={12} md={7} lg={8} xl={9}>
             {arry.map((value, index) => (
               <CardModel
                 customtitleclass={`${styles.ParagraphSize}`}
@@ -69,7 +70,7 @@ const Category = () => {
             sm={12}
             md={5}
             lg={4}
-            xl={4}
+            xl={3}
             className={`ColPaddingRemove`}
           >
             <div className={`${styles.CategoryWrraper} CategoriesAccordion`}>
@@ -87,44 +88,14 @@ const Category = () => {
             </div>
           </Col>
           <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-            <div className={styles.PaginationWrraper}>
-              <div
-                className={styles.ActionButtonCover}
-                onClick={handlePrevious}
-              >
-                <BiChevronLeft />
-              </div>
-              <div>
-                {paginationData?.map((page, index) =>
-                  index == 9 ? (
-                    <>
-                      <label className={styles.PageNumber}>...</label>
-                      <label className={styles.PageNumber}>
-                        {paginationData[paginationData.length - 1]}
-                      </label>
-                    </>
-                  ) : (
-                    <>
-                      {index > 9 ? null : (
-                        <label
-                          key={index}
-                          className={`${
-                            selectedPage === index
-                              ? styles.SelectedNumber
-                              : styles.PageNumber
-                          }`}
-                        >
-                          {index + 1}
-                        </label>
-                      )}
-                    </>
-                  )
-                )}
-              </div>
-              <div className={styles.ActionButtonCover} onClick={handleNext}>
-                <BiChevronRight />
-              </div>
-            </div>
+            <Pagination
+              paginationData={paginationData}
+              gape={9}
+              handleNext={handleNext}
+              handlePrevious={handlePrevious}
+              selectedPage={selectedPage}
+              // handlepageclick={() => }
+            />
           </Col>
         </Row>
       </ContainerWrraper>
