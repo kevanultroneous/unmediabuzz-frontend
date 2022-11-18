@@ -11,9 +11,6 @@ const Pagination = ({
   handlepageclick,
 }) => {
   const [cSelectedPage, setCSelectedPage] = useState(selectedPage);
-  useEffect(() => {
-    selectedPage = cSelectedPage;
-  }, [cSelectedPage, selectedPage]);
 
   return (
     <div className={styles.PaginationWrraper}>
