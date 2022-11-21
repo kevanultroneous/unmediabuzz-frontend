@@ -1,0 +1,44 @@
+:root {
+  --layoutSpace: 3rem 3rem;
+  --mainHeading: 48px;
+  --subHeading: 28px;
+  --midHeading: 38px;
+  --searchHeading: 27px;
+  --bigParagraph: 18px;
+  --smallParagraph: 16px;
+  --maxText: 14px;
+  --midText: 12px;
+  --uniqueLabel: 18px;
+  --minText: 16px;
+  --btnText: 21.6667px;
+  --otherText: 20px;
+  --menuText: 16px;
+  --anonymText: 36px;
+  --primaryColor: #ffffff;
+  --elementColor: #000000;
+  --sidebarColor: #fff9f9;
+  --midColor: #ead0d0;
+  --sidebarColor2: rgba(244, 96, 108, 0.04);
+  --gradiantOne: #f65d61;
+  --gradiantTwo: #f16684;
+  --gradiantThree: #fa9a64;
+  --textGradiant: -webkit-linear-gradient(
+    75deg,
+    #f65c60 0%,
+    #f16583 50%,
+    #fb9c64 100%
+  );
+  --textGradiantSecond: linear-gradient(
+    180deg,
+    #f65c60 0%,
+    #f16583 50%,
+    #fb9c64 100%
+  );
+  --textGradiantThird: linear-gradient(
+    180deg,
+    #f65d61 0%,
+    #f16684 50.52%,
+    #fa9a64 100%
+  );
+  --textGradiantFourth: linear-gradient(180deg, #f65d61 0%, #fb9c64 100%);
+}
