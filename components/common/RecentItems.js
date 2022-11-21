@@ -1,4 +1,4 @@
-import { Col, Image, Row } from "react-bootstrap";
+import { Badge, Col, Image, Row } from "react-bootstrap";
 import ContainerWrraper from "./ContainerWrraper";
 import styles from "@/styles/common/RecentItems.module.css";
 import ToggleUiButton from "./ToggleUiButton";
@@ -10,18 +10,11 @@ export const CardModel = ({
   date,
   hide,
   customtitleclass,
+  companyname,
+  badge,
 }) => {
   return (
     <Row className={styles.CardModelRow}>
-      <Col xs={12} sm={12} md={2} lg={3} xl={3} className={`ColPaddingRemove`}>
-        <div className={styles.PostImage}>
-          <Image
-            src="/assets/images/dummy-post.png"
-            alt="coverimage"
-            width={"100%"}
-          />
-        </div>
-      </Col>
       <Col
         xs={12}
         sm={12}
@@ -30,9 +23,32 @@ export const CardModel = ({
         xl={9}
         className={`ColPaddingRemove ${styles.PostDetails}`}
       >
-        <p className={styles.CategoryName}>{categoryname}</p>
+        <p className={styles.PostDate}>
+          {date}
+          {badge && (
+            <span className={styles.Badge}>
+              <Image src="/assets/icons/l-speaker.svg" alt="badge" /> Buzzed
+            </span>
+          )}
+        </p>
         <p className={`${styles.PostTitle} ${customtitleclass}`}>{title}</p>
-        <p className={styles.PostDate}>{date}</p>
+        <p className={styles.CategoryName}>{categoryname || companyname}</p>
+      </Col>
+      <Col
+        xs={12}
+        sm={12}
+        md={2}
+        lg={3}
+        xl={3}
+        className={`ColPaddingRemove ${styles.PostImageCol}`}
+      >
+        <div className={styles.PostImage}>
+          <Image
+            src="/assets/images/dummy-post.png"
+            alt="coverimage"
+            width={"100%"}
+          />
+        </div>
       </Col>
       {!hide && <div className={styles.LineHorizontal}></div>}
     </Row>
@@ -42,19 +58,34 @@ export const CardModel = ({
 const BlogsCardModel = ({ title, date, hide }) => {
   return (
     <>
-      <div className={styles.BlogsCard}>
-        <div className={styles.BlogImageCover}>
+      <Row>
+        <Col
+          xs={8}
+          sm={8}
+          md={8}
+          lg={8}
+          xl={8}
+          className={`${styles.DetailCol}`}
+        >
+          <p className={styles.BlogPostDate}>{date}</p>
+          <p className={styles.BlogPostTitle}>{title}</p>
+          <p className={styles.CompanyName}>By, XYZ Company Name</p>
+        </Col>
+        <Col
+          xs={4}
+          sm={4}
+          md={4}
+          lg={4}
+          xl={4}
+          className={` ${styles.BlogImageCol}`}
+        >
           <Image
             src="/assets/images/dummy-post.png"
             alt="coverimage"
             className={styles.BlogImg}
           />
-        </div>
-        <div>
-          <p className={styles.BlogPostTitle}>{title}</p>
-          <p className={styles.BlogPostDate}>{date}</p>
-        </div>
-      </div>
+        </Col>
+      </Row>
       {!hide && <div className={styles.BlogLineHorizontal}></div>}
     </>
   );
@@ -62,7 +93,7 @@ const BlogsCardModel = ({ title, date, hide }) => {
 
 const RecentItems = () => {
   const postList = [1, 2, 3, 4];
-
+  const blogList = [1, 2, 3, 4, 5, 6];
   return (
     <ContainerWrraper customClass={`${styles.ContainerWrraperRecentItems}`}>
       <Row>
@@ -81,12 +112,12 @@ const RecentItems = () => {
           <ContainerWrraper customClass={`${styles.ContainerWrraperCardModel}`}>
             {postList.map((v, i) => (
               <CardModel
-                hide={postList.indexOf(postList.length) === i}
+                badge={i == 0 || i == 3 || i == 2}
                 key={i}
-                categoryname={"Category"}
+                companyname={"By, XYZ Company Name"}
                 date={"04 Novemeber 2022"}
                 title={
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing."
                 }
               />
             ))}
@@ -102,20 +133,18 @@ const RecentItems = () => {
           className={`ColPaddingRemove`}
         >
           <h4 className={styles.ListHeading}>
-            Recent <span className={styles.SpanText}>Blogs</span>
+            Top <span className={styles.SpanText}>Buzz</span>
           </h4>
           <ContainerWrraper
             customClass={`${styles.ContainerWrraperBlogCardModel}`}
           >
-            {postList.map((v, i) => (
+            {blogList.map((v, i) => (
               <BlogsCardModel
-                hide={postList.indexOf(postList.length) === i}
+                hide={i === blogList.indexOf(blogList.length)}
                 key={i}
                 categoryname={"Category"}
-                date={"04 Novemeber 2022"}
-                title={
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-                }
+                date={"31 March 2022"}
+                title={"Lorem Ipsum is simply dummy text of the printing."}
               />
             ))}
           </ContainerWrraper>
@@ -131,19 +160,7 @@ const RecentItems = () => {
           className={`ColPaddingRemove`}
         >
           <div className={styles.ButtonOutCover}>
-            <ToggleUiButton text={ButtonsList.pressReleaseCommon.source} dark />
-          </div>
-        </Col>
-        <Col
-          xs={12}
-          sm={12}
-          md={5}
-          lg={5}
-          xl={5}
-          className={`ColPaddingRemove`}
-        >
-          <div className={styles.ButtonOutCover}>
-            <ToggleUiButton text={ButtonsList.blogpostCommon.source} dark />
+            <ToggleUiButton text={ButtonsList.viewCommon.source} dark />
           </div>
         </Col>
       </Row>

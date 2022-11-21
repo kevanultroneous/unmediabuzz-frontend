@@ -14,6 +14,19 @@ export const ButtonsList = {
     ),
     link: "",
   },
+  viewCommon: {
+    source: (
+      <span>
+        <Image
+          src="/assets/icons/white-pr-icon.svg"
+          alt="press-release"
+          fluid
+        />
+        &nbsp;&nbsp;View All
+      </span>
+    ),
+    link: "",
+  },
   blogpostCommon: {
     source: (
       <span>

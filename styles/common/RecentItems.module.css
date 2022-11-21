@@ -16,25 +16,27 @@
 }
 .CategoryName {
   font-size: var(--maxText);
-  color: #f65d61;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.6);
   margin: 0%;
   margin-bottom: 0.4rem;
 }
 .PostTitle {
   font-size: var(--bigParagraph);
   font-weight: 600;
-  width: 458px;
   margin: 0%;
-  margin-bottom: 0.5rem;
+  max-width: 30rem;
+  margin-bottom: 2rem;
+  padding-top: 0.5rem;
 }
 .PostDate {
   font-size: var(--maxText);
-  font-weight: 700;
-  color: rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.4);
   margin: 0%;
 }
 .PostDetails {
-  padding-left: 2.5rem !important;
+  /* padding-left: 2.5rem !important; */
 }
 .CardModelRow {
   margin-bottom: 2rem;
@@ -45,18 +47,18 @@
   margin-top: 2rem;
 }
 .ButtonOutCover {
-  padding-top: 3rem;
+  padding-top: 0.5rem;
   padding-left: 0.3rem;
 }
 .PostImage {
-  max-width: 14rem;
+  max-width: 10rem;
 }
 .BlogsCard {
   display: flex;
-  padding-left: 2.5rem;
+  /* padding-left: 2.5rem; */
 }
 .BlogImageCover {
-  width: 23%;
+  /* width: 23%; */
 }
 .BlogImg {
   border-radius: 100%;
@@ -66,16 +68,16 @@
 /* .BlogPostDetails {
 } */
 .BlogPostTitle {
-  width: 19rem;
   font-weight: 600;
   font-size: 16px;
   margin: 0%;
 }
 .BlogPostDate {
   font-weight: 600;
-  font-size: 14px;
+  font-size: var(--midText);
   color: rgba(33, 37, 41, 0.4);
-  margin-top: 0.4rem;
+  margin: 0%;
+  margin-bottom: 0.5rem;
 }
 .ContainerWrraperBlogCardModel {
   background: var(--sidebarColor);
@@ -83,13 +85,45 @@
   margin-top: 5rem;
   padding-right: 0%;
   padding-left: 0%;
+  padding-top: 2rem;
+  margin-left: 2rem;
+  padding-bottom: 2rem;
 }
 .BlogLineHorizontal {
   border: 0.1px solid var(--primaryColor);
-  margin-bottom: 3rem;
-  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
 }
 .ContainerWrraperRecentItems {
   padding-top: 12rem;
   padding-bottom: 7rem;
+}
+.PostImageCol {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.Badge {
+  margin-left: 1rem;
+  font-size: var(--midText);
+  padding: 0.4rem 0.9rem;
+  background: #f65d61;
+  border-radius: 6px;
+  color: var(--primaryColor);
+}
+.CompanyName {
+  margin: 0%;
+  font-weight: 700;
+  padding-top: 0.5rem;
+  font-size: var(--midText);
+  color: rgba(0, 0, 0, 0.6);
+}
+.BlogImageCol {
+  display: flex;
+  padding-right: 3rem;
+  justify-content: flex-end;
+  align-items: center;
+}
+.DetailCol {
+  padding-left: 3rem;
 }

@@ -7,9 +7,14 @@ import { FooterMenu } from "utils/Navigation.utils";
 const Footer = () => {
   return (
     <ContainerWrraper customClass={`${styles.FooterCover}`}>
-      <Row>
+      <Row className="align-items-center">
         <Col xs={6} md={3} lg={3} xl={2} className={`ColPaddingRemove`}>
-          <label className={styles.LogoText}>Logo</label>
+          <Image
+            src="/assets/icons/unmb.svg"
+            alt="Logo"
+            fluid
+            draggable={false}
+          />
         </Col>
         <Col xs={6} md={3} lg={6} xl={8} className={`ColPaddingRemove`}>
           <div className="text-center">

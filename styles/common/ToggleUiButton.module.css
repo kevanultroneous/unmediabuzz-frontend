@@ -1,7 +1,7 @@
 .ButtonToggle {
   text-align: center;
   background: var(--primaryColor);
-  max-width: 14rem;
+  width: 14rem;
   padding: 0.8rem 1rem;
   font-size: var(--btnText);
   font-weight: 600;
@@ -14,7 +14,7 @@
   text-align: center;
   background: var(--elementColor);
   color: var(--primaryColor);
-  max-width: 14rem;
+  width: 14rem;
   padding: 0.8rem 1rem;
   font-size: var(--btnText);
   font-weight: 600;

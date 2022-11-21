@@ -22,7 +22,7 @@ const Header = () => {
       <Row className={styles.MainMenuRow}>
         <Col xs={6} md={3} lg={3} xl={3} className={`ColPaddingRemove`}>
           <Image
-            src="/assets/icons/logo.svg"
+            src="/assets/icons/unmb.svg"
             alt="Logo"
             fluid
             draggable={false}

@@ -231,7 +231,7 @@ a {
 .rc-pagination-jump-next button:after {
   display: block;
   content: "•••";
-  color: ;
+  /* color: ; */
 }
 .rc-pagination-prev,
 .rc-pagination-jump-prev,
