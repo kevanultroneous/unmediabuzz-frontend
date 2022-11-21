@@ -9,7 +9,7 @@ import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import { useEffect, useState } from "react";
 
 const PressRelease = () => {
-  const arry = [1, 2, 3, 4, 5];
+  const arry = [1, 2, 3, 4, 5, 6, 7];
   const paginationData = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
   ];
@@ -57,9 +57,9 @@ const PressRelease = () => {
                 customtitleclass={`${styles.ParagraphSize}`}
                 hide={arry.indexOf(arry.length) === index}
                 key={index}
-                categoryname={"Category"}
+                categoryname={"By, XYZ Company Name"}
                 title={
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing."
                 }
                 date={"04 Novemeber 2022"}
               />

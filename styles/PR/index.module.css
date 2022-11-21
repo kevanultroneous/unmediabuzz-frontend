@@ -33,7 +33,7 @@
   user-select: none;
 }
 .PageNumber {
-  padding: 0 2rem;
+  padding: 0 1rem;
   font-weight: 600;
   font-size: var(--minText);
   user-select: none;
@@ -41,7 +41,7 @@
   color: #bcbcbc;
 }
 .SelectedNumber {
-  padding: 0 2rem;
+  padding: 0 1rem;
   font-weight: 600;
   font-size: var(--minText);
   background: var(--textGradiantThird);

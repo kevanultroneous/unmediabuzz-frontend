@@ -36,7 +36,8 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  padding-bottom: 4rem;
+  padding-bottom: 3rem;
+  margin: 0%;
 }
 .Digit {
   font-size: 130px;

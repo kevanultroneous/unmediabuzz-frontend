@@ -33,11 +33,9 @@ const GettingStarted = () => {
           </div>
 
           <div className={styles.ButtonsMainWrraper}>
-            {ButtonsList.GettingStartedButtonList.map((button, index) => (
-              <div className={styles.ButtonCover} key={index + 1}>
-                <ToggleUiButton text={button.source} />
-              </div>
-            ))}
+            <div className={styles.ButtonCover}>
+              <ToggleUiButton text={ButtonsList.letsStart.source} />
+            </div>
           </div>
         </Col>
 

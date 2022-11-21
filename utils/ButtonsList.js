@@ -1,6 +1,15 @@
 import { Image } from "react-bootstrap";
 
 export const ButtonsList = {
+  letsStart: {
+    source: (
+      <span>
+        <Image src="/assets/icons/send-icon.svg" alt="press-release" fluid />
+        &nbsp; Let’s Start Now
+      </span>
+    ),
+    link: "/",
+  },
   pressReleaseCommon: {
     source: (
       <span>
