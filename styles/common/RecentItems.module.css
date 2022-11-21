@@ -25,7 +25,8 @@
   font-size: var(--bigParagraph);
   font-weight: 600;
   margin: 0%;
-  max-width: 30rem;
+  padding-right: 2rem;
+  /* max-width: 30rem; */
   margin-bottom: 2rem;
   padding-top: 0.5rem;
 }
@@ -59,6 +60,9 @@
 }
 .BlogImageCover {
   /* width: 23%; */
+}
+.ListHeadingSpace {
+  padding-left: 2rem;
 }
 .BlogImg {
   border-radius: 100%;

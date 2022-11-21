@@ -12,9 +12,10 @@ export const CardModel = ({
   customtitleclass,
   companyname,
   badge,
+  customcardmodelrow,
 }) => {
   return (
-    <Row className={styles.CardModelRow}>
+    <Row className={`${styles.CardModelRow} ${customcardmodelrow}`}>
       <Col
         xs={12}
         sm={12}
@@ -106,9 +107,8 @@ const RecentItems = () => {
           className={`ColPaddingRemove`}
         >
           <h4 className={styles.ListHeading}>
-            Recent <span className={styles.SpanText}>Press Release</span>
+            Top <span className={styles.SpanText}>Buzz</span>
           </h4>
-
           <ContainerWrraper customClass={`${styles.ContainerWrraperCardModel}`}>
             {postList.map((v, i) => (
               <CardModel
@@ -132,8 +132,8 @@ const RecentItems = () => {
           xl={5}
           className={`ColPaddingRemove`}
         >
-          <h4 className={styles.ListHeading}>
-            Top <span className={styles.SpanText}>Buzz</span>
+          <h4 className={`${styles.ListHeading} ${styles.ListHeadingSpace}`}>
+            Recent <span className={styles.SpanText}>Press Release</span>
           </h4>
           <ContainerWrraper
             customClass={`${styles.ContainerWrraperBlogCardModel}`}

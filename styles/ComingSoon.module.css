@@ -1,0 +1,10 @@
+.CustomContainerWrraper {
+  background: var(--sidebarColor);
+  text-align: center;
+  padding: 14rem;
+  margin-bottom: 4rem;
+}
+.ComingSoonText {
+  font-size: var(--midHeading);
+  font-weight: 800;
+}

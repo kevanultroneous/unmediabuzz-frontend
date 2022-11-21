@@ -2,7 +2,7 @@ import { Row, Col, Image } from "react-bootstrap";
 import ContainerWrraper from "../common/ContainerWrraper";
 import styles from "@/styles/PR/CategoryHero.module.css";
 
-const CategoryHero = () => {
+const CategoryHero = ({ heading, breadcumb }) => {
   return (
     <ContainerWrraper customClass={`${styles.HeroSectionContainerWrraper}`}>
       <Row>
@@ -14,13 +14,8 @@ const CategoryHero = () => {
           xl={12}
           className={`ColPaddingRemove ${styles.HeroSectionChildsCol}`}
         >
-          <p className={styles.SmallText}>
-            <span>
-              <Image src="/assets/icons/speaker.svg" alt="speaker" />
-            </span>
-            Press Release
-          </p>
-          <h4 className={styles.MainHeading}>Category Name</h4>
+          <h4 className={styles.MainHeading}>{heading}</h4>
+          <p className={styles.BreadCumb}>{breadcumb}</p>
         </Col>
       </Row>
     </ContainerWrraper>

@@ -1,0 +1,27 @@
+.SearchHeading {
+  text-align: center;
+}
+.SearchHeadingText {
+  font-size: var(--searchHeading);
+}
+.SpanText {
+  font-weight: 800;
+}
+.SmallText {
+  font-size: var(--minText);
+  font-weight: 400;
+  margin-top: 1rem;
+  color: rgba(0, 0, 0, 0.5);
+}
+.HeaderContainerWrraper {
+  background: var(--sidebarColor);
+  padding-bottom: 4.5rem;
+}
+.IconWrraping {
+  position: relative;
+  top: -1rem;
+}
+
+.PostsWrraper {
+  padding: 6rem 12rem;
+}

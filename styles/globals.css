@@ -21,6 +21,8 @@ a {
   --layoutSpace: 3rem 3rem;
   --mainHeading: 48px;
   --subHeading: 28px;
+  --midHeading: 38px;
+  --searchHeading: 27px;
   --bigParagraph: 18px;
   --smallParagraph: 16px;
   --maxText: 14px;
@@ -30,6 +32,7 @@ a {
   --btnText: 21.6667px;
   --otherText: 20px;
   --menuText: 16px;
+  --anonymText: 36px;
   --primaryColor: #ffffff;
   --elementColor: #000000;
   --sidebarColor: #fff9f9;
@@ -92,7 +95,13 @@ a {
 .FaqSectionHome .accordion-button:focus {
   box-shadow: none !important;
 }
-
+.CustomArrow .accordion-button::after {
+  background-image: url("/assets/icons/down-arrow.svg") !important;
+}
+.CustomArrow .accordion-button:not(.collapsed)::after {
+  background-image: url("/assets/icons/up-arrow.svg") !important;
+  transform: rotate(360deg) !important;
+}
 /*  -----------------------------------  CategoriesAccordion -------------------------------------------- */
 .CategoriesAccordion .accordion-button:not(.collapsed) {
   background-color: transparent !important;

@@ -73,7 +73,9 @@ const PressRelease = () => {
             xl={4}
             className={`ColPaddingRemove`}
           >
-            <div className={`${styles.CategoryWrraper} CategoriesAccordion`}>
+            <div
+              className={`${styles.CategoryWrraper} CategoriesAccordion CustomArrow`}
+            >
               <div className={styles.CategoryHeadingWrrap}>
                 <p className={styles.CategoryHeading}>CATEGORIES</p>
               </div>
