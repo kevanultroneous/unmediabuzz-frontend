@@ -2,6 +2,9 @@
   padding: var(--layoutSpace);
 }
 @media screen and (max-width: 600px) {
+  .ContainerWrraper {
+    padding: var(--mobileLayout);
+  }
 }
 @media (min-width: 768px) and (max-width: 1080px) {
 }

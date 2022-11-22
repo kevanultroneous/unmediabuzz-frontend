@@ -66,3 +66,47 @@
 .ArrowWrraperUp {
   margin-top: 1rem;
 }
+.ProcessMainDiv {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 600px) {
+  .TitleIntro {
+    width: 100%;
+  }
+  .TitleText {
+    font-size: var(--mainMobHeadingCopy);
+  }
+  .BrushImage {
+    position: absolute;
+    z-index: -1;
+    width: 15rem;
+    height: 2.5rem;
+  }
+  .ButtonsWrraper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+  }
+
+  .ButtonSpaces {
+    margin-left: 0rem;
+    margin-bottom: 1rem;
+  }
+  .ProcessWrraper {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5rem;
+  }
+  .ArrowWrraper {
+    display: none;
+    /* transform: rotate(90deg); */
+  }
+  .ArrowWrraperUp {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1080px) {
+}
+@media (min-width: 1200px) and (max-width: 1730px) {
+}

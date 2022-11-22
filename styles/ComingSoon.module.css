@@ -8,3 +8,27 @@
   font-size: var(--midHeading);
   font-weight: 800;
 }
+@media screen and (max-width: 600px) {
+  .CustomContainerWrraper {
+    padding: var(--mobileLayout);
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+    margin: 0%;
+  }
+  .ComingSoonText {
+    font-size: var(--mainMobHeading);
+  }
+  .ImageWrraper {
+    width: 4rem;
+  }
+  .ImageCol {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (min-width: 768px) and (max-width: 1080px) {
+}
+@media (min-width: 1200px) and (max-width: 1730px) {
+}

@@ -9,8 +9,21 @@ const ComingSoon = () => {
     <Layout>
       <ContainerWrraper customClass={`${styles.CustomContainerWrraper}`}>
         <Row>
-          <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-            <Image src="/assets/images/big-speaker.svg" alt="coming-soon" />
+          <Col
+            xs={12}
+            sm={12}
+            md={12}
+            lg={12}
+            xl={12}
+            className={styles.ImageCol}
+          >
+            <div className={styles.ImageWrraper}>
+              <Image
+                src="/assets/images/big-speaker.svg"
+                alt="coming-soon"
+                fluid
+              />
+            </div>
             <h4 className={styles.ComingSoonText}>Coming Soon...</h4>
           </Col>
         </Row>

@@ -39,7 +39,11 @@ export const ButtonsList = {
   blogpostCommon: {
     source: (
       <span>
-        <Image src="/assets/icons/white-blog-icon.svg" alt="press-release" />{" "}
+        <Image
+          src="/assets/icons/white-blog-icon.svg"
+          alt="press-release"
+          fluid
+        />{" "}
         &nbsp; Post Blogs
       </span>
     ),
@@ -66,6 +70,7 @@ export const ButtonsList = {
             src="/assets/icons/blog-post.svg"
             alt="press-release"
             height={25}
+            fluid
           />{" "}
           &nbsp; Post Blogs
         </span>
@@ -90,7 +95,11 @@ export const ButtonsList = {
     {
       source: (
         <span>
-          <Image src="/assets/icons/white-blog-icon.svg" alt="press-release" />{" "}
+          <Image
+            src="/assets/icons/white-blog-icon.svg"
+            alt="press-release"
+            fluid
+          />{" "}
           &nbsp; Post Blogs
         </span>
       ),

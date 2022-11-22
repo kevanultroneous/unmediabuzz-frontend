@@ -51,3 +51,58 @@
   max-width: 101%;
   height: 101.5%;
 }
+@media screen and (max-width: 600px) {
+  .GettingStartedCard {
+    border-radius: 0%;
+  }
+  .RightCurve {
+    display: none;
+  }
+  .GradiantHeading,
+  .SimpleHeading {
+    font-size: var(--mainMobHeading);
+  }
+  .DiscriptionWrapper {
+    padding: var(--mobileLayout);
+  }
+  .ContainerWrraperSpaces {
+    padding: var(--mobileLayout);
+  }
+  .WorldImageFluid {
+    max-width: 21rem;
+    transform: rotate(90deg);
+  }
+  .WorldImage {
+    padding: 0%;
+    text-align: center;
+  }
+  .ButtonsMainWrraper {
+    padding: var(--mobileLayout);
+  }
+}
+@media (min-width: 768px) and (max-width: 1080px) {
+}
+@media (min-width: 1200px) and (max-width: 1730px) {
+}
+/* .earth {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: transparent url("/assets/images/world-web.png");
+  background-size: cover;
+  box-shadow: inset 0px -20px 50px 10px #00ffff80, 0px 0px 30px 6px #00ffff70;
+  transform-style: preserve-3d;
+  transform: rotate(20deg);
+  animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 530px 0;
+  }
+} */

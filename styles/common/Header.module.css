@@ -79,3 +79,19 @@
 .MainMenuRow {
   align-items: baseline;
 }
+
+@media screen and (max-width: 600px) {
+  .HideMenusInMob {
+    display: none;
+  }
+  .HeaderContainer {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    background-color: transparent;
+    z-index: 10;
+  }
+}
+@media (min-width: 768px) and (max-width: 1080px) {
+}
+@media (min-width: 1200px) and (max-width: 1730px) {
+}

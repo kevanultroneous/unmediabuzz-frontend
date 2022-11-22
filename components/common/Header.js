@@ -28,8 +28,9 @@ const Header = () => {
             draggable={false}
           />
         </Col>
+
         <Col xs={6} md={3} lg={6} xl={6} className={`ColPaddingRemove`}>
-          <div className="text-center">
+          <div className={`text-center ${styles.HideMenusInMob}`}>
             {HeaderMenu.map((menus, index) => (
               <>
                 <Link
@@ -55,6 +56,7 @@ const Header = () => {
             ))}
           </div>
         </Col>
+
         <Col
           xs={12}
           md={3}
@@ -62,7 +64,10 @@ const Header = () => {
           xl={3}
           className={`ColPaddingRemove ${styles.SearchGroup}`}
         >
-          <InputGroup size="sm" className={`${styles.GroupInput}`}>
+          <InputGroup
+            size="sm"
+            className={`${styles.GroupInput} ${styles.HideMenusInMob} `}
+          >
             <Form.Control
               className={styles.FormControl}
               aria-label="Small"

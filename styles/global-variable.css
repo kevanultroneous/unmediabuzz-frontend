@@ -44,8 +44,9 @@
   );
   --textGradiantFourth: linear-gradient(180deg, #f65d61 0%, #fb9c64 100%);
   /* mobile */
-  --mobileLayout: 2rem 1rem;
-  --mainMobHeading: 48px;
+  --mobileLayout: 2rem 2rem;
+  --mainMobHeading: 26px;
+  --mainMobHeadingCopy: 30px;
   --subMobHeading: 28px;
   --midMobHeading: 38px;
   --searchMobHeading: 27px;

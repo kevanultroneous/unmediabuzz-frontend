@@ -1,26 +1,37 @@
-.FooterCover{
-    background: var(--sidebarColor);
+.FooterCover {
+  background: var(--sidebarColor);
 }
-.LogoText{
-    font-size: var(--otherText);
+.LogoText {
+  font-size: var(--otherText);
 }
-.IconCol{
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+.IconCol {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
-.IconCover{
-    margin-left: 2rem;
+.IconCover {
+  margin-left: 2rem;
 }
-.Links{
-    text-decoration: none;
-    font-size: var(--menuText);
-    font-weight: 400;
-    color: var(--elementColor);
+.Links {
+  text-decoration: none;
+  font-size: var(--menuText);
+  font-weight: 400;
+  color: var(--elementColor);
 }
-.Links:hover{
-    color: var(--gradiantTwo);
+.Links:hover {
+  color: var(--gradiantTwo);
 }
-.LinkSpan{
-    margin: 0 0.7rem;
+.LinkSpan {
+  margin: 0 0.7rem;
+}
+
+@media screen and (max-width: 600px) {
+  .Links,
+  .LinkSpan {
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1080px) {
+}
+@media (min-width: 1200px) and (max-width: 1730px) {
 }
