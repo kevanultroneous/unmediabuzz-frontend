@@ -62,7 +62,12 @@ a {
 .CategoriesAccordion .accordion-button:not(.collapsed) {
   background-color: transparent !important;
   box-shadow: none !important;
-  color: #000000 !important;
+  font-weight: 700;
+  background: linear-gradient(138deg, #f65d61 0%, #f16684 50.52%, #fa9a64 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: var(--maxText);
+  background-clip: text;
 }
 .CategoriesAccordion .accordion-button:focus {
   border-color: transparent !important;
@@ -74,13 +79,16 @@ a {
 .CategoriesAccordion .accordion-item {
   background-color: var(--sidebarColor);
   border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 }
 .CategoriesAccordion .accordion-button {
   background-color: var(--sidebarColor);
-  padding: 1.5rem 2.5rem;
+  padding: 2rem 2.5rem 0;
   font-size: var(--maxText);
 }
 .CategoriesAccordion .accordion-item:last-child {
   border-bottom: none;
+}
+.CategoriesAccordion .accordion-button::after {
+  background-size: 60% !important;
+  transition: none !important;
 }

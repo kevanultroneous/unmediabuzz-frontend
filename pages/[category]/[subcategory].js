@@ -48,7 +48,6 @@ const Subcategory = () => {
             {arry.map((value, index) => (
               <CardModel
                 customtitleclass={`${styles.ParagraphSize}`}
-                hide={arry.indexOf(arry.length) === index}
                 key={index}
                 categoryname={"By, XYZ Company Name"}
                 title={

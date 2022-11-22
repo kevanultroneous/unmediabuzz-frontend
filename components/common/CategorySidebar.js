@@ -2,7 +2,7 @@ import { Accordion } from "react-bootstrap";
 import styles from "@/styles/common/CategorySidebar.module.css";
 
 const CategorySidebar = () => {
-  const arry = [1, 2, 3, 4, 5, 6];
+  const arry = ["Sports", "Art & Entertainment", "Category 3", "Category 4"];
   return (
     <div
       className={`${styles.CategoryWrraper} CategoriesAccordion CustomArrow`}
@@ -16,14 +16,20 @@ const CategorySidebar = () => {
       <Accordion defaultActiveKey="0">
         {arry.map((category, index) => (
           <Accordion.Item eventKey={index} key={index}>
-            <Accordion.Header>Category</Accordion.Header>
+            <Accordion.Header>{category}</Accordion.Header>
             <Accordion.Body>
-              <p>Subcategory</p>
-              <p>Subcategory</p>
-              <p>Subcategory</p>
-              <p>Subcategory</p>
-              <p>Subcategory</p>
-              <p>Subcategory</p>
+              <div className={styles.SubcategoryWrraper}>
+                {[
+                  "Subcategory 1",
+                  "Subcategory 2",
+                  "Subcategory 3",
+                  "Subcategory 4",
+                ].map((subcategory, index) => (
+                  <p key={subcategory} className={styles.SubcategoryText}>
+                    {subcategory}
+                  </p>
+                ))}
+              </div>
             </Accordion.Body>
           </Accordion.Item>
         ))}

@@ -56,8 +56,8 @@
 .PaginationWrraper {
   display: flex;
   align-items: center;
-  padding-top: 6.5rem;
-  padding-bottom: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
 }
 .ActionButtonCover {
   height: 50px;

@@ -6,7 +6,6 @@ import { CardModel } from "@/components/common/RecentItems";
 import CategoryHero from "@/components/PR/CategoryHero";
 import styles from "@/styles/PR/Category.module.css";
 import Pagination from "rc-pagination";
-import { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 
@@ -48,7 +47,6 @@ const Category = () => {
             {arry.map((value, index) => (
               <CardModel
                 customtitleclass={`${styles.ParagraphSize}`}
-                hide={arry.indexOf(arry.length) === index}
                 key={index}
                 categoryname={"By, XYZ Company Name"}
                 title={

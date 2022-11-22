@@ -13,19 +13,28 @@
   font-size: var(--midText);
   font-weight: 700;
   color: var(--midColor);
+  margin: 0%;
+  padding-bottom: 1rem;
 }
 .AllPrLabelWrap {
   padding-left: 2.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  padding-bottom: 0rem;
 }
 .AllPrLabel {
   font-weight: 500;
   font-size: var(--maxText);
-  background: var(--textGradiantThird);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
   cursor: pointer;
+  color: rgba(0, 0, 0, 0.7);
   user-select: none;
+  margin: 0%;
+}
+.SubcategoryWrraper {
+  padding-left: 1.2rem;
+}
+.SubcategoryText {
+  margin: 0%;
+  font-size: var(--midText);
+  margin-bottom: 0.5rem;
+  cursor: pointer;
 }
