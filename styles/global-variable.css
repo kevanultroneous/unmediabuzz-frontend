@@ -1,5 +1,7 @@
 :root {
   --layoutSpace: 3rem 3rem;
+  --mobileLayout: 2rem 1rem;
+  --tabLayout: 2.5rem 1.5rem;
   --mainHeading: 48px;
   --subHeading: 28px;
   --midHeading: 38px;
@@ -41,4 +43,36 @@
     #fa9a64 100%
   );
   --textGradiantFourth: linear-gradient(180deg, #f65d61 0%, #fb9c64 100%);
+  /* mobile */
+  --mobileLayout: 2rem 1rem;
+  --mainMobHeading: 48px;
+  --subMobHeading: 28px;
+  --midMobHeading: 38px;
+  --searchMobHeading: 27px;
+  --bigMobParagraph: 18px;
+  --smallMobParagraph: 16px;
+  --maxMobText: 14px;
+  --midMobText: 12px;
+  --uniqueMobLabel: 18px;
+  --minMobText: 16px;
+  --btnMobText: 21.6667px;
+  --otherMobText: 20px;
+  --menuMobText: 16px;
+  --anonymMobText: 36px;
+  /* tablet  */
+  --tabLayout: 2.5rem 1.5rem;
+  --mainTabHeading: 48px;
+  --subTabHeading: 28px;
+  --midTabHeading: 38px;
+  --searchTabHeading: 27px;
+  --bigTabParagraph: 18px;
+  --smallTabParagraph: 16px;
+  --maxTabText: 14px;
+  --midTabText: 12px;
+  --uniqueTabLabel: 18px;
+  --minTabText: 16px;
+  --btnTabText: 21.6667px;
+  --otherTabText: 20px;
+  --menuTabText: 16px;
+  --anonymTabText: 36px;
 }
