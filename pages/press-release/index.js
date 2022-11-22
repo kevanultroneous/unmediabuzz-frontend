@@ -38,7 +38,6 @@ const PressRelease = () => {
   return (
     <Layout>
       <HeroSection />
-
       <ContainerWrraper customClass={`${styles.CardModelContainerWrraper}`}>
         <Row>
           <Col xs={12} sm={12} md={7} lg={8} xl={8}>
