@@ -7,7 +7,7 @@ import CategoryHero from "@/components/PR/CategoryHero";
 import styles from "@/styles/PR/Category.module.css";
 import Pagination from "rc-pagination";
 import { useEffect, useState } from "react";
-import { Accordion, Col, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 
 const Category = () => {
