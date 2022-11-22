@@ -1,3 +1,4 @@
+import CategorySidebar from "@/components/common/CategorySidebar";
 import ContainerWrraper from "@/components/common/ContainerWrraper";
 import GettingStarted from "@/components/common/GettingStarted";
 import Layout from "@/components/common/Layout";
@@ -6,49 +7,30 @@ import CategoryHero from "@/components/PR/CategoryHero";
 import styles from "@/styles/PR/Category.module.css";
 import Pagination from "rc-pagination";
 import { useEffect, useState } from "react";
-import { Col, Row } from "react-bootstrap";
+import { Accordion, Col, Row } from "react-bootstrap";
+import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 
 const Subcategory = () => {
   const arry = [1, 2, 3, 4];
-  const paginationData = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
-  ];
-  const [currentPages, setCurrentPages] = useState([]);
-  const [selectedPage, setSelectedPage] = useState(0);
-  const [gapesStore, setGapesStore] = useState([]);
-  const [gape, setGape] = useState(9);
 
-  const targetedGapes = (gape) => {
-    let gapesArray = [];
-    for (let i = 1; i <= 10; i++) {
-      gapesArray.push(gape * i);
-    }
-    return gapesArray;
-  };
-
-  useEffect(() => {
-    setGapesStore(targetedGapes(gape));
-  }, [gape]);
-
-  useEffect(() => {
-    if (selectedPage === -1) {
-      setSelectedPage(paginationData.length - 1);
-    }
-    if (
-      selectedPage === paginationData.length ||
-      gapesStore.includes(selectedPage)
-    ) {
-      setSelectedPage(0);
-    }
-  }, [gapesStore, paginationData.length, selectedPage]);
-
-  const handlePrevious = () => setSelectedPage(selectedPage - 1);
-  const handleNext = () => setSelectedPage(selectedPage + 1);
-
-  const itemRender = (current, type, element) => {
+  const textItemRender = (current, type, element) => {
     if (type === "page") {
       return (
         <label className={`${styles.PageNumber} SelectedNum`}>{current}</label>
+      );
+    }
+    if (type === "prev") {
+      return (
+        <div className={styles.ActionButtonCover}>
+          <BiChevronLeft />
+        </div>
+      );
+    }
+    if (type === "next") {
+      return (
+        <div className={styles.ActionButtonCover}>
+          <BiChevronRight />
+        </div>
       );
     }
     return element;
@@ -84,22 +66,12 @@ const Subcategory = () => {
             xl={3}
             className={`ColPaddingRemove`}
           >
-            <div className={`${styles.CategoryWrraper} CategoriesAccordion`}>
-              <div className={styles.CategoryHeadingWrrap}>
-                <p className={styles.CategoryHeading}>Category Name</p>
-              </div>
-              <div className={styles.SubCategoryWrraper}>
-                {arry.map((subcategory, index) => (
-                  <div
-                    key={index}
-                    className={styles.SubCategoryText}
-                  >{`Sub Category ${index + 1}`}</div>
-                ))}
-              </div>
-            </div>
+            <CategorySidebar />
           </Col>
           <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-            <Pagination total={32} itemRender={itemRender} />
+            <div className={styles.PaginationWrraper}>
+              <Pagination total={320} itemRender={textItemRender} />
+            </div>
           </Col>
         </Row>
       </ContainerWrraper>

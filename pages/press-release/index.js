@@ -6,8 +6,8 @@ import HeroSection from "@/components/PR/HeroSection";
 import { Accordion, Col, Row } from "react-bootstrap";
 import styles from "@/styles/PR/index.module.css";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
-import { useEffect, useState } from "react";
 import Pagination from "rc-pagination";
+import CategorySidebar from "@/components/common/CategorySidebar";
 
 const PressRelease = () => {
   const arry = [1, 2, 3, 4, 5, 6, 7];
@@ -63,24 +63,7 @@ const PressRelease = () => {
             xl={4}
             className={`ColPaddingRemove`}
           >
-            <div
-              className={`${styles.CategoryWrraper} CategoriesAccordion CustomArrow`}
-            >
-              <div className={styles.CategoryHeadingWrrap}>
-                <p className={styles.CategoryHeading}>CATEGORIES</p>
-              </div>
-              <div className={styles.AllPrLabelWrap}>
-                <p className={styles.AllPrLabel}>All Press Release</p>
-              </div>
-              <Accordion defaultActiveKey="0">
-                {arry.map((category, index) => (
-                  <Accordion.Item eventKey={index} key={index}>
-                    <Accordion.Header>Category</Accordion.Header>
-                    <Accordion.Body></Accordion.Body>
-                  </Accordion.Item>
-                ))}
-              </Accordion>
-            </div>
+            <CategorySidebar />
           </Col>
           <Col xs={12} sm={12} md={12} lg={12} xl={12}>
             <div className={styles.PaginationWrraper}>
