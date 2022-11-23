@@ -131,3 +131,96 @@
 .DetailCol {
   padding-left: 3rem;
 }
+.HideBlogListOnDesk {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .CardModelRow {
+    flex-direction: column-reverse;
+  }
+  .PostImageCol {
+    justify-content: flex-start;
+    margin-bottom: 2rem;
+  }
+  .CardModelRow {
+    margin-right: 0%;
+    margin-bottom: 3rem;
+  }
+  .PostDate {
+    margin-bottom: 1rem;
+  }
+  .PostTitle {
+    padding-right: 0%;
+    margin-bottom: 1rem;
+  }
+  .LineHorizontal {
+    display: none;
+  }
+  .LineHorizontalMob {
+    border: 0.1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 3rem;
+  }
+  .ListHeading {
+    font-size: var(--mainMobHeading);
+  }
+
+  .ContainerWrraperBlogCardModel {
+    margin-left: 0%;
+    margin-top: 3rem;
+  }
+  .ListHeadingSpace {
+    padding-top: 0rem;
+  }
+  .BlogImageCol {
+    padding-right: 0;
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+    justify-content: flex-start;
+  }
+  .DetailCol {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .BlogPostTitle {
+    margin-top: 1.5rem;
+  }
+  .CompanyName {
+    margin-top: 0.5rem;
+    font-size: var(--maxText);
+  }
+  .BlogsCardModelReverse {
+    flex-direction: column-reverse;
+  }
+  .HideBlogListOnMobile {
+    display: none;
+  }
+  .MobileRPRwrraper {
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+  .HideBlogListOnDesk {
+    display: block;
+  }
+}
+@media (min-width: 768px) and (max-width: 1080px) {
+  .CardModelRow {
+    flex-direction: column-reverse;
+  }
+  .PostImageCol {
+    justify-content: flex-start;
+    margin-bottom: 2rem;
+  }
+  .CardModelRow {
+    margin-right: 0%;
+    margin-bottom: 3rem;
+  }
+  .PostDate {
+    margin-bottom: 1rem;
+  }
+  .PostTitle {
+    padding-right: 0%;
+    margin-bottom: 1rem;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1730px) {
+}

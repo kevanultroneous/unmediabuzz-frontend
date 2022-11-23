@@ -86,3 +86,28 @@
   padding-left: 2.5rem;
   padding-bottom: 1rem;
 }
+/* (this for mobile) */
+@media screen and (max-width: 600px) {
+  .HideCategorySidebar {
+    display: none;
+  }
+  .ActionButtonCover {
+    height: 35px;
+    width: 35px;
+    top: 0;
+    margin-left: 1rem;
+  }
+  .PageNumber {
+    padding: 0%;
+  }
+  .SelectedNumber {
+    padding: 0%;
+  }
+  .PaginationWrraper {
+    padding: 0%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1080px) {
+}
+@media (min-width: 1200px) and (max-width: 1730px) {
+}

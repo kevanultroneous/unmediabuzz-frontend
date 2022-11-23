@@ -3,6 +3,7 @@ import ContainerWrraper from "./ContainerWrraper";
 import styles from "@/styles/common/RecentItems.module.css";
 import ToggleUiButton from "./ToggleUiButton";
 import { ButtonsList } from "utils/ButtonsList";
+import RecentPressRelease from "./RecentPressRelease";
 
 export const CardModel = ({
   categoryname,
@@ -19,7 +20,7 @@ export const CardModel = ({
       <Col
         xs={12}
         sm={12}
-        md={10}
+        md={12}
         lg={9}
         xl={9}
         className={`ColPaddingRemove ${styles.PostDetails}`}
@@ -34,11 +35,12 @@ export const CardModel = ({
         </p>
         <p className={`${styles.PostTitle} ${customtitleclass}`}>{title}</p>
         <p className={styles.CategoryName}>{categoryname || companyname}</p>
+        {!hide && <div className={styles.LineHorizontalMob}></div>}
       </Col>
       <Col
         xs={12}
         sm={12}
-        md={2}
+        md={12}
         lg={3}
         xl={3}
         className={`ColPaddingRemove ${styles.PostImageCol}`}
@@ -56,17 +58,17 @@ export const CardModel = ({
   );
 };
 
-const BlogsCardModel = ({ title, date, hide, badge }) => {
+export const BlogsCardModel = ({ title, date, hide, badge }) => {
   return (
     <>
-      <Row>
+      <Row className={styles.BlogsCardModelReverse}>
         <Col
-          xs={8}
-          sm={8}
+          xs={12}
+          sm={12}
           md={8}
           lg={8}
           xl={8}
-          className={`${styles.DetailCol}`}
+          className={`${styles.DetailCol} `}
         >
           <p className={styles.BlogPostDate}>
             {date}
@@ -80,8 +82,8 @@ const BlogsCardModel = ({ title, date, hide, badge }) => {
           <p className={styles.CompanyName}>By, XYZ Company Name</p>
         </Col>
         <Col
-          xs={4}
-          sm={4}
+          xs={12}
+          sm={12}
           md={4}
           lg={4}
           xl={4}
@@ -103,76 +105,71 @@ const RecentItems = () => {
   const postList = [1, 2, 3, 4];
   const blogList = [1, 2, 3, 4, 5, 6];
   return (
-    <ContainerWrraper customClass={`${styles.ContainerWrraperRecentItems}`}>
-      <Row>
-        <Col
-          xs={12}
-          sm={12}
-          md={7}
-          lg={7}
-          xl={7}
-          className={`ColPaddingRemove`}
-        >
-          <h4 className={styles.ListHeading}>
-            Top <span className={styles.SpanText}>Buzz</span>
-          </h4>
-          <ContainerWrraper customClass={`${styles.ContainerWrraperCardModel}`}>
-            {postList.map((v, i) => (
-              <CardModel
-                badge={i == 0 || i == 3 || i == 2}
-                key={i}
-                companyname={"By, XYZ Company Name"}
-                date={"04 Novemeber 2022"}
-                title={
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing."
-                }
-              />
-            ))}
-          </ContainerWrraper>
-        </Col>
-
-        <Col
-          xs={12}
-          sm={12}
-          md={5}
-          lg={5}
-          xl={5}
-          className={`ColPaddingRemove`}
-        >
-          <h4 className={`${styles.ListHeading} ${styles.ListHeadingSpace}`}>
-            Recent <span className={styles.SpanText}>Press Release</span>
-          </h4>
-          <ContainerWrraper
-            customClass={`${styles.ContainerWrraperBlogCardModel}`}
+    <>
+      <ContainerWrraper customClass={`${styles.ContainerWrraperRecentItems}`}>
+        <Row>
+          <Col
+            xs={12}
+            sm={12}
+            md={7}
+            lg={7}
+            xl={7}
+            className={`ColPaddingRemove`}
           >
-            {blogList.map((v, i) => (
-              <BlogsCardModel
-                badge={i == 0}
-                hide={i === blogList.indexOf(blogList.length)}
-                key={i}
-                categoryname={"Category"}
-                date={"31 March 2022"}
-                title={"Lorem Ipsum is simply dummy text of the printing."}
-              />
-            ))}
-          </ContainerWrraper>
-        </Col>
+            <h4 className={styles.ListHeading}>
+              Top <span className={styles.SpanText}>Buzz</span>
+            </h4>
+            <ContainerWrraper
+              customClass={`${styles.ContainerWrraperCardModel}`}
+            >
+              {postList.map((v, i) => (
+                <CardModel
+                  badge={i == 0 || i == 3 || i == 2}
+                  key={i}
+                  companyname={"By, XYZ Company Name"}
+                  date={"04 Novemeber 2022"}
+                  title={
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing."
+                  }
+                />
+              ))}
+            </ContainerWrraper>
+            <Col
+              xs={12}
+              sm={12}
+              md={7}
+              lg={7}
+              xl={7}
+              className={`ColPaddingRemove`}
+            >
+              <div className={styles.ButtonOutCover}>
+                <ToggleUiButton text={ButtonsList.viewCommon.source} dark />
+              </div>
+            </Col>
+          </Col>
 
-        {/* action buttons */}
-        <Col
-          xs={12}
-          sm={12}
-          md={7}
-          lg={7}
-          xl={7}
-          className={`ColPaddingRemove`}
-        >
-          <div className={styles.ButtonOutCover}>
-            <ToggleUiButton text={ButtonsList.viewCommon.source} dark />
-          </div>
-        </Col>
-      </Row>
-    </ContainerWrraper>
+          {/* we hide this component on Mobile */}
+          <RecentPressRelease
+            blogList={blogList}
+            hideclass={styles.HideBlogListOnMobile}
+          />
+        </Row>
+      </ContainerWrraper>
+
+      {/* for mobile  
+          why you make this differently ? : container need to remove side spaces and full view but 
+        here we use row col so we can't  remove space so we make RecentPressRelease Component
+      */}
+
+      <ContainerWrraper customClass={`${styles.MobileRPRwrraper}`}>
+        <Row>
+          <RecentPressRelease
+            blogList={blogList}
+            hideclass={styles.HideBlogListOnDesk}
+          />
+        </Row>
+      </ContainerWrraper>
+    </>
   );
 };
 export default RecentItems;

@@ -74,3 +74,25 @@
   position: relative;
   top: 0.3rem;
 }
+@media screen and (max-width: 600px) {
+  .MainTitle {
+    font-size: var(--mainMobHeading);
+  }
+  .MainParagraph {
+    width: auto;
+    text-align: justify;
+  }
+  .GradiantText {
+    display: none;
+  }
+  .SpanImage {
+    right: -4.5rem;
+  }
+  .SpanImage img {
+    width: 7.779rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1080px) {
+}
+@media (min-width: 1200px) and (max-width: 1730px) {
+}

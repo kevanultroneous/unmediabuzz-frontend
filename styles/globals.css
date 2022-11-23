@@ -48,6 +48,7 @@ a {
   color: #606060;
   font-weight: 400;
   background: transparent !important;
+  box-shadow: none !important;
 }
 .FaqSectionHome .accordion-button:focus {
   box-shadow: none !important;

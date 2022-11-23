@@ -286,3 +286,20 @@
     display: none;
   }
 }
+
+/* 
+ */
+
+/* (this for mobile) */
+@media screen and (max-width: 600px) {
+  .rc-pagination-item-active .SelectedNum {
+    padding: 0;
+  }
+  .rc-pagination-item {
+    margin: 0%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1080px) {
+}
+@media (min-width: 1200px) and (max-width: 1730px) {
+}

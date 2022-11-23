@@ -45,12 +45,21 @@ const ViewPost = () => {
           </Col>
         </Row>
       </ContainerWrraper>
-      <Row>
-        <Col className={styles.ContentWrraper}>
-          <h3>Contents</h3>
-          <p>jfkdsfkjskdfjksdkjkjkkk ksjdkfjskdjksjdkjkjk </p>
-        </Col>
-      </Row>
+      <ContainerWrraper className={styles.ContentWrraper}>
+        <Row>
+          <Col
+            xs={12}
+            sm={12}
+            md={12}
+            lg={12}
+            xl={12}
+            className={`ColPaddingRemove`}
+          >
+            <h3>Contents</h3>
+            <p>jfkdsfkjskdfjksdkjkjkkk ksjdkfjskdjksjdkjkjk </p>
+          </Col>
+        </Row>
+      </ContainerWrraper>
       {/* <ContainerWrraper customClass={`${}`}>
       </ContainerWrraper> */}
       <ContainerWrraper customClass={`${styles.InterestedContainerWrraper}`}>
@@ -59,7 +68,11 @@ const ViewPost = () => {
             <h6 className={styles.InterestedMainHeading}>
               You might be Interested
               <span className={styles.InterstedMainHeadingBrush}>
-                <Image src="/assets/icons/brush-4.svg" alt="brush" />
+                <Image
+                  src="/assets/icons/brush-4.svg"
+                  alt="brush"
+                  className={styles.BrushMobImage}
+                />
               </span>
             </h6>
           </Col>
@@ -79,7 +92,7 @@ const ViewPost = () => {
             md={6}
             lg={6}
             xl={6}
-            className={`${styles.BetweenSpace}`}
+            className={`${styles.BetweenSpace} ColPaddingRemove`}
           >
             <CardModel
               customcardmodelrow={`${styles.customcardmodelrow}`}
