@@ -1,31 +1,75 @@
-.ContainerWrraperHighlight{
-    padding: 0rem 0 3rem 0;
+.ContainerWrraperHighlight {
+  padding: 0rem 0 3rem 0;
 }
-.HighlightHeadCover{
-    padding: 4rem 0;
+.HighlightHeadCover {
+  padding: 4rem 0;
 }
-.HighlightsWrraper{
-    display: flex;
-    justify-content: space-between;
+.HighlightsWrraper {
+  display: flex;
+  justify-content: space-between;
 }
-.HighlightImage{
-    width: fit-content;
+.HighlightImage {
+  width: fit-content;
 }
-.Highlights{
-    padding:var(--layoutSpace);
-    padding-left: 2.4rem;
-    padding-right: 2.4rem;
-    background: var(--sidebarColor);
+.Highlights {
+  padding: var(--layoutSpace);
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+  background: var(--sidebarColor);
+  height: 10rem;
+  overflow: hidden;
 }
-.HighlightHeading{
-    font-size: var(--mainHeading);
-    font-weight: 800;
-    text-align: center;
+.HighlightHeading {
+  font-size: var(--mainHeading);
+  font-weight: 800;
+  text-align: center;
 }
-.BrushSetup{
-    position: absolute;
-    z-index: -1;
+.BrushSetup {
+  position: absolute;
+  z-index: -1;
 }
-.UniqueLabel{
-    color: var(--primaryColor);
+.UniqueLabel {
+  color: var(--primaryColor);
 }
+.marqueeImage {
+  padding: 0 4rem;
+}
+
+.marquee-container {
+  overflow-x: visible !important;
+}
+/* .marquee {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
+  --offset: 20vw;
+  --item-font-size: 10vw;
+  --move-initial: calc(-25% + var(--offset));
+  --move-final: calc(-50% + var(--offset));
+  top: -0.5rem;
+}
+
+.marquee__inner {
+  width: 200%;
+  position: relative;
+  transform: translate3d(var(--move-initial), 0, 0);
+  animation: marquee 5s linear infinite;
+}
+.marqueeCover {
+  width: 100%;
+  border-bottom-left-radius: 20rem;
+  border-bottom-right-radius: 20rem;
+  height: 45rem;
+  overflow: hidden;
+}
+@keyframes marquee {
+  0% {
+    transform: translate3d(var(--move-final), 0, 0);
+  }
+  100% {
+    transform: translate3d(var(--move-initial), 0, 0);
+  }
+} */

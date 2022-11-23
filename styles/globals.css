@@ -93,3 +93,20 @@ a {
   background-size: 60% !important;
   transition: none !important;
 }
+
+.Highlights .marquee-container {
+  overflow-x: visible !important;
+  display: flex !important;
+  flex-direction: row !important;
+  position: relative;
+  width: 100%;
+}
+
+.Highlights {
+  padding: var(--layoutSpace);
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+  background: var(--sidebarColor);
+  height: 10rem;
+  overflow: hidden;
+}
