@@ -2,7 +2,7 @@ import ContainerWrraper from "@/components/common/ContainerWrraper";
 import Layout from "@/components/common/Layout";
 import { Col, Row, Image, ToggleButton } from "react-bootstrap";
 import styles from "@/styles/ContactUs.module.css";
-import { countryCall } from "utils/CountryCode";
+import refreshed, { countryCall } from "utils/CountryCode";
 import ToggleUiButton from "@/components/common/ToggleUiButton";
 import { useState } from "react";
 import { RadioButtonsData } from "utils/Anonymous";
@@ -31,7 +31,7 @@ const ContactUs = () => {
 
   return (
     <Layout>
-      <ContainerWrraper>
+      <ContainerWrraper customClass={`${styles.mobileCustomContainer}`}>
         <Row>
           <Col
             xs={12}
@@ -44,7 +44,12 @@ const ContactUs = () => {
             <p className={styles.Heading}>
               Connect to start your Journey with UNMedia Buzz
             </p>
-            <Image src="/assets/images/brush-3.svg" alt="brush" />
+            <Image
+              src="/assets/images/brush-3.svg"
+              alt="brush"
+              loading="lazy"
+              className={styles.BrushImage}
+            />
           </Col>
         </Row>
       </ContainerWrraper>
@@ -56,7 +61,7 @@ const ContactUs = () => {
             md={4}
             lg={4}
             xl={4}
-            className="ColPaddingRemove"
+            className={`ColPaddingRemove ${styles.RemoveSideImageBar}`}
           >
             <div className={styles.BoardContainer}>
               <Image
@@ -90,18 +95,13 @@ const ContactUs = () => {
                   <label className={styles.Labels}>PHONE (Optional)</label>
                   <div className={styles.CountryInput}>
                     <select className={styles.Options}>
-                      {countryCall.map((code, index) => (
+                      {refreshed.map((code, index) => (
                         <option value={code.code} key={index}>
                           {code.code}
                         </option>
                       ))}
                     </select>
-                    <input
-                      type={"text"}
-                      // value={""}
-                      // onChange={changeHandler}
-                      className={styles.Controller}
-                    />
+                    <input type={"text"} className={styles.Controller} />
                   </div>
                 </div>
               </Col>

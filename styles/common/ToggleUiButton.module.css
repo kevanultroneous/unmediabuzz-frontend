@@ -26,3 +26,20 @@
   user-select: none;
   cursor: pointer;
 }
+/* mobile */
+@media screen and (max-width: 600px) {
+  .ButtonToggle,
+  .ButtonToggleDark {
+    width: 14.872rem;
+    font-size: 21.6667px;
+    font-weight: 600;
+    padding: 0%;
+    height: 55px;
+  }
+}
+/* tablet */
+@media (min-width: 768px) and (max-width: 1080px) {
+}
+/* leptop */
+@media (min-width: 1200px) and (max-width: 1730px) {
+}

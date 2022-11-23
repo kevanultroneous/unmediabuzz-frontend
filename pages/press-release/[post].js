@@ -17,7 +17,14 @@ const ViewPost = () => {
       <ContainerWrraper customClass={`${styles.ViewPostContainerWrraper}`}>
         <IoIosArrowRoundBack size={40} className={styles.ArrowIcon} />
         <Row className={styles.HeroSectionRow}>
-          <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+          <Col
+            xs={12}
+            sm={12}
+            md={12}
+            lg={12}
+            xl={12}
+            className={styles.DetailSectionCol}
+          >
             <p className={styles.BreadCumb}>
               Home/ Press Release/ Sports / Cricket
             </p>

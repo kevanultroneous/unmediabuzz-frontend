@@ -139,3 +139,66 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* mobile */
+@media screen and (max-width: 600px) {
+  .RemoveSideImageBar {
+    display: none;
+  }
+  .Heading {
+    font-size: var(--mainMobHeading);
+    max-width: 14.313rem;
+  }
+  .ControllersSpace {
+    padding: 0%;
+  }
+  .BrushImage {
+    max-width: 9.177rem;
+  }
+  .SendButtonWrraper {
+    padding-top: 2.5rem;
+    justify-content: center;
+  }
+  .HelpDiscription,
+  .HelpContact {
+    text-align: center;
+  }
+  .mobileCustomContainer {
+    padding-top: 3.5rem;
+  }
+  .HelpWrraper {
+    padding-top: 3rem;
+  }
+  .FormContainer {
+    padding-bottom: 4rem;
+  }
+  .Labels,
+  .UniqueLabels {
+    font-size: var(--midText);
+    font-weight: 500;
+  }
+  .Controller {
+    font-size: var(--minText);
+    font-weight: 400;
+  }
+  .RadioButtonChild {
+    height: 9px;
+    width: 9px;
+  }
+  .RadioButtonParent {
+    height: 17px;
+    width: 17px;
+  }
+}
+/* tablet */
+@media (min-width: 768px) and (max-width: 1080px) {
+  .ControllersSpace {
+    padding-left: 4rem;
+  }
+  .BoardContainer {
+    height: 42rem;
+  }
+}
+/* leptop */
+@media (min-width: 1200px) and (max-width: 1730px) {
+}
