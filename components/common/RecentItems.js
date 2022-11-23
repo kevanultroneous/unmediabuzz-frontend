@@ -56,7 +56,7 @@ export const CardModel = ({
   );
 };
 
-const BlogsCardModel = ({ title, date, hide }) => {
+const BlogsCardModel = ({ title, date, hide, badge }) => {
   return (
     <>
       <Row>
@@ -68,7 +68,14 @@ const BlogsCardModel = ({ title, date, hide }) => {
           xl={8}
           className={`${styles.DetailCol}`}
         >
-          <p className={styles.BlogPostDate}>{date}</p>
+          <p className={styles.BlogPostDate}>
+            {date}
+            {badge && (
+              <span className={styles.Badge}>
+                <Image src="/assets/icons/l-speaker.svg" alt="badge" /> Buzzed
+              </span>
+            )}
+          </p>
           <p className={styles.BlogPostTitle}>{title}</p>
           <p className={styles.CompanyName}>By, XYZ Company Name</p>
         </Col>
@@ -140,6 +147,7 @@ const RecentItems = () => {
           >
             {blogList.map((v, i) => (
               <BlogsCardModel
+                badge={i == 0}
                 hide={i === blogList.indexOf(blogList.length)}
                 key={i}
                 categoryname={"Category"}

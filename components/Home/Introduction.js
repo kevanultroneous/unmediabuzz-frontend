@@ -8,7 +8,7 @@ import { ProcessList } from "utils/Anonymous";
 // Process card component
 const Process = ({ ProcessList, title, icon, desc, index }) => {
   return (
-    <div className={styles.ProcessMainDiv}>
+    <div className="d-flex">
       <div className={styles.ProcessCover}>
         <div className={styles.ProcessImage}>
           <Image src={icon} alt="edit-desk" />

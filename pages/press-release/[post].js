@@ -45,9 +45,14 @@ const ViewPost = () => {
           </Col>
         </Row>
       </ContainerWrraper>
-      <ContainerWrraper customClass={`${styles.ContentWrraper}`}>
-        <h3>Contents</h3>
-      </ContainerWrraper>
+      <Row>
+        <Col className={styles.ContentWrraper}>
+          <h3>Contents</h3>
+          <p>jfkdsfkjskdfjksdkjkjkkk ksjdkfjskdjksjdkjkjk </p>
+        </Col>
+      </Row>
+      {/* <ContainerWrraper customClass={`${}`}>
+      </ContainerWrraper> */}
       <ContainerWrraper customClass={`${styles.InterestedContainerWrraper}`}>
         <Row>
           <Col xs={12} sm={12} md={12} lg={12} xl={12}>

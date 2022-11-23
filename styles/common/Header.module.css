@@ -1,10 +1,11 @@
 .HeaderContainer {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  position: sticky;
-  top: 0;
-  background-color: var(--primaryColor);
-  z-index: 10;
+  /* position: sticky; */
+  /* top: 0; */
+  background-color: var(--sidebarColor);
+  /* background-color: var(--primaryColor); */
+  /* z-index: 10; */
 }
 .FooterCover {
   background: var(--sidebarColor);
@@ -87,8 +88,8 @@
   .HeaderContainer {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-    background-color: var(--primaryColor);
-    z-index: 10;
+    /* background-color: var(--primaryColor); */
+    /* z-index: 10; */
   }
 }
 @media (min-width: 768px) and (max-width: 1080px) {

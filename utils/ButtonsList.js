@@ -43,7 +43,7 @@ export const ButtonsList = {
           src="/assets/icons/white-blog-icon.svg"
           alt="press-release"
           fluid
-        />{" "}
+        />
         &nbsp; Post Blogs
       </span>
     ),
@@ -58,7 +58,7 @@ export const ButtonsList = {
             alt="press-release"
             fluid
           />
-          &nbsp;&nbsp; Press Release
+          &nbsp;&nbsp;Press Release
         </span>
       ),
       link: "",
@@ -71,8 +71,8 @@ export const ButtonsList = {
             alt="press-release"
             height={25}
             fluid
-          />{" "}
-          &nbsp; Post Blogs
+          />
+          &nbsp;Post Blogs
         </span>
       ),
       link: "",
@@ -87,7 +87,7 @@ export const ButtonsList = {
             alt="press-release"
             fluid
           />
-          &nbsp;&nbsp; Press Release
+          &nbsp;&nbsp;Press Release
         </span>
       ),
       link: "",
@@ -99,8 +99,8 @@ export const ButtonsList = {
             src="/assets/icons/white-blog-icon.svg"
             alt="press-release"
             fluid
-          />{" "}
-          &nbsp; Post Blogs
+          />
+          &nbsp;Post Blogs
         </span>
       ),
       link: "",
