@@ -28,7 +28,7 @@ const PressRelease = () => {
     }
     if (type === "prev") {
       return (
-        <div className={styles.ActionButtonCover}>
+        <div className={`${styles.ActionButtonCover} ${styles.PrevButton}`}>
           <BiChevronLeft />
         </div>
       );
@@ -89,7 +89,14 @@ const PressRelease = () => {
           >
             <CategorySidebar />
           </Col>
-          <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+          <Col
+            xs={12}
+            sm={12}
+            md={12}
+            lg={12}
+            xl={12}
+            className={`ColPaddingRemove d-flex justify-content-center`}
+          >
             <div className={styles.PaginationWrraper}>
               <Pagination total={320} itemRender={textItemRender} />
             </div>

@@ -116,6 +116,15 @@
   .CardModelContainerWrraper {
     padding-top: 2rem;
   }
+  .ActionButtonCover {
+    height: 35px;
+    width: 35px;
+    top: 0;
+    margin-left: 1rem;
+  }
+  .PrevButton {
+    margin-left: 0%;
+  }
 }
 @media (min-width: 768px) and (max-width: 1080px) {
 }
