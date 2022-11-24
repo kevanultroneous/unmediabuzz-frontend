@@ -11,10 +11,10 @@ const Footer = () => {
         <Col
           xs={12}
           sm={12}
-          md={3}
+          md={12}
           lg={3}
           xl={2}
-          className={`ColPaddingRemove`}
+          className={`ColPaddingRemove ${styles.tabFooter}`}
         >
           <Image
             src="/assets/icons/unmb.svg"
@@ -23,7 +23,14 @@ const Footer = () => {
             draggable={false}
           />
         </Col>
-        <Col xs={12} sm={12} lg={6} xl={8} className={`ColPaddingRemove`}>
+        <Col
+          xs={12}
+          sm={12}
+          md={12}
+          lg={6}
+          xl={8}
+          className={`ColPaddingRemove`}
+        >
           <div className="text-center">
             {FooterMenu.map((menus, index) => (
               <>
@@ -45,7 +52,7 @@ const Footer = () => {
         <Col
           xs={12}
           sm={12}
-          md={3}
+          md={12}
           lg={3}
           xl={2}
           className={`${styles.IconCol} ColPaddingRemove`}
