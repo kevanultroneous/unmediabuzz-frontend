@@ -93,9 +93,9 @@
   .MobileSearchMenu {
     text-align: right;
   }
-  .MobileLogoWrraper {
-    /* max-width: 8.938rem; */
-  }
+  /* .MobileLogoWrraper { */
+  /* max-width: 8.938rem; */
+  /* } */
   .SearchGroup {
     display: none;
   }
