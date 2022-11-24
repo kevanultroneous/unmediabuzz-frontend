@@ -75,7 +75,7 @@ const ContactUs = () => {
           <Col
             xs={12}
             sm={12}
-            md={8}
+            md={12}
             lg={8}
             xl={8}
             className={styles.ControllersSpace}

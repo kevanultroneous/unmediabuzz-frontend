@@ -2,8 +2,21 @@ import styles from "@/styles/common/Testimonial.module.css";
 import { Col, Image, Row } from "react-bootstrap";
 import ContainerWrraper from "./ContainerWrraper";
 import { FaRegStar } from "react-icons/fa";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Testimonial = () => {
+  var settings = {
+    dots: false,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+  };
   return (
     <ContainerWrraper customClass={`${styles.ContainerWrraperTestimonial}`}>
       <Row>
@@ -22,7 +35,7 @@ const Testimonial = () => {
             </span>
           </h6>
         </Col>
-        {[1, 2, 3, 4].map((v, i) => (
+        {/* {[1, 2, 3, 4].map((v, i) => (
           <Col
             xs={12}
             sm={12}
@@ -57,8 +70,166 @@ const Testimonial = () => {
               </p>
             </div>
           </Col>
-        ))}
+        ))} */}
       </Row>
+      <Slider {...settings}>
+        <div className={styles.sliderSection}>
+          <div className={styles.TestimonialCard}>
+            <div className={styles.Profile}>
+              <div>
+                <Image src="/assets/icons/avatar.svg" alt="filled" />
+              </div>
+              <div className={styles.ProfileDetails}>
+                <p className={styles.UserName}>Bette Davis</p>
+                <p className={styles.Designation}>Designation</p>
+              </div>
+            </div>
+            <div className={styles.rating}>
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+            </div>
+            <p className={styles.ProfileDescription}>
+              In Tier 1 Pro distribution package - you get 225 media outlets
+              distribution with Google News, Marketwatch, Financial Network
+              Distribution, Marketmedia Distribution, Google News Network
+              Distribution, 9K-15K extra impression in popular sites -
+            </p>
+          </div>
+        </div>
+        <div className={styles.sliderSection}>
+          <div className={styles.TestimonialCard}>
+            <div className={styles.Profile}>
+              <div>
+                <Image src="/assets/icons/avatar.svg" alt="filled" />
+              </div>
+              <div className={styles.ProfileDetails}>
+                <p className={styles.UserName}>Bette Davis</p>
+                <p className={styles.Designation}>Designation</p>
+              </div>
+            </div>
+            <div className={styles.rating}>
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+            </div>
+            <p className={styles.ProfileDescription}>
+              In Tier 1 Pro distribution package - you get 225 media outlets
+              distribution with Google News, Marketwatch, Financial Network
+              Distribution, Marketmedia Distribution, Google News Network
+              Distribution, 9K-15K extra impression in popular sites -
+            </p>
+          </div>
+        </div>
+        <div className={styles.sliderSection}>
+          <div className={styles.TestimonialCard}>
+            <div className={styles.Profile}>
+              <div>
+                <Image src="/assets/icons/avatar.svg" alt="filled" />
+              </div>
+              <div className={styles.ProfileDetails}>
+                <p className={styles.UserName}>Bette Davis</p>
+                <p className={styles.Designation}>Designation</p>
+              </div>
+            </div>
+            <div className={styles.rating}>
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+            </div>
+            <p className={styles.ProfileDescription}>
+              In Tier 1 Pro distribution package - you get 225 media outlets
+              distribution with Google News, Marketwatch, Financial Network
+              Distribution, Marketmedia Distribution, Google News Network
+              Distribution, 9K-15K extra impression in popular sites -
+            </p>
+          </div>
+        </div>
+        <div className={styles.sliderSection}>
+          <div className={styles.TestimonialCard}>
+            <div className={styles.Profile}>
+              <div>
+                <Image src="/assets/icons/avatar.svg" alt="filled" />
+              </div>
+              <div className={styles.ProfileDetails}>
+                <p className={styles.UserName}>Bette Davis</p>
+                <p className={styles.Designation}>Designation</p>
+              </div>
+            </div>
+            <div className={styles.rating}>
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+            </div>
+            <p className={styles.ProfileDescription}>
+              In Tier 1 Pro distribution package - you get 225 media outlets
+              distribution with Google News, Marketwatch, Financial Network
+              Distribution, Marketmedia Distribution, Google News Network
+              Distribution, 9K-15K extra impression in popular sites -
+            </p>
+          </div>
+        </div>
+        <div className={styles.sliderSection}>
+          <div className={styles.TestimonialCard}>
+            <div className={styles.Profile}>
+              <div>
+                <Image src="/assets/icons/avatar.svg" alt="filled" />
+              </div>
+              <div className={styles.ProfileDetails}>
+                <p className={styles.UserName}>Bette Davis</p>
+                <p className={styles.Designation}>Designation</p>
+              </div>
+            </div>
+            <div className={styles.rating}>
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+            </div>
+            <p className={styles.ProfileDescription}>
+              In Tier 1 Pro distribution package - you get 225 media outlets
+              distribution with Google News, Marketwatch, Financial Network
+              Distribution, Marketmedia Distribution, Google News Network
+              Distribution, 9K-15K extra impression in popular sites -
+            </p>
+          </div>
+        </div>
+        <div className={styles.sliderSection}>
+          <div className={styles.TestimonialCard}>
+            <div className={styles.Profile}>
+              <div>
+                <Image src="/assets/icons/avatar.svg" alt="filled" />
+              </div>
+              <div className={styles.ProfileDetails}>
+                <p className={styles.UserName}>Bette Davis</p>
+                <p className={styles.Designation}>Designation</p>
+              </div>
+            </div>
+            <div className={styles.rating}>
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+              <Image src="/assets/icons/full-star.svg" alt="filled" />
+            </div>
+            <p className={styles.ProfileDescription}>
+              In Tier 1 Pro distribution package - you get 225 media outlets
+              distribution with Google News, Marketwatch, Financial Network
+              Distribution, Marketmedia Distribution, Google News Network
+              Distribution, 9K-15K extra impression in popular sites -
+            </p>
+          </div>
+        </div>
+      </Slider>
     </ContainerWrraper>
   );
 };

@@ -193,10 +193,13 @@
 /* tablet */
 @media (min-width: 768px) and (max-width: 1080px) {
   .ControllersSpace {
-    padding-left: 4rem;
+    padding-left: 0rem;
   }
   .BoardContainer {
     height: 42rem;
+  }
+  .RemoveSideImageBar {
+    display: none;
   }
 }
 /* leptop */

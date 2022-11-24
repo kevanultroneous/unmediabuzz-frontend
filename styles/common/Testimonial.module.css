@@ -49,3 +49,9 @@
   left: 10rem;
   top: -1rem;
 }
+.rating {
+  display: flex;
+}
+.sliderSection {
+  margin: 0;
+}
