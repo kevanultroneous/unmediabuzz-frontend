@@ -73,3 +73,11 @@
     transform: translate3d(var(--move-initial), 0, 0);
   }
 } */
+@media screen and (max-width: 600px) {
+  .brushImage {
+    width: 90%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1080px) {
+}

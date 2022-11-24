@@ -19,7 +19,11 @@ const PressReleaseHighlights = () => {
           Your
           <label className={styles.UniqueLabel}>
             <span className={styles.BrushSetup}>
-              <Image src="/assets/images/brush-h-01.svg" alt="brush" />
+              <Image
+                src="/assets/images/brush-h-01.svg"
+                alt="brush"
+                className={styles.brushImage}
+              />
             </span>
             &nbsp;&nbsp;&nbsp; Press Release
           </label>

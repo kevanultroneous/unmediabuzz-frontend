@@ -10,7 +10,7 @@ const Faq = () => {
         <Col
           xs={12}
           sm={12}
-          md={5}
+          md={12}
           lg={5}
           xl={5}
           className={`ColPaddingRemove`}
@@ -27,7 +27,7 @@ const Faq = () => {
         <Col
           xs={12}
           sm={12}
-          md={7}
+          md={12}
           lg={7}
           xl={7}
           className={`ColPaddingRemove FaqSectionHome`}

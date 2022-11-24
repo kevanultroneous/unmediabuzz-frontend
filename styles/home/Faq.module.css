@@ -46,6 +46,13 @@
   }
 }
 @media (min-width: 768px) and (max-width: 1080px) {
+  .MainHeading {
+    width: 100%;
+  }
+  .MainParagraph {
+    width: 100%;
+    margin: 2rem auto;
+  }
 }
 @media (min-width: 1200px) and (max-width: 1730px) {
 }

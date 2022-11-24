@@ -134,6 +134,9 @@
 .HideBlogListOnDesk {
   display: none;
 }
+.MobileRPRwrraper {
+  display: none;
+}
 @media screen and (max-width: 600px) {
   .CardModelRow {
     flex-direction: column-reverse;
