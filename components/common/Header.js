@@ -29,7 +29,7 @@ const Header = () => {
   return (
     <ContainerWrraper customClass={`${styles.HeaderContainer}`}>
       <Row className={styles.MainMenuRow}>
-        <Col xs={6} md={3} lg={3} xl={3} className={`ColPaddingRemove`}>
+        <Col xs={6} md={6} lg={3} xl={3} className={`ColPaddingRemove`}>
           <div className={styles.MobileLogoWrraper}>
             <Image
               src="/assets/icons/unmb.svg"
@@ -40,7 +40,7 @@ const Header = () => {
           </div>
         </Col>
 
-        <Col xs={6} md={3} lg={6} xl={6} className={`ColPaddingRemove`}>
+        <Col xs={6} md={6} lg={6} xl={6} className={`ColPaddingRemove`}>
           <div className={styles.MobileSearchMenu}>
             <FiSearch size={18} className={styles.SearchIcon} />
             <div

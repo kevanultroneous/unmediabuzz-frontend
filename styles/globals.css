@@ -6,7 +6,7 @@ body {
   margin: 0;
   font-family: "Lato", sans-serif;
   scroll-behavior: auto !important;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 a {
@@ -205,4 +205,13 @@ a {
   background: var(--sidebarColor);
   height: 10rem;
   overflow: hidden;
+}
+@media (min-width: 768px) and (max-width: 1080px) {
+  #nav-icon3 {
+    top: 0rem;
+    width: 65%;
+  }
+  .offcanvas.offcanvas-start {
+    width: 100% !important;
+  }
 }

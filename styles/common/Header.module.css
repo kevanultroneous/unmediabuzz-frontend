@@ -113,8 +113,44 @@
   .Links {
     margin-bottom: 1rem;
   }
+  .HeaderContainer {
+    position: sticky;
+    z-index: 10;
+  }
 }
 @media (min-width: 768px) and (max-width: 1080px) {
+  .MobileSearchMenu {
+    display: block;
+  }
+  .HideMenusInMob {
+    display: none;
+  }
+  .HeaderContainer {
+    position: sticky;
+    top: 0;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    background-color: var(--primaryColor);
+  }
+  .MobileSearchMenu {
+    text-align: right;
+  }
+  .SearchGroup {
+    display: none;
+  }
+  .SearchIcon {
+    margin-right: 3rem;
+  }
+  .MobileMenuSidebar {
+    padding-top: 2rem;
+    padding-left: 0.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .SelectedLink,
+  .Links {
+    margin-bottom: 1rem;
+  }
 }
 @media (min-width: 1200px) and (max-width: 1730px) {
 }

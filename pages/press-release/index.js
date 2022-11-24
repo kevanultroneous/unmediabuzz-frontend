@@ -40,7 +40,7 @@ const PressRelease = () => {
       <HeroSection />
       <ContainerWrraper customClass={`${styles.CardModelContainerWrraper}`}>
         <Row>
-          <Col xs={12} sm={12} md={7} lg={8} xl={8}>
+          <Col xs={12} sm={12} md={12} lg={8} xl={8}>
             {arry.map((value, index) => (
               <CardModel
                 customtitleclass={`${styles.ParagraphSize}`}
