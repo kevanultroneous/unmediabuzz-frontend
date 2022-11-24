@@ -125,6 +125,10 @@
   .PrevButton {
     margin-left: 0%;
   }
+  .CenterPagination {
+    display: flex;
+    justify-content: center;
+  }
 }
 @media (min-width: 768px) and (max-width: 1080px) {
 }

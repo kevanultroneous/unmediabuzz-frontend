@@ -95,7 +95,7 @@ const PressRelease = () => {
             md={12}
             lg={12}
             xl={12}
-            className={`ColPaddingRemove d-flex justify-content-center`}
+            className={`ColPaddingRemove ${styles.CenterPagination}`}
           >
             <div className={styles.PaginationWrraper}>
               <Pagination total={320} itemRender={textItemRender} />
