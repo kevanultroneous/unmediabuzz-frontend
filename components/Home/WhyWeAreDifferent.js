@@ -4,21 +4,6 @@ import { Col, Image, Row } from "react-bootstrap";
 import ToggleUiButton from "../common/ToggleUiButton";
 
 const WhyWeAreDifferent = () => {
-  const MediaDistribution = [
-    {
-      number: "01",
-      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    },
-    {
-      number: "02",
-      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    },
-    {
-      number: "03",
-      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    },
-  ];
-
   return (
     <ContainerWrraper customClass={`${styles.ContainerWrraperCustom}`}>
       <Row>
@@ -47,22 +32,6 @@ const WhyWeAreDifferent = () => {
           </p>
         </Col>
       </Row>
-      {/* <Row className={styles.DigitsRow}>
-        {MediaDistribution?.map((cards, index) => (
-          <Col
-            xs={12}
-            sm={12}
-            md={4}
-            lg={4}
-            xl={4}
-            key={index}
-            className={`${styles.DigitWrraper} ColPaddingRemove`}
-          >
-            <h6 className={styles.Digit}>{cards.number}</h6>
-            <p className={styles.DigitText}>{cards.text}</p>
-          </Col>
-        ))}
-      </Row> */}
       <Row>
         <Col
           xs={12}

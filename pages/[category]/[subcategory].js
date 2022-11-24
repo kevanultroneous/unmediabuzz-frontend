@@ -6,8 +6,7 @@ import { CardModel } from "@/components/common/RecentItems";
 import CategoryHero from "@/components/PR/CategoryHero";
 import styles from "@/styles/PR/Category.module.css";
 import Pagination from "rc-pagination";
-import { useEffect, useState } from "react";
-import { Accordion, Col, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 
 const Subcategory = () => {
@@ -63,18 +62,25 @@ const Subcategory = () => {
             md={5}
             lg={4}
             xl={3}
-            className={`ColPaddingRemove`}
+            className={`ColPaddingRemove ${styles.HideCategorySidebar}`}
           >
             <CategorySidebar />
           </Col>
-          <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+          <Col
+            xs={12}
+            sm={12}
+            md={12}
+            lg={12}
+            xl={12}
+            className={`ColPaddingRemove`}
+          >
             <div className={styles.PaginationWrraper}>
               <Pagination total={320} itemRender={textItemRender} />
             </div>
           </Col>
         </Row>
       </ContainerWrraper>
-      <GettingStarted />
+      {/* <GettingStarted /> */}
     </Layout>
   );
 };

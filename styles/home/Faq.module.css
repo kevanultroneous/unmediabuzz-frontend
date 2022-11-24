@@ -1,38 +1,51 @@
-.FaqContainerWrraper{
-    padding-bottom: 7.5rem;
+.FaqContainerWrraper {
+  padding-bottom: 7.5rem;
 }
-.MainHeading{
-    font-size: var(--mainHeading);
-    font-weight: 800;
-    width: 24.375rem;
+.MainHeading {
+  font-size: var(--mainHeading);
+  font-weight: 800;
+  width: 24.375rem;
 }
-.MainParagraph{
-    font-size: var(--smallParagraph);
-    font-weight: 400;
-    width: 27.125rem;
-    margin-top: 1.5rem;
+.MainParagraph {
+  font-size: var(--smallParagraph);
+  font-weight: 400;
+  width: 27.125rem;
+  margin-top: 1.5rem;
 }
-/* .FaqQuestion{
 
-} */
-.FaqAnswer{
-padding-top: 0%;
+.FaqAnswer {
+  padding-top: 0%;
 }
-.FaqQuestionText{
-    margin: 0%;
-    margin-left: 1rem;
-    font-size: var(--smallParagraph);
-    font-weight: 400;
+
+.FaqQuestionText {
+  margin: 0%;
+  margin-left: 1rem;
+  font-size: var(--smallParagraph);
+  font-weight: 400;
 }
-.FaqAnswerText{
-    margin: 0%;
-    margin-left: 2rem;
-    font-weight: 400;
-    font-size: 14px;
+.FaqAnswerText {
+  margin: 0%;
+  margin-left: 2rem;
+  font-weight: 400;
+  font-size: 14px;
 }
-.AccordianSpace{
-    margin-bottom: 1rem;
-    padding: 0.3rem;
-    border: 1px solid rgba(0, 0, 0, 0.1) !important;
-    border-radius: 8px !important;
+.AccordianSpace {
+  margin-bottom: 1rem;
+  padding: 0.3rem;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  border-radius: 8px !important;
+}
+@media screen and (max-width: 600px) {
+  .MainHeading {
+    font-size: var(--mainMobHeading);
+    max-width: 19.375rem;
+  }
+  .MainParagraph {
+    width: auto;
+    padding-bottom: 2.5rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1080px) {
+}
+@media (min-width: 1200px) and (max-width: 1730px) {
 }

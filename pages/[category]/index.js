@@ -62,7 +62,7 @@ const Category = () => {
             md={5}
             lg={4}
             xl={3}
-            className={`ColPaddingRemove`}
+            className={`ColPaddingRemove ${styles.HideCategorySidebar}`}
           >
             <CategorySidebar />
           </Col>
@@ -73,7 +73,7 @@ const Category = () => {
           </Col>
         </Row>
       </ContainerWrraper>
-      <GettingStarted />
+      {/* <GettingStarted /> */}
     </Layout>
   );
 };

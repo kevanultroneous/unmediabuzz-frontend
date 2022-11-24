@@ -65,9 +65,6 @@
   .DiscriptionWrapper {
     padding: var(--mobileLayout);
   }
-  .ContainerWrraperSpaces {
-    padding: var(--mobileLayout);
-  }
   .WorldImageFluid {
     max-width: 21rem;
     transform: rotate(90deg);
@@ -78,6 +75,9 @@
   }
   .ButtonsMainWrraper {
     padding: var(--mobileLayout);
+  }
+  .ContainerWrraperSpaces {
+    padding: 0%;
   }
 }
 @media (min-width: 768px) and (max-width: 1080px) {
