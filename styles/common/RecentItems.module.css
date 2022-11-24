@@ -204,6 +204,10 @@
   .HideBlogListOnDesk {
     display: block;
   }
+  .MobileRPRwrraper {
+    display: block;
+    overflow: hidden;
+  }
 }
 @media (min-width: 768px) and (max-width: 1080px) {
   /* .CardModelRow {

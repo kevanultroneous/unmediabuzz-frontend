@@ -106,6 +106,9 @@
   .BetweenSpace {
     padding-left: 1rem !important;
   }
+  .InterestedContainerWrraper {
+    margin-bottom: 0%;
+  }
 }
 @media (min-width: 768px) and (max-width: 1080px) {
   .ArrowIcon {
@@ -148,6 +151,9 @@
   }
   .BetweenSpace {
     padding-left: 3rem !important;
+  }
+  .InterestedContainerWrraper {
+    margin-bottom: 0%;
   }
 }
 @media (min-width: 1200px) and (max-width: 1730px) {
