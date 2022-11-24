@@ -6,7 +6,6 @@ body {
   margin: 0;
   font-family: "Lato", sans-serif;
   scroll-behavior: auto !important;
-  overflow-x: hidden;
 }
 
 a {
@@ -116,7 +115,7 @@ a {
 #nav-icon3 span {
   display: block;
   position: absolute;
-  height: 1.66px;
+  height: 2.66px;
   width: 100%;
   background: var(--elementColor);
   border-radius: 9px;
@@ -137,7 +136,6 @@ a {
 #nav-icon3 span:nth-child(1) {
   top: 4px;
   width: 1rem;
-  border-radius: 100%;
 }
 
 #nav-icon3 span:nth-child(2),
@@ -145,13 +143,11 @@ a {
   top: 10px;
   width: 1.8rem;
   opacity: 0.6;
-  border-radius: 100%;
 }
 
 #nav-icon3 span:nth-child(4) {
   top: 16px;
   width: 1.4rem;
-  border-radius: 100%;
 }
 
 #nav-icon3.open span:nth-child(1) {
