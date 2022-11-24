@@ -50,3 +50,12 @@
   align-items: center;
   justify-content: center;
 }
+@media screen and (max-width: 600px) {
+  .MainHeading {
+    font-size: var(--mainMobHeading);
+  }
+}
+@media (min-width: 768px) and (max-width: 1080px) {
+}
+@media (min-width: 1200px) and (max-width: 1730px) {
+}

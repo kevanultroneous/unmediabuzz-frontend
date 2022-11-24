@@ -50,17 +50,4 @@
   /* tablet  */
   --tabLayout: 2.5rem 1.5rem;
   --mainTabHeading: 48px;
-  --subTabHeading: 28px;
-  --midTabHeading: 38px;
-  --searchTabHeading: 27px;
-  --bigTabParagraph: 18px;
-  --smallTabParagraph: 16px;
-  --maxTabText: 14px;
-  --midTabText: 12px;
-  --uniqueTabLabel: 18px;
-  --minTabText: 16px;
-  --btnTabText: 21.6667px;
-  --otherTabText: 20px;
-  --menuTabText: 16px;
-  --anonymTabText: 36px;
 }

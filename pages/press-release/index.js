@@ -8,10 +8,18 @@ import styles from "@/styles/PR/index.module.css";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import Pagination from "rc-pagination";
 import CategorySidebar from "@/components/common/CategorySidebar";
+import { useState } from "react";
 
 const PressRelease = () => {
   const arry = [1, 2, 3, 4, 5, 6, 7];
-
+  const tabs = [
+    "All Press Release",
+    "Sports",
+    "Art & Entertainment",
+    "Categories",
+    "Categories",
+    "Categories",
+  ];
   const textItemRender = (current, type, element) => {
     if (type === "page") {
       return (
@@ -35,9 +43,27 @@ const PressRelease = () => {
     return element;
   };
 
+  const [currentTab, setCurrentTab] = useState(0);
+
   return (
     <Layout>
       <HeroSection />
+      <ContainerWrraper customClass={`${styles.TabsMainContainer}`}>
+        <div className={styles.TabsLayer}>
+          {tabs.map((tab, index) => (
+            <div key={index}>
+              <div
+                className={`${styles.CurrentTab} ${
+                  index == currentTab ? styles.SelectedTab : null
+                }`}
+                onClick={() => setCurrentTab(index)}
+              >
+                {tab}
+              </div>
+            </div>
+          ))}
+        </div>
+      </ContainerWrraper>
       <ContainerWrraper customClass={`${styles.CardModelContainerWrraper}`}>
         <Row>
           <Col xs={12} sm={12} md={12} lg={8} xl={8}>
