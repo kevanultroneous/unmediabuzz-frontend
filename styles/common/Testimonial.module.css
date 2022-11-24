@@ -55,3 +55,17 @@
 .sliderSection {
   margin: 0;
 }
+
+@media screen and (max-width: 600px) {
+  .TestimonialCard {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1080px) {
+  .TestimonialCard {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
