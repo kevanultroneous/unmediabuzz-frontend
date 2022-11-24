@@ -14,7 +14,7 @@ export default function Home() {
       <WhyWeAreDifferent />
       <RecentItems />
       <Faq />
-      {/* <PressReleaseHighlights /> */}
+      <PressReleaseHighlights />
       <Testimonial />
       <GettingStarted />
     </Layout>
