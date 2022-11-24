@@ -3,8 +3,7 @@
   padding-bottom: 1.5rem;
   position: sticky;
   top: 0;
-  background-color: var(--sidebarColor);
-  /* background-color: var(--primaryColor); */
+  background-color: var(--primaryColor);
   z-index: 10;
 }
 .FooterCover {
@@ -80,8 +79,13 @@
 .MainMenuRow {
   align-items: baseline;
 }
-
+.MobileSearchMenu {
+  display: none;
+}
 @media screen and (max-width: 600px) {
+  .MobileSearchMenu {
+    display: block;
+  }
   .HideMenusInMob {
     display: none;
   }
@@ -93,14 +97,21 @@
   .MobileSearchMenu {
     text-align: right;
   }
-  /* .MobileLogoWrraper { */
-  /* max-width: 8.938rem; */
-  /* } */
   .SearchGroup {
     display: none;
   }
   .SearchIcon {
     margin-right: 3rem;
+  }
+  .MobileMenuSidebar {
+    padding-top: 2rem;
+    padding-left: 0.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .SelectedLink,
+  .Links {
+    margin-bottom: 1rem;
   }
 }
 @media (min-width: 768px) and (max-width: 1080px) {

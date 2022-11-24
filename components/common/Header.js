@@ -1,5 +1,13 @@
 import Link from "next/link";
-import { Button, Col, Form, Image, InputGroup, Row } from "react-bootstrap";
+import {
+  Button,
+  Col,
+  Form,
+  Image,
+  InputGroup,
+  Offcanvas,
+  Row,
+} from "react-bootstrap";
 import ContainerWrraper from "./ContainerWrraper";
 import styles from "@/styles/common/Header.module.css";
 import { FiSearch } from "react-icons/fi";
@@ -98,6 +106,38 @@ const Header = () => {
           </InputGroup>
         </Col>
       </Row>
+      {/* mobile menu offcanvas */}
+      <div className={styles.SidebarCanvas}>
+        <Offcanvas show={open} backdrop={false} onHide={() => setOpen(false)}>
+          <Offcanvas.Body>
+            <div className={`${styles.MobileMenuSidebar}`}>
+              {HeaderMenu.map((menus, index) => (
+                <>
+                  <Link
+                    draggable={false}
+                    className={
+                      router.pathname === menus.link
+                        ? styles.SelectedLink
+                        : styles.Links
+                    }
+                    href={menus.link}
+                    key={index + 1}
+                  >
+                    {menus.name}{" "}
+                    {router.pathname === menus.link && (
+                      <Image src="/assets/icons/speaker.svg" alt="speaker" />
+                    )}
+                  </Link>
+                  {HeaderMenu.indexOf(HeaderMenu[HeaderMenu.length - 1]) ===
+                  index ? null : (
+                    <span className={styles.LinkSpan}> </span>
+                  )}
+                </>
+              ))}
+            </div>
+          </Offcanvas.Body>
+        </Offcanvas>
+      </div>
     </ContainerWrraper>
   );
 };
