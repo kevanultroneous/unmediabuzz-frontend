@@ -20,7 +20,7 @@ export const CardModel = ({
       <Col
         xs={12}
         sm={12}
-        md={12}
+        md={9}
         lg={9}
         xl={9}
         className={`ColPaddingRemove ${styles.PostDetails}`}
@@ -40,7 +40,7 @@ export const CardModel = ({
       <Col
         xs={12}
         sm={12}
-        md={12}
+        md={3}
         lg={3}
         xl={3}
         className={`ColPaddingRemove ${styles.PostImageCol}`}
@@ -111,7 +111,7 @@ const RecentItems = () => {
           <Col
             xs={12}
             sm={12}
-            md={7}
+            md={12}
             lg={7}
             xl={7}
             className={`ColPaddingRemove`}
@@ -137,7 +137,7 @@ const RecentItems = () => {
             <Col
               xs={12}
               sm={12}
-              md={7}
+              md={12}
               lg={7}
               xl={7}
               className={`ColPaddingRemove`}

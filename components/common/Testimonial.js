@@ -50,10 +50,10 @@ const Testimonial = () => {
                 <Image src="/assets/icons/full-star.svg" alt="filled" />
               </div>
               <p className={styles.ProfileDescription}>
-                In Tier 1 Pro distribution package - you get 225 media outlets
+                In Tier 1 Pro distribution package you get 225 media outlets
                 distribution with Google News, Marketwatch, Financial Network
                 Distribution, Marketmedia Distribution, Google News Network
-                Distribution, 9K-15K extra impression in popular sites -
+                Distribution, 9K-15K extra impression in popular sites.
               </p>
             </div>
           </Col>

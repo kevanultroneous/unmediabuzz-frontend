@@ -5,7 +5,7 @@ import styles from "@/styles/common/RecentItems.module.css";
 
 const RecentPressRelease = ({ blogList, hideclass }) => {
   return (
-    <Col xs={12} sm={12} md={5} lg={5} xl={5} className={hideclass}>
+    <Col xs={12} sm={12} md={12} lg={5} xl={5} className={hideclass}>
       <h4 className={`${styles.ListHeading} ${styles.ListHeadingSpace} `}>
         Recent <span className={styles.SpanText}>Press Release</span>
       </h4>

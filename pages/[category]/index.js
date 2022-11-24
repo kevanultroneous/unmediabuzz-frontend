@@ -43,7 +43,7 @@ const Category = () => {
       />
       <ContainerWrraper customClass={`${styles.CardModelContainerWrraper}`}>
         <Row>
-          <Col xs={12} sm={12} md={7} lg={8} xl={9}>
+          <Col xs={12} sm={12} md={12} lg={8} xl={9}>
             {arry.map((value, index) => (
               <CardModel
                 customtitleclass={`${styles.ParagraphSize}`}
@@ -73,7 +73,7 @@ const Category = () => {
           </Col>
         </Row>
       </ContainerWrraper>
-      {/* <GettingStarted /> */}
+      <GettingStarted />
     </Layout>
   );
 };

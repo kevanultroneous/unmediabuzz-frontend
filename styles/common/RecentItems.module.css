@@ -36,9 +36,9 @@
   color: rgba(0, 0, 0, 0.4);
   margin: 0%;
 }
-.PostDetails {
-  /* padding-left: 2.5rem !important; */
-}
+/* .PostDetails { */
+/* padding-left: 2.5rem !important; */
+/* } */
 .CardModelRow {
   margin-bottom: 2rem;
   margin-right: 2rem;
@@ -58,9 +58,9 @@
   display: flex;
   /* padding-left: 2.5rem; */
 }
-.BlogImageCover {
-  /* width: 23%; */
-}
+/* .BlogImageCover { */
+/* width: 23%; */
+/* } */
 .ListHeadingSpace {
   padding-left: 2rem;
 }
@@ -203,9 +203,9 @@
   }
 }
 @media (min-width: 768px) and (max-width: 1080px) {
-  .CardModelRow {
+  /* .CardModelRow {
     flex-direction: column-reverse;
-  }
+  } */
   .PostImageCol {
     justify-content: flex-start;
     margin-bottom: 2rem;
@@ -221,6 +221,13 @@
     padding-right: 0%;
     margin-bottom: 1rem;
   }
+  /* .LineHorizontal {
+    display: none;
+  }
+  .LineHorizontalMob {
+    border: 0.1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 3rem;
+  } */
 }
 @media (min-width: 1200px) and (max-width: 1730px) {
 }

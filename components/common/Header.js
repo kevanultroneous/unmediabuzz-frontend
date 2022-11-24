@@ -10,6 +10,7 @@ import { HeaderMenu } from "utils/Navigation.utils";
 const Header = () => {
   const [showSearchInput, setShowSearchInput] = useState(false);
   const router = useRouter();
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     if (router.pathname === "/") {
@@ -21,15 +22,30 @@ const Header = () => {
     <ContainerWrraper customClass={`${styles.HeaderContainer}`}>
       <Row className={styles.MainMenuRow}>
         <Col xs={6} md={3} lg={3} xl={3} className={`ColPaddingRemove`}>
-          <Image
-            src="/assets/icons/unmb.svg"
-            alt="Logo"
-            fluid
-            draggable={false}
-          />
+          <div className={styles.MobileLogoWrraper}>
+            <Image
+              src="/assets/icons/unmb.svg"
+              alt="Logo"
+              fluid
+              draggable={false}
+            />
+          </div>
         </Col>
 
         <Col xs={6} md={3} lg={6} xl={6} className={`ColPaddingRemove`}>
+          <div className={styles.MobileSearchMenu}>
+            <FiSearch size={18} className={styles.SearchIcon} />
+            <div
+              id="nav-icon3"
+              className={open ? "open" : ""}
+              onClick={() => setOpen(!open)}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
           <div className={`text-center ${styles.HideMenusInMob}`}>
             {HeaderMenu.map((menus, index) => (
               <>
@@ -58,7 +74,7 @@ const Header = () => {
         </Col>
 
         <Col
-          xs={12}
+          xs={2}
           md={3}
           lg={3}
           xl={3}

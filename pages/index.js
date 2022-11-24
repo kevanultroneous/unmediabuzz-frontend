@@ -16,7 +16,7 @@ export default function Home() {
       <Faq />
       {/* <PressReleaseHighlights /> */}
       <Testimonial />
-      {/* <GettingStarted /> */}
+      <GettingStarted />
     </Layout>
   );
 }
