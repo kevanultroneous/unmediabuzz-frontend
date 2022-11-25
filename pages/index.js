@@ -7,31 +7,35 @@ import Introduction from "@/components/Home/Introduction";
 import PressReleaseHighlights from "@/components/Home/PressReleaseHighlights";
 import WhyWeAreDifferent from "@/components/Home/WhyWeAreDifferent";
 import Test from "@/components/test-highliter";
+import useResponsiveChecker from "hooks/ResponsiveChecker";
 import { useEffect } from "react";
 
 export default function Home() {
+  const checkResponsive = useResponsiveChecker();
   useEffect(() => {
-    const sections = [...document.querySelectorAll(".section")];
+    if (!checkResponsive) {
+      const sections = [...document.querySelectorAll(".section")];
 
-    window.lastScrollTop = window.pageYOffset;
+      window.lastScrollTop = window.pageYOffset;
 
-    document.body.style.background = sections[0].getAttribute("data-bg");
+      document.body.style.background = sections[0].getAttribute("data-bg");
 
-    window.addEventListener("scroll", onScroll);
+      window.addEventListener("scroll", onScroll);
 
-    function onScroll() {
-      const scrollTop = window.pageYOffset;
+      function onScroll() {
+        const scrollTop = window.pageYOffset;
 
-      const section = sections
-        .map((section) => {
-          const el = section;
-          const rect = el.getBoundingClientRect();
-          return { el, rect };
-        })
-        .find((section) => section.rect.bottom >= window.innerHeight * 0.5);
+        const section = sections
+          .map((section) => {
+            const el = section;
+            const rect = el.getBoundingClientRect();
+            return { el, rect };
+          })
+          .find((section) => section.rect.bottom >= window.innerHeight * 0.5);
 
-      document.getElementsByClassName("wrapper")[0].style.background =
-        section?.el.getAttribute("data-bg");
+        document.getElementsByClassName("wrapper")[0].style.background =
+          section?.el.getAttribute("data-bg");
+      }
     }
   }, []);
 
