@@ -4,6 +4,9 @@ import styles from "@/styles/home/Introduction.module.css";
 import ToggleUiButton from "../common/ToggleUiButton";
 import { ButtonsList } from "utils/ButtonsList";
 import { ProcessList } from "utils/Anonymous";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 // Process card component
 const Process = ({ ProcessList, title, icon, desc, index }) => {
@@ -55,6 +58,10 @@ const Process = ({ ProcessList, title, icon, desc, index }) => {
 
 // Full introduction component
 const Introduction = () => {
+  useEffect(() => {
+    Aos.refresh();
+    Aos.init();
+  }, []);
   return (
     <ContainerWrraper customClass={`${styles.IntroContainerWrraper}`}>
       <Row>
@@ -66,21 +73,22 @@ const Introduction = () => {
           xl={12}
           className={`${styles.MainIntroductionWrraper} ColPaddingRemove`}
         >
-          <div>
-            <p className={styles.TitleText}>Start, Raise & Grow</p>
-            <p className={`${styles.TitleText} ${styles.TitleTextWithBrush}`}>
-              faster with
-              <span className={styles.TitleSpan}>
-                <Image
-                  src="/assets/images/brush-2.svg"
-                  alt="span-text"
-                  className={styles.BrushImage}
-                />
-                &nbsp;&nbsp;&nbsp;UNmediaBuzz
-              </span>
-            </p>
+          <div className={styles.animationSection}>
+            <div data-aos="fade-up" data-aos-duration="3000">
+              <p className={styles.TitleText}>Start, Raise & Grow</p>
+              <p className={`${styles.TitleText} ${styles.TitleTextWithBrush}`}>
+                faster with
+                <span className={styles.TitleSpan}>
+                  <Image
+                    src="/assets/images/brush-2.svg"
+                    alt="span-text"
+                    className={styles.BrushImage}
+                  />
+                  &nbsp;&nbsp;&nbsp;UNmediaBuzz
+                </span>
+              </p>
+            </div>
           </div>
-
           <div>
             <p className={styles.TitleIntro}>
               Lorem Ipsum is simply dummy text of the printing and typesetting
