@@ -89,6 +89,7 @@
 .TabsMainContainer {
   display: none;
 }
+
 /* (this for mobile) */
 @media screen and (max-width: 600px) {
   .HideCategorySidebar {
@@ -128,7 +129,14 @@
     list-style: none;
     width: 100%;
     border-bottom: 1px solid rgba(108, 108, 108, 0.1);
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .TabsLayer::-webkit-scrollbar {
+    display: none;
+  }
+
   .CurrentTab {
     width: max-content;
     margin-right: 1rem;
@@ -156,6 +164,7 @@
     padding-right: 0.4rem;
     user-select: none;
   }
+
   .CardModelContainerWrraper {
     padding-top: 2rem;
   }
@@ -193,7 +202,14 @@
     list-style: none;
     width: 100%;
     border-bottom: 1px solid rgba(108, 108, 108, 0.1);
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .TabsLayer::-webkit-scrollbar {
+    display: none;
+  }
+
   .CurrentTab {
     width: max-content;
     margin-right: 1rem;
