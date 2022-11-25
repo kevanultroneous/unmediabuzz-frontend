@@ -13,43 +13,44 @@ import { useEffect } from "react";
 export default function Home() {
   const checkResponsive = useResponsiveChecker();
   useEffect(() => {
-    if (!checkResponsive) {
-      const sections = [...document.querySelectorAll(".section")];
+    const sections = [...document.querySelectorAll(".section")];
 
-      window.lastScrollTop = window.pageYOffset;
+    window.lastScrollTop = window.pageYOffset;
 
-      document.body.style.background = sections[0].getAttribute("data-bg");
+    document.body.style.background = sections[0].getAttribute("data-bg");
 
-      window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll);
 
-      function onScroll() {
-        const scrollTop = window.pageYOffset;
+    function onScroll() {
+      const scrollTop = window.pageYOffset;
 
-        const section = sections
-          .map((section) => {
-            const el = section;
-            const rect = el.getBoundingClientRect();
-            return { el, rect };
-          })
-          .find((section) => section.rect.bottom >= window.innerHeight * 0.5);
+      const section = sections
+        .map((section) => {
+          const el = section;
+          const rect = el.getBoundingClientRect();
+          return { el, rect };
+        })
+        .find((section) => section.rect.bottom >= window.innerHeight * 0.5);
 
-        document.getElementsByClassName("wrapper")[0].style.background =
-          section?.el.getAttribute("data-bg");
-      }
+      document.getElementsByClassName("wrapper")[0].style.background =
+        section?.el.getAttribute("data-bg");
     }
   }, []);
 
   return (
     <Layout>
       {/* <Test /> */}
-      <div className={`wrapper`}>
-        <div className={`section`} data-bg="white">
+      {checkResponsive ? (
+        <>
           <Introduction />
-        </div>
-        <div className={`section`} data-bg="black">
           <WhyWeAreDifferent />
+        </>
+      ) : (
+        <div className={`wrapper`}>
+          <div className={`section`} data-bg="white"></div>
+          <div className={`section`} data-bg="black"></div>
         </div>
-      </div>
+      )}
       <RecentItems />
       <Faq />
       <PressReleaseHighlights />
