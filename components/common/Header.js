@@ -14,6 +14,7 @@ import { FiSearch } from "react-icons/fi";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { HeaderMenu } from "utils/Navigation.utils";
+import useResponsiveViewer from "hooks/ResponsiveViewer";
 
 const Header = () => {
   const [showSearchInput, setShowSearchInput] = useState(false);
@@ -31,12 +32,14 @@ const Header = () => {
       <Row className={styles.MainMenuRow}>
         <Col xs={6} md={6} lg={3} xl={3} className={`ColPaddingRemove`}>
           <div className={styles.MobileLogoWrraper}>
-            <Image
-              src="/assets/icons/unmb.svg"
-              alt="Logo"
-              fluid
-              draggable={false}
-            />
+            <Link href={"/"}>
+              <Image
+                src="/assets/icons/unmb.svg"
+                alt="Logo"
+                fluid
+                draggable={false}
+              />
+            </Link>
           </div>
         </Col>
 

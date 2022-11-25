@@ -2,17 +2,10 @@ import { Col, Form, InputGroup, Row } from "react-bootstrap";
 import ContainerWrraper from "../common/ContainerWrraper";
 import styles from "@/styles/PR/HeroSection.module.css";
 import { FiSearch } from "react-icons/fi";
-import { useEffect, useState } from "react";
+import useResponsiveViewer from "hooks/ResponsiveViewer";
 
 const HeroSection = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  useEffect(() => {
-    if (window.innerWidth < 768) {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-    }
-  }, []);
+  const isMobile = useResponsiveViewer();
 
   return (
     <ContainerWrraper customClass={`${styles.HeroSectionContainerWrraper}`}>
