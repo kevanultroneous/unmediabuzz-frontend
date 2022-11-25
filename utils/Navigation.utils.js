@@ -5,11 +5,11 @@ export const HeaderMenu = [
   },
   {
     name: "Blog",
-    link: "/#",
+    link: "/coming-soon",
   },
   {
     name: "Writing Guideline",
-    link: "/#",
+    link: "/coming-soon",
   },
   {
     name: "Contact Us",
@@ -27,18 +27,18 @@ export const FooterMenu = [
   },
   {
     name: "Blog",
-    link: "/",
+    link: "/coming-soon",
   },
   {
     name: "Writing Guideline",
-    link: "/",
+    link: "/coming-soon",
   },
   {
     name: "Privacy Policy",
-    link: "/",
+    link: "/coming-soon",
   },
   {
     name: "Terms & Condition",
-    link: "/",
+    link: "/coming-soon",
   },
 ];
