@@ -57,7 +57,7 @@ const Footer = () => {
           xl={2}
           className={`${styles.IconCol} ColPaddingRemove`}
         >
-          <div className={styles.IconCover}>
+          <div className={`${styles.IconCover} ${styles.SiconSpaceRemove}`}>
             <Image src="/assets/icons/twitter-icon.svg" alt="facebook" fluid />
           </div>
           <div className={styles.IconCover}>

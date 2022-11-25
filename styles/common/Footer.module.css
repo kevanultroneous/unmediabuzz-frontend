@@ -47,6 +47,9 @@
   .IconCover {
     width: 1.5rem;
   }
+  .SiconSpaceRemove {
+    margin-left: 0%;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1080px) {
