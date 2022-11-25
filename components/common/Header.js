@@ -44,8 +44,13 @@ const Header = () => {
         </Col>
 
         <Col xs={6} md={6} lg={6} xl={6} className={`ColPaddingRemove`}>
+          {/* mobile */}
           <div className={styles.MobileSearchMenu}>
-            <FiSearch size={18} className={styles.SearchIcon} />
+            <FiSearch
+              size={18}
+              className={styles.SearchIcon}
+              onClick={() => router.push("/search-result")}
+            />
             <div
               id="nav-icon3"
               className={open ? "open" : ""}
@@ -57,6 +62,7 @@ const Header = () => {
               <span></span>
             </div>
           </div>
+          {/* --------- */}
           <div className={`text-center ${styles.HideMenusInMob}`}>
             {HeaderMenu.map((menus, index) => (
               <>
