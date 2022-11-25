@@ -2,8 +2,15 @@ import ContainerWrraper from "../common/ContainerWrraper";
 import styles from "@/styles/home/WhyWeAreDifferent.module.css";
 import { Col, Image, Row } from "react-bootstrap";
 import ToggleUiButton from "../common/ToggleUiButton";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const WhyWeAreDifferent = () => {
+  useEffect(() => {
+    Aos.refresh();
+    Aos.init();
+  }, []);
   return (
     <ContainerWrraper customClass={`${styles.ContainerWrraperCustom}`}>
       <Row>
@@ -15,8 +22,18 @@ const WhyWeAreDifferent = () => {
           xl={12}
           className={`${styles.MainIntroAndDiscription} ColPaddingRemove`}
         >
-          <p className={styles.MainTitle}>Why we are Different?</p>
-          <div className={styles.SpanImage}>
+          <p
+            className={styles.MainTitle}
+            data-aos="fade-up"
+            data-aos-duration="3000"
+          >
+            Why we are Different?
+          </p>
+          <div
+            className={styles.SpanImage}
+            data-aos="fade-up"
+            data-aos-duration="3000"
+          >
             <Image src="/assets/images/brush-3.svg" alt="brush-img" />
           </div>
           <p className={styles.MainParagraph}>

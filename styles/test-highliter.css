@@ -1,0 +1,38 @@
+brush-wrap {
+  position: relative;
+  display: inline-block;
+  padding: 3rem;
+}
+
+/* applying example animation (indefinite variant) */
+.brush-wrap.brush-wrap--indefinite:before {
+  clip-path: url(#clip-indefinite);
+}
+
+/* clipping/animating object (pseudo element) */
+.brush-wrap:before {
+  content: "";
+  position: absolute;
+  height: 7rem;
+  width: 25rem;
+  top: 5rem;
+  left: 0;
+  background-color: #f16683; /* For browsers that do not support gradients */
+  background-image: linear-gradient(
+    180deg,
+    #f65c5f 0%,
+    #f16683 48.44%,
+    #fb9b64 100%
+  );
+  z-index: -1;
+  clip-path: url(#clip); /* applying clip animation */
+}
+
+.brush-wrap p {
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin: 0;
+  color: white;
+  font-style: italic;
+  /* filter: drop-shadow(0px 0px 2px #f16683);   */
+}
