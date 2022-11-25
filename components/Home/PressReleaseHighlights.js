@@ -2,8 +2,10 @@ import ContainerWrraper from "../common/ContainerWrraper";
 import { Row, Col, Image } from "react-bootstrap";
 import styles from "@/styles/home/PressReleaseHighlights.module.css";
 import Marquee from "react-fast-marquee";
+import useResponsiveViewer from "hooks/ResponsiveViewer";
 
 const PressReleaseHighlights = () => {
+  const isMobile = useResponsiveViewer();
   const imagedata = [
     "/assets/images/highlight-1.svg",
     "/assets/images/highlight-2.svg",
@@ -15,20 +17,38 @@ const PressReleaseHighlights = () => {
   return (
     <ContainerWrraper customClass={`${styles.ContainerWrraperHighlight}`}>
       <div className={styles.HighlightHeadCover}>
-        <p className={styles.HighlightHeading}>
-          Your
-          <label className={styles.UniqueLabel}>
-            <span className={styles.BrushSetup}>
-              <Image
-                src="/assets/images/brush-h-01.svg"
-                alt="brush"
-                className={styles.brushImage}
-              />
-            </span>
-            &nbsp;&nbsp;&nbsp; Press Release
-          </label>
-          &nbsp;&nbsp;&nbsp; could appear on
-        </p>
+        {isMobile ? (
+          <p className={styles.HighlightHeading}>
+            Your
+            <label className={styles.UniqueLabel}>
+              <span className={styles.BrushSetup}>
+                <Image
+                  src="/assets/images/brush-2.svg"
+                  alt="brush"
+                  className={styles.brushImage}
+                />
+              </span>
+              &nbsp;&nbsp;&nbsp; Press Release
+            </label>
+            <br />
+            could appear on
+          </p>
+        ) : (
+          <p className={styles.HighlightHeading}>
+            Your
+            <label className={styles.UniqueLabel}>
+              <span className={styles.BrushSetup}>
+                <Image
+                  src="/assets/images/brush-h-01.svg"
+                  alt="brush"
+                  className={styles.brushImage}
+                />
+              </span>
+              &nbsp;&nbsp;&nbsp; Press Release
+            </label>
+            &nbsp;&nbsp;&nbsp; could appear on
+          </p>
+        )}
       </div>
 
       <div className={`Highlights`}>

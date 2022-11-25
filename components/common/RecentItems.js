@@ -124,7 +124,7 @@ const RecentItems = () => {
             >
               {postList.map((v, i) => (
                 <CardModel
-                  badge={i == 0 || i == 3 || i == 2}
+                  badge={i == 0}
                   key={i}
                   companyname={"By, XYZ Company Name"}
                   date={"04 Novemeber 2022"}

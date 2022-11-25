@@ -26,7 +26,6 @@
   font-weight: 600;
   margin: 0%;
   padding-right: 2rem;
-  /* max-width: 30rem; */
   margin-bottom: 2rem;
   padding-top: 0.5rem;
 }
@@ -36,9 +35,7 @@
   color: rgba(0, 0, 0, 0.4);
   margin: 0%;
 }
-/* .PostDetails { */
-/* padding-left: 2.5rem !important; */
-/* } */
+
 .CardModelRow {
   margin-bottom: 2rem;
   margin-right: 2rem;
@@ -56,11 +53,8 @@
 }
 .BlogsCard {
   display: flex;
-  /* padding-left: 2.5rem; */
 }
-/* .BlogImageCover { */
-/* width: 23%; */
-/* } */
+
 .ListHeadingSpace {
   padding-left: 2rem;
 }
@@ -69,8 +63,7 @@
   width: 80px;
   height: 80px;
 }
-/* .BlogPostDetails {
-} */
+
 .BlogPostTitle {
   font-weight: 600;
   font-size: 16px;
@@ -208,11 +201,18 @@
     display: block;
     overflow: hidden;
   }
+  .ContainerWrraperRecentItems {
+    padding-top: 4rem;
+  }
+  .ContainerWrraperCardModel {
+    padding-top: 2rem;
+    padding-right: 0;
+  }
+  .ListHeadingSpace {
+    padding-left: 1.5rem;
+  }
 }
 @media (min-width: 768px) and (max-width: 1080px) {
-  /* .CardModelRow {
-    flex-direction: column-reverse;
-  } */
   .PostImageCol {
     justify-content: flex-start;
     margin-bottom: 2rem;
@@ -228,13 +228,37 @@
     padding-right: 0%;
     margin-bottom: 1rem;
   }
-  /* .LineHorizontal {
+  .HideBlogListOnMobile {
     display: none;
   }
-  .LineHorizontalMob {
-    border: 0.1px solid rgba(0, 0, 0, 0.1);
-    margin-top: 3rem;
-  } */
+  .MobileRPRwrraper {
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+  .HideBlogListOnDesk {
+    display: block;
+  }
+  .MobileRPRwrraper {
+    display: block;
+    overflow: hidden;
+  }
+  .ContainerWrraperRecentItems {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+  }
+  .ContainerWrraperCardModel {
+    padding-top: 2rem;
+    padding-right: 0;
+  }
+  .ListHeadingSpace {
+    padding-left: 1.5rem;
+  }
+  .ContainerWrraperBlogCardModel {
+    margin-left: 0;
+  }
+  .ListHeadingSpace {
+    padding-left: 2.5rem;
+  }
 }
 @media (min-width: 1200px) and (max-width: 1730px) {
 }

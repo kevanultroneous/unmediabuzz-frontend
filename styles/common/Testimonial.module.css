@@ -61,6 +61,35 @@
     margin-left: 1rem;
     margin-right: 1rem;
   }
+  .ContainerWrraperTestimonial {
+    padding-top: 2rem;
+  }
+  .MainHeading {
+    font-size: var(--mainMobHeading);
+    margin: 0%;
+    padding-bottom: 2rem;
+  }
+  .MainHeadingBrush {
+    left: 5rem;
+    top: -6px;
+  }
+  .MainHeadingBrush img {
+    max-width: 6rem;
+  }
+  .ContainerWrraperTestimonial {
+    padding-top: 1rem;
+  }
+  .CustomDots {
+    height: 10px;
+    width: 10px;
+    border-radius: 100%;
+    background: linear-gradient(
+      180deg,
+      #f65d61 0%,
+      #f16684 50.52%,
+      #fa9a64 100%
+    );
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1080px) {

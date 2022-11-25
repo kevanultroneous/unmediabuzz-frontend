@@ -2,8 +2,10 @@ import ContainerWrraper from "../common/ContainerWrraper";
 import styles from "@/styles/home/WhyWeAreDifferent.module.css";
 import { Col, Image, Row } from "react-bootstrap";
 import ToggleUiButton from "../common/ToggleUiButton";
+import useResponsiveViewer from "hooks/ResponsiveViewer";
 
 const WhyWeAreDifferent = () => {
+  const isMobile = useResponsiveViewer();
   return (
     <ContainerWrraper customClass={`${styles.ContainerWrraperCustom}`}>
       <Row>
@@ -46,7 +48,7 @@ const WhyWeAreDifferent = () => {
               text={
                 <span>
                   <Image
-                    src="/assets/icons/send-icon.svg"
+                    src={"/assets/icons/send-icon.svg"}
                     alt="press-release"
                     fluid
                   />
@@ -65,7 +67,15 @@ const WhyWeAreDifferent = () => {
           className={`${styles.LastBigImage} ColPaddingRemove`}
         >
           <div className={styles.BigImage}>
-            <Image src="/assets/images/about-pr.png" alt="about-pr" fluid />
+            <Image
+              src={
+                isMobile
+                  ? "/assets/images/mobile-diff-img.svg"
+                  : "/assets/images/about-pr.png"
+              }
+              alt="about-pr"
+              fluid
+            />
           </div>
         </Col>
       </Row>

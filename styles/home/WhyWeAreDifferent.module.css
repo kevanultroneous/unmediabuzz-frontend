@@ -91,8 +91,15 @@
   .SpanImage img {
     width: 7.779rem;
   }
+  .ContainerWrraperCustom {
+    padding-top: 3rem;
+  }
 }
 @media (min-width: 768px) and (max-width: 1080px) {
+  .MainParagraph {
+    width: auto;
+    text-align: center;
+  }
 }
 @media (min-width: 1200px) and (max-width: 1730px) {
 }

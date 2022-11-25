@@ -59,6 +59,7 @@ a {
   background-image: url("/assets/icons/up-arrow.svg") !important;
   transform: rotate(360deg) !important;
 }
+
 /*  -----------------------------------  CategoriesAccordion -------------------------------------------- */
 .CategoriesAccordion .accordion-button:not(.collapsed) {
   background-color: transparent !important;
@@ -93,6 +94,7 @@ a {
   background-size: 60% !important;
   transition: none !important;
 }
+
 /*  ---------------------- hamburger menu -------------------- */
 #nav-icon3 {
   width: 33px;
@@ -130,8 +132,6 @@ a {
   -o-transition: 0.25s ease-in-out;
   transition: 0.25s ease-in-out;
 }
-
-/* Icon 3 */
 
 #nav-icon3 span:nth-child(1) {
   top: 4px;
@@ -202,6 +202,32 @@ a {
   height: 10rem;
   overflow: hidden;
 }
+
+/* --------------------- slick slider ---------------------------- */
+.slick-dots {
+  bottom: -48px !important;
+}
+.slick-dots.slick-thumb {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.slick-dots.slick-thumb li {
+  width: 10px;
+  height: 10px;
+  margin: 0 3px;
+  border-radius: 100%;
+  background: #f0f0f0;
+}
+
+.slick-dots.slick-thumb li.slick-active {
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(180deg, #f65d61 0%, #f16684 50.52%, #fa9a64 100%);
+  transition: all 1s ease;
+}
+
 @media (min-width: 768px) and (max-width: 1080px) {
   #nav-icon3 {
     top: 0rem;

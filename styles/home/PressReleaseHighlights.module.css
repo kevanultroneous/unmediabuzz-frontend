@@ -75,7 +75,16 @@
 } */
 @media screen and (max-width: 600px) {
   .brushImage {
-    width: 90%;
+    width: 70%;
+  }
+  .HighlightHeading {
+    font-size: var(--mainMobHeading);
+  }
+  .BrushSetup {
+    left: 80px;
+  }
+  .HighlightHeadCover {
+    padding: 0rem 0 4rem;
   }
 }
 

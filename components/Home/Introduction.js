@@ -15,6 +15,21 @@ const Process = ({ ProcessList, title, icon, desc, index }) => {
         </div>
         <h6 className={styles.ProcessTitle}>{title}</h6>
         <p className={styles.ProcessDesc}>{desc}</p>
+        <div className={styles.MobileProcessList}>
+          {!(
+            ProcessList.indexOf(ProcessList[ProcessList.length - 1]) === index
+          ) && (
+            <Image
+              src={
+                index % 2 == 0
+                  ? "/assets/images/left-down-arrow.svg"
+                  : "/assets/images/right-down-arrow.svg"
+              }
+              className={index % 2 == 0 ? " " : styles.RightArrowMob}
+              alt="arrow"
+            />
+          )}
+        </div>
       </div>
       {!(
         ProcessList.indexOf(ProcessList[ProcessList.length - 1]) === index
