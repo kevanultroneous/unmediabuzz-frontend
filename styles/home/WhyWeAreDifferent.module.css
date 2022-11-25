@@ -79,6 +79,7 @@
   .MainTitle {
     font-size: var(--mainMobHeading);
   }
+
   .MainParagraph {
     width: auto;
     text-align: justify;
@@ -100,6 +101,9 @@
   .MainParagraph {
     width: auto;
     text-align: center;
+  }
+  .ContainerWrraperCustom {
+    background: var(--elementColor);
   }
 }
 @media (min-width: 1200px) and (max-width: 1730px) {
