@@ -6,12 +6,11 @@ import Faq from "@/components/Home/Faq";
 import Introduction from "@/components/Home/Introduction";
 import PressReleaseHighlights from "@/components/Home/PressReleaseHighlights";
 import WhyWeAreDifferent from "@/components/Home/WhyWeAreDifferent";
-import Test from "@/components/test-highliter";
-import useResponsiveChecker from "hooks/ResponsiveChecker";
+import useResponsiveViewer from "hooks/ResponsiveViewer";
 import { useEffect } from "react";
 
 export default function Home() {
-  const checkResponsive = useResponsiveChecker();
+  const checkResponsive = useResponsiveViewer();
   useEffect(() => {
     const sections = [...document.querySelectorAll(".section")];
 
@@ -47,8 +46,12 @@ export default function Home() {
         </>
       ) : (
         <div className={`wrapper`}>
-          <div className={`section`} data-bg="white"></div>
-          <div className={`section`} data-bg="black"></div>
+          <div className={`section`} data-bg="white">
+            <Introduction />
+          </div>
+          <div className={`section`} data-bg="black">
+            <WhyWeAreDifferent />
+          </div>
         </div>
       )}
       <RecentItems />
