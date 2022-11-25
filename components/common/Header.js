@@ -68,7 +68,11 @@ const Header = () => {
                   key={index + 1}
                 >
                   {router.pathname === menus.link && (
-                    <Image src="/assets/icons/speaker.svg" alt="speaker" />
+                    <Image
+                      src="/assets/icons/speaker.svg"
+                      alt="speaker"
+                      className={styles.speekarAnimation}
+                    />
                   )}
                   {menus.name}
                 </Link>
