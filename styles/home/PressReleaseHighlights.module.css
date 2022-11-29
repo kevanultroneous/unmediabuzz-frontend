@@ -31,6 +31,10 @@
 .UniqueLabel {
   color: var(--primaryColor);
 }
+.animationSection {
+  overflow: hidden;
+}
+
 .marqueeImage {
   padding: 0 4rem;
 }

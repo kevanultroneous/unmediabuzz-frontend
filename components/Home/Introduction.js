@@ -74,7 +74,7 @@ const Introduction = () => {
           className={`${styles.MainIntroductionWrraper} ColPaddingRemove`}
         >
           <div className={styles.animationSection}>
-            <div data-aos="fade-up" data-aos-duration="3000">
+            <div data-aos="fade-up" data-aos-duration="2000">
               <p className={styles.TitleText}>Start, Raise & Grow</p>
               <p className={`${styles.TitleText} ${styles.TitleTextWithBrush}`}>
                 faster with

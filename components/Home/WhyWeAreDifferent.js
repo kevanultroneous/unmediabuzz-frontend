@@ -27,14 +27,14 @@ const WhyWeAreDifferent = () => {
           <p
             className={styles.MainTitle}
             data-aos="fade-up"
-            data-aos-duration="3000"
+            data-aos-duration="2000"
           >
             Why we are Different?
           </p>
           <div
             className={styles.SpanImage}
             data-aos="fade-up"
-            data-aos-duration="3000"
+            data-aos-duration="2000"
           >
             <Image src="/assets/images/brush-3.svg" alt="brush-img" />
           </div>

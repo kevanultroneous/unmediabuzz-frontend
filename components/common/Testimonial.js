@@ -5,6 +5,8 @@ import { FaRegStar } from "react-icons/fa";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useEffect } from "react";
+import Aos from "aos";
 
 const Testimonial = () => {
   var settings = {
@@ -47,6 +49,10 @@ const Testimonial = () => {
       },
     ],
   };
+  useEffect(() => {
+    Aos.refresh();
+    Aos.init();
+  }, []);
   return (
     <ContainerWrraper customClass={`${styles.ContainerWrraperTestimonial}`}>
       <Row>
@@ -58,12 +64,18 @@ const Testimonial = () => {
           xl={12}
           className={`ColPaddingRemove`}
         >
-          <h6 className={styles.MainHeading}>
-            Trusted by our Clients
-            <span className={styles.MainHeadingBrush}>
-              <Image src="/assets/icons/brush-4.svg" alt="brush" />
-            </span>
-          </h6>
+          <div className={styles.animationSection}>
+            <h6
+              className={styles.MainHeading}
+              data-aos="fade-up"
+              data-aos-duration="2000"
+            >
+              Trusted by our Clients
+              <span className={styles.MainHeadingBrush}>
+                <Image src="/assets/icons/brush-4.svg" alt="brush" />
+              </span>
+            </h6>
+          </div>
         </Col>
         {/* {[1, 2, 3, 4].map((v, i) => (
           <Col
