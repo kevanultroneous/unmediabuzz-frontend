@@ -15,6 +15,7 @@ import { useRouter } from "next/router";
 const ViewPost = () => {
   const router = useRouter();
   const { post } = router.query;
+
   console.log(router);
   return (
     <Layout>
