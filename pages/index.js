@@ -7,7 +7,7 @@ import Introduction from "@/components/Home/Introduction";
 import PressReleaseHighlights from "@/components/Home/PressReleaseHighlights";
 import WhyWeAreDifferent from "@/components/Home/WhyWeAreDifferent";
 import Test from "@/components/test-highliter";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   useEffect(() => {
@@ -33,16 +33,29 @@ export default function Home() {
       document.getElementsByClassName("wrapper")[0].style.background =
         section?.el.getAttribute("data-bg");
     }
+
+    // window.addEventListener("scroll", () => {
+    //   let findblack = document
+    //     .getElementsByClassName("black-f")[0]
+    //     .getBoundingClientRect();
+
+    // });
   }, []);
+  const [opacity, setOpacity] = useState(false);
 
   return (
     <Layout>
       {/* <Test /> */}
+
       <div className={`wrapper`}>
-        <div className={`section`} data-bg="white">
+        <div
+          className={`section`}
+          data-bg="white"
+          // style={opacity ? { opacity: "0" } : { opacity: "1" }}
+        >
           <Introduction />
         </div>
-        <div className={`section`} data-bg="black">
+        <div className={`section black-f`} data-bg="black">
           <WhyWeAreDifferent />
         </div>
       </div>
