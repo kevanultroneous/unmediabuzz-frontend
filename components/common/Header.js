@@ -17,13 +17,13 @@ import { HeaderMenu } from "utils/Navigation.utils";
 import useResponsiveViewer from "hooks/ResponsiveViewer";
 
 const Header = () => {
-  const [showSearchInput, setShowSearchInput] = useState(false);
   const router = useRouter();
   const [open, setOpen] = useState(false);
+  const [search, setSearch] = useState(false);
 
   useEffect(() => {
     if (router.pathname === "/") {
-      setShowSearchInput(true);
+      setSearch(true);
     }
   }, [router]);
 
@@ -103,14 +103,18 @@ const Header = () => {
         >
           <InputGroup
             size="sm"
-            className={`${styles.GroupInput} ${styles.HideMenusInMob} `}
+            className={`${styles.GroupInput} ${styles.HideMenusInMob}`}
+            style={search ? { maxWidth: "16rem" } : { maxWidth: "3rem" }}
           >
-            <Form.Control
-              className={styles.FormControl}
-              aria-label="Small"
-              aria-describedby="inputGroup-sizing-sm"
-            />
+            {search && (
+              <Form.Control
+                className={styles.FormControl}
+                aria-label="Small"
+                aria-describedby="inputGroup-sizing-sm"
+              />
+            )}
             <InputGroup.Text
+              onClick={() => setSearch(true)}
               id="inputGroup-sizing-sm"
               className={styles.SearchButton}
             >

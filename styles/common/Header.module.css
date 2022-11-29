@@ -62,7 +62,9 @@
   border: 0.5px solid #f65d61;
   border-radius: 4px;
   outline: none;
-  max-width: 16rem;
+}
+.GroupInputOpen {
+  max-width: 16rem !important;
 }
 .FormControl {
   box-shadow: none !important;
