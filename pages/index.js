@@ -6,12 +6,9 @@ import Faq from "@/components/Home/Faq";
 import Introduction from "@/components/Home/Introduction";
 import PressReleaseHighlights from "@/components/Home/PressReleaseHighlights";
 import WhyWeAreDifferent from "@/components/Home/WhyWeAreDifferent";
-<<<<<<< HEAD
 import useResponsiveViewer from "hooks/ResponsiveViewer";
 import { useEffect } from "react";
-=======
 import { useEffect, useRef, useState } from "react";
->>>>>>> 9fb3590bcf1638a4b2404f99ff02706150c07a38
 
 export default function Home() {
   const checkResponsive = useResponsiveViewer();
@@ -50,22 +47,10 @@ export default function Home() {
 
   return (
     <Layout>
-<<<<<<< HEAD
       {/* <Test /> */}
       {checkResponsive ? (
         <>
           <Introduction />
-=======
-      <div className={`wrapper`}>
-        <div
-          className={`section`}
-          data-bg="white"
-          // style={opacity ? { opacity: "0" } : { opacity: "1" }}
-        >
-          <Introduction />
-        </div>
-        <div className={`section black-f`} data-bg="black">
->>>>>>> 9fb3590bcf1638a4b2404f99ff02706150c07a38
           <WhyWeAreDifferent />
         </>
       ) : (
