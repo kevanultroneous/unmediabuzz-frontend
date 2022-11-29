@@ -7,7 +7,7 @@ import Introduction from "@/components/Home/Introduction";
 import PressReleaseHighlights from "@/components/Home/PressReleaseHighlights";
 import WhyWeAreDifferent from "@/components/Home/WhyWeAreDifferent";
 import useResponsiveViewer from "hooks/ResponsiveViewer";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const checkResponsive = useResponsiveViewer();
