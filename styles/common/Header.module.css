@@ -79,7 +79,7 @@
   text-align: center;
 }
 .MainMenuRow {
-  align-items: baseline;
+  align-items: center;
 }
 .MobileSearchMenu {
   display: none;
