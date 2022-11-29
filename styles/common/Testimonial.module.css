@@ -55,6 +55,9 @@
 .sliderSection {
   margin: 0;
 }
+.animationSection {
+  overflow: hidden;
+}
 
 @media screen and (max-width: 600px) {
   .TestimonialCard {

@@ -4,6 +4,9 @@ import styles from "@/styles/common/RecentItems.module.css";
 import ToggleUiButton from "./ToggleUiButton";
 import { ButtonsList } from "utils/ButtonsList";
 import RecentPressRelease from "./RecentPressRelease";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import Aos from "aos";
 
 export const CardModel = ({
   categoryname,
@@ -104,6 +107,10 @@ export const BlogsCardModel = ({ title, date, hide, badge }) => {
 const RecentItems = () => {
   const postList = [1, 2, 3, 4];
   const blogList = [1, 2, 3, 4, 5, 6];
+  useEffect(() => {
+    Aos.refresh();
+    Aos.init();
+  }, []);
   return (
     <>
       <ContainerWrraper customClass={`${styles.ContainerWrraperRecentItems}`}>
@@ -116,7 +123,11 @@ const RecentItems = () => {
             xl={7}
             className={`ColPaddingRemove`}
           >
-            <h4 className={styles.ListHeading}>
+            <h4
+              className={styles.ListHeading}
+              data-aos="fade-up"
+              data-aos-duration="2000"
+            >
               Top <span className={styles.SpanText}>Buzz</span>
             </h4>
             <ContainerWrraper

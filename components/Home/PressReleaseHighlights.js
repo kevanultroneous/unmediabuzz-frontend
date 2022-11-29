@@ -3,6 +3,8 @@ import { Row, Col, Image } from "react-bootstrap";
 import styles from "@/styles/home/PressReleaseHighlights.module.css";
 import Marquee from "react-fast-marquee";
 import useResponsiveViewer from "hooks/ResponsiveViewer";
+import { useEffect } from "react";
+import Aos from "aos";
 
 const PressReleaseHighlights = () => {
   const isMobile = useResponsiveViewer();
@@ -13,6 +15,10 @@ const PressReleaseHighlights = () => {
     "/assets/images/highlight-4.svg",
     "/assets/images/highlight-5.svg",
   ];
+  useEffect(() => {
+    Aos.refresh();
+    Aos.init();
+  }, []);
 
   return (
     <ContainerWrraper customClass={`${styles.ContainerWrraperHighlight}`}>
@@ -34,20 +40,26 @@ const PressReleaseHighlights = () => {
             could appear on
           </p>
         ) : (
-          <p className={styles.HighlightHeading}>
-            Your
-            <label className={styles.UniqueLabel}>
-              <span className={styles.BrushSetup}>
-                <Image
-                  src="/assets/images/brush-h-01.svg"
-                  alt="brush"
-                  className={styles.brushImage}
-                />
-              </span>
-              &nbsp;&nbsp;&nbsp; Press Release
-            </label>
-            &nbsp;&nbsp;&nbsp; could appear on
-          </p>
+          <div className={styles.animationSection}>
+            <p
+              className={styles.HighlightHeading}
+              data-aos="fade-up"
+              data-aos-duration="2000"
+            >
+              Your
+              <label className={styles.UniqueLabel}>
+                <span className={styles.BrushSetup}>
+                  <Image
+                    src="/assets/images/brush-h-01.svg"
+                    alt="brush"
+                    className={styles.brushImage}
+                  />
+                </span>
+                &nbsp;&nbsp;&nbsp; Press Release
+              </label>
+              &nbsp;&nbsp;&nbsp; could appear on
+            </p>
+          </div>
         )}
       </div>
 

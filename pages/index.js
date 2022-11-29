@@ -6,7 +6,6 @@ import Faq from "@/components/Home/Faq";
 import Introduction from "@/components/Home/Introduction";
 import PressReleaseHighlights from "@/components/Home/PressReleaseHighlights";
 import WhyWeAreDifferent from "@/components/Home/WhyWeAreDifferent";
-import Test from "@/components/test-highliter";
 import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
@@ -45,8 +44,6 @@ export default function Home() {
 
   return (
     <Layout>
-      {/* <Test /> */}
-
       <div className={`wrapper`}>
         <div
           className={`section`}

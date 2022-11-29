@@ -35,6 +35,9 @@
   border: 1px solid rgba(0, 0, 0, 0.1) !important;
   border-radius: 8px !important;
 }
+.animationSection {
+  overflow: hidden;
+}
 @media screen and (max-width: 600px) {
   .MainHeading {
     font-size: var(--mainMobHeading);

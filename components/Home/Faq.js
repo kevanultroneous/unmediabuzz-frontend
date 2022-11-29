@@ -2,8 +2,14 @@ import { Accordion, Col, Row } from "react-bootstrap";
 import ContainerWrraper from "../common/ContainerWrraper";
 import styles from "@/styles/home/Faq.module.css";
 import { Faqdata } from "utils/Anonymous";
+import { useEffect } from "react";
+import Aos from "aos";
 
 const Faq = () => {
+  useEffect(() => {
+    Aos.refresh();
+    Aos.init();
+  }, []);
   return (
     <ContainerWrraper customClass={`${styles.FaqContainerWrraper}`}>
       <Row>
@@ -15,9 +21,15 @@ const Faq = () => {
           xl={5}
           className={`ColPaddingRemove`}
         >
-          <h6 className={styles.MainHeading}>
-            We have all the Answers you are looking for!
-          </h6>
+          <div className={styles.animationSection}>
+            <h6
+              className={styles.MainHeading}
+              data-aos="fade-up"
+              data-aos-duration="2000"
+            >
+              We have all the Answers you are looking for!
+            </h6>
+          </div>
           <p className={styles.MainParagraph}>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industrys standard dummy text

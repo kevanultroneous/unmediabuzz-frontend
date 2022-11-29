@@ -4,8 +4,10 @@ import { Col, Row, Image, ToggleButton } from "react-bootstrap";
 import styles from "@/styles/ContactUs.module.css";
 import refreshed, { countryCall } from "utils/CountryCode";
 import ToggleUiButton from "@/components/common/ToggleUiButton";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { RadioButtonsData } from "utils/Anonymous";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const InputController = ({ label, type, value, changeHandler }) => {
   return (
@@ -28,7 +30,10 @@ const ContactUs = () => {
     setRadioButton(null);
     setRadioButton(v);
   };
-
+  useEffect(() => {
+    Aos.refresh();
+    Aos.init();
+  }, []);
   return (
     <Layout>
       <ContainerWrraper customClass={`${styles.mobileCustomContainer}`}>
@@ -40,6 +45,8 @@ const ContactUs = () => {
             lg={12}
             xl={12}
             className={styles.HeadingCol}
+            data-aos="fade-up"
+            data-aos-duration="2000"
           >
             <p className={styles.Heading}>
               Connect to start your Journey with UNMedia Buzz
