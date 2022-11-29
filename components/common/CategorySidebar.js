@@ -2,7 +2,24 @@ import { Accordion } from "react-bootstrap";
 import styles from "@/styles/common/CategorySidebar.module.css";
 
 const CategorySidebar = () => {
-  const arry = ["Sports", "Art & Entertainment", "Category 3", "Category 4"];
+  const arry = [
+    "Sports",
+    "Art & Entertainment",
+    "Category 3",
+    "Category 4",
+    "Sports",
+    "Art & Entertainment",
+    "Category 3",
+    "Category 4",
+    "Sports",
+    "Art & Entertainment",
+    "Category 3",
+    "Category 4",
+    "Sports",
+    "Art & Entertainment",
+    "Category 3",
+    "Category 4",
+  ];
   return (
     <div
       className={`${styles.CategoryWrraper} CategoriesAccordion CustomArrow`}

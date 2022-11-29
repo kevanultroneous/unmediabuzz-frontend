@@ -9,8 +9,13 @@ import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import Pagination from "rc-pagination";
 import CategorySidebar from "@/components/common/CategorySidebar";
 import { useState } from "react";
+import axios from "axios";
+import { PressReleaseListAPI } from "utils/API";
+import { MAIN_URL } from "utils/Anonymous";
+import { useRouter } from "next/router";
 
-const PressRelease = () => {
+const PressRelease = ({ fetchlistOfPressReleaseList }) => {
+  const router = useRouter();
   const arry = [1, 2, 3, 4, 5, 6, 7];
   const tabs = [
     "All Press Release",
@@ -67,14 +72,20 @@ const PressRelease = () => {
       <ContainerWrraper customClass={`${styles.CardModelContainerWrraper}`}>
         <Row>
           <Col xs={12} sm={12} md={12} lg={8} xl={8} className={`pe-0`}>
-            {arry.map((value, index) => (
+            {fetchlistOfPressReleaseList.data?.map((value, index) => (
               <CardModel
+                url={() =>
+                  router.push({
+                    pathname: value.slugUrl
+                      ? `press-release/${value.slugUrl}-${value._id}`
+                      : `#`,
+                  })
+                }
+                coverimg={MAIN_URL + value.featuredImage}
                 customtitleclass={`${styles.ParagraphSize}`}
                 key={index}
-                categoryname={"By, XYZ Company Name"}
-                title={
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing."
-                }
+                companyname={value.companyName}
+                title={value.title}
                 date={"04 Novemeber 2022"}
               />
             ))}
@@ -107,5 +118,17 @@ const PressRelease = () => {
     </Layout>
   );
 };
+
+export async function getServerSideProps() {
+  const fetchlistOfPressReleaseList = await axios
+    .post(PressReleaseListAPI)
+    .then((res) => res.data)
+    .catch((e) => console.log(e));
+  return {
+    props: {
+      fetchlistOfPressReleaseList,
+    },
+  };
+}
 
 export default PressRelease;

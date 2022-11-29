@@ -10,8 +10,12 @@ import {
 } from "react-icons/ai";
 import styles from "@/styles/ViewDetails.module.css";
 import { CardModel } from "@/components/common/RecentItems";
+import { useRouter } from "next/router";
 
 const ViewPost = () => {
+  const router = useRouter();
+  const { post } = router.query;
+  console.log(router);
   return (
     <Layout>
       <ContainerWrraper customClass={`${styles.ViewPostContainerWrraper}`}>
@@ -60,8 +64,7 @@ const ViewPost = () => {
           </Col>
         </Row>
       </ContainerWrraper>
-      {/* <ContainerWrraper customClass={`${}`}>
-      </ContainerWrraper> */}
+
       <ContainerWrraper customClass={`${styles.InterestedContainerWrraper}`}>
         <Row>
           <Col xs={12} sm={12} md={12} lg={12} xl={12}>
@@ -78,6 +81,8 @@ const ViewPost = () => {
           </Col>
           <Col xs={12} sm={12} md={6} lg={6} xl={6}>
             <CardModel
+              url={"#"}
+              coverimg={""}
               hide={true}
               date={"04 Novemeber 2022"}
               title={
@@ -95,6 +100,7 @@ const ViewPost = () => {
             className={`${styles.BetweenSpace} ColPaddingRemove`}
           >
             <CardModel
+              url={"/"}
               customcardmodelrow={`${styles.customcardmodelrow}`}
               hide={true}
               date={"04 Novemeber 2022"}

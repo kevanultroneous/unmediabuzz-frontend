@@ -7,6 +7,7 @@ import RecentPressRelease from "./RecentPressRelease";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Aos from "aos";
+import Link from "next/link";
 
 export const CardModel = ({
   categoryname,
@@ -17,6 +18,8 @@ export const CardModel = ({
   companyname,
   badge,
   customcardmodelrow,
+  coverimg,
+  url,
 }) => {
   return (
     <Row className={`${styles.CardModelRow} ${customcardmodelrow}`}>
@@ -36,7 +39,10 @@ export const CardModel = ({
             </span>
           )}
         </p>
-        <p className={`${styles.PostTitle} ${customtitleclass}`}>{title}</p>
+
+        <p className={`${styles.PostTitle} ${customtitleclass}`} onClick={url}>
+          {title}
+        </p>
         <p className={styles.CategoryName}>{categoryname || companyname}</p>
         {!hide && <div className={styles.LineHorizontalMob}></div>}
       </Col>
@@ -48,13 +54,11 @@ export const CardModel = ({
         xl={3}
         className={`ColPaddingRemove ${styles.PostImageCol}`}
       >
-        <div className={styles.PostImage}>
-          <Image
-            src="/assets/images/dummy-post.png"
-            alt="coverimage"
-            width={"100%"}
-          />
-        </div>
+        {coverimg ? (
+          <div className={styles.PostImage}>
+            <Image src={coverimg} alt="coverimage" width={"100%"} />
+          </div>
+        ) : null}
       </Col>
       {!hide && <div className={styles.LineHorizontal}></div>}
     </Row>

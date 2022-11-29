@@ -1,3 +1,5 @@
+export const MAIN_URL = `http://localhost:8000/`;
+
 export const ProcessList = [
   {
     icon: "/assets/images/edit-desk.svg",
@@ -43,3 +45,17 @@ export const Faqdata = [
   },
 ];
 export const RadioButtonsData = ["Press Release", "Blog Post"];
+export const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
