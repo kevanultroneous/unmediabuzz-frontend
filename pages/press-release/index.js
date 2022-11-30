@@ -74,13 +74,7 @@ const PressRelease = ({ fetchlistOfPressReleaseList }) => {
           <Col xs={12} sm={12} md={12} lg={8} xl={8} className={`pe-0`}>
             {fetchlistOfPressReleaseList.data?.map((value, index) => (
               <CardModel
-                url={() =>
-                  router.push({
-                    pathname: value.slugUrl
-                      ? `press-release/${value.slugUrl}`
-                      : `#`,
-                  })
-                }
+                url={value.slugUrl ? `press-release/${value.slugUrl}` : `#`}
                 coverimg={MAIN_URL + value.featuredImage}
                 customtitleclass={`${styles.ParagraphSize}`}
                 key={index}

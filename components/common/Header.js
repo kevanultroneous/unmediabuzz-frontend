@@ -26,108 +26,55 @@ const Header = () => {
       setSearch(true);
     }
   }, [router]);
+  useEffect(() => {
+    var prevScrollpos = window.pageYOffset; // Code for when screen scroll down navbar hide and scroll up navbar show
+    window.onscroll = function () {
+      var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+      } else {
+      }
+      prevScrollpos = currentScrollPos;
+    };
+  });
 
   return (
-    <ContainerWrraper customClass={`${styles.HeaderContainer}`}>
-      <Row className={styles.MainMenuRow}>
-        <Col xs={6} md={6} lg={3} xl={3} className={`ColPaddingRemove`}>
-          <div className={styles.MobileLogoWrraper}>
-            <Link href={"/"}>
-              <Image
-                src="/assets/icons/unmb.svg"
-                alt="Logo"
-                fluid
-                draggable={false}
-              />
-            </Link>
-          </div>
-        </Col>
-
-        <Col xs={6} md={6} lg={6} xl={6} className={`ColPaddingRemove`}>
-          {/* mobile */}
-          <div className={styles.MobileSearchMenu}>
-            <FiSearch
-              size={18}
-              className={styles.SearchIcon}
-              onClick={() => router.push("/search-result")}
-            />
-            <div
-              id="nav-icon3"
-              className={open ? "open" : ""}
-              onClick={() => setOpen(!open)}
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-          {/* --------- */}
-          <div className={`text-center ${styles.HideMenusInMob}`}>
-            {HeaderMenu.map((menus, index) => (
-              <>
-                <Link
+    <div id="navbar">
+      <ContainerWrraper customClass={`${styles.HeaderContainer}`}>
+        <Row className={styles.MainMenuRow}>
+          <Col xs={6} md={6} lg={3} xl={3} className={`ColPaddingRemove`}>
+            <div className={styles.MobileLogoWrraper}>
+              <Link href={"/"}>
+                <Image
+                  src="/assets/icons/unmb.svg"
+                  alt="Logo"
+                  fluid
                   draggable={false}
-                  className={
-                    router.pathname === menus.link
-                      ? styles.SelectedLink
-                      : styles.Links
-                  }
-                  href={menus.link}
-                  key={index + 1}
-                >
-                  {router.pathname === menus.link && (
-                    <Image
-                      src="/assets/icons/speaker.svg"
-                      alt="speaker"
-                      className={styles.speekarAnimation}
-                    />
-                  )}
-                  {menus.name}
-                </Link>
-                {HeaderMenu.indexOf(HeaderMenu[HeaderMenu.length - 1]) ===
-                index ? null : (
-                  <span className={styles.LinkSpan}> </span>
-                )}
-              </>
-            ))}
-          </div>
-        </Col>
+                />
+              </Link>
+            </div>
+          </Col>
 
-        <Col
-          xs={2}
-          md={3}
-          lg={3}
-          xl={3}
-          className={`ColPaddingRemove ${styles.SearchGroup}`}
-        >
-          <InputGroup
-            size="sm"
-            className={`${styles.GroupInput} ${styles.HideMenusInMob}`}
-            style={search ? { maxWidth: "16rem" } : { maxWidth: "3rem" }}
-          >
-            {search && (
-              <Form.Control
-                className={styles.FormControl}
-                aria-label="Small"
-                aria-describedby="inputGroup-sizing-sm"
+          <Col xs={6} md={6} lg={6} xl={6} className={`ColPaddingRemove`}>
+            {/* mobile */}
+            <div className={styles.MobileSearchMenu}>
+              <FiSearch
+                size={18}
+                className={styles.SearchIcon}
+                onClick={() => router.push("/search-result")}
               />
-            )}
-            <InputGroup.Text
-              onClick={() => setSearch(true)}
-              id="inputGroup-sizing-sm"
-              className={styles.SearchButton}
-            >
-              <FiSearch size={18} />
-            </InputGroup.Text>
-          </InputGroup>
-        </Col>
-      </Row>
-      {/* mobile menu offcanvas */}
-      <div className={styles.SidebarCanvas}>
-        <Offcanvas show={open} backdrop={false} onHide={() => setOpen(false)}>
-          <Offcanvas.Body>
-            <div className={`${styles.MobileMenuSidebar}`}>
+              <div
+                id="nav-icon3"
+                className={open ? "open" : ""}
+                onClick={() => setOpen(!open)}
+              >
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            {/* --------- */}
+            <div className={`text-center ${styles.HideMenusInMob}`}>
               {HeaderMenu.map((menus, index) => (
                 <>
                   <Link
@@ -140,10 +87,14 @@ const Header = () => {
                     href={menus.link}
                     key={index + 1}
                   >
-                    {menus.name}{" "}
                     {router.pathname === menus.link && (
-                      <Image src="/assets/icons/speaker.svg" alt="speaker" />
+                      <Image
+                        src="/assets/icons/speaker.svg"
+                        alt="speaker"
+                        className={styles.speekarAnimation}
+                      />
                     )}
+                    {menus.name}
                   </Link>
                   {HeaderMenu.indexOf(HeaderMenu[HeaderMenu.length - 1]) ===
                   index ? null : (
@@ -152,10 +103,71 @@ const Header = () => {
                 </>
               ))}
             </div>
-          </Offcanvas.Body>
-        </Offcanvas>
-      </div>
-    </ContainerWrraper>
+          </Col>
+
+          <Col
+            xs={2}
+            md={3}
+            lg={3}
+            xl={3}
+            className={`ColPaddingRemove ${styles.SearchGroup}`}
+          >
+            <InputGroup
+              size="sm"
+              className={`${styles.GroupInput} ${styles.HideMenusInMob}`}
+              style={search ? { maxWidth: "16rem" } : { maxWidth: "3rem" }}
+            >
+              {search && (
+                <Form.Control
+                  className={styles.FormControl}
+                  aria-label="Small"
+                  aria-describedby="inputGroup-sizing-sm"
+                />
+              )}
+              <InputGroup.Text
+                onClick={() => setSearch(true)}
+                id="inputGroup-sizing-sm"
+                className={styles.SearchButton}
+              >
+                <FiSearch size={18} />
+              </InputGroup.Text>
+            </InputGroup>
+          </Col>
+        </Row>
+        {/* mobile menu offcanvas */}
+        <div className={styles.SidebarCanvas}>
+          <Offcanvas show={open} backdrop={false} onHide={() => setOpen(false)}>
+            <Offcanvas.Body>
+              <div className={`${styles.MobileMenuSidebar}`}>
+                {HeaderMenu.map((menus, index) => (
+                  <>
+                    <Link
+                      draggable={false}
+                      className={
+                        router.pathname === menus.link
+                          ? styles.SelectedLink
+                          : styles.Links
+                      }
+                      href={menus.link}
+                      key={index + 1}
+                    >
+                      {menus.name}{" "}
+                      {router.pathname === menus.link && (
+                        <Image src="/assets/icons/speaker.svg" alt="speaker" />
+                      )}
+                    </Link>
+                    {HeaderMenu.indexOf(HeaderMenu[HeaderMenu.length - 1]) ===
+                    index ? null : (
+                      <span className={styles.LinkSpan}> </span>
+                    )}
+                  </>
+                ))}
+              </div>
+            </Offcanvas.Body>
+          </Offcanvas>
+        </div>
+      </ContainerWrraper>
+    </div>
   );
 };
 

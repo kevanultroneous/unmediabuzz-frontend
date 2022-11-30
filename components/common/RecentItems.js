@@ -41,8 +41,10 @@ export const CardModel = ({
           )}
         </p>
 
-        <p className={`${styles.PostTitle} ${customtitleclass}`} onClick={url}>
-          {title}
+        <p className={`${styles.PostTitle} ${customtitleclass}`}>
+          <Link href={url} className={styles.LinkStyle}>
+            {title}
+          </Link>
         </p>
         <p className={styles.CategoryName}>{categoryname || companyname}</p>
         {!hide && <div className={styles.LineHorizontalMob}></div>}
@@ -142,6 +144,7 @@ const RecentItems = ({ postList, blogList }) => {
               {postList.map((value, index) => (
                 <CardModel
                   key={index}
+                  url={value.slugUrl ? `press-release/${value.slugUrl}` : `#`}
                   coverimg={MAIN_URL + value?.featuredImage}
                   companyname={`By, ${value?.companyName}`}
                   date={`${timestampToDate(value?.releaseDate)}`}

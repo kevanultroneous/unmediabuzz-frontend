@@ -21,13 +21,19 @@
   margin: 0%;
   margin-bottom: 0.4rem;
 }
-.PostTitle {
+.PostTitle,
+.LinkStyle {
   font-size: var(--bigParagraph);
   font-weight: 600;
+  text-decoration: none;
   margin: 0%;
   padding-right: 2rem;
   margin-bottom: 2rem;
   padding-top: 0.5rem;
+  color: var(--elementColor);
+}
+.LinkStyle:hover {
+  color: var(--elementColor);
 }
 .PostDate {
   font-size: var(--maxText);
