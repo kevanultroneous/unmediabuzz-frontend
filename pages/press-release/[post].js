@@ -11,16 +11,29 @@ import {
 import styles from "@/styles/ViewDetails.module.css";
 import { CardModel } from "@/components/common/RecentItems";
 import { useRouter } from "next/router";
+import axios from "axios";
+import { PressReleaseListAPI } from "utils/API";
+import { useEffect } from "react";
+import { Markup } from "interweave";
+import { MAIN_URL, timestampToDate } from "utils/Anonymous";
 
-const ViewPost = () => {
+const ViewPost = ({ data }) => {
   const router = useRouter();
-  const { post } = router.query;
 
-  console.log(router);
+  useEffect(() => {
+    if (data == null) {
+      router.push("/");
+    }
+  }, [data, router]);
+
   return (
     <Layout>
       <ContainerWrraper customClass={`${styles.ViewPostContainerWrraper}`}>
-        <IoIosArrowRoundBack size={40} className={styles.ArrowIcon} />
+        <IoIosArrowRoundBack
+          size={40}
+          className={styles.ArrowIcon}
+          onClick={() => router.back()}
+        />
         <Row className={styles.HeroSectionRow}>
           <Col
             xs={12}
@@ -33,12 +46,10 @@ const ViewPost = () => {
             <p className={styles.BreadCumb}>
               Home/ Press Release/ Sports / Cricket
             </p>
-            <p className={styles.PostTitle}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum is simply dummy text of the printing and
-              typesetting industry.
-            </p>
-            <p className={styles.CreatedAt}>On 04 Novemeber 2022 By, XYZ</p>
+            <p className={styles.PostTitle}>{data?.title}</p>
+            <p className={styles.CreatedAt}>{`On ${timestampToDate(
+              data?.releaseDate
+            )} By, ${data?.companyName}`}</p>
             <div className={styles.IconsWrraper}>
               <AiFillFacebook size={30} className={styles.IconSpace} />
               <AiFillLinkedin size={30} className={styles.IconSpace} />
@@ -50,7 +61,7 @@ const ViewPost = () => {
           </Col>
         </Row>
       </ContainerWrraper>
-      <ContainerWrraper className={styles.ContentWrraper}>
+      <ContainerWrraper customClass={styles.ContentWrraper}>
         <Row>
           <Col
             xs={12}
@@ -60,8 +71,17 @@ const ViewPost = () => {
             xl={12}
             className={`ColPaddingRemove`}
           >
-            <h3>Contents</h3>
-            <p>jfkdsfkjskdfjksdkjkjkkk ksjdkfjskdjksjdkjkjk </p>
+            <p>{data?.summary}</p>
+            <center>
+              <div className={styles.FeaturedImage}>
+                <Image
+                  src={MAIN_URL + data?.featuredImage}
+                  alt="featured-image"
+                  fluid
+                />
+              </div>
+            </center>
+            <Markup content={data?.content} />
           </Col>
         </Row>
       </ContainerWrraper>
@@ -117,5 +137,16 @@ const ViewPost = () => {
     </Layout>
   );
 };
+export async function getServerSideProps(context) {
+  const data = await axios
+    .post(PressReleaseListAPI, { url: context.params?.post })
+    .then((res) => res.data?.data)
+    .catch((e) => console.log(e));
+  return {
+    props: {
+      data: typeof data === "object" ? data : null,
+    },
+  };
+}
 
 export default ViewPost;

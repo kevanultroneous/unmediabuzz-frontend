@@ -59,3 +59,12 @@ export const months = [
   "November",
   "December",
 ];
+export const timestampToDate = (ts) => {
+  return (
+    new Date(ts).getDate() +
+    " " +
+    months[new Date(ts).getMonth() - 1] +
+    " " +
+    new Date(ts).getFullYear()
+  );
+};

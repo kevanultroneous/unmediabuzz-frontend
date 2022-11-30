@@ -39,6 +39,7 @@
 }
 .ContentWrraper {
   padding: 6rem 12rem;
+  padding-left: 14rem;
 }
 .InterestedContainerWrraper {
   background: var(--sidebarColor);
@@ -63,6 +64,11 @@
 }
 .customcardmodelrow {
   margin-right: 0 !important;
+}
+.FeaturedImage {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  max-width: 815px;
 }
 @media screen and (max-width: 600px) {
   .ArrowIcon {

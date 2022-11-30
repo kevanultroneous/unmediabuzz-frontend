@@ -11,7 +11,7 @@ import CategorySidebar from "@/components/common/CategorySidebar";
 import { useState } from "react";
 import axios from "axios";
 import { PressReleaseListAPI } from "utils/API";
-import { MAIN_URL } from "utils/Anonymous";
+import { MAIN_URL, timestampToDate } from "utils/Anonymous";
 import { useRouter } from "next/router";
 
 const PressRelease = ({ fetchlistOfPressReleaseList }) => {
@@ -77,7 +77,7 @@ const PressRelease = ({ fetchlistOfPressReleaseList }) => {
                 url={() =>
                   router.push({
                     pathname: value.slugUrl
-                      ? `press-release/${value.slugUrl}-${value._id}`
+                      ? `press-release/${value.slugUrl}`
                       : `#`,
                   })
                 }
@@ -86,7 +86,7 @@ const PressRelease = ({ fetchlistOfPressReleaseList }) => {
                 key={index}
                 companyname={value.companyName}
                 title={value.title}
-                date={"04 Novemeber 2022"}
+                date={timestampToDate(value.releaseDate)}
               />
             ))}
           </Col>
@@ -109,7 +109,10 @@ const PressRelease = ({ fetchlistOfPressReleaseList }) => {
             className={`ColPaddingRemove ${styles.CenterPagination}`}
           >
             <div className={styles.PaginationWrraper}>
-              <Pagination total={320} itemRender={textItemRender} />
+              <Pagination
+                total={fetchlistOfPressReleaseList.data?.length}
+                itemRender={textItemRender}
+              />
             </div>
           </Col>
         </Row>

@@ -8,6 +8,7 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Aos from "aos";
 import Link from "next/link";
+import { MAIN_URL, timestampToDate } from "utils/Anonymous";
 
 export const CardModel = ({
   categoryname,
@@ -65,7 +66,14 @@ export const CardModel = ({
   );
 };
 
-export const BlogsCardModel = ({ title, date, hide, badge }) => {
+export const BlogsCardModel = ({
+  title,
+  date,
+  hide,
+  badge,
+  companyName,
+  coverimg,
+}) => {
   return (
     <>
       <Row className={styles.BlogsCardModelReverse}>
@@ -86,7 +94,7 @@ export const BlogsCardModel = ({ title, date, hide, badge }) => {
             )}
           </p>
           <p className={styles.BlogPostTitle}>{title}</p>
-          <p className={styles.CompanyName}>By, XYZ Company Name</p>
+          <p className={styles.CompanyName}>By, {companyName}</p>
         </Col>
         <Col
           xs={12}
@@ -96,11 +104,7 @@ export const BlogsCardModel = ({ title, date, hide, badge }) => {
           xl={4}
           className={` ${styles.BlogImageCol}`}
         >
-          <Image
-            src="/assets/images/dummy-post.png"
-            alt="coverimage"
-            className={styles.BlogImg}
-          />
+          <Image src={coverimg} alt="coverimage" className={styles.BlogImg} />
         </Col>
       </Row>
       {!hide && <div className={styles.BlogLineHorizontal}></div>}
@@ -108,9 +112,7 @@ export const BlogsCardModel = ({ title, date, hide, badge }) => {
   );
 };
 
-const RecentItems = () => {
-  const postList = [1, 2, 3, 4];
-  const blogList = [1, 2, 3, 4, 5, 6];
+const RecentItems = ({ postList, blogList }) => {
   useEffect(() => {
     Aos.refresh();
     Aos.init();
@@ -137,15 +139,13 @@ const RecentItems = () => {
             <ContainerWrraper
               customClass={`${styles.ContainerWrraperCardModel}`}
             >
-              {postList.map((v, i) => (
+              {postList.map((value, index) => (
                 <CardModel
-                  badge={i == 0}
-                  key={i}
-                  companyname={"By, XYZ Company Name"}
-                  date={"04 Novemeber 2022"}
-                  title={
-                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing."
-                  }
+                  key={index}
+                  coverimg={MAIN_URL + value?.featuredImage}
+                  companyname={`By, ${value?.companyName}`}
+                  date={`${timestampToDate(value?.releaseDate)}`}
+                  title={value?.title}
                 />
               ))}
             </ContainerWrraper>
