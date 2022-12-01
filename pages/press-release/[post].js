@@ -29,7 +29,13 @@ const ViewPost = ({ data }) => {
   }, [data, router]);
 
   return (
-    <Layout>
+    <Layout
+      title={`unmediabuzz | ${data?.seoTitle}`}
+      description={data?.seoDescription}
+      keywords={data?.seoKeywords}
+      ogtitle={data?.seoTitle}
+      ogimage={MAIN_URL + data?.featuredImage}
+    >
       <ContainerWrraper customClass={`${styles.ViewPostContainerWrraper}`}>
         <IoIosArrowRoundBack
           size={40}
@@ -45,9 +51,7 @@ const ViewPost = ({ data }) => {
             xl={12}
             className={styles.DetailSectionCol}
           >
-            <p className={styles.BreadCumb}>
-              Home/ Press Release/ Sports / Cricket
-            </p>
+            <p className={styles.BreadCumb}>Home/ Press Release/</p>
             <p className={styles.PostTitle}>{data?.title}</p>
             <p className={styles.CreatedAt}>{`On ${timestampToDate(
               data?.releaseDate

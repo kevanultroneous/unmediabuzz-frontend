@@ -118,7 +118,7 @@ const PressRelease = ({ fetchlistOfPressReleaseList }) => {
 
 export async function getServerSideProps() {
   const fetchlistOfPressReleaseList = await axios
-    .post(PressReleaseListAPI)
+    .post(PressReleaseListAPI, { limit: 7 })
     .then((res) => res.data)
     .catch((e) => console.log(e));
   return {
