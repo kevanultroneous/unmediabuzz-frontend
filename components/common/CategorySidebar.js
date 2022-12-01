@@ -22,7 +22,7 @@ const CategorySidebar = () => {
   ];
   return (
     <div
-      className={`${styles.CategoryWrraper} CategoriesAccordion CustomArrow`}
+      className={`${styles.CategoryWrraper} CategoriesAccordion CustomArrow CategoryScroll`}
     >
       <div className={styles.CategoryHeadingWrrap}>
         <p className={styles.CategoryHeading}>CATEGORIES</p>

@@ -14,7 +14,6 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import { PressReleaseListAPI } from "utils/API";
 import { useEffect } from "react";
-import { Markup } from "interweave";
 import { MAIN_URL, timestampToDate } from "utils/Anonymous";
 
 const ViewPost = ({ data }) => {
@@ -23,6 +22,9 @@ const ViewPost = ({ data }) => {
   useEffect(() => {
     if (data == null) {
       router.push("/");
+    } else {
+      // target div which is help to convert string to html without interweave package
+      document.getElementById("htmlcontent").innerHTML = data?.content;
     }
   }, [data, router]);
 
@@ -81,7 +83,7 @@ const ViewPost = ({ data }) => {
                 />
               </div>
             </center>
-            <Markup content={data?.content} />
+            <div id="htmlcontent"></div>
           </Col>
         </Row>
       </ContainerWrraper>
@@ -140,11 +142,11 @@ const ViewPost = ({ data }) => {
 export async function getServerSideProps(context) {
   const data = await axios
     .post(PressReleaseListAPI, { url: context.params?.post })
-    .then((res) => res.data?.data)
-    .catch((e) => console.log(e));
+    .then((res) => (res.data.success ? res.data?.data : null))
+    .catch((e) => e);
   return {
     props: {
-      data: typeof data === "object" ? data : null,
+      data: typeof data === "object" && data !== undefined ? data : null,
     },
   };
 }

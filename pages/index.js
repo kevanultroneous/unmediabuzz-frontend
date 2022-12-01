@@ -32,8 +32,10 @@ export default function Home({ data }) {
           return { el, rect };
         })
         .find((section) => section.rect.bottom >= window.innerHeight * 0.5);
-      document.getElementsByClassName("wrapper")[0].style.background =
-        section?.el.getAttribute("data-bg");
+      document.getElementsByClassName("wrapper")[0] !== undefined
+        ? (document.getElementsByClassName("wrapper")[0].style.background =
+            section?.el.getAttribute("data-bg"))
+        : null;
     }
   }, []);
 

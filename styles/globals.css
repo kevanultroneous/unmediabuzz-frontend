@@ -207,10 +207,15 @@ a {
 .slick-dots {
   bottom: -48px !important;
 }
+.slick-dots label {
+  opacity: 0;
+  cursor: pointer;
+}
 .slick-dots.slick-thumb {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
 }
 
 .slick-dots.slick-thumb li {
@@ -220,7 +225,6 @@ a {
   border-radius: 100%;
   background: #f0f0f0;
 }
-
 .slick-dots.slick-thumb li.slick-active {
   width: 10px;
   height: 10px;
@@ -245,4 +249,26 @@ a {
 
 .section {
   height: auto;
+}
+
+/* ================================================================ category sidebar scroll css ========================================================================== */
+
+/* width */
+.CategoryScroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.CategoryScroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.CategoryScroll::-webkit-scrollbar-thumb {
+  background: #f65d61;
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+.CategoryScroll::-webkit-scrollbar-thumb:hover {
 }

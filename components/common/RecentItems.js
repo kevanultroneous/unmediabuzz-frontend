@@ -75,6 +75,7 @@ export const BlogsCardModel = ({
   badge,
   companyName,
   coverimg,
+  url,
 }) => {
   return (
     <>
@@ -95,7 +96,11 @@ export const BlogsCardModel = ({
               </span>
             )}
           </p>
-          <p className={styles.BlogPostTitle}>{title}</p>
+          <p className={styles.BlogPostTitle}>
+            <Link href={url} className={styles.LinkStyle}>
+              {title}
+            </Link>
+          </p>
           <p className={styles.CompanyName}>By, {companyName}</p>
         </Col>
         <Col

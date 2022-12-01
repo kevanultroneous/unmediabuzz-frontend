@@ -16,6 +16,7 @@
 .HeaderContainerWrraper {
   background: var(--sidebarColor);
   padding-bottom: 4.5rem;
+  padding-top: 10rem;
 }
 .IconWrraping {
   position: relative;

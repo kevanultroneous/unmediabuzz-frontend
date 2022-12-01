@@ -1,5 +1,6 @@
 .ViewPostContainerWrraper {
   background: var(--sidebarColor);
+  padding-top: 10rem;
 }
 .BreadCumb {
   font-weight: 700;

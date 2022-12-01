@@ -18,10 +18,16 @@ const Testimonial = () => {
     speed: 3500,
     slidesToShow: 4,
     slidesToScroll: 1,
-    customPaging: function (i) {
-      return <div className="dot"></div>;
-    },
+    // customPaging: function (i) {
+    //   return <div className="dot" onClick={() => alert(i)}></div>;
+    // },
     dotsClass: "slick-dots slick-thumb",
+    appendDots: (dots) => (
+      <div>
+        <ul style={{ margin: "0px" }}> {dots} </ul>
+      </div>
+    ),
+    customPaging: (i) => <label>{i}</label>,
     responsive: [
       {
         breakpoint: 1024,

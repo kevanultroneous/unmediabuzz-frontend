@@ -25,6 +25,7 @@ const RecentPressRelease = ({ blogList, hideclass }) => {
       <ContainerWrraper customClass={`${styles.ContainerWrraperBlogCardModel}`}>
         {blogList.map((value, index) => (
           <BlogsCardModel
+            url={value.slugUrl ? `press-release/${value.slugUrl}` : `#`}
             companyName={value.companyName}
             badge={parseInt(value.totalPaidAmount) > 0}
             hide={index === blogList.length - 1}

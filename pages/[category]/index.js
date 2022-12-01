@@ -85,6 +85,7 @@ const Category = () => {
           <Col xs={12} sm={12} md={12} lg={8} xl={9} className={`pe-0`}>
             {arry.map((value, index) => (
               <CardModel
+                url={"#"}
                 customtitleclass={`${styles.ParagraphSize}`}
                 key={index}
                 categoryname={"By, XYZ Company Name"}
