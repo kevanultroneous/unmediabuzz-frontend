@@ -27,9 +27,22 @@ const Header = () => {
     }
   }, [router]);
 
+  // useEffect(() => {
+  //   var prevScrollpos = window.pageYOffset;
+  //   window.onscroll = function () {
+  //     var currentScrollPos = window.pageYOffset;
+  //     if (prevScrollpos > currentScrollPos) {
+  //       document.getElementById("navbar").style.top = "0";
+  //     } else {
+  //       document.getElementById("navbar").style.top = "-50px";
+  //     }
+  //     prevScrollpos = currentScrollPos;
+  //   };
+  // });
+
   return (
     <ContainerWrraper customClass={`${styles.HeaderContainer}`}>
-      <Row className={styles.MainMenuRow}>
+      <Row className={styles.MainMenuRow} id="navbar">
         <Col xs={6} md={6} lg={3} xl={3} className={`ColPaddingRemove`}>
           <div className={styles.MobileLogoWrraper}>
             <Link href={"/"}>

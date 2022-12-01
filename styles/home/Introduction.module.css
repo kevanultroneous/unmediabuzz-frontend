@@ -19,6 +19,7 @@
   font-weight: 400;
   text-align: center;
   width: 44rem;
+  margin-top: 1rem;
 }
 .BrushImage {
   position: absolute;
@@ -51,7 +52,7 @@
 }
 .ProcessDesc {
   font-size: var(--maxText);
-  font-weight: 300;
+  font-weight: 400;
   text-align: center;
   width: 12.25rem;
 }
@@ -83,6 +84,7 @@
 .animationSection {
   overflow: hidden;
   width: 100%;
+  height: 8rem;
 }
 @media screen and (max-width: 600px) {
   .TitleIntro {

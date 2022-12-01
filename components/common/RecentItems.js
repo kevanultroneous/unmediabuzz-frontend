@@ -123,13 +123,15 @@ const RecentItems = () => {
             xl={7}
             className={`ColPaddingRemove`}
           >
-            <h4
-              className={styles.ListHeading}
-              data-aos="fade-up"
-              data-aos-duration="2000"
-            >
-              Top <span className={styles.SpanText}>Buzz</span>
-            </h4>
+            <div className={styles.animationSection}>
+              <h4
+                className={styles.ListHeading}
+                data-aos="fade-up"
+                data-aos-duration="2000"
+              >
+                Top <span className={styles.SpanText}>Buzz</span>
+              </h4>
+            </div>
             <ContainerWrraper
               customClass={`${styles.ContainerWrraperCardModel}`}
             >

@@ -34,19 +34,10 @@ export default function Home() {
       document.getElementsByClassName("wrapper")[0].style.background =
         section?.el.getAttribute("data-bg");
     }
-
-    // window.addEventListener("scroll", () => {
-    //   let findblack = document
-    //     .getElementsByClassName("black-f")[0]
-    //     .getBoundingClientRect();
-
-    // });
   }, []);
-  const [opacity, setOpacity] = useState(false);
 
   return (
     <Layout>
-      {/* <Test /> */}
       {checkResponsive ? (
         <>
           <Introduction />

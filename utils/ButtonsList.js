@@ -18,7 +18,7 @@ export const ButtonsList = {
           alt="press-release"
           fluid
         />
-        &nbsp;&nbsp; Press Release
+        &nbsp;&nbsp; &nbsp; Press Release
       </span>
     ),
     link: "",
@@ -44,7 +44,7 @@ export const ButtonsList = {
           alt="press-release"
           fluid
         />
-        &nbsp; Post Blogs
+        &nbsp; &nbsp; &nbsp; &nbsp; Post Blogs
       </span>
     ),
     link: "",
@@ -81,26 +81,26 @@ export const ButtonsList = {
   IntroButtonList: [
     {
       source: (
-        <span>
+        <span style={{ display: "flex", alignItem: "center" }}>
           <Image
             src="/assets/icons/white-pr-icon.svg"
             alt="press-release"
             fluid
           />
-          &nbsp;&nbsp;Press Release
+          &nbsp;&nbsp;&nbsp;Press Release
         </span>
       ),
       link: "",
     },
     {
       source: (
-        <span>
+        <span style={{ display: "flex", alignItem: "center" }}>
           <Image
             src="/assets/icons/white-blog-icon.svg"
             alt="press-release"
             fluid
           />
-          &nbsp;Post Blogs
+          &nbsp;&nbsp;Post Blogs
         </span>
       ),
       link: "",

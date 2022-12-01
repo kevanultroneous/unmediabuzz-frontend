@@ -130,6 +130,10 @@
 .MobileRPRwrraper {
   display: none;
 }
+.animationSection {
+  overflow: hidden;
+}
+
 @media screen and (max-width: 600px) {
   .CardModelRow {
     flex-direction: column-reverse;
