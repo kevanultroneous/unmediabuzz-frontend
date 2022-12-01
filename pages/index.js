@@ -36,11 +36,9 @@ export default function Home({ data }) {
         section?.el.getAttribute("data-bg");
     }
   }, []);
-  const [opacity, setOpacity] = useState(false);
 
   return (
     <Layout>
-      {/* <Test /> */}
       {checkResponsive ? (
         <>
           <Introduction />

@@ -49,11 +49,12 @@ const GettingStarted = () => {
         >
           <div className={styles.WorldImageCover}>
             <Image
-              src="/assets/images/world-web.png"
+              src="/assets/images/globenet2.png"
               alt="world"
               className={styles.WorldImageFluid}
             />
           </div>
+          {/* <div className={styles.earth}></div> */}
         </Col>
       </Row>
     </ContainerWrraper>

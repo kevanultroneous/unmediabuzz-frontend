@@ -1,0 +1,31 @@
+.parentSection {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  transition: all 2s ease;
+  height: 20vh;
+  background: transparent url("/assets/images/about-pr.png");
+  background-position: 250%;
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  width: 100%;
+
+  border-radius: 25%;
+}
+.parentSection:hover {
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+    rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+  transition: all 2s ease;
+  height: 30vh;
+}
+/* .backImage {
+  background: transparent url("/assets/images/about-pr.png");
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 20vh;
+  border: 1px solid #000;
+  border-radius: 25%;
+} */

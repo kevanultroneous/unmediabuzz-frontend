@@ -24,19 +24,21 @@ const WhyWeAreDifferent = () => {
           xl={12}
           className={`${styles.MainIntroAndDiscription} ColPaddingRemove`}
         >
-          <p
-            className={styles.MainTitle}
-            data-aos="fade-up"
-            data-aos-duration="2000"
-          >
-            Why we are Different?
-          </p>
-          <div
-            className={styles.SpanImage}
-            data-aos="fade-up"
-            data-aos-duration="2000"
-          >
-            <Image src="/assets/images/brush-3.svg" alt="brush-img" />
+          <div className={styles.animationSection}>
+            <p
+              className={styles.MainTitle}
+              data-aos="fade-up"
+              data-aos-duration="2000"
+            >
+              Why we are Different?
+            </p>
+            <div
+              className={styles.SpanImage}
+              data-aos="fade-up"
+              data-aos-duration="2000"
+            >
+              <Image src="/assets/images/brush-3.svg" alt="brush-img" />
+            </div>
           </div>
           <p className={styles.MainParagraph}>
             Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -92,6 +94,8 @@ const WhyWeAreDifferent = () => {
               }
               alt="about-pr"
               fluid
+              data-aos="fade-up"
+              data-aos-duration="1500"
             />
           </div>
         </Col>

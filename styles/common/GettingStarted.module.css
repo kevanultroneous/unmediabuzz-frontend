@@ -2,6 +2,7 @@
   background: var(--elementColor);
   border-radius: 30px;
   user-select: none;
+  overflow: hidden;
 }
 .SimpleHeading {
   font-size: var(--mainHeading);
@@ -44,11 +45,32 @@
 }
 .WorldImageCover {
   height: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
+  position: relative;
+  left: 10rem;
+  padding: 0%;
+  text-align: end;
+  background: transparent url("/assets/images/globe .png");
+  background-size: cover;
+  border-radius: 50%;
+  width: 550px;
+  height: 500px;
+  /* box-shadow: inset 0px -20px 50px 10px #00ffff80, 0px 0px 30px 6px #00ffff70; */
+  transform-style: preserve-3d;
+  transform: rotate(20deg);
+  animation: rotate 15s linear infinite;
 }
 .WorldImageFluid {
-  max-width: 101%;
-  height: 101.5%;
+  /* max-width: 101%;
+  height: 104.5%; */
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 0rem;
+  right: 2rem;
+  /* transform-style: preserve-3d; */
+  /* transform: rotate(20deg); */
+  animation: spin 30s linear infinite;
 }
 @media screen and (max-width: 600px) {
   .GettingStartedCard {
@@ -107,18 +129,6 @@
 }
 @media (min-width: 1200px) and (max-width: 1730px) {
 }
-/* .earth {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background: transparent url("/assets/images/world-web.png");
-  background-size: cover;
-  box-shadow: inset 0px -20px 50px 10px #00ffff80, 0px 0px 30px 6px #00ffff70;
-  transform-style: preserve-3d;
-  transform: rotate(20deg);
-  animation: rotate 15s linear infinite;
-}
 
 @keyframes rotate {
   0% {
@@ -128,4 +138,11 @@
   100% {
     background-position: 530px 0;
   }
-} */
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

@@ -13,13 +13,15 @@ const RecentPressRelease = ({ blogList, hideclass }) => {
   }, []);
   return (
     <Col xs={12} sm={12} md={12} lg={5} xl={5} className={hideclass}>
-      <h4
-        className={`${styles.ListHeading} ${styles.ListHeadingSpace} `}
-        data-aos="fade-up"
-        data-aos-duration="2000"
-      >
-        Recent <span className={styles.SpanText}>Press Release</span>
-      </h4>
+      <div className={styles.animationSection}>
+        <h4
+          className={`${styles.ListHeading} ${styles.ListHeadingSpace} `}
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
+          Recent <span className={styles.SpanText}>Press Release</span>
+        </h4>
+      </div>
       <ContainerWrraper customClass={`${styles.ContainerWrraperBlogCardModel}`}>
         {blogList.map((value, index) => (
           <BlogsCardModel
