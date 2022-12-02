@@ -58,8 +58,8 @@ export default function Home({ data }) {
       )}
 
       <RecentItems
-        postList={data.topbuzz.data}
-        blogList={data.recentitem.data}
+        postList={data.topbuzz?.data}
+        blogList={data.recentitem?.data}
       />
       <Faq />
       <PressReleaseHighlights />

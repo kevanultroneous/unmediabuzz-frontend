@@ -10,11 +10,11 @@ import Pagination from "rc-pagination";
 import CategorySidebar from "@/components/common/CategorySidebar";
 import { useState } from "react";
 import axios from "axios";
-import { PressReleaseListAPI } from "utils/API";
+import { AllCategoryAPI, PressReleaseListAPI } from "utils/API";
 import { MAIN_URL, timestampToDate } from "utils/Anonymous";
 import { useRouter } from "next/router";
 
-const PressRelease = ({ fetchlistOfPressReleaseList }) => {
+const PressRelease = ({ data }) => {
   const router = useRouter();
   const arry = [1, 2, 3, 4, 5, 6, 7];
   const tabs = [
@@ -72,7 +72,7 @@ const PressRelease = ({ fetchlistOfPressReleaseList }) => {
       <ContainerWrraper customClass={`${styles.CardModelContainerWrraper}`}>
         <Row>
           <Col xs={12} sm={12} md={12} lg={8} xl={8} className={`pe-0`}>
-            {fetchlistOfPressReleaseList.data?.map((value, index) => (
+            {data.fetchlistOfPressReleaseList.data?.map((value, index) => (
               <CardModel
                 url={value.slugUrl ? `press-release/${value.slugUrl}` : `#`}
                 coverimg={MAIN_URL + value.featuredImage}
@@ -92,7 +92,7 @@ const PressRelease = ({ fetchlistOfPressReleaseList }) => {
             xl={4}
             className={`ColPaddingRemove`}
           >
-            <CategorySidebar />
+            <CategorySidebar categorylist={data.allcategories?.data} />
           </Col>
           <Col
             xs={12}
@@ -104,7 +104,7 @@ const PressRelease = ({ fetchlistOfPressReleaseList }) => {
           >
             <div className={styles.PaginationWrraper}>
               <Pagination
-                total={fetchlistOfPressReleaseList.data?.length}
+                total={data.fetchlistOfPressReleaseList.data?.length}
                 itemRender={textItemRender}
               />
             </div>
@@ -121,9 +121,16 @@ export async function getServerSideProps() {
     .post(PressReleaseListAPI, { limit: 7 })
     .then((res) => res.data)
     .catch((e) => console.log(e));
+  const allcategories = await axios
+    .get(AllCategoryAPI)
+    .then((res) => res.data)
+    .catch((e) => e);
   return {
     props: {
-      fetchlistOfPressReleaseList,
+      data: {
+        fetchlistOfPressReleaseList,
+        allcategories,
+      },
     },
   };
 }

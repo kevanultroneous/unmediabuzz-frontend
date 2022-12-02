@@ -5,12 +5,17 @@ import Layout from "@/components/common/Layout";
 import { CardModel } from "@/components/common/RecentItems";
 import CategoryHero from "@/components/PR/CategoryHero";
 import styles from "@/styles/PR/Category.module.css";
+import axios from "axios";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import Pagination from "rc-pagination";
 import { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+import { AllCategoryAPI } from "utils/API";
 
-const Subcategory = () => {
+const Subcategory = ({ data }) => {
+  const router = useRouter();
   const arry = [1, 2, 3, 4];
   const [currentTab, setCurrentTab] = useState(0);
 
@@ -57,8 +62,20 @@ const Subcategory = () => {
   return (
     <Layout>
       <CategoryHero
-        heading={"Cricket"}
-        breadcumb={"Home/ Press Release/ Sports/ Cricket"}
+        heading={router.query?.subcategory}
+        breadcumb={
+          <>
+            <Link href={"/"}>Home</Link>/{" "}
+            <Link href={"/press-release"}>Press Release</Link>/{" "}
+            <Link href={`/${router.query.category}`}>
+              {router.query.category}
+            </Link>
+            /{" "}
+            <Link href={`/${router.query.category}`}>
+              {router.query.subcategory}
+            </Link>
+          </>
+        }
       />
       <ContainerWrraper customClass={`${styles.TabsMainContainer}`}>
         <div className={styles.TabsLayer}>
@@ -100,7 +117,7 @@ const Subcategory = () => {
             xl={3}
             className={`ColPaddingRemove ${styles.HideCategorySidebar}`}
           >
-            <CategorySidebar />
+            <CategorySidebar categorylist={data.allcategories?.data} />
           </Col>
           <Col
             xs={12}
@@ -124,5 +141,17 @@ const Subcategory = () => {
     </Layout>
   );
 };
-
+export async function getServerSideProps() {
+  const allcategories = await axios
+    .get(AllCategoryAPI)
+    .then((res) => res.data)
+    .catch((e) => e);
+  return {
+    props: {
+      data: {
+        allcategories,
+      },
+    },
+  };
+}
 export default Subcategory;
