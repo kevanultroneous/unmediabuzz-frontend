@@ -1,5 +1,5 @@
-export const MAIN_URL = `http://localhost:8000/`;
-
+export const MAIN_URL = `http://192.168.1.28:8000/`;
+// `http://52.64.42.139:8000/`
 export const ProcessList = [
   {
     icon: "/assets/images/edit-desk.svg",
