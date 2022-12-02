@@ -20,6 +20,7 @@ const Header = () => {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState(false);
+  const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
     if (router.pathname === "/") {
@@ -41,6 +42,12 @@ const Header = () => {
       prevScrollpos = currentScrollPos;
     };
   });
+
+  const handlesearch = () => {
+    if (search && searchInput.length > 5) {
+      router.push(`/search?searching=${searchInput}`);
+    }
+  };
 
   return (
     <ContainerWrraper customClass={`${styles.HeaderContainer} headerforscroll`}>
@@ -125,11 +132,16 @@ const Header = () => {
               <Form.Control
                 className={styles.FormControl}
                 aria-label="Small"
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.target.value)}
                 aria-describedby="inputGroup-sizing-sm"
               />
             )}
             <InputGroup.Text
-              onClick={() => setSearch(true)}
+              onClick={() => {
+                setSearch(true);
+                handlesearch();
+              }}
               id="inputGroup-sizing-sm"
               className={styles.SearchButton}
             >

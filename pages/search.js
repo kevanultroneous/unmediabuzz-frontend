@@ -7,8 +7,15 @@ import styles from "@/styles/SearchResult.module.css";
 import { CardModel } from "@/components/common/RecentItems";
 import Pagination from "rc-pagination";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import axios from "axios";
+import { GlobalSearchAPI } from "utils/API";
+import { MAIN_URL, timestampToDate } from "utils/Anonymous";
 
-const SearchResult = () => {
+const SearchResult = ({ data }) => {
+  const router = useRouter();
+
   const textItemRender = (current, type, element) => {
     if (type === "page") {
       return (
@@ -44,22 +51,28 @@ const SearchResult = () => {
             xl={12}
             className={`ColPaddingRemove`}
           >
-            <IoIosArrowRoundBack size={40} className={styles.IconWrraping} />
+            <IoIosArrowRoundBack
+              size={40}
+              className={styles.IconWrraping}
+              onClick={() => router.back()}
+            />
             <div className={styles.SearchHeading}>
               <h4 className={styles.SearchHeadingText}>
                 Search result for{" "}
                 <span className={styles.SpanText}>
-                  “Information Technology”
+                  “{router.query.searching}”
                 </span>
               </h4>
-              <p className={styles.SmallText}>200 Lists are found.</p>
+              <p className={styles.SmallText}>
+                {data?.searchdata[0]?.totalCount} Lists are found.
+              </p>
             </div>
           </Col>
         </Row>
       </ContainerWrraper>
       <ContainerWrraper customClass={`${styles.PostsWrraper}`}>
         <Row>
-          {[1, 2, 3, 4, 5, 6, 7].map((item, index) => (
+          {data?.searchdata[0]?.mainDoc.map((item, index) => (
             <Col
               xs={12}
               sm={12}
@@ -70,12 +83,16 @@ const SearchResult = () => {
               className={`pe-0`}
             >
               <CardModel
-                url={"#"}
-                companyname={"By, XYZ Company Name"}
-                date={"04 Novemeber 2022"}
-                title={
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing."
+                url={
+                  item.postType == "press"
+                    ? `/press-release/${item.slugUrl}`
+                    : "#"
                 }
+                coverimg={MAIN_URL + item.featuredImage}
+                badge={item.paidStatus}
+                companyname={`By, ${item.companyName}`}
+                date={timestampToDate(item.releaseDate)}
+                title={item.title}
               />
             </Col>
           ))}
@@ -89,7 +106,11 @@ const SearchResult = () => {
           className={`ColPaddingRemove ${styles.CenterPagination}`}
         >
           <div className={styles.PaginationWrraper}>
-            <Pagination total={320} itemRender={textItemRender} />
+            <Pagination
+              total={data?.searchdata[0]?.totalCount}
+              itemRender={textItemRender}
+              pageSize={30}
+            />
           </div>
         </Col>
       </ContainerWrraper>
@@ -98,4 +119,15 @@ const SearchResult = () => {
   );
 };
 
+export async function getServerSideProps(context) {
+  const data = await axios
+    .post(GlobalSearchAPI, { searchTerm: context.query.searching })
+    .then((res) => res.data.data)
+    .catch((e) => e);
+  return {
+    props: {
+      data: { searchdata: data },
+    },
+  };
+}
 export default SearchResult;

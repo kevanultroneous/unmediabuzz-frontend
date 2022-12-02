@@ -74,7 +74,7 @@ const PressRelease = ({ data }) => {
       </ContainerWrraper>
       <ContainerWrraper customClass={`${styles.CardModelContainerWrraper}`}>
         <Row>
-          <Col xs={12} sm={12} md={12} lg={8} xl={8} className={`pe-0`}>
+          <Col xs={12} sm={12} md={12} lg={8} xl={9} className={`pe-0`}>
             {data.fetchlistOfPressReleaseList.data?.map((value, index) => (
               <CardModel
                 badge={value.paidStatus}
@@ -93,7 +93,7 @@ const PressRelease = ({ data }) => {
             sm={12}
             md={5}
             lg={4}
-            xl={4}
+            xl={3}
             className={`ColPaddingRemove`}
           >
             <CategorySidebar categorylist={data.allcategories?.data} />

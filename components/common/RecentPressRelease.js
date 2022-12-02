@@ -27,7 +27,7 @@ const RecentPressRelease = ({ blogList, hideclass }) => {
           <BlogsCardModel
             url={value.slugUrl ? `press-release/${value.slugUrl}` : `#`}
             companyName={value.companyName}
-            badge={parseInt(value.totalPaidAmount) > 0}
+            badge={value.paidStatus}
             hide={index === blogList.length - 1}
             key={index}
             date={`${timestampToDate(value.releaseDate)}`}
