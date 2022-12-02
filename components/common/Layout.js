@@ -2,7 +2,14 @@ import Head from "next/head";
 import Footer from "./Footer";
 import Header from "./Header";
 
-const Layout = ({ title, keywords, description, children }) => {
+const Layout = ({
+  title,
+  keywords,
+  description,
+  children,
+  ogtitle,
+  ogimage,
+}) => {
   return (
     <div>
       <Head>
@@ -17,6 +24,8 @@ const Layout = ({ title, keywords, description, children }) => {
           content={keywords}
           key="unmediabuzz-key-keywords"
         />
+        <meta property="og:title" content={ogtitle} />
+        <meta property="og:image" content={ogimage} />
       </Head>
       <Header />
       <div>{children}</div>

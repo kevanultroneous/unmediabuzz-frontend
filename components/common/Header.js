@@ -17,32 +17,34 @@ import { HeaderMenu } from "utils/Navigation.utils";
 import useResponsiveViewer from "hooks/ResponsiveViewer";
 
 const Header = () => {
-  const [showSearchInput, setShowSearchInput] = useState(false);
   const router = useRouter();
   const [open, setOpen] = useState(false);
+  const [search, setSearch] = useState(false);
 
   useEffect(() => {
     if (router.pathname === "/") {
-      setShowSearchInput(true);
+      setSearch(true);
     }
+    window.scrollTo(0, 0);
   }, [router]);
 
-  // useEffect(() => {
-  //   var prevScrollpos = window.pageYOffset;
-  //   window.onscroll = function () {
-  //     var currentScrollPos = window.pageYOffset;
-  //     if (prevScrollpos > currentScrollPos) {
-  //       document.getElementById("navbar").style.top = "0";
-  //     } else {
-  //       document.getElementById("navbar").style.top = "-50px";
-  //     }
-  //     prevScrollpos = currentScrollPos;
-  //   };
-  // });
+  useEffect(() => {
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+      var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementsByClassName("headerforscroll")[0].style.top = "0";
+      } else {
+        document.getElementsByClassName("headerforscroll")[0].style.top =
+          "-90px";
+      }
+      prevScrollpos = currentScrollPos;
+    };
+  });
 
   return (
-    <ContainerWrraper customClass={`${styles.HeaderContainer}`}>
-      <Row className={styles.MainMenuRow} id="navbar">
+    <ContainerWrraper customClass={`${styles.HeaderContainer} headerforscroll`}>
+      <Row className={styles.MainMenuRow}>
         <Col xs={6} md={6} lg={3} xl={3} className={`ColPaddingRemove`}>
           <div className={styles.MobileLogoWrraper}>
             <Link href={"/"}>
@@ -116,14 +118,18 @@ const Header = () => {
         >
           <InputGroup
             size="sm"
-            className={`${styles.GroupInput} ${styles.HideMenusInMob} `}
+            className={`${styles.GroupInput} ${styles.HideMenusInMob}`}
+            style={search ? { maxWidth: "16rem" } : { maxWidth: "3rem" }}
           >
-            <Form.Control
-              className={styles.FormControl}
-              aria-label="Small"
-              aria-describedby="inputGroup-sizing-sm"
-            />
+            {search && (
+              <Form.Control
+                className={styles.FormControl}
+                aria-label="Small"
+                aria-describedby="inputGroup-sizing-sm"
+              />
+            )}
             <InputGroup.Text
+              onClick={() => setSearch(true)}
               id="inputGroup-sizing-sm"
               className={styles.SearchButton}
             >

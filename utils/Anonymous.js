@@ -1,3 +1,5 @@
+export const MAIN_URL = `http://192.168.1.28:8000/`;
+// `http://52.64.42.139:8000/`
 export const ProcessList = [
   {
     icon: "/assets/images/edit-desk.svg",
@@ -43,3 +45,26 @@ export const Faqdata = [
   },
 ];
 export const RadioButtonsData = ["Press Release", "Blog Post"];
+export const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+export const timestampToDate = (ts) => {
+  return (
+    new Date(ts).getDate() +
+    " " +
+    months[new Date(ts).getMonth() - 1] +
+    " " +
+    new Date(ts).getFullYear()
+  );
+};

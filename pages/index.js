@@ -6,10 +6,12 @@ import Faq from "@/components/Home/Faq";
 import Introduction from "@/components/Home/Introduction";
 import PressReleaseHighlights from "@/components/Home/PressReleaseHighlights";
 import WhyWeAreDifferent from "@/components/Home/WhyWeAreDifferent";
+import axios from "axios";
 import useResponsiveViewer from "hooks/ResponsiveViewer";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
+import { RecentPrAPI, TopBuzzListAPI } from "utils/API";
 
-export default function Home() {
+export default function Home({ data }) {
   const checkResponsive = useResponsiveViewer();
   useEffect(() => {
     const sections = [...document.querySelectorAll(".section")];
@@ -30,9 +32,10 @@ export default function Home() {
           return { el, rect };
         })
         .find((section) => section.rect.bottom >= window.innerHeight * 0.5);
-
-      document.getElementsByClassName("wrapper")[0].style.background =
-        section?.el.getAttribute("data-bg");
+      document.getElementsByClassName("wrapper")[0] !== undefined
+        ? (document.getElementsByClassName("wrapper")[0].style.background =
+            section?.el.getAttribute("data-bg"))
+        : null;
     }
   }, []);
 
@@ -53,11 +56,30 @@ export default function Home() {
           </div>
         </div>
       )}
-      <RecentItems />
+
+      <RecentItems
+        postList={data.topbuzz?.data}
+        blogList={data.recentitem?.data}
+      />
       <Faq />
       <PressReleaseHighlights />
       <Testimonial />
       <GettingStarted />
     </Layout>
   );
+}
+export async function getServerSideProps() {
+  const TopbuzzList = await axios
+    .get(TopBuzzListAPI)
+    .then((res) => res.data)
+    .catch((e) => console.log(e));
+  const RecentItems = await axios
+    .get(RecentPrAPI)
+    .then((res) => res.data)
+    .catch((e) => console.log(e));
+  return {
+    props: {
+      data: { topbuzz: TopbuzzList, recentitem: RecentItems },
+    },
+  };
 }

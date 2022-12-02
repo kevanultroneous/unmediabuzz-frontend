@@ -70,6 +70,7 @@ const SearchResult = () => {
               className={`pe-0`}
             >
               <CardModel
+                url={"#"}
                 companyname={"By, XYZ Company Name"}
                 date={"04 Novemeber 2022"}
                 title={

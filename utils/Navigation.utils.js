@@ -25,6 +25,7 @@ export const FooterMenu = [
     name: "Press Release",
     link: "/press-release",
   },
+
   {
     name: "Blog",
     link: "/#",

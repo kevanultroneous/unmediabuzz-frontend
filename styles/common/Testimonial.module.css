@@ -36,7 +36,7 @@
   border: 1px solid var(--gradiantOne);
   border-radius: 20px;
   margin-right: 1rem;
-  /* margin-left: 1rem; */
+  cursor: grab;
 }
 .ProfileDescription {
   padding-top: 1rem;

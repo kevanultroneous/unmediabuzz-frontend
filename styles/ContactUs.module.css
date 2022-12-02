@@ -139,7 +139,9 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-
+.ContactUsContainerWrraper {
+  padding-top: 10rem;
+}
 /* mobile */
 @media screen and (max-width: 600px) {
   .RemoveSideImageBar {

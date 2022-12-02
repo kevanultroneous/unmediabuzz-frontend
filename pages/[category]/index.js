@@ -5,15 +5,20 @@ import Layout from "@/components/common/Layout";
 import { CardModel } from "@/components/common/RecentItems";
 import CategoryHero from "@/components/PR/CategoryHero";
 import styles from "@/styles/PR/Category.module.css";
+import axios from "axios";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import Pagination from "rc-pagination";
 import { useState } from "react";
 import { Col, Dropdown, Row } from "react-bootstrap";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+import { AllCategoryAPI } from "utils/API";
 
-const Category = () => {
+const Category = ({ data }) => {
   const arry = [1, 2, 3, 4, 5];
   const [currentTab, setCurrentTab] = useState(0);
-
+  const router = useRouter();
+  console.log(router.query);
   const tabs = [
     "All Press Release",
     "Sports",
@@ -48,8 +53,16 @@ const Category = () => {
   return (
     <Layout>
       <CategoryHero
-        heading={"Sports"}
-        breadcumb={"Home/ Press Release/ Sports"}
+        heading={router.query.category}
+        breadcumb={
+          <>
+            <Link href={"/"}>Home</Link>/{" "}
+            <Link href={"/press-release"}>Press Release</Link>/{" "}
+            <Link href={`/${router.query.category}`}>
+              {router.query.category}
+            </Link>
+          </>
+        }
       />
       <ContainerWrraper customClass={`${styles.TabsMainContainer}`}>
         <Row className={styles.GroupRowTab}>
@@ -85,6 +98,7 @@ const Category = () => {
           <Col xs={12} sm={12} md={12} lg={8} xl={9} className={`pe-0`}>
             {arry.map((value, index) => (
               <CardModel
+                url={"#"}
                 customtitleclass={`${styles.ParagraphSize}`}
                 key={index}
                 categoryname={"By, XYZ Company Name"}
@@ -103,7 +117,7 @@ const Category = () => {
             xl={3}
             className={`ColPaddingRemove ${styles.HideCategorySidebar}`}
           >
-            <CategorySidebar />
+            <CategorySidebar categorylist={data.allcategories?.data} />
           </Col>
           <Col
             xs={12}
@@ -123,5 +137,18 @@ const Category = () => {
     </Layout>
   );
 };
+export async function getServerSideProps() {
+  const allcategories = await axios
+    .get(AllCategoryAPI)
+    .then((res) => res.data)
+    .catch((e) => e);
+  return {
+    props: {
+      data: {
+        allcategories,
+      },
+    },
+  };
+}
 
 export default Category;

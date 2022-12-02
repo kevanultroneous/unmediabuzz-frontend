@@ -1,10 +1,12 @@
 .HeaderContainer {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  position: sticky;
-  top: 0;
   background-color: var(--primaryColor);
   z-index: 10;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  transition: all 1s ease;
 }
 .FooterCover {
   background: var(--sidebarColor);
@@ -62,7 +64,9 @@
   border: 0.5px solid #f65d61;
   border-radius: 4px;
   outline: none;
-  max-width: 16rem;
+}
+.GroupInputOpen {
+  max-width: 16rem !important;
 }
 .FormControl {
   box-shadow: none !important;
@@ -77,7 +81,7 @@
   text-align: center;
 }
 .MainMenuRow {
-  align-items: baseline;
+  align-items: center;
 }
 .MobileSearchMenu {
   display: none;

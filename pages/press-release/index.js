@@ -9,8 +9,13 @@ import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import Pagination from "rc-pagination";
 import CategorySidebar from "@/components/common/CategorySidebar";
 import { useState } from "react";
+import axios from "axios";
+import { AllCategoryAPI, PressReleaseListAPI } from "utils/API";
+import { MAIN_URL, timestampToDate } from "utils/Anonymous";
+import { useRouter } from "next/router";
 
-const PressRelease = () => {
+const PressRelease = ({ data }) => {
+  const router = useRouter();
   const arry = [1, 2, 3, 4, 5, 6, 7];
   const tabs = [
     "All Press Release",
@@ -67,15 +72,15 @@ const PressRelease = () => {
       <ContainerWrraper customClass={`${styles.CardModelContainerWrraper}`}>
         <Row>
           <Col xs={12} sm={12} md={12} lg={8} xl={8} className={`pe-0`}>
-            {arry.map((value, index) => (
+            {data.fetchlistOfPressReleaseList.data?.map((value, index) => (
               <CardModel
+                url={value.slugUrl ? `press-release/${value.slugUrl}` : `#`}
+                coverimg={MAIN_URL + value.featuredImage}
                 customtitleclass={`${styles.ParagraphSize}`}
                 key={index}
-                categoryname={"By, XYZ Company Name"}
-                title={
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing."
-                }
-                date={"04 Novemeber 2022"}
+                companyname={value.companyName}
+                title={value.title}
+                date={timestampToDate(value.releaseDate)}
               />
             ))}
           </Col>
@@ -87,7 +92,7 @@ const PressRelease = () => {
             xl={4}
             className={`ColPaddingRemove`}
           >
-            <CategorySidebar />
+            <CategorySidebar categorylist={data.allcategories?.data} />
           </Col>
           <Col
             xs={12}
@@ -98,7 +103,10 @@ const PressRelease = () => {
             className={`ColPaddingRemove ${styles.CenterPagination}`}
           >
             <div className={styles.PaginationWrraper}>
-              <Pagination total={320} itemRender={textItemRender} />
+              <Pagination
+                total={data.fetchlistOfPressReleaseList.data?.length}
+                itemRender={textItemRender}
+              />
             </div>
           </Col>
         </Row>
@@ -107,5 +115,24 @@ const PressRelease = () => {
     </Layout>
   );
 };
+
+export async function getServerSideProps() {
+  const fetchlistOfPressReleaseList = await axios
+    .post(PressReleaseListAPI, { limit: 7 })
+    .then((res) => res.data)
+    .catch((e) => console.log(e));
+  const allcategories = await axios
+    .get(AllCategoryAPI)
+    .then((res) => res.data)
+    .catch((e) => e);
+  return {
+    props: {
+      data: {
+        fetchlistOfPressReleaseList,
+        allcategories,
+      },
+    },
+  };
+}
 
 export default PressRelease;

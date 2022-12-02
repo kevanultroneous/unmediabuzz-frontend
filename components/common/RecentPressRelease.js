@@ -4,6 +4,7 @@ import { BlogsCardModel } from "./RecentItems";
 import styles from "@/styles/common/RecentItems.module.css";
 import { useEffect } from "react";
 import Aos from "aos";
+import { MAIN_URL, timestampToDate } from "utils/Anonymous";
 
 const RecentPressRelease = ({ blogList, hideclass }) => {
   useEffect(() => {
@@ -22,14 +23,16 @@ const RecentPressRelease = ({ blogList, hideclass }) => {
         </h4>
       </div>
       <ContainerWrraper customClass={`${styles.ContainerWrraperBlogCardModel}`}>
-        {blogList.map((v, i) => (
+        {blogList.map((value, index) => (
           <BlogsCardModel
-            badge={i == 0}
-            hide={i === blogList.indexOf(blogList.length)}
-            key={i}
-            categoryname={"Category"}
-            date={"31 March 2022"}
-            title={"Lorem Ipsum is simply dummy text of the printing."}
+            url={value.slugUrl ? `press-release/${value.slugUrl}` : `#`}
+            companyName={value.companyName}
+            badge={parseInt(value.totalPaidAmount) > 0}
+            hide={index === blogList.length - 1}
+            key={index}
+            date={`${timestampToDate(value.releaseDate)}`}
+            title={value.title}
+            coverimg={MAIN_URL + value.featuredImage}
           />
         ))}
       </ContainerWrraper>

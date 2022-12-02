@@ -36,7 +36,9 @@ const ContactUs = () => {
   }, []);
   return (
     <Layout>
-      <ContainerWrraper customClass={`${styles.mobileCustomContainer}`}>
+      <ContainerWrraper
+        customClass={`${styles.mobileCustomContainer} ${styles.ContactUsContainerWrraper}`}
+      >
         <Row>
           <Col
             xs={12}
