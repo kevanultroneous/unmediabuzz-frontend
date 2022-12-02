@@ -71,6 +71,9 @@ a {
   font-size: var(--maxText);
   background-clip: text;
 }
+.CategoriesAccordion a {
+  text-decoration: none;
+}
 .CategoriesAccordion .accordion-button:focus {
   border-color: transparent !important;
   box-shadow: none !important;

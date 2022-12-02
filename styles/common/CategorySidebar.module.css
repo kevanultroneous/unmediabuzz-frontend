@@ -36,12 +36,16 @@
 .SubcategoryWrraper {
   padding-left: 1.2rem;
 }
+.SubcategoryWrraper a {
+  color: rgba(0, 0, 0, 0.7);
+}
 .SubcategoryText {
   margin: 0%;
   font-size: var(--midText);
   margin-bottom: 0.5rem;
   cursor: pointer;
 }
+
 @media screen and (max-width: 600px) {
   .CategoryWrraper {
     display: none;
