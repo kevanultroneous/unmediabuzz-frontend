@@ -9,7 +9,7 @@ import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Pagination from "rc-pagination";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Col, Dropdown, Row } from "react-bootstrap";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import { AllCategoryAPI } from "utils/API";
@@ -19,7 +19,23 @@ const Category = ({ data }) => {
   const [currentTab, setCurrentTab] = useState(0);
   const router = useRouter();
   const [currentSubcategory, setCurrentSubcategory] = useState([]);
+  useEffect(() => {
+    let precatchdata = data.allcategories?.data.find(
+      (i) => i.title == router.query.category
+    );
+    let findsubcategoryindex = 0;
 
+    precatchdata?.subcategories.map((value, index) =>
+      value.title === router.query.subcategory
+        ? (findsubcategoryindex = index)
+        : (findsubcategoryindex = 0)
+    );
+    if (!precatchdata) {
+      router.push("/404");
+    }
+    setCurrentTab(findsubcategoryindex);
+    setCurrentSubcategory([precatchdata?.title, precatchdata?.subcategories]);
+  }, []);
   const textItemRender = (current, type, element) => {
     if (type === "page") {
       return (
@@ -73,6 +89,7 @@ const Category = ({ data }) => {
                   <option
                     key={index}
                     value={JSON.stringify([value.title, value.subcategories])}
+                    selected={value.title === currentSubcategory[0]}
                   >
                     {value.title}
                   </option>

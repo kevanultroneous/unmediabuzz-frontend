@@ -40,6 +40,10 @@
   margin: 0%;
   padding-top: 1rem;
 }
+.BreadCumb a {
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+}
 /* (this for mobile) */
 @media screen and (max-width: 600px) {
   .MainHeading {

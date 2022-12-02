@@ -5,7 +5,7 @@ import Layout from "@/components/common/Layout";
 const NotFound = () => {
   return (
     <Layout title={"404"}>
-      <ContainerWrraper>
+      <ContainerWrraper customClass={`NofoundSpace`}>
         <h1>No Page Found</h1>
       </ContainerWrraper>
       <GettingStarted />

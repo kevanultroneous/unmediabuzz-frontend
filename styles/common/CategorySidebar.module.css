@@ -45,7 +45,16 @@
   margin-bottom: 0.5rem;
   cursor: pointer;
 }
-
+.SelectedSubcategoryText {
+  margin: 0%;
+  font-size: var(--midText);
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  background: linear-gradient(180deg, #f65d61 0%, #f16684 50.52%, #fa9a64 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 @media screen and (max-width: 600px) {
   .CategoryWrraper {
     display: none;

@@ -55,15 +55,18 @@ const PressRelease = ({ data }) => {
       <HeroSection />
       <ContainerWrraper customClass={`${styles.TabsMainContainer}`}>
         <div className={styles.TabsLayer}>
-          {tabs.map((tab, index) => (
+          {data.allcategories?.data.map((tab, index) => (
             <div key={index}>
               <div
                 className={`${styles.CurrentTab} ${
                   index == currentTab ? styles.SelectedTab : null
                 }`}
-                onClick={() => setCurrentTab(index)}
+                onClick={() => {
+                  setCurrentTab(index);
+                  router.push(`${`/${tab.title}`}`);
+                }}
               >
-                {tab}
+                {tab.title}
               </div>
             </div>
           ))}

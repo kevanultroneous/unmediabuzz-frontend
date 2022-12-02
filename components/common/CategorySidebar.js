@@ -7,7 +7,7 @@ const CategorySidebar = ({ categorylist }) => {
   const router = useRouter();
   return (
     <div
-      className={`${styles.CategoryWrraper} CategoriesAccordion CustomArrow CategoryScroll`}
+      className={`${styles.CategoryWrraper}  CategoriesAccordion CustomArrow CategoryScroll`}
     >
       <div className={styles.CategoryHeadingWrrap}>
         <p className={styles.CategoryHeading}>CATEGORIES</p>
@@ -17,7 +17,16 @@ const CategorySidebar = ({ categorylist }) => {
       </div>
       <Accordion defaultActiveKey={router.query?.category}>
         {categorylist.map((category, index) => (
-          <Accordion.Item eventKey={category?.title} key={index}>
+          <Accordion.Item
+            eventKey={category?.title}
+            key={index}
+            className={
+              router.query.category == category.title &&
+              router.query.subcategory
+                ? "CategoriesAccordionforUrl"
+                : ""
+            }
+          >
             <Link href={`/${category?.title}`}>
               <Accordion.Header>{category.title}</Accordion.Header>
             </Link>
@@ -28,7 +37,13 @@ const CategorySidebar = ({ categorylist }) => {
                     href={`/${category?.title}/${subcategory.title}`}
                     key={subcategory.title}
                   >
-                    <p className={styles.SubcategoryText}>
+                    <p
+                      className={`${
+                        router.query.subcategory === subcategory.title
+                          ? styles.SelectedSubcategoryText
+                          : styles.SubcategoryText
+                      }`}
+                    >
                       {subcategory.title}
                     </p>
                   </Link>

@@ -31,6 +31,9 @@ const Subcategory = ({ data }) => {
         ? (findsubcategoryindex = index)
         : null
     );
+    if (!precatchdata) {
+      router.push("/404");
+    }
     setCurrentTab(findsubcategoryindex);
     setCurrentSubcategory([precatchdata?.title, precatchdata?.subcategories]);
   }, []);
@@ -69,7 +72,9 @@ const Subcategory = ({ data }) => {
               {router.query.category}
             </Link>
             /{" "}
-            <Link href={`/${router.query.category}`}>
+            <Link
+              href={`/${router.query.category}/${router.query.subcategory}`}
+            >
               {router.query.subcategory}
             </Link>
           </>
@@ -91,6 +96,7 @@ const Subcategory = ({ data }) => {
                 {data.allcategories?.data.map((value, index) => (
                   <option
                     key={index}
+                    // create json stringify array where 0 index present title of category and 1 index present subcategories array
                     value={JSON.stringify([value.title, value.subcategories])}
                     selected={value.title === currentSubcategory[0]}
                   >

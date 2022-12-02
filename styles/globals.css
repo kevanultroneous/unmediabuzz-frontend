@@ -59,7 +59,10 @@ a {
   background-image: url("/assets/icons/up-arrow.svg") !important;
   transform: rotate(360deg) !important;
 }
-
+.CategoriesAccordionforUrl .accordion-button:not(.collapsed)::after {
+  background-image: url("/assets/icons/black-arrow-up.svg") !important;
+  transform: rotate(360deg) !important;
+}
 /*  -----------------------------------  CategoriesAccordion -------------------------------------------- */
 .CategoriesAccordion .accordion-button:not(.collapsed) {
   background-color: transparent !important;
@@ -70,6 +73,12 @@ a {
   -webkit-text-fill-color: transparent;
   font-size: var(--maxText);
   background-clip: text;
+}
+.CategoriesAccordionforUrl .accordion-button:not(.collapsed) {
+  color: #000000;
+  background: none;
+  -webkit-text-fill-color: #000000;
+  background-clip: unset;
 }
 .CategoriesAccordion a {
   text-decoration: none;
@@ -274,4 +283,9 @@ a {
 
 /* Handle on hover */
 .CategoryScroll::-webkit-scrollbar-thumb:hover {
+}
+
+/* ================================= 404 =================================== */
+.NofoundSpace {
+  padding-top: 10rem !important;
 }
