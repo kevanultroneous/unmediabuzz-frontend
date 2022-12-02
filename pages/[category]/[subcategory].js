@@ -36,7 +36,7 @@ const Subcategory = ({ data }) => {
     }
     setCurrentTab(findsubcategoryindex);
     setCurrentSubcategory([precatchdata?.title, precatchdata?.subcategories]);
-  }, []);
+  }, [data.allcategories?.data, router]);
   const textItemRender = (current, type, element) => {
     if (type === "page") {
       return (

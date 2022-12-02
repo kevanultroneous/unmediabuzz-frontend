@@ -19,6 +19,7 @@ const Category = ({ data }) => {
   const [currentTab, setCurrentTab] = useState(0);
   const router = useRouter();
   const [currentSubcategory, setCurrentSubcategory] = useState([]);
+
   useEffect(() => {
     let precatchdata = data.allcategories?.data.find(
       (i) => i.title == router.query.category
@@ -35,7 +36,8 @@ const Category = ({ data }) => {
     }
     setCurrentTab(findsubcategoryindex);
     setCurrentSubcategory([precatchdata?.title, precatchdata?.subcategories]);
-  }, []);
+  }, [data.allcategories?.data, router]);
+
   const textItemRender = (current, type, element) => {
     if (type === "page") {
       return (
