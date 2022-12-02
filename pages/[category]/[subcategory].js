@@ -9,7 +9,7 @@ import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Pagination from "rc-pagination";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import { AllCategoryAPI } from "utils/API";
@@ -18,24 +18,22 @@ const Subcategory = ({ data }) => {
   const router = useRouter();
   const arry = [1, 2, 3, 4];
   const [currentTab, setCurrentTab] = useState(0);
+  const [currentSubcategory, setCurrentSubcategory] = useState([]);
 
-  const tabs = [
-    "All Press Release",
-    "Sports",
-    "Art & Entertainment",
-    "Categories",
-    "Categories",
-    "Categories",
-    "Categories",
-    "Categories",
-    "Categories",
-    "Categories",
-    "Categories",
-    "Categories",
-    "Categories",
-    "Categories",
-    "Categories",
-  ];
+  useEffect(() => {
+    let precatchdata = data.allcategories?.data.find(
+      (i) => i.title == router.query.category
+    );
+    let findsubcategoryindex = 0;
+
+    precatchdata?.subcategories.map((value, index) =>
+      value.title === router.query.subcategory
+        ? (findsubcategoryindex = index)
+        : null
+    );
+    setCurrentTab(findsubcategoryindex);
+    setCurrentSubcategory([precatchdata?.title, precatchdata?.subcategories]);
+  }, []);
   const textItemRender = (current, type, element) => {
     if (type === "page") {
       return (
@@ -77,22 +75,54 @@ const Subcategory = ({ data }) => {
           </>
         }
       />
+
+      {/* =========================================== For MOBILE and TAB Design Strat ======================================= */}
       <ContainerWrraper customClass={`${styles.TabsMainContainer}`}>
-        <div className={styles.TabsLayer}>
-          {tabs.map((tab, index) => (
-            <div key={index}>
-              <div
-                className={`${styles.CurrentTab} ${
-                  index == currentTab ? styles.SelectedTab : null
-                }`}
-                onClick={() => setCurrentTab(index)}
+        <Row className={styles.GroupRowTab}>
+          <Col xs={12} sm={12} md={6}>
+            <div className={styles.DropdownWrraper}>
+              <select
+                className={styles.TabsDropdown}
+                onChange={(e) => {
+                  router.push(`/${JSON.parse(e.target.value)[0]}`);
+                  setCurrentSubcategory(JSON.parse(e.target.value));
+                }}
               >
-                {tab}
-              </div>
+                {data.allcategories?.data.map((value, index) => (
+                  <option
+                    key={index}
+                    value={JSON.stringify([value.title, value.subcategories])}
+                    selected={value.title === currentSubcategory[0]}
+                  >
+                    {value.title}
+                  </option>
+                ))}
+              </select>
             </div>
-          ))}
-        </div>
+          </Col>
+          <Col xs={12} sm={12} md={6}>
+            <div className={styles.TabsLayer}>
+              {currentSubcategory[1]?.map((tab, index) => (
+                <div key={index}>
+                  <div
+                    className={`${styles.CurrentTab} ${
+                      index == currentTab ? styles.SelectedTab : null
+                    }`}
+                    onClick={() => {
+                      setCurrentTab(index);
+                      router.push(`/${router.query.category}/${tab.title}`);
+                    }}
+                  >
+                    {tab.title}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Col>
+        </Row>
       </ContainerWrraper>
+      {/* =========================================== For MOBILE and TAB Design End  ======================================= */}
+
       <ContainerWrraper customClass={`${styles.CardModelContainerWrraper}`}>
         <Row>
           <Col xs={12} sm={12} md={12} lg={8} xl={9}>

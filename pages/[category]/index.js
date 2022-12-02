@@ -18,15 +18,8 @@ const Category = ({ data }) => {
   const arry = [1, 2, 3, 4, 5];
   const [currentTab, setCurrentTab] = useState(0);
   const router = useRouter();
-  console.log(router.query);
-  const tabs = [
-    "All Press Release",
-    "Sports",
-    "Art & Entertainment",
-    "Categories",
-    "Categories",
-    "Categories",
-  ];
+  const [currentSubcategory, setCurrentSubcategory] = useState([]);
+
   const textItemRender = (current, type, element) => {
     if (type === "page") {
       return (
@@ -64,28 +57,43 @@ const Category = ({ data }) => {
           </>
         }
       />
+      {/* =========================================== For MOBILE and TAB Design Strat ======================================= */}
       <ContainerWrraper customClass={`${styles.TabsMainContainer}`}>
         <Row className={styles.GroupRowTab}>
           <Col xs={12} sm={12} md={6}>
             <div className={styles.DropdownWrraper}>
-              <select className={styles.TabsDropdown}>
-                {[1, 2, 3, 4, 5].map((value, index) => (
-                  <option key={index}>Sports</option>
+              <select
+                className={styles.TabsDropdown}
+                onChange={(e) => {
+                  router.push(`/${JSON.parse(e.target.value)[0]}`);
+                  setCurrentSubcategory(JSON.parse(e.target.value));
+                }}
+              >
+                {data.allcategories?.data.map((value, index) => (
+                  <option
+                    key={index}
+                    value={JSON.stringify([value.title, value.subcategories])}
+                  >
+                    {value.title}
+                  </option>
                 ))}
               </select>
             </div>
           </Col>
           <Col xs={12} sm={12} md={6}>
             <div className={styles.TabsLayer}>
-              {tabs.map((tab, index) => (
+              {currentSubcategory[1]?.map((tab, index) => (
                 <div key={index}>
                   <div
                     className={`${styles.CurrentTab} ${
                       index == currentTab ? styles.SelectedTab : null
                     }`}
-                    onClick={() => setCurrentTab(index)}
+                    onClick={() => {
+                      setCurrentTab(index);
+                      router.push(`/${router.query.category}/${tab.title}`);
+                    }}
                   >
-                    {tab}
+                    {tab.title}
                   </div>
                 </div>
               ))}
@@ -93,6 +101,7 @@ const Category = ({ data }) => {
           </Col>
         </Row>
       </ContainerWrraper>
+      {/* =========================================== For MOBILE and TAB Design End  ======================================= */}
       <ContainerWrraper customClass={`${styles.CardModelContainerWrraper}`}>
         <Row>
           <Col xs={12} sm={12} md={12} lg={8} xl={9} className={`pe-0`}>
