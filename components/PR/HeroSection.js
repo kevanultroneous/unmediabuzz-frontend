@@ -4,7 +4,7 @@ import styles from "@/styles/PR/HeroSection.module.css";
 import { FiSearch } from "react-icons/fi";
 import useResponsiveViewer from "hooks/ResponsiveViewer";
 
-const HeroSection = () => {
+const HeroSection = ({ searchvalue, onchangesearch, searchButtonAction }) => {
   const isMobile = useResponsiveViewer();
 
   return (
@@ -29,12 +29,15 @@ const HeroSection = () => {
           <div className={styles.InputGroupMainWrraper}>
             <InputGroup className={styles.InputGroup}>
               <Form.Control
+                value={searchvalue}
+                onChange={onchangesearch}
                 className={styles.GroupInput}
                 placeholder="Search Press Release"
                 aria-label="Small"
                 aria-describedby="inputGroup-sizing-sm"
               />
               <InputGroup.Text
+                onClick={searchButtonAction}
                 id="inputGroup-sizing-sm"
                 className={styles.SearchButton}
               >

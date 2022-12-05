@@ -10,21 +10,18 @@ import Pagination from "rc-pagination";
 import CategorySidebar from "@/components/common/CategorySidebar";
 import { useState } from "react";
 import axios from "axios";
-import { AllCategoryAPI, PressReleaseListAPI } from "utils/API";
-import { MAIN_URL, timestampToDate } from "utils/Anonymous";
+import {
+  AllCategoryAPI,
+  InternalSearchAPI,
+  PressReleaseListAPI,
+} from "utils/API";
+import { MAIN_URL, specialcharacter, timestampToDate } from "utils/Anonymous";
 import { useRouter } from "next/router";
+import toast, { Toaster } from "react-hot-toast";
 
 const PressRelease = ({ data }) => {
   const router = useRouter();
-  const arry = [1, 2, 3, 4, 5, 6, 7];
-  const tabs = [
-    "All Press Release",
-    "Sports",
-    "Art & Entertainment",
-    "Categories",
-    "Categories",
-    "Categories",
-  ];
+
   const textItemRender = (current, type, element) => {
     if (type === "page") {
       return (
@@ -49,10 +46,26 @@ const PressRelease = ({ data }) => {
   };
 
   const [currentTab, setCurrentTab] = useState(0);
+  const [searchvalue, setSearchValue] = useState("");
+
+  const searchaction = () => {
+    if (!searchvalue.length > 0) {
+      toast.error("Search field is required !");
+    } else if (specialcharacter.test(searchvalue)) {
+      toast.error("Special character is not allowed !");
+    } else {
+      router.push(`/press-release?search=${searchvalue}`);
+    }
+  };
 
   return (
     <Layout>
-      <HeroSection />
+      <Toaster position="top-center" reverseOrder={false} />
+      <HeroSection
+        onchangesearch={(e) => setSearchValue(e.target.value)}
+        searchButtonAction={searchaction}
+        searchvalue={searchvalue}
+      />
       <ContainerWrraper customClass={`${styles.TabsMainContainer}`}>
         <div className={styles.TabsLayer}>
           {data.allcategories?.data.map((tab, index) => (
@@ -75,18 +88,41 @@ const PressRelease = ({ data }) => {
       <ContainerWrraper customClass={`${styles.CardModelContainerWrraper}`}>
         <Row>
           <Col xs={12} sm={12} md={12} lg={8} xl={9} className={`pe-0`}>
-            {data.fetchlistOfPressReleaseList.data[0]?.mainDoc.map(
-              (value, index) => (
-                <CardModel
-                  badge={value.paidStatus}
-                  url={value.slugUrl ? `/press-release/${value.slugUrl}` : `#`}
-                  coverimg={MAIN_URL + value.featuredImage}
-                  customtitleclass={`${styles.ParagraphSize}`}
-                  key={index}
-                  companyname={value.companyName}
-                  title={value.title}
-                  date={timestampToDate(value.releaseDate)}
-                />
+            {router.query.search ? (
+              data?.internalSearch?.data[0]?.mainDoc.length == 0 ? (
+                <h3>No data found</h3>
+              ) : (
+                data?.internalSearch?.data[0]?.mainDoc.map((value, index) => (
+                  <CardModel
+                    badge={value.paidStatus}
+                    url={
+                      value.slugUrl ? `/press-release/${value.slugUrl}` : `#`
+                    }
+                    coverimg={MAIN_URL + value.featuredImage}
+                    customtitleclass={`${styles.ParagraphSize}`}
+                    key={index}
+                    companyname={value.companyName}
+                    title={value.title}
+                    date={timestampToDate(value.releaseDate)}
+                  />
+                ))
+              )
+            ) : (
+              data?.fetchlistOfPressReleaseList?.data[0]?.mainDoc.map(
+                (value, index) => (
+                  <CardModel
+                    badge={value.paidStatus}
+                    url={
+                      value.slugUrl ? `/press-release/${value.slugUrl}` : `#`
+                    }
+                    coverimg={MAIN_URL + value.featuredImage}
+                    customtitleclass={`${styles.ParagraphSize}`}
+                    key={index}
+                    companyname={value.companyName}
+                    title={value.title}
+                    date={timestampToDate(value.releaseDate)}
+                  />
+                )
               )
             )}
           </Col>
@@ -100,6 +136,7 @@ const PressRelease = ({ data }) => {
           >
             <CategorySidebar categorylist={data.allcategories?.data} />
           </Col>
+
           <Col
             xs={12}
             sm={12}
@@ -108,15 +145,28 @@ const PressRelease = ({ data }) => {
             xl={12}
             className={`ColPaddingRemove ${styles.CenterPagination}`}
           >
-            <div className={styles.PaginationWrraper}>
-              <Pagination
-                defaultCurrent={router.query.page}
-                onChange={(v) => router.push(`/press-release?page=${v}`)}
-                total={data.fetchlistOfPressReleaseList.data[0]?.totalCount}
-                itemRender={textItemRender}
-                pageSize={30}
-              />
-            </div>
+            {(data.internalSearch.data[0]?.totalCount ||
+              data.fetchlistOfPressReleaseList.data[0]?.totalCount) > 30 && (
+              <div className={styles.PaginationWrraper}>
+                <Pagination
+                  defaultCurrent={router.query.page}
+                  onChange={(v) => {
+                    router.query.search
+                      ? router.push(
+                          `/press-release?search=${router.query.search}&page=${v}`
+                        )
+                      : router.push(`/press-release?page=${v}`);
+                  }}
+                  total={
+                    router.query.search
+                      ? data.internalSearch.data[0]?.totalCount
+                      : data.fetchlistOfPressReleaseList.data[0]?.totalCount
+                  }
+                  itemRender={textItemRender}
+                  pageSize={30}
+                />
+              </div>
+            )}
           </Col>
         </Row>
       </ContainerWrraper>
@@ -137,11 +187,21 @@ export async function getServerSideProps(context) {
     .get(AllCategoryAPI)
     .then((res) => res.data)
     .catch((e) => e);
+  const internalSearch = await axios
+    .post(InternalSearchAPI, {
+      searchTerm: context.query.search,
+      limit: 30,
+      page: context.query.page ? context.query.page : 1,
+    })
+    .then((res) => res.data)
+    .catch((e) => e);
+
   return {
     props: {
       data: {
         fetchlistOfPressReleaseList,
         allcategories,
+        internalSearch,
       },
     },
   };

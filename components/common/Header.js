@@ -15,6 +15,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { HeaderMenu } from "utils/Navigation.utils";
 import useResponsiveViewer from "hooks/ResponsiveViewer";
+import toast, { Toaster } from "react-hot-toast";
 
 const Header = ({ commonchecked }) => {
   const router = useRouter();
@@ -44,13 +45,19 @@ const Header = ({ commonchecked }) => {
   });
 
   const handlesearch = () => {
-    if (search && searchInput.length > 5) {
-      router.push(`/search?searching=${searchInput}`);
+    if (search) {
+      if (searchInput.length > 0) {
+        router.push(`/search?searching=${searchInput}`);
+      } else {
+        toast.error("Search field is required !");
+      }
+    } else {
     }
   };
 
   return (
     <ContainerWrraper customClass={`${styles.HeaderContainer} headerforscroll`}>
+      <Toaster position="top-center" reverseOrder={false} />
       <Row className={styles.MainMenuRow}>
         <Col xs={6} md={6} lg={3} xl={3} className={`ColPaddingRemove`}>
           <div className={styles.MobileLogoWrraper}>

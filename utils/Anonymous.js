@@ -68,3 +68,4 @@ export const timestampToDate = (ts) => {
     new Date(ts).getFullYear()
   );
 };
+export const specialcharacter = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
