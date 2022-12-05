@@ -157,6 +157,7 @@ const PressRelease = ({ data }) => {
               : data.fetchlistOfPressReleaseList.data[0]?.totalCount > 30 && (
                   <div className={styles.PaginationWrraper}>
                     <Pagination
+                      showTitle={false}
                       defaultCurrent={router.query.page}
                       onChange={(v) => {
                         router.query.search

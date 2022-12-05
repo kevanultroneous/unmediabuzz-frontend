@@ -108,6 +108,7 @@ const SearchResult = ({ data }) => {
           >
             <div className={styles.PaginationWrraper}>
               <Pagination
+                showTitle={false}
                 defaultCurrent={router.query.page}
                 onChange={(v) =>
                   router.push(

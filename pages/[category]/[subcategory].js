@@ -165,6 +165,7 @@ const Subcategory = ({ data }) => {
           >
             <div className={styles.PaginationWrraper}>
               <Pagination
+                showTitle={false}
                 total={320}
                 itemRender={textItemRender}
                 pageSize={7}

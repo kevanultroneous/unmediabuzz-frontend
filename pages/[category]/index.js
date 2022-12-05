@@ -159,6 +159,7 @@ const Category = ({ data }) => {
             {data.categorywisepost[0]?.totalCount > 30 && (
               <div className={styles.PaginationWrraper}>
                 <Pagination
+                  showTitle={false}
                   total={data.categorywisepost[0]?.totalCount}
                   itemRender={textItemRender}
                   pageSize={30}
