@@ -8,7 +8,7 @@ export const ButtonsList = {
         &nbsp; Let’s Start Now
       </span>
     ),
-    link: "/",
+    link: "/contact-us",
   },
   pressReleaseCommon: {
     source: (
@@ -21,7 +21,7 @@ export const ButtonsList = {
         &nbsp;&nbsp; &nbsp; Press Release
       </span>
     ),
-    link: "",
+    link: "/press-release",
   },
   viewCommon: {
     source: (
@@ -34,7 +34,7 @@ export const ButtonsList = {
         &nbsp;&nbsp;View All
       </span>
     ),
-    link: "",
+    link: "/press-release",
   },
   blogpostCommon: {
     source: (
@@ -47,7 +47,7 @@ export const ButtonsList = {
         &nbsp; &nbsp; &nbsp; &nbsp; Post Blogs
       </span>
     ),
-    link: "",
+    link: "/coming-soon",
   },
   GettingStartedButtonList: [
     {
@@ -61,7 +61,7 @@ export const ButtonsList = {
           &nbsp;&nbsp;Press Release
         </span>
       ),
-      link: "",
+      link: "/press-release",
     },
     {
       source: (
@@ -75,7 +75,7 @@ export const ButtonsList = {
           &nbsp;Post Blogs
         </span>
       ),
-      link: "",
+      link: "/coming-soon",
     },
   ],
   IntroButtonList: [
@@ -90,7 +90,7 @@ export const ButtonsList = {
           &nbsp;&nbsp;&nbsp;Press Release
         </span>
       ),
-      link: "",
+      link: "/press-release",
     },
     {
       source: (
@@ -103,7 +103,7 @@ export const ButtonsList = {
           &nbsp;&nbsp;Post Blogs
         </span>
       ),
-      link: "",
+      link: "/coming-soon",
     },
   ],
 };

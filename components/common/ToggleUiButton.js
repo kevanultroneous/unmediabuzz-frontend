@@ -1,11 +1,14 @@
-import styles from "@/styles/common/ToggleUiButton.module.css"
+import styles from "@/styles/common/ToggleUiButton.module.css";
+import Link from "next/link";
 
-const ToggleUiButton = ({text,dark}) =>{
-    return (
-        <div className={dark ? styles.ButtonToggleDark  : styles.ButtonToggle}>
-            {text}
-        </div>
-    )
-}
+const ToggleUiButton = ({ text, dark, url = "/" }) => {
+  return (
+    <div className={dark ? styles.ButtonToggleDark : styles.ButtonToggle}>
+      <span>
+        <Link href={url}>{text}</Link>
+      </span>
+    </div>
+  );
+};
 
-export default ToggleUiButton
+export default ToggleUiButton;

@@ -34,7 +34,10 @@ const GettingStarted = () => {
 
           <div className={styles.ButtonsMainWrraper}>
             <div className={styles.ButtonCover}>
-              <ToggleUiButton text={ButtonsList.letsStart.source} />
+              <ToggleUiButton
+                text={ButtonsList.letsStart.source}
+                url={ButtonsList.letsStart.link}
+              />
             </div>
           </div>
         </Col>

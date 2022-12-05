@@ -100,7 +100,7 @@ const Introduction = () => {
           <div className={styles.ButtonsWrraper}>
             {ButtonsList?.IntroButtonList?.map((button, index) => (
               <div className={styles.ButtonSpaces} key={index + 1}>
-                <ToggleUiButton dark text={button.source} />
+                <ToggleUiButton dark text={button.source} url={button.link} />
               </div>
             ))}
           </div>

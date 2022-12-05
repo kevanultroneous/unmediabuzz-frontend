@@ -11,7 +11,10 @@
   user-select: none;
   cursor: pointer;
 }
-
+.ButtonToggle span a {
+  text-decoration: none;
+  color: var(--elementColor);
+}
 .ButtonToggle:hover {
   animation: pulsee 2s infinite;
 }
@@ -42,7 +45,10 @@
   user-select: none;
   cursor: pointer;
 }
-
+.ButtonToggleDark span a {
+  text-decoration: none;
+  color: var(--primaryColor);
+}
 .ButtonToggleDark:hover {
   animation: pulse 2s infinite;
 }

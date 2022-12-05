@@ -36,6 +36,9 @@
   display: flex;
   margin-top: 1.5rem;
 }
+.ButtonsWrraper a {
+  text-decoration: none;
+}
 .ButtonSpaces {
   margin-left: 2rem;
 }

@@ -168,7 +168,11 @@ const RecentItems = ({ postList, blogList }) => {
               className={`ColPaddingRemove`}
             >
               <div className={styles.ButtonOutCover}>
-                <ToggleUiButton text={ButtonsList.viewCommon.source} dark />
+                <ToggleUiButton
+                  text={ButtonsList.viewCommon.source}
+                  dark
+                  url={ButtonsList.viewCommon.link}
+                />
               </div>
             </Col>
           </Col>
