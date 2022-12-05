@@ -14,7 +14,8 @@ const Process = ({ ProcessList, title, icon, desc, index }) => {
     <div className="d-flex">
       <div className={styles.ProcessCover}>
         <div className={styles.ProcessImage}>
-          <Image src={icon} alt="edit-desk" className={styles.processIcon} />
+          {/* <Image src={icon} alt="edit-desk" className={styles.processIcon} /> */}
+          {icon}
         </div>
         <h6 className={styles.ProcessTitle}>{title}</h6>
         <p className={styles.ProcessDesc}>{desc}</p>
@@ -113,7 +114,7 @@ const Introduction = () => {
           xl={12}
           className={`ColPaddingRemove`}
         >
-          <div className={styles.ProcessWrraper}>
+          <div className={`${styles.ProcessWrraper} ProcessWrapperStyle`}>
             {ProcessList?.map((process, index) => (
               <Process
                 key={index + 1}

@@ -1,23 +1,25 @@
 export const MAIN_URL = `http://192.168.1.28:8000/`;
 // `http://52.64.42.139:8000/`
+
+import { IoMdLaptop } from "react-icons/io";
 export const ProcessList = [
   {
-    icon: "/assets/images/edit-desk.svg",
+    icon: <IoMdLaptop size={55} />,
     title: "Submit",
     desc: "Lorem Ipsum is simply dummy text of the printing.",
   },
   {
-    icon: "/assets/images/edit-desk.svg",
+    icon: <IoMdLaptop size={55} />,
     title: "Boost",
     desc: "Lorem Ipsum is simply dummy text of the printing.",
   },
   {
-    icon: "/assets/images/edit-desk.svg",
+    icon: <IoMdLaptop size={55} />,
     title: "Coverage",
     desc: "Lorem Ipsum is simply dummy text of the printing.",
   },
   {
-    icon: "/assets/images/edit-desk.svg",
+    icon: <IoMdLaptop size={55} />,
     title: "Report",
     desc: "Lorem Ipsum is simply dummy text of the printing.",
   },

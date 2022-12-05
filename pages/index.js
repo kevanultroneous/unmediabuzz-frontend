@@ -13,30 +13,35 @@ import { RecentPrAPI, TopBuzzListAPI } from "utils/API";
 
 export default function Home({ data }) {
   const checkResponsive = useResponsiveViewer();
+
   useEffect(() => {
-    const sections = [...document.querySelectorAll(".section")];
+    const observer = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            el.style.background = "black";
+            document.getElementsByClassName("wrapper")[0].style.background =
+              "black";
+            document.getElementsByClassName(
+              "ProcessWrapperStyle"
+            )[0].style.color = "white";
+          } else {
+            el.style.background = "white";
+            document.getElementsByClassName("wrapper")[0].style.background =
+              "white";
+            document.getElementsByClassName(
+              "ProcessWrapperStyle"
+            )[0].style.color = "black";
+          }
+        }),
+      {
+        threshold: 0.3,
+      }
+    );
 
-    window.lastScrollTop = window.pageYOffset;
+    const el = document.getElementsByClassName("section")[1];
 
-    document.body.style.background = sections[0].getAttribute("data-bg");
-
-    window.addEventListener("scroll", onScroll);
-
-    function onScroll() {
-      const scrollTop = window.pageYOffset;
-
-      const section = sections
-        .map((section) => {
-          const el = section;
-          const rect = el.getBoundingClientRect();
-          return { el, rect };
-        })
-        .find((section) => section.rect.bottom >= window.innerHeight * 0.5);
-      document.getElementsByClassName("wrapper")[0] !== undefined
-        ? (document.getElementsByClassName("wrapper")[0].style.background =
-            section?.el.getAttribute("data-bg"))
-        : null;
-    }
+    observer.observe(el);
   }, []);
 
   return (

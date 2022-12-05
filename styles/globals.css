@@ -20,6 +20,14 @@ a {
 
 .ColPaddingRemove {
   padding: 0% !important;
+} /* ============================================================== section color change css ======================================================================================= */
+.wrapper {
+  transition: all 2s ease;
+}
+
+.section {
+  height: auto;
+  transition: all 2s ease;
 }
 
 /* -------------------------------------------------------------- accordion style ------------------------------------------------------ */
@@ -59,7 +67,10 @@ a {
   background-image: url("/assets/icons/up-arrow.svg") !important;
   transform: rotate(360deg) !important;
 }
-
+.CategoriesAccordionforUrl .accordion-button:not(.collapsed)::after {
+  background-image: url("/assets/icons/black-arrow-up.svg") !important;
+  transform: rotate(360deg) !important;
+}
 /*  -----------------------------------  CategoriesAccordion -------------------------------------------- */
 .CategoriesAccordion .accordion-button:not(.collapsed) {
   background-color: transparent !important;
@@ -70,6 +81,15 @@ a {
   -webkit-text-fill-color: transparent;
   font-size: var(--maxText);
   background-clip: text;
+}
+.CategoriesAccordionforUrl .accordion-button:not(.collapsed) {
+  color: #000000;
+  background: none;
+  -webkit-text-fill-color: #000000;
+  background-clip: unset;
+}
+.CategoriesAccordion a {
+  text-decoration: none;
 }
 .CategoriesAccordion .accordion-button:focus {
   border-color: transparent !important;
@@ -242,15 +262,6 @@ a {
   }
 }
 
-/* ============================================================== section color change css ======================================================================================= */
-.wrapper {
-  transition: all 2s ease;
-}
-
-.section {
-  height: auto;
-}
-
 /* ================================================================ category sidebar scroll css ========================================================================== */
 
 /* width */
@@ -271,4 +282,9 @@ a {
 
 /* Handle on hover */
 .CategoryScroll::-webkit-scrollbar-thumb:hover {
+}
+
+/* ================================= 404 =================================== */
+.NofoundSpace {
+  padding-top: 10rem !important;
 }
