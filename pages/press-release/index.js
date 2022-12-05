@@ -75,18 +75,20 @@ const PressRelease = ({ data }) => {
       <ContainerWrraper customClass={`${styles.CardModelContainerWrraper}`}>
         <Row>
           <Col xs={12} sm={12} md={12} lg={8} xl={9} className={`pe-0`}>
-            {data.fetchlistOfPressReleaseList.data?.map((value, index) => (
-              <CardModel
-                badge={value.paidStatus}
-                url={value.slugUrl ? `press-release/${value.slugUrl}` : `#`}
-                coverimg={MAIN_URL + value.featuredImage}
-                customtitleclass={`${styles.ParagraphSize}`}
-                key={index}
-                companyname={value.companyName}
-                title={value.title}
-                date={timestampToDate(value.releaseDate)}
-              />
-            ))}
+            {data.fetchlistOfPressReleaseList.data[0]?.mainDoc.map(
+              (value, index) => (
+                <CardModel
+                  badge={value.paidStatus}
+                  url={value.slugUrl ? `/press-release/${value.slugUrl}` : `#`}
+                  coverimg={MAIN_URL + value.featuredImage}
+                  customtitleclass={`${styles.ParagraphSize}`}
+                  key={index}
+                  companyname={value.companyName}
+                  title={value.title}
+                  date={timestampToDate(value.releaseDate)}
+                />
+              )
+            )}
           </Col>
           <Col
             xs={12}
@@ -108,8 +110,11 @@ const PressRelease = ({ data }) => {
           >
             <div className={styles.PaginationWrraper}>
               <Pagination
-                total={data.fetchlistOfPressReleaseList.data?.length}
+                defaultCurrent={router.query.page}
+                onChange={(v) => router.push(`/press-release?page=${v}`)}
+                total={data.fetchlistOfPressReleaseList.data[0]?.totalCount}
                 itemRender={textItemRender}
+                pageSize={30}
               />
             </div>
           </Col>
@@ -120,9 +125,12 @@ const PressRelease = ({ data }) => {
   );
 };
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
   const fetchlistOfPressReleaseList = await axios
-    .post(PressReleaseListAPI, { limit: 7 })
+    .post(PressReleaseListAPI, {
+      limit: 30,
+      page: context.query.page ? context.query.page : 1,
+    })
     .then((res) => res.data)
     .catch((e) => console.log(e));
   const allcategories = await axios

@@ -16,7 +16,7 @@ import { useEffect, useState } from "react";
 import { HeaderMenu } from "utils/Navigation.utils";
 import useResponsiveViewer from "hooks/ResponsiveViewer";
 
-const Header = () => {
+const Header = ({ commonchecked }) => {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState(false);

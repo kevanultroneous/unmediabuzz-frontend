@@ -97,22 +97,24 @@ const SearchResult = ({ data }) => {
             </Col>
           ))}
         </Row>
-        <Col
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
-          className={`ColPaddingRemove ${styles.CenterPagination}`}
-        >
-          <div className={styles.PaginationWrraper}>
-            <Pagination
-              total={data?.searchdata[0]?.totalCount}
-              itemRender={textItemRender}
-              pageSize={30}
-            />
-          </div>
-        </Col>
+        {data?.searchdata[0]?.totalCount > 0 && (
+          <Col
+            xs={12}
+            sm={12}
+            md={12}
+            lg={12}
+            xl={12}
+            className={`ColPaddingRemove ${styles.CenterPagination}`}
+          >
+            <div className={styles.PaginationWrraper}>
+              <Pagination
+                total={data?.searchdata[0]?.totalCount}
+                itemRender={textItemRender}
+                pageSize={30}
+              />
+            </div>
+          </Col>
+        )}
       </ContainerWrraper>
       <GettingStarted />
     </Layout>

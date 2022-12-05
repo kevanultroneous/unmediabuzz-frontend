@@ -12,7 +12,7 @@ import styles from "@/styles/ViewDetails.module.css";
 import { CardModel } from "@/components/common/RecentItems";
 import { useRouter } from "next/router";
 import axios from "axios";
-import { PressReleaseListAPI } from "utils/API";
+import { InterestedPostAPI, PressReleaseListAPI } from "utils/API";
 import { useEffect } from "react";
 import { MAIN_URL, timestampToDate } from "utils/Anonymous";
 
@@ -24,17 +24,18 @@ const ViewPost = ({ data }) => {
       router.push("/");
     } else {
       // target div which is help to convert string to html without interweave package
-      document.getElementById("htmlcontent").innerHTML = data?.content;
+      document.getElementById("htmlcontent").innerHTML =
+        data?.PressReleaseList.content;
     }
   }, [data, router]);
 
   return (
     <Layout
-      title={`unmediabuzz | ${data?.seoTitle}`}
-      description={data?.seoDescription}
-      keywords={data?.seoKeywords}
-      ogtitle={data?.seoTitle}
-      ogimage={MAIN_URL + data?.featuredImage}
+      title={`unmediabuzz | ${data?.PressReleaseList.seoTitle}`}
+      description={data?.PressReleaseList.seoDescription}
+      keywords={data?.PressReleaseList.seoKeywords}
+      ogtitle={data?.PressReleaseList.seoTitle}
+      ogimage={MAIN_URL + data?.PressReleaseList.featuredImage}
     >
       <ContainerWrraper customClass={`${styles.ViewPostContainerWrraper}`}>
         <IoIosArrowRoundBack
@@ -52,10 +53,10 @@ const ViewPost = ({ data }) => {
             className={styles.DetailSectionCol}
           >
             <p className={styles.BreadCumb}>Home/ Press Release/</p>
-            <p className={styles.PostTitle}>{data?.title}</p>
+            <p className={styles.PostTitle}>{data?.PressReleaseList.title}</p>
             <p className={styles.CreatedAt}>{`On ${timestampToDate(
-              data?.releaseDate
-            )} By, ${data?.companyName}`}</p>
+              data?.PressReleaseList.releaseDate
+            )} By, ${data?.PressReleaseList.companyName}`}</p>
             <div className={styles.IconsWrraper}>
               <AiFillFacebook size={30} className={styles.IconSpace} />
               <AiFillLinkedin size={30} className={styles.IconSpace} />
@@ -77,11 +78,11 @@ const ViewPost = ({ data }) => {
             xl={12}
             className={`ColPaddingRemove`}
           >
-            <p>{data?.summary}</p>
+            <p>{data?.PressReleaseList.summary}</p>
             <center>
               <div className={styles.FeaturedImage}>
                 <Image
-                  src={MAIN_URL + data?.featuredImage}
+                  src={MAIN_URL + data?.PressReleaseList.featuredImage}
                   alt="featured-image"
                   fluid
                 />
@@ -106,37 +107,28 @@ const ViewPost = ({ data }) => {
               </span>
             </h6>
           </Col>
-          <Col xs={12} sm={12} md={6} lg={6} xl={6}>
-            <CardModel
-              url={"#"}
-              coverimg={""}
-              hide={true}
-              date={"04 Novemeber 2022"}
-              title={
-                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing."
-              }
-              companyname={"By, XYZ Company Name"}
-            />
-          </Col>
-          <Col
-            xs={12}
-            sm={12}
-            md={6}
-            lg={6}
-            xl={6}
-            className={`${styles.BetweenSpace} ColPaddingRemove`}
-          >
-            <CardModel
-              url={"/"}
-              customcardmodelrow={`${styles.customcardmodelrow}`}
-              hide={true}
-              date={"04 Novemeber 2022"}
-              title={
-                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing."
-              }
-              companyname={"By, XYZ Company Name"}
-            />
-          </Col>
+          {data?.InterestedPost.map((posts, index) => (
+            <Col
+              xs={12}
+              sm={12}
+              md={6}
+              lg={6}
+              xl={6}
+              key={index}
+              className={`${
+                index === 1 ? `${styles.BetweenSpace} ColPaddingRemove` : ""
+              }`}
+            >
+              <CardModel
+                url={posts.slugUrl ? `/press-release/${posts.slugUrl}` : "#"}
+                coverimg={MAIN_URL + posts.featuredImage}
+                hide={true}
+                date={timestampToDate(posts.releaseDate)}
+                title={posts.title}
+                companyname={posts.companyName}
+              />
+            </Col>
+          ))}
         </Row>
       </ContainerWrraper>
       <GettingStarted />
@@ -144,13 +136,20 @@ const ViewPost = ({ data }) => {
   );
 };
 export async function getServerSideProps(context) {
-  const data = await axios
+  const pressreleaseview = await axios
     .post(PressReleaseListAPI, { url: context.params?.post })
     .then((res) => (res.data.success ? res.data?.data : null))
     .catch((e) => e);
+  const interestedPostdata = await axios
+    .post(InterestedPostAPI, { postId: pressreleaseview?._id })
+    .then((res) => res.data.data)
+    .catch((e) => e);
   return {
     props: {
-      data: typeof data === "object" && data !== undefined ? data : null,
+      data: {
+        PressReleaseList: pressreleaseview,
+        InterestedPost: interestedPostdata,
+      },
     },
   };
 }
