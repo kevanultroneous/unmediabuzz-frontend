@@ -97,7 +97,7 @@ const SearchResult = ({ data }) => {
             </Col>
           ))}
         </Row>
-        {data?.searchdata[0]?.totalCount > 0 && (
+        {data?.searchdata[0]?.totalCount > 30 && (
           <Col
             xs={12}
             sm={12}
@@ -108,6 +108,12 @@ const SearchResult = ({ data }) => {
           >
             <div className={styles.PaginationWrraper}>
               <Pagination
+                defaultCurrent={router.query.page}
+                onChange={(v) =>
+                  router.push(
+                    `/search?searching=${router.query.searching}&page=${v}`
+                  )
+                }
                 total={data?.searchdata[0]?.totalCount}
                 itemRender={textItemRender}
                 pageSize={30}
@@ -123,7 +129,11 @@ const SearchResult = ({ data }) => {
 
 export async function getServerSideProps(context) {
   const data = await axios
-    .post(GlobalSearchAPI, { searchTerm: context.query.searching })
+    .post(GlobalSearchAPI, {
+      searchTerm: context.query.searching,
+      limit: 30,
+      page: context.query.page ? context.query.page : 1,
+    })
     .then((res) => res.data.data)
     .catch((e) => e);
   return {
