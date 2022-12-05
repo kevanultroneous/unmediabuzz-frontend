@@ -8,3 +8,4 @@ export const AllCategoryAPI = MAIN_URL + `api/category/all-category`;
 export const GlobalSearchAPI = MAIN_URL + `api/post/search-pr-title`;
 export const InterestedPostAPI = MAIN_URL + `api/post/interested-posts`;
 export const InternalSearchAPI = MAIN_URL + `api/post/internal-search`;
+export const CategoryWisePostApi = MAIN_URL + `api/post/category-page`;

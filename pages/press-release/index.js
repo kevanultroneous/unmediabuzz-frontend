@@ -46,7 +46,7 @@ const PressRelease = ({ data }) => {
   };
 
   const [currentTab, setCurrentTab] = useState(0);
-  const [searchvalue, setSearchValue] = useState("");
+  const [searchvalue, setSearchValue] = useState(router.query.search);
 
   const searchaction = () => {
     if (!searchvalue.length > 0) {
@@ -62,6 +62,11 @@ const PressRelease = ({ data }) => {
     <Layout>
       <Toaster position="top-center" reverseOrder={false} />
       <HeroSection
+        keydown={(e) => {
+          if (e.code === "Enter") {
+            searchaction();
+          }
+        }}
         onchangesearch={(e) => setSearchValue(e.target.value)}
         searchButtonAction={searchaction}
         searchvalue={searchvalue}

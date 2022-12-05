@@ -12,7 +12,8 @@ import Pagination from "rc-pagination";
 import { useEffect, useState } from "react";
 import { Col, Dropdown, Row } from "react-bootstrap";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
-import { AllCategoryAPI } from "utils/API";
+import { MAIN_URL, timestampToDate } from "utils/Anonymous";
+import { AllCategoryAPI, CategoryWisePostApi } from "utils/API";
 
 const Category = ({ data }) => {
   const arry = [1, 2, 3, 4, 5];
@@ -124,16 +125,16 @@ const Category = ({ data }) => {
       <ContainerWrraper customClass={`${styles.CardModelContainerWrraper}`}>
         <Row>
           <Col xs={12} sm={12} md={12} lg={8} xl={9} className={`pe-0`}>
-            {arry.map((value, index) => (
+            {data.categorywisepost[0]?.mainDoc.map((value, index) => (
               <CardModel
-                url={"#"}
+                badge={value.paidStatus}
+                url={value.slugUrl ? `/press-release/${value.slugUrl}` : `#`}
+                coverimg={MAIN_URL + value.featuredImage}
                 customtitleclass={`${styles.ParagraphSize}`}
                 key={index}
-                categoryname={"By, XYZ Company Name"}
-                title={
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing."
-                }
-                date={"04 Novemeber 2022"}
+                companyname={value.companyName}
+                title={value.title}
+                date={timestampToDate(value.releaseDate)}
               />
             ))}
           </Col>
@@ -155,9 +156,15 @@ const Category = ({ data }) => {
             xl={12}
             className={`ColPaddingRemove ${styles.CenterPagination}`}
           >
-            <div className={styles.PaginationWrraper}>
-              <Pagination total={320} itemRender={textItemRender} />
-            </div>
+            {data.categorywisepost[0]?.totalCount > 30 && (
+              <div className={styles.PaginationWrraper}>
+                <Pagination
+                  total={data.categorywisepost[0]?.totalCount}
+                  itemRender={textItemRender}
+                  pageSize={30}
+                />
+              </div>
+            )}
           </Col>
         </Row>
       </ContainerWrraper>
@@ -165,15 +172,24 @@ const Category = ({ data }) => {
     </Layout>
   );
 };
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
   const allcategories = await axios
     .get(AllCategoryAPI)
     .then((res) => res.data)
+    .catch((e) => e);
+  const categorywisepost = await await axios
+    .post(CategoryWisePostApi, {
+      categoryID: "638487d7d4d6b72e70bf20ab",
+      limit: 30,
+      page: 1,
+    })
+    .then((res) => res.data?.data)
     .catch((e) => e);
   return {
     props: {
       data: {
         allcategories,
+        categorywisepost,
       },
     },
   };

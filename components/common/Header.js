@@ -16,6 +16,7 @@ import { useEffect, useState } from "react";
 import { HeaderMenu } from "utils/Navigation.utils";
 import useResponsiveViewer from "hooks/ResponsiveViewer";
 import toast, { Toaster } from "react-hot-toast";
+import { specialcharacter } from "utils/Anonymous";
 
 const Header = ({ commonchecked }) => {
   const router = useRouter();
@@ -46,12 +47,13 @@ const Header = ({ commonchecked }) => {
 
   const handlesearch = () => {
     if (search) {
-      if (searchInput.length > 0) {
-        router.push(`/search?searching=${searchInput}`);
-      } else {
+      if (!searchInput.length > 0) {
         toast.error("Search field is required !");
+      } else if (specialcharacter.test(searchInput)) {
+        toast.error("Special character is not allowed !");
+      } else {
+        router.push(`/search?searching=${searchInput}`);
       }
-    } else {
     }
   };
 
@@ -137,6 +139,11 @@ const Header = ({ commonchecked }) => {
           >
             {search && (
               <Form.Control
+                onKeyDown={(e) => {
+                  if (e.code === "Enter") {
+                    handlesearch();
+                  }
+                }}
                 className={styles.FormControl}
                 aria-label="Small"
                 value={searchInput}
