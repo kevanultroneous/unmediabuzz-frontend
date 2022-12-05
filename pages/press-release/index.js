@@ -46,7 +46,9 @@ const PressRelease = ({ data }) => {
   };
 
   const [currentTab, setCurrentTab] = useState(0);
-  const [searchvalue, setSearchValue] = useState(router.query.search);
+  const [searchvalue, setSearchValue] = useState(
+    router.query.search ? router.query.search : ""
+  );
 
   const searchaction = () => {
     if (!searchvalue.length > 0) {

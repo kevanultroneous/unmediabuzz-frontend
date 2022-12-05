@@ -22,10 +22,12 @@ const Header = ({ commonchecked }) => {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState(false);
-  const [searchInput, setSearchInput] = useState("");
+  const [searchInput, setSearchInput] = useState(
+    router.query.searching ? router.query.searching : ""
+  );
 
   useEffect(() => {
-    if (router.pathname === "/") {
+    if (router.pathname === "/" || router.pathname === "/search") {
       setSearch(true);
     }
     window.scrollTo(0, 0);
@@ -56,7 +58,7 @@ const Header = ({ commonchecked }) => {
       }
     }
   };
-
+  const selectedcustom = ["/press-release/[post]"];
   return (
     <ContainerWrraper customClass={`${styles.HeaderContainer} headerforscroll`}>
       <Toaster position="top-center" reverseOrder={false} />
