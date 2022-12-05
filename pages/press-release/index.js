@@ -152,28 +152,29 @@ const PressRelease = ({ data }) => {
             xl={12}
             className={`ColPaddingRemove ${styles.CenterPagination}`}
           >
-            {(data.internalSearch.data[0]?.totalCount ||
-              data.fetchlistOfPressReleaseList.data[0]?.totalCount) > 30 && (
-              <div className={styles.PaginationWrraper}>
-                <Pagination
-                  defaultCurrent={router.query.page}
-                  onChange={(v) => {
-                    router.query.search
-                      ? router.push(
-                          `/press-release?search=${router.query.search}&page=${v}`
-                        )
-                      : router.push(`/press-release?page=${v}`);
-                  }}
-                  total={
-                    router.query.search
-                      ? data.internalSearch.data[0]?.totalCount
-                      : data.fetchlistOfPressReleaseList.data[0]?.totalCount
-                  }
-                  itemRender={textItemRender}
-                  pageSize={30}
-                />
-              </div>
-            )}
+            {router.query.search
+              ? data.internalSearch.data[0]?.totalCount > 30
+              : data.fetchlistOfPressReleaseList.data[0]?.totalCount > 30 && (
+                  <div className={styles.PaginationWrraper}>
+                    <Pagination
+                      defaultCurrent={router.query.page}
+                      onChange={(v) => {
+                        router.query.search
+                          ? router.push(
+                              `/press-release?search=${router.query.search}&page=${v}`
+                            )
+                          : router.push(`/press-release?page=${v}`);
+                      }}
+                      total={
+                        router.query.search
+                          ? data.internalSearch.data[0]?.totalCount
+                          : data.fetchlistOfPressReleaseList.data[0]?.totalCount
+                      }
+                      itemRender={textItemRender}
+                      pageSize={30}
+                    />
+                  </div>
+                )}
           </Col>
         </Row>
       </ContainerWrraper>
