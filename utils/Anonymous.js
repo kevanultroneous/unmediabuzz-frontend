@@ -85,3 +85,9 @@ export function isValidPhoneNumber(phone) {
     return false;
   }
 }
+export function upperCaseAt(str, i) {
+  return str.substr(0, i) + str.charAt(i).toUpperCase() + str.substr(i + 1);
+}
+export function FindSpecialCharacterIndex(str, chr) {
+  return str.indexOf(chr);
+}

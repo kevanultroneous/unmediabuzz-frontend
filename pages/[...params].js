@@ -12,18 +12,23 @@ import Pagination from "rc-pagination";
 import { useEffect, useState } from "react";
 import { Col, Dropdown, Row } from "react-bootstrap";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
-import { MAIN_URL, timestampToDate } from "utils/Anonymous";
+import {
+  FindSpecialCharacterIndex,
+  MAIN_URL,
+  timestampToDate,
+  upperCaseAt,
+} from "utils/Anonymous";
 import { AllCategoryAPI, CategoryWisePostApi } from "utils/API";
 
-const Category = ({ data }) => {
+const GlobalParams = ({ data }) => {
   const arry = [1, 2, 3, 4, 5];
   const [currentTab, setCurrentTab] = useState(0);
   const router = useRouter();
   const [currentSubcategory, setCurrentSubcategory] = useState([]);
-
+  const { params } = router.query;
   useEffect(() => {
     let precatchdata = data.allcategories?.data.find(
-      (i) => i.title == router.query.category.replace(/-/g, " ")
+      (i) => i.title == params[0].replace(/-/g, " ")
     );
     let findsubcategoryindex = 0;
 
@@ -32,9 +37,9 @@ const Category = ({ data }) => {
         ? (findsubcategoryindex = index)
         : (findsubcategoryindex = 0)
     );
-    if (!precatchdata) {
-      router.push("/404");
-    }
+    // if (!precatchdata) {
+    //   router.push("/404");
+    // }
     setCurrentTab(findsubcategoryindex);
     setCurrentSubcategory([precatchdata?.title, precatchdata?.subcategories]);
   }, [data.allcategories?.data, router]);
@@ -62,17 +67,31 @@ const Category = ({ data }) => {
     return element;
   };
 
+  let renewdata = {
+    originalcategory:
+      params[0].charAt(0).toUpperCase() + params[0].slice(1).replace(/-/g, " "),
+    originalsubcategory:
+      params[1]?.charAt(0).toUpperCase() +
+      params[1]?.slice(1).replace(/-/g, " "),
+  };
+  const findCharacteindex = FindSpecialCharacterIndex(
+    renewdata.originalcategory,
+    "&"
+  );
   return (
     <Layout>
       <CategoryHero
-        heading={router.query.category}
+        heading={upperCaseAt(
+          renewdata.originalcategory,
+          FindSpecialCharacterIndex(renewdata.originalcategory, "&") + 2
+        )}
         breadcumb={
           <>
             <Link href={"/"}>Home</Link>/{" "}
             <Link href={"/press-release"}>Press Release</Link>/{" "}
-            <Link href={`/${router.query.category}`}>
-              {router.query.category}
-            </Link>
+            {/* <Link href={`/${router.query.category}`}>
+              {router.query.params[0]}
+            </Link> */}
           </>
         }
       />
@@ -124,7 +143,7 @@ const Category = ({ data }) => {
       {/* =========================================== For MOBILE and TAB Design End  ======================================= */}
       <ContainerWrraper customClass={`${styles.CardModelContainerWrraper}`}>
         <Row>
-          <Col xs={12} sm={12} md={12} lg={8} xl={9} className={`pe-0`}>
+          {/* <Col xs={12} sm={12} md={12} lg={8} xl={9} className={`pe-0`}>
             {data.categorywisepost[0]?.mainDoc.map((value, index) => (
               <CardModel
                 badge={value.paidStatus}
@@ -137,7 +156,7 @@ const Category = ({ data }) => {
                 date={timestampToDate(value.releaseDate)}
               />
             ))}
-          </Col>
+          </Col> */}
           <Col
             xs={12}
             sm={12}
@@ -196,4 +215,4 @@ export async function getServerSideProps(context) {
   };
 }
 
-export default Category;
+export default GlobalParams;
