@@ -63,7 +63,7 @@ const Subcategory = ({ data }) => {
   return (
     <Layout>
       <CategoryHero
-        heading={router.query?.subcategory}
+        heading={router.query?.subcategory.replace(/-/g, " ")}
         breadcumb={
           <>
             <Link href={"/"}>Home</Link>/{" "}

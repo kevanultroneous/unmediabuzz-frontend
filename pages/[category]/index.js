@@ -65,7 +65,7 @@ const Category = ({ data }) => {
   return (
     <Layout>
       <CategoryHero
-        heading={router.query.category}
+        heading={router.query.category.replace(/-/g, " ")}
         breadcumb={
           <>
             <Link href={"/"}>Home</Link>/{" "}

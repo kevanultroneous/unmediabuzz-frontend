@@ -42,7 +42,8 @@ const CategorySidebar = ({ categorylist }) => {
                   >
                     <p
                       className={`${
-                        router.query.subcategory === subcategory.title
+                        router.query.subcategory?.replace(/-/g, " ") ===
+                        subcategory.title
                           ? styles.SelectedSubcategoryText
                           : styles.SubcategoryText
                       }`}
