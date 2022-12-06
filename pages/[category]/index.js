@@ -61,7 +61,9 @@ const Category = ({ data }) => {
     }
     return element;
   };
-
+  {
+    console.log(data);
+  }
   return (
     <Layout>
       <CategoryHero
@@ -125,18 +127,22 @@ const Category = ({ data }) => {
       <ContainerWrraper customClass={`${styles.CardModelContainerWrraper}`}>
         <Row>
           <Col xs={12} sm={12} md={12} lg={8} xl={9} className={`pe-0`}>
-            {data.categorywisepost[0]?.mainDoc.map((value, index) => (
-              <CardModel
-                badge={value.paidStatus}
-                url={value.slugUrl ? `/press-release/${value.slugUrl}` : `#`}
-                coverimg={MAIN_URL + value.featuredImage}
-                customtitleclass={`${styles.ParagraphSize}`}
-                key={index}
-                companyname={value.companyName}
-                title={value.title}
-                date={timestampToDate(value.releaseDate)}
-              />
-            ))}
+            {data.categorywisepost.data[0].mainDoc.length > 0 ? (
+              data.categorywisepost.data[0].mainDoc?.map((value, index) => (
+                <CardModel
+                  badge={value.paidStatus}
+                  url={value.slugUrl ? `/press-release/${value.slugUrl}` : `#`}
+                  coverimg={MAIN_URL + value.featuredImage}
+                  customtitleclass={`${styles.ParagraphSize}`}
+                  key={index}
+                  companyname={value.companyName}
+                  title={value.title}
+                  date={timestampToDate(value.releaseDate)}
+                />
+              ))
+            ) : (
+              <h4>No Post of {router.query.category}</h4>
+            )}
           </Col>
           <Col
             xs={12}
@@ -156,11 +162,15 @@ const Category = ({ data }) => {
             xl={12}
             className={`ColPaddingRemove ${styles.CenterPagination}`}
           >
-            {data.categorywisepost[0]?.totalCount > 30 && (
+            {data.categorywisepost.data[0]?.totalCount > 30 && (
               <div className={styles.PaginationWrraper}>
                 <Pagination
                   showTitle={false}
-                  total={data.categorywisepost[0]?.totalCount}
+                  defaultCurrent={router.query.page}
+                  onChange={(v) =>
+                    router.push(`/${router.query.category}?page=${v}`)
+                  }
+                  total={data.categorywisepost.data[0]?.totalCount}
                   itemRender={textItemRender}
                   pageSize={30}
                 />
@@ -178,13 +188,13 @@ export async function getServerSideProps(context) {
     .get(AllCategoryAPI)
     .then((res) => res.data)
     .catch((e) => e);
-  const categorywisepost = await await axios
+  const categorywisepost = await axios
     .post(CategoryWisePostApi, {
-      categoryID: "638487d7d4d6b72e70bf20ab",
+      categoryID: context.params.category.replace(/-/g, " "),
       limit: 30,
-      page: 1,
+      page: context.query.page ? context.query.page : 1,
     })
-    .then((res) => res.data?.data)
+    .then((res) => res?.data)
     .catch((e) => e);
   return {
     props: {
