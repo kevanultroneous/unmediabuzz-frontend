@@ -25,6 +25,15 @@ export default function Home({ data }) {
             document.getElementsByClassName(
               "ProcessWrapperStyle"
             )[0].style.color = "white";
+
+            document.getElementsByClassName("processIcon")[0].src =
+              "../assets/icons/blackw.svg";
+            document.getElementsByClassName("processIcon")[1].src =
+              "../assets/icons/blackw.svg";
+            document.getElementsByClassName("processIcon")[2].src =
+              "../assets/icons/blackw.svg";
+            document.getElementsByClassName("processIcon")[3].src =
+              "../assets/icons/blackw.svg";
           } else {
             el.style.background = "white";
             document.getElementsByClassName("wrapper")[0].style.background =
@@ -32,6 +41,14 @@ export default function Home({ data }) {
             document.getElementsByClassName(
               "ProcessWrapperStyle"
             )[0].style.color = "black";
+            document.getElementsByClassName("processIcon")[0].src =
+              "../assets/icons/black.svg";
+            document.getElementsByClassName("processIcon")[1].src =
+              "../assets/icons/black.svg";
+            document.getElementsByClassName("processIcon")[2].src =
+              "../assets/icons/black.svg";
+            document.getElementsByClassName("processIcon")[3].src =
+              "../assets/icons/black.svg";
           }
         }),
       {

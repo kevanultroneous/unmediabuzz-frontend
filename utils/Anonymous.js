@@ -5,22 +5,26 @@ export const MAIN_URL = `https://eb13-124-123-177-175.in.ngrok.io/`;
 import { IoMdLaptop } from "react-icons/io";
 export const ProcessList = [
   {
-    icon: <IoMdLaptop size={55} />,
+    // icon: <IoMdLaptop size={55} />,
+    icon: "./assets/icons/black.svg",
     title: "Submit",
     desc: "Lorem Ipsum is simply dummy text of the printing.",
   },
   {
-    icon: <IoMdLaptop size={55} />,
+    // icon: <IoMdLaptop size={55} />,
+    icon: "./assets/icons/black.svg",
     title: "Boost",
     desc: "Lorem Ipsum is simply dummy text of the printing.",
   },
   {
-    icon: <IoMdLaptop size={55} />,
+    // icon: <IoMdLaptop size={55} />,
+    icon: "./assets/icons/black.svg",
     title: "Coverage",
     desc: "Lorem Ipsum is simply dummy text of the printing.",
   },
   {
-    icon: <IoMdLaptop size={55} />,
+    // icon: <IoMdLaptop size={55} />,
+    icon: "./assets/icons/black.svg",
     title: "Report",
     desc: "Lorem Ipsum is simply dummy text of the printing.",
   },

@@ -14,8 +14,12 @@ const Process = ({ ProcessList, title, icon, desc, index }) => {
     <div className="d-flex">
       <div className={styles.ProcessCover}>
         <div className={styles.ProcessImage}>
-          {/* <Image src={icon} alt="edit-desk" className={styles.processIcon} /> */}
-          {icon}
+          <Image
+            src={icon}
+            alt="edit-desk"
+            className={`${styles.processIcon} processIcon`}
+          />
+          {/* {icon} */}
         </div>
         <h6 className={styles.ProcessTitle}>{title}</h6>
         <p className={styles.ProcessDesc}>{desc}</p>
