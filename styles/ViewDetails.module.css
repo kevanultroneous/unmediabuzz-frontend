@@ -23,6 +23,7 @@
 }
 .IconSpace {
   margin-right: 1rem;
+  cursor: pointer;
 }
 .CreatedAt {
   padding: 1.5rem 0;

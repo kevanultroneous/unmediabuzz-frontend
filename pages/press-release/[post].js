@@ -15,6 +15,7 @@ import axios from "axios";
 import { InterestedPostAPI, PressReleaseListAPI } from "utils/API";
 import { useEffect } from "react";
 import { MAIN_URL, timestampToDate } from "utils/Anonymous";
+import toast from "react-hot-toast";
 
 const ViewPost = ({ data }) => {
   const router = useRouter();
@@ -28,6 +29,11 @@ const ViewPost = ({ data }) => {
         data?.PressReleaseList.content;
     }
   }, [data, router]);
+
+  const linkForPlatform = () => {
+    navigator.clipboard.writeText(window.location.host + "" + router.asPath);
+    toast.success("Link is copied !");
+  };
 
   return (
     <Layout
@@ -58,12 +64,22 @@ const ViewPost = ({ data }) => {
               data?.PressReleaseList.releaseDate
             )} By, ${data?.PressReleaseList.companyName}`}</p>
             <div className={styles.IconsWrraper}>
-              <AiFillFacebook size={30} className={styles.IconSpace} />
-              <AiFillLinkedin size={30} className={styles.IconSpace} />
-              <AiOutlineTwitter size={30} className={styles.IconSpace} />
-              <AiFillFacebook size={30} className={styles.IconSpace} />
-              <AiFillLinkedin size={30} className={styles.IconSpace} />
-              <AiOutlineTwitter size={30} />
+              <AiFillFacebook
+                size={30}
+                className={styles.IconSpace}
+                onClick={linkForPlatform}
+              />
+
+              <AiFillLinkedin
+                size={30}
+                className={styles.IconSpace}
+                onClick={linkForPlatform}
+              />
+              <AiOutlineTwitter
+                size={30}
+                className={styles.IconSpace}
+                onClick={linkForPlatform}
+              />
             </div>
           </Col>
         </Row>
