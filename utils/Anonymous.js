@@ -1,4 +1,5 @@
-export const MAIN_URL = `http://192.168.1.28:8000/`;
+// export const MAIN_URL = `http://192.168.1.28:8000/`;
+export const MAIN_URL = `https://eb13-124-123-177-175.in.ngrok.io/`;
 // `http://52.64.42.139:8000/`
 
 import { IoMdLaptop } from "react-icons/io";
