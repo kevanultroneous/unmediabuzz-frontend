@@ -31,7 +31,7 @@ const ViewPost = ({ data }) => {
   }, [data, router]);
 
   const linkForPlatform = () => {
-    navigator.clipboard.writeText(window.location.href);
+    navigator.clipboard.writeText(window?.location?.href);
     toast.success("Link is copied !");
   };
 

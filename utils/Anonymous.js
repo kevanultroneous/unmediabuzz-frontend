@@ -1,5 +1,5 @@
-// export const MAIN_URL = `http://192.168.1.28:8000/`;
-export const MAIN_URL = `https://eb13-124-123-177-175.in.ngrok.io/`;
+export const MAIN_URL = `http://192.168.1.28:8000/`;
+// export const MAIN_URL = `https://eb13-124-123-177-175.in.ngrok.io/`;
 // `http://52.64.42.139:8000/`
 
 import { IoMdLaptop } from "react-icons/io";
@@ -76,3 +76,12 @@ export const timestampToDate = (ts) => {
   );
 };
 export const specialcharacter = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+
+export function isValidPhoneNumber(phone) {
+  var regex = /^\+(?:[0-9] ?){6,14}[0-9]$/;
+  if (regex.test(phone)) {
+    return true;
+  } else {
+    return false;
+  }
+}

@@ -27,14 +27,17 @@ const CategorySidebar = ({ categorylist }) => {
                 : ""
             }
           >
-            <Link href={`/${category?.title}`}>
+            <Link href={`/${category?.title.replace(/\s+/g, "-")}`}>
               <Accordion.Header>{category.title}</Accordion.Header>
             </Link>
             <Accordion.Body>
               <div className={styles.SubcategoryWrraper}>
                 {category.subcategories.map((subcategory, index) => (
                   <Link
-                    href={`/${category?.title}/${subcategory.title}`}
+                    href={`/${category?.title.replace(
+                      /\s+/g,
+                      "-"
+                    )}/${subcategory.title.replace(/\s+/g, "-")}`}
                     key={subcategory.title}
                   >
                     <p

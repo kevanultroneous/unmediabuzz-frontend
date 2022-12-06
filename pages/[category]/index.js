@@ -23,7 +23,7 @@ const Category = ({ data }) => {
 
   useEffect(() => {
     let precatchdata = data.allcategories?.data.find(
-      (i) => i.title == router.query.category
+      (i) => i.title == router.query.category.replace(/-/g, " ")
     );
     let findsubcategoryindex = 0;
 
