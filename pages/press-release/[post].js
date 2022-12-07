@@ -98,15 +98,17 @@ const ViewPost = ({ data }) => {
             className={`ColPaddingRemove`}
           >
             <p>{data?.PressReleaseList.summary}</p>
-            <center>
-              <div className={styles.FeaturedImage}>
-                <Image
-                  src={MAIN_URL + data?.PressReleaseList.featuredImage}
-                  alt="featured-image"
-                  fluid
-                />
-              </div>
-            </center>
+            {data?.PressReleaseList.featuredImage && (
+              <center>
+                <div className={styles.FeaturedImage}>
+                  <Image
+                    src={MAIN_URL + data?.PressReleaseList.featuredImage}
+                    alt="featured-image"
+                    fluid
+                  />
+                </div>
+              </center>
+            )}
             <div id="htmlcontent"></div>
           </Col>
         </Row>
@@ -140,7 +142,9 @@ const ViewPost = ({ data }) => {
             >
               <CardModel
                 url={posts.slugUrl ? `/press-release/${posts.slugUrl}` : "#"}
-                coverimg={MAIN_URL + posts.featuredImage}
+                coverimg={
+                  posts.featuredImage ? MAIN_URL + posts.featuredImage : null
+                }
                 hide={true}
                 date={timestampToDate(posts.releaseDate)}
                 title={posts.title}

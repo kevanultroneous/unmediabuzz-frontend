@@ -57,7 +57,7 @@ export const CardModel = ({
         xl={3}
         className={`ColPaddingRemove ${styles.PostImageCol}`}
       >
-        {coverimg ? (
+        {coverimg == null ? null : (
           <div className={styles.PostImage}>
             <Image
               src={coverimg}
@@ -66,7 +66,7 @@ export const CardModel = ({
               className={styles.PostImageS}
             />
           </div>
-        ) : null}
+        )}
       </Col>
       {!hide && <div className={styles.LineHorizontal}></div>}
     </Row>
@@ -116,7 +116,9 @@ export const BlogsCardModel = ({
           xl={4}
           className={` ${styles.BlogImageCol}`}
         >
-          <Image src={coverimg} alt="coverimage" className={styles.BlogImg} />
+          {!coverimg == null && (
+            <Image src={coverimg} alt="coverimage" className={styles.BlogImg} />
+          )}
         </Col>
       </Row>
       {!hide && <div className={styles.BlogLineHorizontal}></div>}
@@ -150,36 +152,49 @@ const RecentItems = ({ postList, blogList }) => {
                 Top <span className={styles.SpanText}>Buzz</span>
               </h4>
             </div>
-            <ContainerWrraper
-              customClass={`${styles.ContainerWrraperCardModel}`}
-            >
-              {postList.map((value, index) => (
-                <CardModel
-                  key={index}
-                  url={value.slugUrl ? `press-release/${value.slugUrl}` : `#`}
-                  coverimg={MAIN_URL + value?.featuredImage}
-                  companyname={`By, ${value?.companyName}`}
-                  date={`${timestampToDate(value?.releaseDate)}`}
-                  title={value?.title}
-                />
-              ))}
-            </ContainerWrraper>
-            <Col
-              xs={12}
-              sm={12}
-              md={12}
-              lg={7}
-              xl={7}
-              className={`ColPaddingRemove`}
-            >
-              <div className={styles.ButtonOutCover}>
-                <ToggleUiButton
-                  text={ButtonsList.viewCommon.source}
-                  dark
-                  url={ButtonsList.viewCommon.link}
-                />
-              </div>
-            </Col>
+            {postList.length > 0 ? (
+              <>
+                <ContainerWrraper
+                  customClass={`${styles.ContainerWrraperCardModel}`}
+                >
+                  {postList.map((value, index) => (
+                    <CardModel
+                      key={index}
+                      url={
+                        value.slugUrl ? `press-release/${value.slugUrl}` : `#`
+                      }
+                      coverimg={
+                        value?.featuredImage
+                          ? MAIN_URL + value?.featuredImage
+                          : null
+                      }
+                      companyname={`By, ${value?.companyName}`}
+                      date={`${timestampToDate(value?.releaseDate)}`}
+                      title={value?.title}
+                    />
+                  ))}
+                </ContainerWrraper>
+
+                <Col
+                  xs={12}
+                  sm={12}
+                  md={12}
+                  lg={7}
+                  xl={7}
+                  className={`ColPaddingRemove`}
+                >
+                  <div className={styles.ButtonOutCover}>
+                    <ToggleUiButton
+                      text={ButtonsList.viewCommon.source}
+                      dark
+                      url={ButtonsList.viewCommon.link}
+                    />
+                  </div>
+                </Col>
+              </>
+            ) : (
+              <h3 className="p-5">No Post</h3>
+            )}
           </Col>
 
           {/* we hide this component on Mobile */}

@@ -120,7 +120,11 @@ const PressRelease = ({ data }) => {
                     url={
                       value.slugUrl ? `/press-release/${value.slugUrl}` : `#`
                     }
-                    coverimg={MAIN_URL + value.featuredImage}
+                    coverimg={
+                      value.featuredImage
+                        ? MAIN_URL + value.featuredImage
+                        : null
+                    }
                     customtitleclass={`${styles.ParagraphSize}`}
                     key={index}
                     companyname={value.companyName}
@@ -137,7 +141,11 @@ const PressRelease = ({ data }) => {
                     url={
                       value.slugUrl ? `/press-release/${value.slugUrl}` : `#`
                     }
-                    coverimg={MAIN_URL + value.featuredImage}
+                    coverimg={
+                      value.featuredImage
+                        ? MAIN_URL + value.featuredImage
+                        : null
+                    }
                     customtitleclass={`${styles.ParagraphSize}`}
                     key={index}
                     companyname={value.companyName}

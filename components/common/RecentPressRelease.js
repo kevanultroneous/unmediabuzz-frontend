@@ -22,20 +22,28 @@ const RecentPressRelease = ({ blogList, hideclass }) => {
           Recent <span className={styles.SpanText}>Press Release</span>
         </h4>
       </div>
-      <ContainerWrraper customClass={`${styles.ContainerWrraperBlogCardModel}`}>
-        {blogList.map((value, index) => (
-          <BlogsCardModel
-            url={value.slugUrl ? `press-release/${value.slugUrl}` : `#`}
-            companyName={value.companyName}
-            badge={value.paidStatus}
-            hide={index === blogList.length - 1}
-            key={index}
-            date={`${timestampToDate(value.releaseDate)}`}
-            title={value.title}
-            coverimg={MAIN_URL + value.featuredImage}
-          />
-        ))}
-      </ContainerWrraper>
+      {blogList.length > 0 ? (
+        <ContainerWrraper
+          customClass={`${styles.ContainerWrraperBlogCardModel}`}
+        >
+          {blogList.map((value, index) => (
+            <BlogsCardModel
+              url={value.slugUrl ? `press-release/${value.slugUrl}` : `#`}
+              companyName={value.companyName}
+              badge={value.paidStatus}
+              hide={index === blogList.length - 1}
+              key={index}
+              date={`${timestampToDate(value.releaseDate)}`}
+              title={value.title}
+              coverimg={
+                value.featuredImage ? MAIN_URL + value.featuredImage : null
+              }
+            />
+          ))}
+        </ContainerWrraper>
+      ) : (
+        <h3 className="p-5">No Post</h3>
+      )}
     </Col>
   );
 };

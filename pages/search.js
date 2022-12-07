@@ -88,7 +88,9 @@ const SearchResult = ({ data }) => {
                     ? `/press-release/${item.slugUrl}`
                     : "#"
                 }
-                coverimg={MAIN_URL + item.featuredImage}
+                coverimg={
+                  item.featuredImage ? MAIN_URL + item.featuredImage : null
+                }
                 badge={item.paidStatus}
                 companyname={`By, ${item.companyName}`}
                 date={timestampToDate(item.releaseDate)}
