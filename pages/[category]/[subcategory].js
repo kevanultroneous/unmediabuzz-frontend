@@ -62,7 +62,15 @@ const Subcategory = ({ data }) => {
   };
 
   return (
-    <Layout>
+    <Layout
+      title={`Latest ${router.query.subcategory.replace(
+        /-/g,
+        " "
+      )} Press Releases & News | Submit ${router.query.subcategory.replace(
+        /-/g,
+        " "
+      )} Press Release Now`}
+    >
       <CategoryHero
         heading={
           router.query?.subcategory.charAt(0).toUpperCase() +

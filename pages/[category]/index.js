@@ -65,7 +65,15 @@ const Category = ({ data }) => {
     console.log(data);
   }
   return (
-    <Layout>
+    <Layout
+      title={`Latest ${router.query.category.replace(
+        /-/g,
+        " "
+      )} Press Releases & News | Submit ${router.query.category.replace(
+        /-/g,
+        " "
+      )} Press Release Now`}
+    >
       <CategoryHero
         heading={
           router.query.category.charAt(0).toUpperCase() +
