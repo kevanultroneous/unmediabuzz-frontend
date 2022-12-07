@@ -73,9 +73,13 @@ const ViewPost = ({ data }) => {
               <Link
                 href={`/${data?.PressReleaseList?.selectedCategory
                   .replace(/\s+/g, "-")
-                  .toLowerCase()}/${data?.PressReleaseList?.selectedSubCategory
-                  .replace(/\s+/g, "-")
-                  .toLowerCase()}`}
+                  .toLowerCase()}/${
+                  data?.PressReleaseList?.selectedSubCategory
+                    ? data?.PressReleaseList?.selectedSubCategory
+                        .replace(/\s+/g, "-")
+                        .toLowerCase()
+                    : null
+                }`}
               >
                 {data?.PressReleaseList?.selectedSubCategory}
               </Link>

@@ -53,9 +53,11 @@ const PressRelease = ({ data }) => {
   const searchaction = () => {
     if (!searchvalue.length > 0) {
       toast.error("Search field is required !");
-    } else if (specialcharacter.test(searchvalue)) {
-      toast.error("Special character is not allowed !");
-    } else {
+    }
+    // else if (specialcharacter.test(searchvalue)) {
+    //   toast.error("Special character is not allowed !");
+    // }
+    else {
       router.push(`/press-release?search=${searchvalue}`);
     }
   };

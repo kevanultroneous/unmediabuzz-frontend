@@ -75,7 +75,7 @@ export const timestampToDate = (ts) => {
     new Date(ts).getFullYear()
   );
 };
-export const specialcharacter = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+export const specialcharacter = /[.,#<>{}|%\s]/g;
 
 export function isValidPhoneNumber(phone) {
   var regex = /^\+(?:[0-9] ?){6,14}[0-9]$/;

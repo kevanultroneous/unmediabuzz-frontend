@@ -51,9 +51,11 @@ const Header = ({ commonchecked }) => {
     if (search) {
       if (!searchInput.length > 0) {
         toast.error("Search field is required !");
-      } else if (specialcharacter.test(searchInput)) {
-        toast.error("Special character is not allowed !");
-      } else {
+      }
+      // else if (specialcharacter.test(searchInput)) {
+      //   toast.error("Special character is not allowed !");
+      // }
+      else {
         router.push(`/search?searching=${searchInput}`);
       }
     }
