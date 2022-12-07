@@ -23,12 +23,12 @@ const Subcategory = ({ data }) => {
 
   useEffect(() => {
     let precatchdata = data.allcategories?.data.find(
-      (i) => i.title == router.query.category.replace(/-/g, " ")
+      (i) => i.title.toLowerCase() == router.query.category.replace(/-/g, " ")
     );
     let findsubcategoryindex = 0;
 
     precatchdata?.subcategories.map((value, index) =>
-      value.title === router.query.subcategory.replace(/-/g, " ")
+      value.title.toLowerCase() === router.query.subcategory.replace(/-/g, " ")
         ? (findsubcategoryindex = index)
         : null
     );
@@ -64,7 +64,10 @@ const Subcategory = ({ data }) => {
   return (
     <Layout>
       <CategoryHero
-        heading={router.query?.subcategory.replace(/-/g, " ")}
+        heading={
+          router.query?.subcategory.charAt(0).toUpperCase() +
+          router.query?.subcategory.slice(1).replace(/-/g, " ")
+        }
         breadcumb={
           <>
             <Link href={"/"}>Home</Link>/{" "}
@@ -91,7 +94,11 @@ const Subcategory = ({ data }) => {
                 className={styles.TabsDropdown}
                 onChange={(e) => {
                   router.push(
-                    `/${JSON.parse(e.target.value.replace(/\s+/g, "-"))[0]}`
+                    `/${
+                      JSON.parse(
+                        e.target.value.replace(/\s+/g, "-").toLowerCase()
+                      )[0]
+                    }`
                   );
                   setCurrentSubcategory(
                     JSON.parse(e.target.value.replace(/\s+/g, "-"))
@@ -124,10 +131,9 @@ const Subcategory = ({ data }) => {
                     onClick={() => {
                       setCurrentTab(index);
                       router.push(
-                        `/${router.query.category}/${tab.title.replace(
-                          /\s+/g,
-                          "-"
-                        )}`
+                        `/${router.query.category}/${tab.title
+                          .replace(/\s+/g, "-")
+                          .toLowerCase()}`
                       );
                     }}
                   >
@@ -160,7 +166,7 @@ const Subcategory = ({ data }) => {
                 />
               ))
             ) : (
-              <h4>No Post of {router.query.subcategory}</h4>
+              <h4>No Post of {router.query.subcategory.replace(/-/g, " ")}</h4>
             )}
           </Col>
           <Col

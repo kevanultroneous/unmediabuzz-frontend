@@ -16,6 +16,7 @@ import { InterestedPostAPI, PressReleaseListAPI } from "utils/API";
 import { useEffect } from "react";
 import { MAIN_URL, timestampToDate } from "utils/Anonymous";
 import toast from "react-hot-toast";
+import Link from "next/link";
 
 const ViewPost = ({ data }) => {
   const router = useRouter();
@@ -59,8 +60,25 @@ const ViewPost = ({ data }) => {
             className={styles.DetailSectionCol}
           >
             <p className={styles.BreadCumb}>
-              Home/ Press Release/ {data?.PressReleaseList.selectedCategory}/{" "}
-              {data?.PressReleaseList.selectedSubCategory}
+              <Link href="/">Home</Link>/{" "}
+              <Link href="/press-release">Press Release</Link>/
+              <Link
+                href={`/${data?.PressReleaseList?.selectedCategory
+                  .replace(/\s+/g, "-")
+                  .toLowerCase()}`}
+              >
+                {data?.PressReleaseList?.selectedCategory}
+              </Link>
+              /
+              <Link
+                href={`/${data?.PressReleaseList?.selectedCategory
+                  .replace(/\s+/g, "-")
+                  .toLowerCase()}/${data?.PressReleaseList?.selectedSubCategory
+                  .replace(/\s+/g, "-")
+                  .toLowerCase()}`}
+              >
+                {data?.PressReleaseList?.selectedSubCategory}
+              </Link>
             </p>
             <p className={styles.PostTitle}>{data?.PressReleaseList.title}</p>
             <p className={styles.CreatedAt}>{`On ${timestampToDate(

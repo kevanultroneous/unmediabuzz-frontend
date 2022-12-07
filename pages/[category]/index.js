@@ -23,12 +23,12 @@ const Category = ({ data }) => {
 
   useEffect(() => {
     let precatchdata = data.allcategories?.data.find(
-      (i) => i.title == router.query.category.replace(/-/g, " ")
+      (i) => i.title.toLowerCase() == router.query.category.replace(/-/g, " ")
     );
     let findsubcategoryindex = 0;
 
     precatchdata?.subcategories.map((value, index) =>
-      value.title === router.query.subcategory
+      value.title.toLowerCase() === router.query.subcategory
         ? (findsubcategoryindex = index)
         : (findsubcategoryindex = 0)
     );
@@ -67,7 +67,10 @@ const Category = ({ data }) => {
   return (
     <Layout>
       <CategoryHero
-        heading={router.query.category.replace(/-/g, " ")}
+        heading={
+          router.query.category.charAt(0).toUpperCase() +
+          router.query.category.slice(1).replace(/-/g, " ")
+        }
         breadcumb={
           <>
             <Link href={"/"}>Home</Link>/{" "}
@@ -87,10 +90,16 @@ const Category = ({ data }) => {
                 className={styles.TabsDropdown}
                 onChange={(e) => {
                   router.push(
-                    `/${JSON.parse(e.target.value.replace(/\s+/g, "-"))[0]}`
+                    `/${
+                      JSON.parse(
+                        e.target.value.replace(/\s+/g, "-").toLowerCase()
+                      )[0]
+                    }`
                   );
                   setCurrentSubcategory(
-                    JSON.parse(e.target.value.replace(/\s+/g, "-"))
+                    JSON.parse(
+                      e.target.value.toLowerCase().replace(/\s+/g, "-")
+                    )
                   );
                 }}
               >
@@ -98,7 +107,7 @@ const Category = ({ data }) => {
                   <option
                     key={index}
                     value={JSON.stringify([
-                      value.title.replace(/\s+/g, "-"),
+                      value.title.toLowerCase().replace(/\s+/g, "-"),
                       value.subcategories,
                     ])}
                     selected={value.title === currentSubcategory[0]}
@@ -120,10 +129,9 @@ const Category = ({ data }) => {
                     onClick={() => {
                       setCurrentTab(index);
                       router.push(
-                        `/${router.query.category}/${tab.title.replace(
-                          /\s+/g,
-                          "-"
-                        )}`
+                        `/${router.query.category}/${tab.title
+                          .replace(/\s+/g, "-")
+                          .toLowerCase()}`
                       );
                     }}
                   >

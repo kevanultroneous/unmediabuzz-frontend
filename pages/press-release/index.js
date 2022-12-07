@@ -98,7 +98,9 @@ const PressRelease = ({ data }) => {
                 }`}
                 onClick={() => {
                   setCurrentTab(index);
-                  router.push(`${`/${tab.title.replace(/\s+/g, "-")}`}`);
+                  router.push(
+                    `${`/${tab.title.replace(/\s+/g, "-").toLowerCase()}`}`
+                  );
                 }}
               >
                 {tab.title}

@@ -32,7 +32,7 @@ const CategorySidebar = ({ categorylist }) => {
       >
         {categorylist.map((category, index) => (
           <Accordion.Item
-            eventKey={category?.title}
+            eventKey={category?.title.toLowerCase()}
             key={index}
             className={
               router.query.category
@@ -43,23 +43,26 @@ const CategorySidebar = ({ categorylist }) => {
                 : null
             }
           >
-            <Link href={`/${category?.title.replace(/\s+/g, "-")}`}>
+            <Link
+              href={`/${category?.title.replace(/\s+/g, "-").toLowerCase()}`}
+            >
               <Accordion.Header>{category.title}</Accordion.Header>
             </Link>
             <Accordion.Body>
               <div className={styles.SubcategoryWrraper}>
                 {category.subcategories.map((subcategory, index) => (
                   <Link
-                    href={`/${category?.title.replace(
-                      /\s+/g,
-                      "-"
-                    )}/${subcategory.title.replace(/\s+/g, "-")}`}
+                    href={`/${category?.title
+                      .replace(/\s+/g, "-")
+                      .toLowerCase()}/${subcategory.title
+                      .replace(/\s+/g, "-")
+                      .toLowerCase()}`}
                     key={subcategory.title}
                   >
                     <p
                       className={`${
                         router.query.subcategory?.replace(/-/g, " ") ===
-                        subcategory.title
+                        subcategory.title.toLowerCase()
                           ? styles.SelectedSubcategoryText
                           : styles.SubcategoryText
                       }`}
