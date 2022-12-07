@@ -163,6 +163,7 @@ const ViewPost = ({ data }) => {
                 coverimg={
                   posts.featuredImage ? MAIN_URL + posts.featuredImage : null
                 }
+                badge={posts.paidStatus}
                 hide={true}
                 date={timestampToDate(posts.releaseDate)}
                 title={posts.title}

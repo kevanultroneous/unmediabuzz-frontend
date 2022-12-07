@@ -168,6 +168,7 @@ const RecentItems = ({ postList, blogList }) => {
                           ? MAIN_URL + value?.featuredImage
                           : null
                       }
+                      badge={value.paidStatus}
                       companyname={`By, ${value?.companyName}`}
                       date={`${timestampToDate(value?.releaseDate)}`}
                       title={value?.title}
