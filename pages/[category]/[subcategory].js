@@ -90,15 +90,21 @@ const Subcategory = ({ data }) => {
               <select
                 className={styles.TabsDropdown}
                 onChange={(e) => {
-                  router.push(`/${JSON.parse(e.target.value)[0]}`);
-                  setCurrentSubcategory(JSON.parse(e.target.value));
+                  router.push(
+                    `/${JSON.parse(e.target.value.replace(/\s+/g, "-"))[0]}`
+                  );
+                  setCurrentSubcategory(
+                    JSON.parse(e.target.value.replace(/\s+/g, "-"))
+                  );
                 }}
               >
                 {data.allcategories?.data.map((value, index) => (
                   <option
                     key={index}
-                    // create json stringify array where 0 index present title of category and 1 index present subcategories array
-                    value={JSON.stringify([value.title, value.subcategories])}
+                    value={JSON.stringify([
+                      value.title.replace(/\s+/g, "-"),
+                      value.subcategories,
+                    ])}
                     selected={value.title === currentSubcategory[0]}
                   >
                     {value.title}
@@ -117,7 +123,12 @@ const Subcategory = ({ data }) => {
                     }`}
                     onClick={() => {
                       setCurrentTab(index);
-                      router.push(`/${router.query.category}/${tab.title}`);
+                      router.push(
+                        `/${router.query.category}/${tab.title.replace(
+                          /\s+/g,
+                          "-"
+                        )}`
+                      );
                     }}
                   >
                     {tab.title}

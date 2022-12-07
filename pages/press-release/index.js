@@ -83,7 +83,7 @@ const PressRelease = ({ data }) => {
                 }`}
                 onClick={() => {
                   setCurrentTab(index);
-                  router.push(`${`/${tab.title}`}`);
+                  router.push(`${`/${tab.title.replace(/\s+/g, "-")}`}`);
                 }}
               >
                 {tab.title}

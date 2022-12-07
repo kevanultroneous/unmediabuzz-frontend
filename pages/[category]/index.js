@@ -72,8 +72,8 @@ const Category = ({ data }) => {
           <>
             <Link href={"/"}>Home</Link>/{" "}
             <Link href={"/press-release"}>Press Release</Link>/{" "}
-            <Link href={`/${router.query.category}`}>
-              {router.query.category}
+            <Link href={`/${router.query.category.replace(/\s+/g, "-")}`}>
+              {router.query.category.replace(/\s+/g, "-")}
             </Link>
           </>
         }
@@ -86,14 +86,21 @@ const Category = ({ data }) => {
               <select
                 className={styles.TabsDropdown}
                 onChange={(e) => {
-                  router.push(`/${JSON.parse(e.target.value)[0]}`);
-                  setCurrentSubcategory(JSON.parse(e.target.value));
+                  router.push(
+                    `/${JSON.parse(e.target.value.replace(/\s+/g, "-"))[0]}`
+                  );
+                  setCurrentSubcategory(
+                    JSON.parse(e.target.value.replace(/\s+/g, "-"))
+                  );
                 }}
               >
                 {data.allcategories?.data.map((value, index) => (
                   <option
                     key={index}
-                    value={JSON.stringify([value.title, value.subcategories])}
+                    value={JSON.stringify([
+                      value.title.replace(/\s+/g, "-"),
+                      value.subcategories,
+                    ])}
                     selected={value.title === currentSubcategory[0]}
                   >
                     {value.title}
@@ -112,7 +119,12 @@ const Category = ({ data }) => {
                     }`}
                     onClick={() => {
                       setCurrentTab(index);
-                      router.push(`/${router.query.category}/${tab.title}`);
+                      router.push(
+                        `/${router.query.category}/${tab.title.replace(
+                          /\s+/g,
+                          "-"
+                        )}`
+                      );
                     }}
                   >
                     {tab.title}
