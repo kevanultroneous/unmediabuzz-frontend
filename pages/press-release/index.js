@@ -179,30 +179,49 @@ const PressRelease = ({ data }) => {
             xl={12}
             className={`ColPaddingRemove ${styles.CenterPagination}`}
           >
-            {router.query.search
-              ? data.internalSearch.data[0]?.totalCount > 30
-              : data.fetchlistOfPressReleaseList.data[0]?.totalCount > 30 && (
+            {router.query.search ? (
+              data.internalSearch.data[0]?.totalCount > 30 ? (
+                <div className={styles.PaginationWrraper}>
+                  <Pagination
+                    showTitle={false}
+                    defaultCurrent={router.query.page}
+                    onChange={(v) => {
+                      router.query.search
+                        ? router.push(
+                            `/press-release?search=${router.query.search}&page=${v}`
+                          )
+                        : "";
+                    }}
+                    total={
+                      router.query.search
+                        ? data.internalSearch.data[0]?.totalCount
+                        : null
+                    }
+                    itemRender={textItemRender}
+                    pageSize={30}
+                  />
+                </div>
+              ) : null
+            ) : (
+              <>
+                {data.fetchlistOfPressReleaseList.data[0]?.totalCount > 30 ? (
                   <div className={styles.PaginationWrraper}>
                     <Pagination
                       showTitle={false}
                       defaultCurrent={router.query.page}
                       onChange={(v) => {
-                        router.query.search
-                          ? router.push(
-                              `/press-release?search=${router.query.search}&page=${v}`
-                            )
-                          : router.push(`/press-release?page=${v}`);
+                        router.push(`/press-release?page=${v}`);
                       }}
                       total={
-                        router.query.search
-                          ? data.internalSearch.data[0]?.totalCount
-                          : data.fetchlistOfPressReleaseList.data[0]?.totalCount
+                        data.fetchlistOfPressReleaseList.data[0]?.totalCount
                       }
                       itemRender={textItemRender}
                       pageSize={30}
                     />
                   </div>
-                )}
+                ) : null}
+              </>
+            )}
           </Col>
         </Row>
       </ContainerWrraper>
