@@ -24,7 +24,8 @@
   padding-left: 2.5rem;
   padding-bottom: 0rem;
 }
-.AllPrLabel {
+.AllPrLabel,
+.AllPrLabel a {
   font-weight: 500;
   font-size: var(--maxText);
   background-clip: text;
@@ -32,6 +33,19 @@
   color: rgba(0, 0, 0, 0.7);
   user-select: none;
   margin: 0%;
+  text-decoration: none;
+}
+.SelectedAllPrLabel {
+  font-weight: 500;
+  font-size: var(--maxText);
+  cursor: pointer;
+  user-select: none;
+  margin: 0%;
+  text-decoration: none;
+  background: linear-gradient(180deg, #f65d61 0%, #f16684 50.52%, #fa9a64 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .SubcategoryWrraper {
   padding-left: 1.2rem;

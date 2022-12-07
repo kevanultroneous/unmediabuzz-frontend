@@ -13,18 +13,34 @@ const CategorySidebar = ({ categorylist }) => {
         <p className={styles.CategoryHeading}>CATEGORIES</p>
       </div>
       <div className={styles.AllPrLabelWrap}>
-        <p className={styles.AllPrLabel}>All Press Release</p>
+        <p
+          className={
+            router.pathname === "/press-release"
+              ? styles.SelectedAllPrLabel
+              : styles.AllPrLabel
+          }
+        >
+          <Link href="/press-release">All Press Release</Link>
+        </p>
       </div>
-      <Accordion defaultActiveKey={router.query?.category}>
+      <Accordion
+        defaultActiveKey={
+          router.query.category
+            ? router.query.category.replace(/-/g, " ")
+            : null
+        }
+      >
         {categorylist.map((category, index) => (
           <Accordion.Item
             eventKey={category?.title}
             key={index}
             className={
-              router.query.category == category.title &&
-              router.query.subcategory
-                ? "CategoriesAccordionforUrl"
-                : ""
+              router.query.category
+                ? router.query.category.replace(/-/g, " ") == category.title &&
+                  router.query.subcategory
+                  ? "CategoriesAccordionforUrl"
+                  : ""
+                : null
             }
           >
             <Link href={`/${category?.title.replace(/\s+/g, "-")}`}>

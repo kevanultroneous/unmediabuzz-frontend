@@ -153,7 +153,7 @@ const Category = ({ data }) => {
                 />
               ))
             ) : (
-              <h4>No Post of {router.query.category}</h4>
+              <h4>No Post of {router.query.category.replace(/-/g, " ")}</h4>
             )}
           </Col>
           <Col

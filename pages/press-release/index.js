@@ -45,7 +45,7 @@ const PressRelease = ({ data }) => {
     return element;
   };
 
-  const [currentTab, setCurrentTab] = useState(0);
+  const [currentTab, setCurrentTab] = useState(null);
   const [searchvalue, setSearchValue] = useState(
     router.query.search ? router.query.search : ""
   );
@@ -75,6 +75,16 @@ const PressRelease = ({ data }) => {
       />
       <ContainerWrraper customClass={`${styles.TabsMainContainer}`}>
         <div className={styles.TabsLayer}>
+          <div>
+            <div
+              className={`${styles.CurrentTab} ${
+                router.pathname == "/press-release" ? styles.SelectedTab : null
+              }`}
+            >
+              All Press Release
+            </div>
+          </div>
+
           {data.allcategories?.data.map((tab, index) => (
             <div key={index}>
               <div
