@@ -62,7 +62,12 @@ export default function Home({ data }) {
   }, []);
 
   return (
-    <Layout>
+    <Layout
+      title={"Press Release Distribution | Submit Press Release Today"}
+      description={
+        "UNMedia Buzz helps you with distributing and reaching new audiences around the globe. Submit a Press Release on the thriving digital news distribution network."
+      }
+    >
       {checkResponsive ? (
         <>
           <Introduction />

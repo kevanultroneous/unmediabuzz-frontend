@@ -1,0 +1,37 @@
+.ContainerWrraperCustom {
+  padding-top: 14rem;
+  background-color: var(--elementColor);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 0%;
+}
+.TitleText {
+  font-weight: 800;
+  font-size: 48px;
+  color: var(--primaryColor);
+}
+.MainRow {
+  text-align: center;
+}
+.BigImage {
+  padding-top: 6rem;
+  top: 4px;
+  position: relative;
+}
+@media screen and (max-width: 600px) {
+  .ContainerWrraperCustom {
+    padding-top: 10rem;
+  }
+  .TitleText {
+    font-weight: 800;
+    font-size: 26px;
+  }
+  .Brushwidth {
+    width: 8rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1080px) {
+}
+@media (min-width: 1200px) and (max-width: 1730px) {
+}

@@ -12,6 +12,7 @@ import "aos/dist/aos.css";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { ContactusApi } from "utils/API";
+import { Router, useRouter } from "next/router";
 
 const InputController = ({ label, type, value, changeHandler }) => {
   return (
@@ -28,6 +29,7 @@ const InputController = ({ label, type, value, changeHandler }) => {
 };
 
 const ContactUs = () => {
+  const router = useRouter();
   const [radioButton, setRadioButton] = useState(null);
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
@@ -79,6 +81,7 @@ const ContactUs = () => {
         })
         .then((response) => {
           toast.success(response.data.msg);
+          router.push("/thankyou");
         })
         .catch((e) => {
           toast.error("Enquiry submition failed !");
