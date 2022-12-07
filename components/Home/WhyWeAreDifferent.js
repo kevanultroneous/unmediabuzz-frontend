@@ -30,7 +30,7 @@ const WhyWeAreDifferent = () => {
               data-aos="fade-up"
               data-aos-duration="2000"
             >
-              Why we are Different?
+              Why distribute press releases with us?
             </p>
             <div
               className={styles.SpanImage}
@@ -41,15 +41,13 @@ const WhyWeAreDifferent = () => {
             </div>
           </div>
           <p className={styles.MainParagraph}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industrys standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.
+            The quality of the distribution network defines how much coverage a
+            press release will get. We handpick the partner sites through a
+            detailed quality check review from our team, followed by
+            distributing the press releases on those network sites.
           </p>
           <p className={styles.GradiantText}>
-            Pick the Best choice for Media Distribution
+            Grow your brand globally with our best distribution network now!
           </p>
         </Col>
       </Row>

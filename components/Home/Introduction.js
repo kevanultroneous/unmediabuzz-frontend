@@ -80,9 +80,9 @@ const Introduction = () => {
         >
           <div className={styles.animationSection}>
             <div data-aos="fade-up" data-aos-duration="2000">
-              <p className={styles.TitleText}>Start, Raise & Grow</p>
+              <p className={styles.TitleText}>Start, Submit & Distribute</p>
               <p className={`${styles.TitleText} ${styles.TitleTextWithBrush}`}>
-                faster with
+                Globally with
                 <span className={styles.TitleSpan}>
                   <Image
                     src="/assets/images/brush-2.svg"
@@ -96,9 +96,9 @@ const Introduction = () => {
           </div>
           <div>
             <p className={styles.TitleIntro}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry&apos;s standard dummy
-              text ever since the 1500s
+              Reach millions and establish authority so you can grow with ease.
+              Get your dynamic story featured in high-authority media outlets
+              with us.
             </p>
           </div>
 

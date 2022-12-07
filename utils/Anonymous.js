@@ -7,26 +7,26 @@ export const ProcessList = [
   {
     // icon: <IoMdLaptop size={55} />,
     icon: "./assets/icons/black.svg",
-    title: "Submit",
-    desc: "Lorem Ipsum is simply dummy text of the printing.",
+    title: "Submission",
+    desc: "Submit your story by following our guidelines.",
   },
   {
     // icon: <IoMdLaptop size={55} />,
     icon: "./assets/icons/black.svg",
-    title: "Boost",
-    desc: "Lorem Ipsum is simply dummy text of the printing.",
+    title: "Review",
+    desc: "Our editors analyze and review submitted content.",
   },
   {
     // icon: <IoMdLaptop size={55} />,
     icon: "./assets/icons/black.svg",
-    title: "Coverage",
-    desc: "Lorem Ipsum is simply dummy text of the printing.",
+    title: "Distribution",
+    desc: "We deliver it to the audiences that matter most.",
   },
   {
     // icon: <IoMdLaptop size={55} />,
     icon: "./assets/icons/black.svg",
     title: "Report",
-    desc: "Lorem Ipsum is simply dummy text of the printing.",
+    desc: "Get a thorough report to optimize your strategy.",
   },
 ];
 export const Faqdata = [
@@ -70,7 +70,7 @@ export const timestampToDate = (ts) => {
   return (
     new Date(ts).getDate() +
     " " +
-    months[new Date(ts).getMonth() - 1] +
+    months[new Date(ts).getMonth() - 1 + 1] +
     " " +
     new Date(ts).getFullYear()
   );

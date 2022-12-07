@@ -27,13 +27,13 @@ const Faq = () => {
               data-aos="fade-up"
               data-aos-duration="2000"
             >
-              We have all the Answers you are looking for!
+              Still hesitant? We have all the answers you are looking for!
             </h6>
           </div>
           <p className={styles.MainParagraph}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industrys standard dummy text
-            ever since the 1500sed.
+            We realize you want a genuine and reliable distribution network to
+            spread the word. For that, don&apos;t be shy; ask away. We put rest
+            to all your worries.
           </p>
         </Col>
         <Col

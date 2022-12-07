@@ -139,7 +139,10 @@
 .animationSection {
   overflow: hidden;
 }
-
+.PostImageS {
+  height: 115px;
+  width: 164px;
+}
 @media screen and (max-width: 600px) {
   .CardModelRow {
     flex-direction: column-reverse;

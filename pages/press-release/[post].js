@@ -58,7 +58,10 @@ const ViewPost = ({ data }) => {
             xl={12}
             className={styles.DetailSectionCol}
           >
-            <p className={styles.BreadCumb}>Home/ Press Release/</p>
+            <p className={styles.BreadCumb}>
+              Home/ Press Release/ {data?.PressReleaseList.selectedCategory}/{" "}
+              {data?.PressReleaseList.selectedSubCategory}
+            </p>
             <p className={styles.PostTitle}>{data?.PressReleaseList.title}</p>
             <p className={styles.CreatedAt}>{`On ${timestampToDate(
               data?.PressReleaseList.releaseDate

@@ -10,6 +10,8 @@ import Aos from "aos";
 import validator from "validator";
 import "aos/dist/aos.css";
 import toast from "react-hot-toast";
+import axios from "axios";
+import { ContactusApi } from "utils/API";
 
 const InputController = ({ label, type, value, changeHandler }) => {
   return (
@@ -47,18 +49,40 @@ const ContactUs = () => {
   const handleformsubmit = () => {
     if (validator.isEmpty(firstname)) {
       toast.error("Firstname is required !");
+    } else if (validator.isNumeric(firstname)) {
+      toast.error("Firstname not accepted number !");
     } else if (validator.isEmpty(lastname)) {
       toast.error("Lastname is required !");
+    } else if (validator.isNumeric(lastname)) {
+      toast.error("Lastname not accepted number !");
     } else if (!validator.isEmail(mail)) {
       toast.error("Enter valid email !");
+    } else if (!validator.isNumeric(phone)) {
+      toast.error("Phone not accepted character !");
     } else if (!isValidPhoneNumber(countryCode + "" + phone)) {
-      toast.error("Enter valid phone number !" + countryCode + " " + phone);
+      toast.error("Enter valid phone number !");
     } else if (radioButton === null) {
       toast.error("Please select post !");
     } else if (validator.isEmpty(topicsame)) {
       toast.error("Topic same is required !");
     } else if (validator.isEmpty(message)) {
       toast.error("Message is required !");
+    } else {
+      axios
+        .post(ContactusApi, {
+          name: firstname + " " + lastname,
+          email: mail,
+          postType: radioButton === 0 ? "press" : "blog",
+          contact: countryCode + "" + phone,
+          topic: topicsame,
+          message: message,
+        })
+        .then((response) => {
+          toast.success(response.data.msg);
+        })
+        .catch((e) => {
+          toast.error("Enquiry submition failed !");
+        });
     }
   };
 
@@ -148,7 +172,7 @@ const ContactUs = () => {
                   <div className={styles.CountryInput}>
                     <select
                       className={styles.Options}
-                      onChange={(e) => console.log(e.target.value)}
+                      onChange={(e) => setCountryCode(e.target.value)}
                       defaultValue={countryCode}
                     >
                       {refreshed.map((code, index) => (

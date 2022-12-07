@@ -59,7 +59,12 @@ export const CardModel = ({
       >
         {coverimg ? (
           <div className={styles.PostImage}>
-            <Image src={coverimg} alt="coverimage" width={"100%"} />
+            <Image
+              src={coverimg}
+              alt="coverimage"
+              width={"100%"}
+              className={styles.PostImageS}
+            />
           </div>
         ) : null}
       </Col>

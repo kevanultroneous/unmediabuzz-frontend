@@ -37,6 +37,7 @@
   border-radius: 20px;
   margin-right: 1rem;
   cursor: grab;
+  height: 25rem;
 }
 .ProfileDescription {
   padding-top: 1rem;
