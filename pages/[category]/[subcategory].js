@@ -63,13 +63,8 @@ const Subcategory = ({ data }) => {
 
   return (
     <Layout
-      title={`Latest ${router.query.subcategory.replace(
-        /-/g,
-        " "
-      )} Press Releases & News | Submit ${router.query.subcategory.replace(
-        /-/g,
-        " "
-      )} Press Release Now`}
+      title={data.findsubcategoryseo.seoTitle}
+      description={data.findsubcategoryseo.seoDescription}
     >
       <CategoryHero
         heading={
@@ -231,11 +226,19 @@ export async function getServerSideProps(context) {
     })
     .then((res) => res?.data)
     .catch((e) => e);
+  let seoData = allcategories?.data.find(
+    (i) => i.title.toLowerCase() == context.query.category.replace(/-/g, " ")
+  );
+  let findsubcategoryseo = seoData.subcategories.find(
+    (i) => i.title.toLowerCase() == context.query.subcategory.replace(/-/g, " ")
+  );
+  console.log(findsubcategoryseo);
   return {
     props: {
       data: {
         allcategories,
         categorywisepost,
+        findsubcategoryseo,
       },
     },
   };

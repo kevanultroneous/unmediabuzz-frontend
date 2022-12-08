@@ -20,7 +20,7 @@ const Category = ({ data }) => {
   const [currentTab, setCurrentTab] = useState(0);
   const router = useRouter();
   const [currentSubcategory, setCurrentSubcategory] = useState([]);
-
+  const [preDataforSeo, setPreDataforSeo] = useState({});
   useEffect(() => {
     let precatchdata = data.allcategories?.data.find(
       (i) => i.title.toLowerCase() == router.query.category.replace(/-/g, " ")
@@ -37,6 +37,7 @@ const Category = ({ data }) => {
     }
     setCurrentTab(findsubcategoryindex);
     setCurrentSubcategory([precatchdata?.title, precatchdata?.subcategories]);
+    setPreDataforSeo(precatchdata);
   }, [data.allcategories?.data, router]);
 
   const textItemRender = (current, type, element) => {
@@ -61,18 +62,11 @@ const Category = ({ data }) => {
     }
     return element;
   };
-  {
-    console.log(data);
-  }
+
   return (
     <Layout
-      title={`Latest ${router.query.category.replace(
-        /-/g,
-        " "
-      )} Press Releases & News | Submit ${router.query.category.replace(
-        /-/g,
-        " "
-      )} Press Release Now`}
+      title={data.seoData.seoTitle}
+      description={data.seoData.seoDescription}
     >
       <CategoryHero
         heading={
@@ -218,6 +212,7 @@ export async function getServerSideProps(context) {
     .get(AllCategoryAPI)
     .then((res) => res.data)
     .catch((e) => e);
+
   const categorywisepost = await axios
     .post(CategoryWisePostApi, {
       categoryID: context.params.category.replace(/-/g, " "),
@@ -226,11 +221,16 @@ export async function getServerSideProps(context) {
     })
     .then((res) => res?.data)
     .catch((e) => e);
+
+  let seoData = allcategories?.data.find(
+    (i) => i.title.toLowerCase() == context.query.category.replace(/-/g, " ")
+  );
   return {
     props: {
       data: {
         allcategories,
         categorywisepost,
+        seoData,
       },
     },
   };
