@@ -14,7 +14,7 @@ const CategoryHero = ({ heading, breadcumb }) => {
           xl={12}
           className={`ColPaddingRemove ${styles.HeroSectionChildsCol}`}
         >
-          <h4 className={styles.MainHeading}>{heading}</h4>
+          <h1 className={styles.MainHeading}>{heading}</h1>
           <p className={styles.BreadCumb}>{breadcumb}</p>
         </Col>
       </Row>

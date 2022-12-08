@@ -22,13 +22,13 @@ const Faq = () => {
           className={`ColPaddingRemove`}
         >
           <div className={styles.animationSection}>
-            <h6
+            <h2
               className={styles.MainHeading}
               data-aos="fade-up"
               data-aos-duration="2000"
             >
               Still hesitant? We have all the answers you are looking for!
-            </h6>
+            </h2>
           </div>
           <p className={styles.MainParagraph}>
             We realize you want a genuine and reliable distribution network to

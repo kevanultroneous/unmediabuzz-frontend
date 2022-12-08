@@ -24,7 +24,7 @@ const PressReleaseHighlights = () => {
     <ContainerWrraper customClass={`${styles.ContainerWrraperHighlight}`}>
       <div className={styles.HighlightHeadCover}>
         {isMobile ? (
-          <p className={styles.HighlightHeading}>
+          <h2 className={styles.HighlightHeading}>
             Your
             <label className={styles.UniqueLabel}>
               <span className={styles.BrushSetup}>
@@ -38,10 +38,10 @@ const PressReleaseHighlights = () => {
             </label>
             <br />
             could appear on
-          </p>
+          </h2>
         ) : (
           <div className={styles.animationSection}>
-            <p
+            <h2
               className={styles.HighlightHeading}
               data-aos="fade-up"
               data-aos-duration="2000"
@@ -58,7 +58,7 @@ const PressReleaseHighlights = () => {
                 &nbsp;&nbsp;&nbsp; Press Release
               </label>
               &nbsp;&nbsp;&nbsp; could appear on
-            </p>
+            </h2>
           </div>
         )}
       </div>

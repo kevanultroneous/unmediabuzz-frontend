@@ -25,13 +25,13 @@ const WhyWeAreDifferent = () => {
           className={`${styles.MainIntroAndDiscription} ColPaddingRemove`}
         >
           <div className={styles.animationSection}>
-            <p
+            <h2
               className={styles.MainTitle}
               data-aos="fade-up"
               data-aos-duration="2000"
             >
               Why distribute press releases with us?
-            </p>
+            </h2>
             <div
               className={styles.SpanImage}
               data-aos="fade-up"

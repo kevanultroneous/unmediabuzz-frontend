@@ -144,13 +144,13 @@ const RecentItems = ({ postList, blogList }) => {
             className={`ColPaddingRemove`}
           >
             <div className={styles.animationSection}>
-              <h4
+              <h2
                 className={styles.ListHeading}
                 data-aos="fade-up"
                 data-aos-duration="2000"
               >
                 Top <span className={styles.SpanText}>Buzz</span>
-              </h4>
+              </h2>
             </div>
             {postList.length > 0 ? (
               <>

@@ -84,7 +84,7 @@ const ViewPost = ({ data }) => {
                 {data?.PressReleaseList?.selectedSubCategory}
               </Link>
             </p>
-            <p className={styles.PostTitle}>{data?.PressReleaseList.title}</p>
+            <h1 className={styles.PostTitle}>{data?.PressReleaseList.title}</h1>
             <p className={styles.CreatedAt}>{`On ${timestampToDate(
               data?.PressReleaseList.releaseDate
             )} By, ${data?.PressReleaseList.companyName}`}</p>

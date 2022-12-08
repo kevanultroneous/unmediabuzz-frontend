@@ -150,7 +150,7 @@ const Testimonial = () => {
           className={`ColPaddingRemove`}
         >
           <div className={styles.animationSection}>
-            <h6
+            <h2
               className={styles.MainHeading}
               data-aos="fade-up"
               data-aos-duration="2000"
@@ -159,7 +159,7 @@ const Testimonial = () => {
               <span className={styles.MainHeadingBrush}>
                 <Image src="/assets/icons/brush-4.svg" alt="brush" />
               </span>
-            </h6>
+            </h2>
           </div>
         </Col>
       </Row>

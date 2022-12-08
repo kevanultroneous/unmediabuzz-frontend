@@ -21,7 +21,7 @@ const Process = ({ ProcessList, title, icon, desc, index }) => {
           />
           {/* {icon} */}
         </div>
-        <h6 className={styles.ProcessTitle}>{title}</h6>
+        <h3 className={styles.ProcessTitle}>{title}</h3>
         <p className={styles.ProcessDesc}>{desc}</p>
         <div className={styles.MobileProcessList}>
           {!(
