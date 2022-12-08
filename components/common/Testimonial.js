@@ -107,6 +107,7 @@ const Testimonial = () => {
   const dataTestimonial = [
     {
       name: "Liza Jones",
+      img: "/assets/images/avt1.jpg",
       designation: "Marketing executive",
       rate: 5,
       message:
@@ -114,6 +115,7 @@ const Testimonial = () => {
     },
     {
       name: "Thomas evans",
+      img: "/assets/images/avt2.jpg",
       designation: "Communication strategist",
       rate: 4,
       message:
@@ -121,6 +123,7 @@ const Testimonial = () => {
     },
     {
       name: "Kelly Davis",
+      img: "/assets/images/avt3.jpg",
       designation: "Vice president",
       rate: 4,
       message:
@@ -128,6 +131,7 @@ const Testimonial = () => {
     },
     {
       name: "James Pearson",
+      img: "/assets/images/avt4.jpg",
       designation: "Chief Marketing Officer",
       rate: 4,
       message:
@@ -169,7 +173,13 @@ const Testimonial = () => {
             <div className={styles.TestimonialCard}>
               <div className={styles.Profile}>
                 <div>
-                  <Image src="/assets/icons/avatar.svg" alt="filled" />
+                  <Image
+                    src={value.img}
+                    alt="filled"
+                    height={"69px"}
+                    width="69px"
+                    style={{ borderRadius: "100%" }}
+                  />
                 </div>
                 <div className={styles.ProfileDetails}>
                   <p className={styles.UserName}>{value.name}</p>
