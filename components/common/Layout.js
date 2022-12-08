@@ -9,6 +9,7 @@ const Layout = ({
   children,
   ogtitle,
   ogimage,
+  robots = "index,follow",
 }) => {
   return (
     <div>
@@ -24,7 +25,7 @@ const Layout = ({
           content={keywords}
           key="unmediabuzz-key-keywords"
         />
-        <meta name="robots" content="index,follow" />
+        <meta name="robots" content={robots} />
         <meta property="og:title" content={ogtitle} />
         <meta property="og:image" content={ogimage} />
       </Head>
@@ -36,9 +37,9 @@ const Layout = ({
 };
 
 Layout.defaultProps = {
-  title: "page | Unmediabuzz",
-  description: "unmediabuzz description",
-  keywords: "keywords",
+  title: "Unmediabuzz",
+  description: "",
+  keywords: "",
 };
 
 export default Layout;
