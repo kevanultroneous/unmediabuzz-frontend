@@ -66,7 +66,7 @@ const PressRelease = ({ data }) => {
     <Layout
       title={"All Press Releases | News Releases | Submit Press Release Now"}
       description={
-        "Explore all the latest news releases and press releases distributed by UNMedia Buzz. Submit Press Release and news release today."
+        "Explore all the latest news releases and press releases distributed by UNmedia Buzz. Submit Press Release and news release today."
       }
     >
       <Toaster position="top-center" reverseOrder={false} />

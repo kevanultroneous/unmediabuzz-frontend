@@ -110,28 +110,28 @@ const Testimonial = () => {
       designation: "Marketing executive",
       rate: 5,
       message:
-        "UNmediaBuzz provides an enormous reach at an affordable price compared to others. I love it. They have let us issue news on critical topics, like climate change, that other news services have rejected. UNmediaBuzz is the real deal.",
+        "UNmedia Buzz provides an enormous reach at an affordable price compared to others. I love it. They have let us issue news on critical topics, like climate change, that other news services have rejected. UNmedia Buzz is the real deal.",
     },
     {
       name: "Thomas evans",
       designation: "Communication strategist",
       rate: 4,
       message:
-        "My press release with UNmediaBuzz got me coverage in different publications. As a result, I received a significant rise in my website traffic. They are the best in the business as far as I am concerned, who helped us scale effortlessly.",
+        "My press release with UNmedia Buzz got me coverage in different publications. As a result, I received a significant rise in my website traffic. They are the best in the business as far as I am concerned, who helped us scale effortlessly.",
     },
     {
       name: "Kelly Davis",
       designation: "Vice president",
       rate: 4,
       message:
-        "The PR distributing companies' ineffective services cost me a lot of money and time. Fortunately, I came across the team of UNmediaBuzz, they helped me out of this situation with complete analytics. I strongly recommend their services.",
+        "The PR distributing companies' ineffective services cost me a lot of money and time. Fortunately, I came across the team of UNmedia Buzz, they helped me out of this situation with complete analytics. I strongly recommend their services.",
     },
     {
       name: "James Pearson",
       designation: "Chief Marketing Officer",
       rate: 4,
       message:
-        "I have used services from over a dozen PR distribution services. Only UNmediaBuzz has been able to deliver its services as effectively as promised. My sincere thanks go out to the entire team.",
+        "I have used services from over a dozen PR distribution services. Only UNmedia Buzz has been able to deliver its services as effectively as promised. My sincere thanks go out to the entire team.",
     },
   ];
   useEffect(() => {

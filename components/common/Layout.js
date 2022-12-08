@@ -18,12 +18,12 @@ const Layout = ({
         <meta
           name="description"
           content={description}
-          key="unmediabuzz-key-description"
+          key="UNmedia Buzz-key-description"
         />
         <meta
           name="keywords"
           content={keywords}
-          key="unmediabuzz-key-keywords"
+          key="UNmedia Buzz-key-keywords"
         />
         <meta name="robots" content={robots} />
         <meta property="og:title" content={ogtitle} />
@@ -37,7 +37,7 @@ const Layout = ({
 };
 
 Layout.defaultProps = {
-  title: "Unmediabuzz",
+  title: "UNmedia Buzz",
   description: "",
   keywords: "",
 };

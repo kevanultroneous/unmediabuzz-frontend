@@ -91,8 +91,8 @@ const ContactUs = () => {
 
   return (
     <Layout
-      title={"Contact UNMedia Buzz Now"}
-      description={"Contact UNMedia Buzz now by filling the form"}
+      title={"Contact UNmedia Buzz Now"}
+      description={"Contact UNmedia Buzz now by filling the form"}
     >
       <ContainerWrraper
         customClass={`${styles.mobileCustomContainer} ${styles.ContactUsContainerWrraper}`}
@@ -109,7 +109,7 @@ const ContactUs = () => {
             data-aos-duration="2000"
           >
             <p className={styles.Heading}>
-              Connect to start your Journey with UNMedia Buzz
+              Connect to start your Journey with UNmedia Buzz
             </p>
             <Image
               src="/assets/images/brush-3.svg"
@@ -265,7 +265,7 @@ const ContactUs = () => {
                 <p className={styles.HelpDiscription}>
                   In case of any querry, Kindly connect to this ID
                 </p>
-                <p className={styles.HelpContact}>contact@unmediabuzz.com</p>
+                <p className={styles.HelpContact}>contact@UNmedia Buzz.com</p>
               </div>
             </Row>
           </Col>
