@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { forallschema } from "utils/schemas";
 import Footer from "./Footer";
 import Header from "./Header";
 
@@ -28,6 +29,10 @@ const Layout = ({
         <meta name="robots" content={robots} />
         <meta property="og:title" content={ogtitle} />
         <meta property="og:image" content={ogimage} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(forallschema) }}
+        ></script>
       </Head>
       <Header />
       <div>{children}</div>
