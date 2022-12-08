@@ -116,7 +116,7 @@ export const BlogsCardModel = ({
           xl={4}
           className={` ${styles.BlogImageCol}`}
         >
-          {!coverimg == null && (
+          {coverimg == null ? null : (
             <Image src={coverimg} alt="coverimage" className={styles.BlogImg} />
           )}
         </Col>
