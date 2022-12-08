@@ -31,24 +31,52 @@ export const ProcessList = [
 ];
 export const Faqdata = [
   {
-    que: "How much it would take to make my PR live?",
-    ans: "In Tier 1 Pro distribution package - you get 225 media outlets distribution with Google News, Marketwatch, Financial Network Distribution, Marketmedia Distribution, Google News Network Distribution, 9K-15K extra impression in popular sites -",
+    que: "How to submit a press release in your portal?",
+    ans: (
+      <>
+        Well, we have kept it really simple. Just fill out the contact us form,
+        and our Editor will be in touch with you to start the submission and
+        distribution process.
+      </>
+    ),
   },
   {
-    que: "What is the difference between Tier 1, Tier 1 Pro, and Tier 2, Tier 2 Pro?",
-    ans: "In Tier 1 Pro distribution package - you get 225 media outlets distribution with Google News, Marketwatch, Financial Network Distribution, Marketmedia Distribution, Google News Network Distribution, 9K-15K extra impression in popular sites -",
+    que: "Would your editorial team check my press release?",
+    ans: (
+      <>
+        Yes, our Editor team will check your press release in detail and ensure
+        that it meets our writing guidelines before publishing it on our
+        network.
+      </>
+    ),
   },
   {
-    que: "How much it would take to make my PR live?",
-    ans: "In Tier 1 Pro distribution package - you get 225 media outlets distribution with Google News, Marketwatch, Financial Network Distribution, Marketmedia Distribution, Google News Network Distribution, 9K-15K extra impression in popular sites -",
+    que: "Do you guys take charge of distributing my press release?",
+    ans: (
+      <>
+        No, we always allow free press release submission and distribution in
+        our network. However, the promoted press releases (we call them Buzzed)
+        will always get better coverage.
+      </>
+    ),
   },
   {
-    que: "What is the difference between Tier 1, Tier 1 Pro, and Tier 2, Tier 2 Pro?",
-    ans: "In Tier 1 Pro distribution package - you get 225 media outlets distribution with Google News, Marketwatch, Financial Network Distribution, Marketmedia Distribution, Google News Network Distribution, 9K-15K extra impression in popular sites -",
+    que: "Will I get the report of my press release distribution?",
+    ans: (
+      <>
+        Yes, all Buzzed press releases will get a special report showcasing the
+        distribution of your content.
+      </>
+    ),
   },
   {
-    que: "How much it would take to make my PR live?",
-    ans: "In Tier 1 Pro distribution package - you get 225 media outlets distribution with Google News, Marketwatch, Financial Network Distribution, Marketmedia Distribution, Google News Network Distribution, 9K-15K extra impression in popular sites -",
+    que: "Can you help me with the press release writing?",
+    ans: (
+      <>
+        Yes, we do provide press release writing services too. Kindly fill out
+        the contact form, and we shall get back to you.
+      </>
+    ),
   },
 ];
 export const RadioButtonsData = ["Press Release", "Blog Post"];

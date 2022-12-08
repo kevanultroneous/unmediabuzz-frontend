@@ -117,11 +117,11 @@ const ViewPost = ({ data }) => {
             md={12}
             lg={12}
             xl={12}
-            className={`ColPaddingRemove`}
+            className={`ColPaddingRemove `}
           >
             <p>{data?.PressReleaseList.summary}</p>
             {data?.PressReleaseList.featuredImage && (
-              <center>
+              <center className={styles.ImageCenter}>
                 <div className={styles.FeaturedImage}>
                   <Image
                     src={MAIN_URL + data?.PressReleaseList.featuredImage}

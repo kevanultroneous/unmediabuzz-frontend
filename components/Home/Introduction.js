@@ -80,8 +80,10 @@ const Introduction = () => {
         >
           <div className={styles.animationSection}>
             <div data-aos="fade-up" data-aos-duration="2000">
-              <p className={styles.TitleText}>Start, Submit & Distribute</p>
-              <p className={`${styles.TitleText} ${styles.TitleTextWithBrush}`}>
+              <h1 className={styles.TitleText}>Start, Submit & Distribute</h1>
+              <h1
+                className={`${styles.TitleText} ${styles.TitleTextWithBrush}`}
+              >
                 Globally with
                 <span className={styles.TitleSpan}>
                   <Image
@@ -91,7 +93,7 @@ const Introduction = () => {
                   />
                   &nbsp;&nbsp;&nbsp;UNmediaBuzz
                 </span>
-              </p>
+              </h1>
             </div>
           </div>
           <div>

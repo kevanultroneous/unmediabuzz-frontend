@@ -9,7 +9,6 @@
 }
 .TitleTextWithBrush {
   position: relative;
-  top: -1rem;
 }
 .TitleSpan {
   color: var(--primaryColor);
@@ -24,8 +23,8 @@
 .BrushImage {
   position: absolute;
   z-index: -1;
-  width: 23rem;
-  height: 4.5rem;
+  width: 22rem;
+  height: 3.5rem;
 }
 .MainIntroductionWrraper {
   display: flex;
