@@ -265,7 +265,7 @@ const ContactUs = () => {
                 <p className={styles.HelpDiscription}>
                   In case of any querry, Kindly connect to this ID
                 </p>
-                <p className={styles.HelpContact}>xyz@gmail.com</p>
+                <p className={styles.HelpContact}>contact@unmediabuzz.com</p>
               </div>
             </Row>
           </Col>
