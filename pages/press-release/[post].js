@@ -38,7 +38,7 @@ const ViewPost = ({ data }) => {
 
   return (
     <Layout
-      title={`unmediabuzz | ${data?.PressReleaseList.seoTitle}`}
+      title={`${data?.PressReleaseList.seoTitle}`}
       description={data?.PressReleaseList.seoDescription}
       keywords={data?.PressReleaseList.seoKeywords}
       ogtitle={data?.PressReleaseList.seoTitle}
