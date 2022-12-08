@@ -40,7 +40,7 @@ const SearchResult = ({ data }) => {
   };
 
   return (
-    <Layout>
+    <Layout robots={"noindex,nofollow"}>
       <ContainerWrraper customClass={`${styles.HeaderContainerWrraper}`}>
         <Row>
           <Col
