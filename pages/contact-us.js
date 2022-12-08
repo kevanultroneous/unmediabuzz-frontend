@@ -90,7 +90,10 @@ const ContactUs = () => {
   };
 
   return (
-    <Layout>
+    <Layout
+      title={"Contact UNMedia Buzz Now"}
+      description={"Contact UNMedia Buzz now by filling the form"}
+    >
       <ContainerWrraper
         customClass={`${styles.mobileCustomContainer} ${styles.ContactUsContainerWrraper}`}
       >

@@ -63,7 +63,9 @@ export default function Home({ data }) {
 
   return (
     <Layout
-      title={"Press Release Distribution | Submit Press Release Today"}
+      title={
+        "Press Release Distribution | Submit Press Release Today | UNMedia Buzz"
+      }
       description={
         "UNMedia Buzz helps you with distributing and reaching new audiences around the globe. Submit a Press Release on the thriving digital news distribution network."
       }
