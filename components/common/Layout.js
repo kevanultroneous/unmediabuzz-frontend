@@ -24,6 +24,7 @@ const Layout = ({
           content={keywords}
           key="unmediabuzz-key-keywords"
         />
+        <meta name="robots" content="index,follow" />
         <meta property="og:title" content={ogtitle} />
         <meta property="og:image" content={ogimage} />
       </Head>
