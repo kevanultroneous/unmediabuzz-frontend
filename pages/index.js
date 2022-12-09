@@ -100,11 +100,11 @@ export default function Home({ data }) {
 export async function getServerSideProps() {
   const TopbuzzList = await axios
     .get(TopBuzzListAPI)
-    .then((res) => res.data)
+    .then((res) => res?.data)
     .catch((e) => console.log(e));
   const RecentItems = await axios
     .get(RecentPrAPI)
-    .then((res) => res.data)
+    .then((res) => res?.data)
     .catch((e) => console.log(e));
   return {
     props: {
