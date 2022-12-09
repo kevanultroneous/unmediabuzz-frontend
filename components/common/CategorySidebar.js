@@ -36,8 +36,8 @@ const CategorySidebar = ({ categorylist }) => {
             key={index}
             className={
               router.query.category
-                ? router.query.category.replace(/-/g, " ") == category.title &&
-                  router.query.subcategory
+                ? router.query.category.replace(/-/g, " ") ==
+                    category.title.toLowerCase() && router.query.subcategory
                   ? "CategoriesAccordionforUrl"
                   : ""
                 : null
