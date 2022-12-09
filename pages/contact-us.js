@@ -83,7 +83,7 @@ const ContactUs = () => {
           message: message,
         })
         .then((response) => {
-          toast.success(response.data.msg);
+          // toast.success(response.data.msg);
           router.push("/thankyou");
         })
         .catch((e) => {
