@@ -38,7 +38,7 @@ const ContactUs = () => {
   const [topicsame, setTopicSame] = useState("");
   const [message, setMessage] = useState("");
   const [countryCode, setCountryCode] = useState("+91");
-
+  const [hidebutton, setHideButton] = useState(false);
   const radiobuttonHandler = (v) => {
     setRadioButton(null);
     setRadioButton(v);
@@ -59,9 +59,11 @@ const ContactUs = () => {
       toast.error("Lastname not accepted number !");
     } else if (!validator.isEmail(mail)) {
       toast.error("Enter valid email !");
-    } else if (!validator.isNumeric(phone)) {
-      toast.error("Phone not accepted character !");
-    } else if (!isValidPhoneNumber(countryCode + "" + phone)) {
+    } else if (
+      phone.length > 0 &&
+      !isValidPhoneNumber(countryCode + "" + phone)
+      // !validator.isNumeric(phone) &&
+    ) {
       toast.error("Enter valid phone number !");
     } else if (radioButton === null) {
       toast.error("Please select post !");
@@ -70,6 +72,7 @@ const ContactUs = () => {
     } else if (validator.isEmpty(message)) {
       toast.error("Message is required !");
     } else {
+      console.log("here");
       axios
         .post(ContactusApi, {
           name: firstname + " " + lastname,
