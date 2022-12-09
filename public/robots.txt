@@ -1,2 +1,5 @@
 User-Agent: *
-Disallow: /
+Allow: /
+Disallow: /search
+Disallow: /?*
+Disallow: /thankyou
