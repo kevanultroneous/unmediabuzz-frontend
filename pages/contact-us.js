@@ -194,6 +194,7 @@ const ContactUs = () => {
                       type={"number"}
                       className={styles.Controller}
                       value={phone}
+                      min={1}
                       onChange={(e) => setPhone(e.target.value)}
                     />
                   </div>
