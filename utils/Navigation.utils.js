@@ -5,7 +5,7 @@ export const HeaderMenu = [
   },
   {
     name: "Blog",
-    link: "/#",
+    link: "/coming-soon",
   },
   {
     name: "Writing Guideline",
@@ -28,7 +28,7 @@ export const FooterMenu = [
 
   {
     name: "Blog",
-    link: "/#",
+    link: "/coming-soon",
   },
   {
     name: "Writing Guideline",
