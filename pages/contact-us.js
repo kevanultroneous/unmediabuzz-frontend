@@ -269,7 +269,11 @@ const ContactUs = () => {
                 <p className={styles.HelpDiscription}>
                   In case of any querry, Kindly connect to this ID
                 </p>
-                <p className={styles.HelpContact}>contact@UNmedia Buzz.com</p>
+                <p className={styles.HelpContact}>
+                  <a href="mailto:contact@UNmediaBuzz.com">
+                    contact@UNmediaBuzz.com
+                  </a>
+                </p>
               </div>
             </Row>
           </Col>
