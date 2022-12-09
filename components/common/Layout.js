@@ -26,6 +26,7 @@ const Layout = ({
           content={keywords}
           key="UNmedia Buzz-key-keywords"
         />
+        <link rel="icon" href="/assets/icons/mainlogo.svg" />
         <meta name="robots" content={robots} />
         <meta property="og:title" content={ogtitle} />
         <meta property="og:image" content={ogimage} />
