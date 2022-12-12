@@ -69,7 +69,7 @@ const WhyWeAreDifferent = () => {
                     alt="press-release"
                     fluid
                   />
-                  &nbsp; Let’s Start Now
+                  &nbsp; Submit Now!
                 </span>
               }
               url={"/contact-us"}
