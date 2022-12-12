@@ -126,7 +126,7 @@ const ViewPost = ({ data }) => {
                   <Image
                     src={MAIN_URL + data?.PressReleaseList.featuredImage}
                     alt="featured-image"
-                    fluid
+                    // className={styles.FeaturedImageFluid}
                   />
                 </div>
               </center>

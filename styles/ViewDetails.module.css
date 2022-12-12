@@ -38,6 +38,7 @@
   position: relative;
   left: -1rem;
   top: -1rem;
+  cursor: pointer;
 }
 .ContentWrraper {
   padding: 6rem 12rem;
@@ -68,11 +69,18 @@
   margin-right: 0 !important;
 }
 .FeaturedImage {
-  width: 100%;
-  height: auto;
+  /* width: 100%;
+  height: auto; */
+
   margin-top: 2rem;
   margin-bottom: 2rem;
-  max-width: 815px;
+  /* max-width: 815px; */
+}
+.FeaturedImageFluid {
+  width: 100%;
+  height: auto;
+  /* object-fit: cover;
+  object-position: 50% 50%; */
 }
 .ImageCenter {
   overflow: hidden;

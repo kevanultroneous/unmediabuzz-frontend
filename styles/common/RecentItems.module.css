@@ -140,8 +140,10 @@
   overflow: hidden;
 }
 .PostImageS {
-  height: 115px;
-  width: 164px;
+  width: 150px;
+  object-fit: cover;
+  height: 150px;
+  object-position: 50% 50%;
 }
 @media screen and (max-width: 600px) {
   .CardModelRow {

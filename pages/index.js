@@ -27,13 +27,13 @@ export default function Home({ data }) {
             )[0].style.color = "white";
 
             document.getElementsByClassName("processIcon")[0].src =
-              "../assets/icons/blackw.svg";
+              "../assets/images/submission-white.svg";
             document.getElementsByClassName("processIcon")[1].src =
-              "../assets/icons/blackw.svg";
+              "../assets/images/review-white.svg";
             document.getElementsByClassName("processIcon")[2].src =
-              "../assets/icons/blackw.svg";
+              "../assets/images/distribution-white.svg";
             document.getElementsByClassName("processIcon")[3].src =
-              "../assets/icons/blackw.svg";
+              "../assets/images/report-white.svg";
           } else {
             el.style.background = "white";
             document.getElementsByClassName("wrapper")[0].style.background =
@@ -42,13 +42,13 @@ export default function Home({ data }) {
               "ProcessWrapperStyle"
             )[0].style.color = "black";
             document.getElementsByClassName("processIcon")[0].src =
-              "../assets/icons/black.svg";
+              "../assets/images/submission-black.svg";
             document.getElementsByClassName("processIcon")[1].src =
-              "../assets/icons/black.svg";
+              "../assets/images/review-black.svg";
             document.getElementsByClassName("processIcon")[2].src =
-              "../assets/icons/black.svg";
+              "../assets/images/distribution-black.svg";
             document.getElementsByClassName("processIcon")[3].src =
-              "../assets/icons/black.svg";
+              "../assets/images/report-black.svg";
           }
         }),
       {

@@ -5,7 +5,11 @@ import styles from "@/styles/ContactUs.module.css";
 import refreshed, { countryCall } from "utils/CountryCode";
 import ToggleUiButton from "@/components/common/ToggleUiButton";
 import { useEffect, useRef, useState } from "react";
-import { isValidPhoneNumber, RadioButtonsData } from "utils/Anonymous";
+import {
+  isValidPhoneNumber,
+  phoneValidator,
+  RadioButtonsData,
+} from "utils/Anonymous";
 import Aos from "aos";
 import validator from "validator";
 import "aos/dist/aos.css";
@@ -13,6 +17,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { ContactusApi } from "utils/API";
 import { Router, useRouter } from "next/router";
+import PhoneInput from "react-phone-input-2";
 
 const InputController = ({ label, type, value, changeHandler }) => {
   return (
@@ -61,10 +66,9 @@ const ContactUs = () => {
       toast.error("Enter valid email !");
     } else if (
       phone.length > 0 &&
-      !isValidPhoneNumber(countryCode + "" + phone)
-      // !validator.isNumeric(phone) &&
+      !validator.isMobilePhone(phone, phoneValidator)
     ) {
-      toast.error("Enter valid phone number !");
+      toast.error("Enter valid phone number !" + phone);
     } else if (radioButton === null) {
       toast.error("Please select post !");
     } else if (validator.isEmpty(topicsame)) {
@@ -78,7 +82,7 @@ const ContactUs = () => {
           name: firstname + " " + lastname,
           email: mail,
           postType: radioButton === 0 ? "press" : "blog",
-          contact: countryCode + "" + phone,
+          contact: "+" + phone,
           topic: topicsame,
           message: message,
         })
@@ -178,26 +182,11 @@ const ContactUs = () => {
               <Col xs={12} sm={12} md={6} lg={6} xl={6}>
                 <div className={styles.InputWrraper}>
                   <label className={styles.Labels}>PHONE (Optional)</label>
-                  <div className={styles.CountryInput}>
-                    <select
-                      className={styles.Options}
-                      onChange={(e) => setCountryCode(e.target.value)}
-                      defaultValue={countryCode}
-                    >
-                      {refreshed.map((code, index) => (
-                        <option value={code.code} key={index}>
-                          {code.code}
-                        </option>
-                      ))}
-                    </select>
-                    <input
-                      type={"number"}
-                      className={styles.Controller}
-                      value={phone}
-                      min={1}
-                      onChange={(e) => setPhone(e.target.value)}
-                    />
-                  </div>
+                  <PhoneInput
+                    country={"in"}
+                    value={phone}
+                    onChange={(phone) => setPhone(phone)}
+                  />
                 </div>
               </Col>
               <Col xs={12} sm={12} md={12} lg={12} xl={12}>

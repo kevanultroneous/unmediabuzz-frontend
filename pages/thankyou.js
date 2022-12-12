@@ -1,4 +1,7 @@
-import ContainerWrraper from "@/components/common/ContainerWrraper";
+import dynamic from "next/dynamic";
+const ContainerWrraper = dynamic(() =>
+  import("@/components/common/ContainerWrraper")
+);
 import Layout from "@/components/common/Layout";
 import { Col, Image, Row } from "react-bootstrap";
 import styles from "@/styles/Thankyou.module.css";
