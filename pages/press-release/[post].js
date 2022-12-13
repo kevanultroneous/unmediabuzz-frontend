@@ -33,7 +33,9 @@ const ViewPost = ({ data }) => {
 
   const linkForPlatform = () => {
     navigator.clipboard.writeText(window?.location?.href);
-    toast.success("Link is copied !");
+    toast.success("Link is copied !", {
+      duration: 400,
+    });
   };
 
   return (
@@ -126,6 +128,7 @@ const ViewPost = ({ data }) => {
                   <Image
                     src={MAIN_URL + data?.PressReleaseList.featuredImage}
                     alt="featured-image"
+                    fluid
                     // className={styles.FeaturedImageFluid}
                   />
                 </div>
