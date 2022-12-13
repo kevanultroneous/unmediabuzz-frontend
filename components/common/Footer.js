@@ -58,13 +58,35 @@ const Footer = () => {
           className={`${styles.IconCol} ColPaddingRemove`}
         >
           <div className={`${styles.IconCover} ${styles.SiconSpaceRemove}`}>
-            <Image src="/assets/icons/twitter-icon.svg" alt="facebook" fluid />
+            <a
+              href="https://twitter.com/UNmediaBuzz"
+              target={"_blank"}
+              rel="noreferrer"
+            >
+              <Image
+                src="/assets/icons/twitter-icon.svg"
+                alt="facebook"
+                fluid
+              />
+            </a>
           </div>
           <div className={styles.IconCover}>
-            <Image src="/assets/icons/fb-icon.svg" alt="facebook" fluid />
+            <a
+              href="https://www.facebook.com/profile.php?id=100087241849287"
+              target={"_blank"}
+              rel="noreferrer"
+            >
+              <Image src="/assets/icons/fb-icon.svg" alt="facebook" fluid />
+            </a>
           </div>
           <div className={styles.IconCover}>
-            <Image src="/assets/icons/in-icon.svg" alt="facebook" fluid />
+            <a
+              href="https://www.instagram.com/unmediabuzz/"
+              target={"_blank"}
+              rel="noreferrer"
+            >
+              <Image src="/assets/icons/in-icon.svg" alt="facebook" fluid />
+            </a>
           </div>
         </Col>
       </Row>
