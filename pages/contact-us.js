@@ -68,7 +68,7 @@ const ContactUs = () => {
       phone.length > 0 &&
       !validator.isMobilePhone(phone, phoneValidator)
     ) {
-      toast.error("Enter valid phone number !" + phone);
+      toast.error("Enter valid phone number !");
     } else if (radioButton === null) {
       toast.error("Please select post !");
     } else if (validator.isEmpty(topicsame)) {
@@ -181,7 +181,9 @@ const ContactUs = () => {
               </Col>
               <Col xs={12} sm={12} md={6} lg={6} xl={6}>
                 <div className={styles.InputWrraper}>
-                  <label className={styles.Labels}>PHONE (Optional)</label>
+                  <label className={styles.Labels} style={{ margin: "0.1rem" }}>
+                    PHONE (Optional)
+                  </label>
                   <PhoneInput
                     country={"in"}
                     value={phone}
