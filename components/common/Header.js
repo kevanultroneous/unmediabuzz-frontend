@@ -104,20 +104,30 @@ const Header = ({ commonchecked }) => {
                 <Link
                   draggable={false}
                   className={
-                    router.pathname === menus.link
+                    router.pathname == "/press-release/[post]" &&
+                    menus.link == "/press-release"
+                      ? styles.SelectedLink
+                      : router.pathname === menus.link
                       ? styles.SelectedLink
                       : styles.Links
                   }
                   href={menus.link}
                   key={index + 1}
                 >
-                  {router.pathname === menus.link && (
+                  {router.pathname == "/press-release/[post]" &&
+                  menus.link == "/press-release" ? (
                     <Image
                       src="/assets/icons/speaker.svg"
                       alt="speaker"
                       className={styles.speekarAnimation}
                     />
-                  )}
+                  ) : router.pathname === menus.link ? (
+                    <Image
+                      src="/assets/icons/speaker.svg"
+                      alt="speaker"
+                      className={styles.speekarAnimation}
+                    />
+                  ) : null}
                   {menus.name}
                 </Link>
                 {HeaderMenu.indexOf(HeaderMenu[HeaderMenu.length - 1]) ===
