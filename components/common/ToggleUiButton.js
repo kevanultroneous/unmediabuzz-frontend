@@ -3,11 +3,24 @@ import Link from "next/link";
 
 const ToggleUiButton = ({ text, dark, url = "/", clickhandler }) => {
   return (
-    <div
-      className={dark ? styles.ButtonToggleDark : styles.ButtonToggle}
-      onClick={clickhandler}
-    >
-      <span>{clickhandler ? text : <Link href={url}>{text}</Link>}</span>
+    <div className={styles.LinksWrrap}>
+      {clickhandler ? (
+        <div
+          className={dark ? styles.ButtonToggleDark : styles.ButtonToggle}
+          onClick={clickhandler}
+        >
+          <span>{text}</span>
+        </div>
+      ) : (
+        <Link href={url}>
+          <div
+            className={dark ? styles.ButtonToggleDark : styles.ButtonToggle}
+            onClick={clickhandler}
+          >
+            <span>{text}</span>
+          </div>
+        </Link>
+      )}
     </div>
   );
 };

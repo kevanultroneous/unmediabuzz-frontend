@@ -91,7 +91,7 @@ const Introduction = () => {
                     alt="span-text"
                     className={styles.BrushImage}
                   />
-                  &nbsp;&nbsp;&nbsp;UNmedia Buzz
+                  &nbsp;&nbsp;UNmedia Buzz
                 </span>
               </h1>
             </div>
