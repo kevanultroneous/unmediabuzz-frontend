@@ -40,11 +40,31 @@ const ViewPost = ({ data }) => {
 
   return (
     <Layout
-      title={`${data?.PressReleaseList.seoTitle}`}
-      description={data?.PressReleaseList.seoDescription}
-      keywords={data?.PressReleaseList.seoKeywords}
-      ogtitle={data?.PressReleaseList.seoTitle}
-      ogimage={MAIN_URL + data?.PressReleaseList.featuredImage}
+      title={`${
+        Object.keys(data.PressReleaseList).length < 1
+          ? "UNmedia Buzz"
+          : data?.PressReleaseList.seoTitle
+      }`}
+      description={
+        Object.keys(data.PressReleaseList).length < 1
+          ? ""
+          : data?.PressReleaseList.seoDescription
+      }
+      keywords={
+        Object.keys(data.PressReleaseList).length < 1
+          ? ""
+          : data?.PressReleaseList.seoKeywords
+      }
+      ogtitle={
+        Object.keys(data.PressReleaseList).length < 1
+          ? ""
+          : data?.PressReleaseList.seoTitle
+      }
+      ogimage={
+        Object.keys(data.PressReleaseList).length < 1
+          ? ""
+          : MAIN_URL + data?.PressReleaseList.featuredImage
+      }
     >
       <ContainerWrraper customClass={`${styles.ViewPostContainerWrraper}`}>
         <IoIosArrowRoundBack
