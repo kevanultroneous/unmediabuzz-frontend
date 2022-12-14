@@ -1,4 +1,4 @@
-export const MAIN_URL = `http://localhost:8000/`;
+export const MAIN_URL = `https://unmediabuzz.com:8000/`;
 // export const MAIN_URL = `https://eb13-124-123-177-175.in.ngrok.io/`;
 // `http://52.64.42.139:8000/`
 
