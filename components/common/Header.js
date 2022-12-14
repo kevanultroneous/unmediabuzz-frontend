@@ -112,7 +112,7 @@ const Header = ({ commonchecked }) => {
                       : styles.Links
                   }
                   href={menus.link}
-                  key={index + 1}
+                  key={index}
                 >
                   {router.pathname == "/press-release/[post]" &&
                   menus.link == "/press-release" ? (
