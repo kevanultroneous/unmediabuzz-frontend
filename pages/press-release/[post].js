@@ -14,7 +14,7 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import { InterestedPostAPI, PressReleaseListAPI } from "utils/API";
 import { useEffect } from "react";
-import { MAIN_URL, timestampToDate } from "utils/Anonymous";
+import { blankobj, MAIN_URL, timestampToDate } from "utils/Anonymous";
 import toast from "react-hot-toast";
 import Link from "next/link";
 
@@ -22,14 +22,14 @@ const ViewPost = ({ data }) => {
   const router = useRouter();
 
   useEffect(() => {
-    if (data == null) {
+    if (Object.keys(data.PressReleaseList).length < 1) {
       router.push("/");
     } else {
       // target div which is help to convert string to html without interweave package
       document.getElementById("htmlcontent").innerHTML =
         data?.PressReleaseList.content;
     }
-  }, [data, router]);
+  }, [data.PressReleaseList, router]);
 
   const linkForPlatform = () => {
     navigator.clipboard.writeText(window?.location?.href);
@@ -66,7 +66,7 @@ const ViewPost = ({ data }) => {
               <Link href="/press-release">Press Release</Link>/
               <Link
                 href={`/${data?.PressReleaseList?.selectedCategory
-                  .replace(/\s+/g, "-")
+                  ?.replace(/\s+/g, "-")
                   .toLowerCase()}`}
               >
                 {data?.PressReleaseList?.selectedCategory}
@@ -74,7 +74,7 @@ const ViewPost = ({ data }) => {
               /
               <Link
                 href={`/${data?.PressReleaseList?.selectedCategory
-                  .replace(/\s+/g, "-")
+                  ?.replace(/\s+/g, "-")
                   .toLowerCase()}/${
                   data?.PressReleaseList?.selectedSubCategory
                     ? data?.PressReleaseList?.selectedSubCategory
@@ -153,7 +153,7 @@ const ViewPost = ({ data }) => {
               </span>
             </h6>
           </Col>
-          {data?.InterestedPost.map((posts, index) => (
+          {data?.InterestedPost?.map((posts, index) => (
             <Col
               xs={12}
               sm={12}
@@ -188,19 +188,30 @@ export async function getServerSideProps(context) {
   const pressreleaseview = await axios
     .post(PressReleaseListAPI, { url: context.params?.post })
     .then((res) => (res.data.success ? res.data?.data : null))
-    .catch((e) => e);
-  const interestedPostdata = await axios
-    .post(InterestedPostAPI, { postId: pressreleaseview?._id })
-    .then((res) => res.data.data)
-    .catch((e) => e);
-  return {
-    props: {
-      data: {
-        PressReleaseList: pressreleaseview,
-        InterestedPost: interestedPostdata,
+    .catch((e) => e.response.data.data);
+  var interestedPostdata;
+  if (Object.keys(pressreleaseview).length > 0) {
+    interestedPostdata = await axios
+      .post(InterestedPostAPI, { postId: pressreleaseview?._id })
+      .then((res) => res.data.data)
+      .catch((e) => e);
+    return {
+      props: {
+        data: {
+          PressReleaseList: pressreleaseview,
+          InterestedPost: interestedPostdata,
+        },
       },
-    },
-  };
+    };
+  } else {
+    return {
+      props: {
+        data: {
+          PressReleaseList: {},
+        },
+      },
+    };
+  }
 }
 
 export default ViewPost;
