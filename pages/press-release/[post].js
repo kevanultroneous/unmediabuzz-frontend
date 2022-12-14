@@ -29,7 +29,7 @@ const ViewPost = ({ data }) => {
       document.getElementById("htmlcontent").innerHTML =
         data?.PressReleaseList.content;
     }
-  }, [data.PressReleaseList, router]);
+  });
 
   const linkForPlatform = () => {
     navigator.clipboard.writeText(window?.location?.href);
