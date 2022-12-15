@@ -43,11 +43,13 @@ const CategorySidebar = ({ categorylist }) => {
                 : null
             }
           >
-            <Link
-              href={`/${category?.title.replace(/\s+/g, "-").toLowerCase()}`}
-            >
-              <Accordion.Header>{category.title}</Accordion.Header>
-            </Link>
+            <Accordion.Header>
+              <Link
+                href={`/${category?.title.replace(/\s+/g, "-").toLowerCase()}`}
+              >
+                {category.title}
+              </Link>
+            </Accordion.Header>
             <Accordion.Body>
               <div className={styles.SubcategoryWrraper}>
                 {category.subcategories.map((subcategory, index) => (

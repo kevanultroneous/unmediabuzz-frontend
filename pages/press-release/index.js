@@ -52,7 +52,7 @@ const PressRelease = ({ data }) => {
 
   const searchaction = () => {
     if (!searchvalue.length > 0) {
-      toast.error("Search field is required !");
+      toast.error("Search field is required !", { duration: 400 });
     }
     // else if (specialcharacter.test(searchvalue)) {
     //   toast.error("Special character is not allowed !");
@@ -152,7 +152,7 @@ const PressRelease = ({ data }) => {
                     }
                     customtitleclass={`${styles.ParagraphSize}`}
                     key={index}
-                    companyname={value.companyName}
+                    companyname={"By," + " " + value.companyName}
                     title={value.title}
                     date={timestampToDate(value.releaseDate)}
                   />

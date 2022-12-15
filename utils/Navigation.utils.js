@@ -5,14 +5,14 @@ export const HeaderMenu = [
   },
   {
     name: "Blog",
-    link: "/coming-soon",
+    link: "/blog",
   },
   {
     name: "Writing Guideline",
     link: "/#",
   },
   {
-    name: "Contact Us",
+    name: "Contact us",
     link: "/contact-us",
   },
 ];

@@ -14,7 +14,7 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import { InterestedPostAPI, PressReleaseListAPI } from "utils/API";
 import { useEffect } from "react";
-import { blankobj, MAIN_URL, timestampToDate } from "utils/Anonymous";
+import { blankobj, MAIN_URL, POST_URL, timestampToDate } from "utils/Anonymous";
 import toast from "react-hot-toast";
 import Link from "next/link";
 
@@ -83,7 +83,7 @@ const ViewPost = ({ data }) => {
           >
             <p className={styles.BreadCumb}>
               <Link href="/">Home</Link>/{" "}
-              <Link href="/press-release">Press Release</Link>/
+              <Link href="/press-release">Press Release</Link>/{" "}
               <Link
                 href={`/${data?.PressReleaseList?.selectedCategory
                   ?.replace(/\s+/g, "-")
@@ -91,42 +91,73 @@ const ViewPost = ({ data }) => {
               >
                 {data?.PressReleaseList?.selectedCategory}
               </Link>
-              /
-              <Link
-                href={`/${data?.PressReleaseList?.selectedCategory
-                  ?.replace(/\s+/g, "-")
-                  .toLowerCase()}/${
-                  data?.PressReleaseList?.selectedSubCategory
-                    ? data?.PressReleaseList?.selectedSubCategory
-                        .replace(/\s+/g, "-")
-                        .toLowerCase()
-                    : null
-                }`}
-              >
-                {data?.PressReleaseList?.selectedSubCategory}
-              </Link>
+              {data?.PressReleaseList?.selectedSubCategory && (
+                <>
+                  /{" "}
+                  <Link
+                    href={`/${data?.PressReleaseList?.selectedCategory
+                      ?.replace(/\s+/g, "-")
+                      .toLowerCase()}/${
+                      data?.PressReleaseList?.selectedSubCategory
+                        ? data?.PressReleaseList?.selectedSubCategory
+                            .replace(/\s+/g, "-")
+                            .toLowerCase()
+                        : null
+                    }`}
+                  >
+                    {data?.PressReleaseList?.selectedSubCategory}
+                  </Link>
+                </>
+              )}
             </p>
             <h1 className={styles.PostTitle}>{data?.PressReleaseList.title}</h1>
             <p className={styles.CreatedAt}>{`On ${timestampToDate(
               data?.PressReleaseList.releaseDate
             )} By, ${data?.PressReleaseList.companyName}`}</p>
             <div className={styles.IconsWrraper}>
-              <AiFillFacebook
-                size={30}
-                className={styles.IconSpace}
-                onClick={linkForPlatform}
-              />
+              <a
+                href={`https://www.facebook.com/sharer/sharer.php?u=${
+                  POST_URL + router.query.post
+                }`}
+                class="fb-xfbml-parse-ignore"
+                target="_blank"
+                style={{ color: "rgba(0, 0, 0, 0.6)" }}
+              >
+                <AiFillFacebook
+                  size={30}
+                  className={styles.IconSpace}
+                  onClick={linkForPlatform}
+                />
+              </a>
+              <a
+                href={`https://www.linkedin.com/shareArticle?mini=true&url={${
+                  POST_URL + router.query.post
+                }}&title={${data?.PressReleaseList.title}}&summary={${
+                  data?.PressReleaseList.summary
+                }}&source={${data?.PressReleaseList.content}}`}
+                target="_blank"
+                style={{ color: "rgba(0, 0, 0, 0.6)" }}
+              >
+                <AiFillLinkedin
+                  size={30}
+                  className={styles.IconSpace}
+                  onClick={linkForPlatform}
+                />
+              </a>
 
-              <AiFillLinkedin
-                size={30}
-                className={styles.IconSpace}
-                onClick={linkForPlatform}
-              />
-              <AiOutlineTwitter
-                size={30}
-                className={styles.IconSpace}
-                onClick={linkForPlatform}
-              />
+              <a
+                href={`https://twitter.com/sharer/sharer.php?u=${
+                  POST_URL + router.query.post
+                }`}
+                target="_blank"
+                style={{ color: "rgba(0, 0, 0, 0.6)" }}
+              >
+                <AiOutlineTwitter
+                  size={30}
+                  className={styles.IconSpace}
+                  onClick={linkForPlatform}
+                />
+              </a>
             </div>
           </Col>
         </Row>

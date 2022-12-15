@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 12rem;
 }
 .Heading {
   font-size: var(--mainHeading);
@@ -31,6 +32,7 @@
   font-size: var(--maxText);
   color: rgba(0, 0, 0, 0.2);
   margin-bottom: 0.5rem;
+  margin-top: 1rem;
 }
 
 .RadioButtonSpace {
@@ -117,7 +119,7 @@
   font-weight: 400;
   font-size: var(--uniqueLabel);
   color: rgba(0, 0, 0, 0.6);
-  padding-right: 1rem;
+  padding-right: 2rem;
   margin-left: 1rem;
 }
 .HelpWrraper {
@@ -141,6 +143,8 @@
 }
 .ContactUsContainerWrraper {
   padding-top: 10rem;
+  padding-bottom: 0;
+  overflow: hidden;
 }
 /* mobile */
 @media screen and (max-width: 600px) {

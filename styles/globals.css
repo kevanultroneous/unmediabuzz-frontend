@@ -89,6 +89,7 @@ a {
   background-clip: unset;
 }
 .CategoriesAccordion a {
+  color: #000;
   text-decoration: none;
 }
 .CategoriesAccordion .accordion-button:focus {
@@ -305,4 +306,7 @@ a {
 }
 .form-control:focus {
   box-shadow: none !important;
+}
+button.accordion-button.collapsed a {
+  color: rgba(0, 0, 0, 0.7);
 }

@@ -78,7 +78,11 @@ const Category = ({ data }) => {
             <Link href={"/"}>Home</Link>/{" "}
             <Link href={"/press-release"}>Press Release</Link>/{" "}
             <Link href={`/${router.query.category.replace(/\s+/g, "-")}`}>
-              {router.query.category.replace(/\s+/g, "-")}
+              {router.query.category
+                .replace(/\s+/g, "-")
+                .charAt(0)
+                .toUpperCase() +
+                router.query.category.replace(/\s+/g, "-").slice(1)}
             </Link>
           </>
         }

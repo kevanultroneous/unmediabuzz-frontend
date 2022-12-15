@@ -76,13 +76,21 @@ const Subcategory = ({ data }) => {
             <Link href={"/"}>Home</Link>/{" "}
             <Link href={"/press-release"}>Press Release</Link>/{" "}
             <Link href={`/${router.query.category}`}>
-              {router.query.category}
+              {router.query.category
+                .replace(/\s+/g, "-")
+                .charAt(0)
+                .toUpperCase() +
+                router.query.category.replace(/\s+/g, "-").slice(1)}
             </Link>
             /{" "}
             <Link
               href={`/${router.query.category}/${router.query.subcategory}`}
             >
-              {router.query.subcategory}
+              {router.query.subcategory
+                .replace(/\s+/g, "-")
+                .charAt(0)
+                .toUpperCase() +
+                router.query.subcategory.replace(/\s+/g, "-").slice(1)}
             </Link>
           </>
         }

@@ -181,7 +181,10 @@ const ContactUs = () => {
               </Col>
               <Col xs={12} sm={12} md={6} lg={6} xl={6}>
                 <div className={styles.InputWrraper}>
-                  <label className={styles.Labels} style={{ margin: "0.1rem" }}>
+                  <label
+                    className={styles.Labels}
+                    style={{ margin: "0.1rem", marginTop: "1rem" }}
+                  >
                     PHONE (Optional)
                   </label>
                   <PhoneInput
@@ -194,7 +197,7 @@ const ContactUs = () => {
               <Col xs={12} sm={12} md={12} lg={12} xl={12}>
                 <div className={styles.InputWrraperRadio}>
                   <label className={styles.Labels}>
-                    WHAT DO YOU WANNA POST
+                    WHAT DO YOU WANT TO POST
                   </label>
                   <br />
                   <div className={styles.RadioButtonWrraper}>
@@ -227,6 +230,7 @@ const ContactUs = () => {
                 <label className={styles.Labels}>MESSAGE</label>
                 <br />
                 <textarea
+                  style={{ minHeight: "38px" }}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   rows={3}

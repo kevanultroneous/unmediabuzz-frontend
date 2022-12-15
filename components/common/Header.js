@@ -33,6 +33,13 @@ const Header = ({ commonchecked }) => {
     window.scrollTo(0, 0);
   }, [router]);
 
+  // useEffect(() => {
+  //   let timeout = setTimeout(() => {
+  //     document.getElementsByClassName("headerforscroll").style.top = "0";
+  //     clearTimeout(timeout);
+  //   }, 100);
+  // }, [router]);
+
   useEffect(() => {
     var prevScrollpos = window.pageYOffset;
     window.onscroll = function () {
@@ -50,7 +57,7 @@ const Header = ({ commonchecked }) => {
   const handlesearch = () => {
     if (search) {
       if (!searchInput.length > 0) {
-        toast.error("Search field is required !");
+        toast.error("Search field is required !", { duration: 400 });
       }
       // else if (specialcharacter.test(searchInput)) {
       //   toast.error("Special character is not allowed !");

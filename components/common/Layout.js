@@ -34,6 +34,13 @@ const Layout = ({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(forallschema) }}
         ></script>
+        <script
+          async
+          defer
+          crossorigin="anonymous"
+          src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v15.0"
+          nonce="mkOQUy2T"
+        ></script>
       </Head>
       <Header />
       <div>{children}</div>
