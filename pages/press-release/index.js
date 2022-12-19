@@ -8,7 +8,7 @@ import styles from "@/styles/PR/index.module.css";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import Pagination from "rc-pagination";
 import CategorySidebar from "@/components/common/CategorySidebar";
-import { useState } from "react";
+import { use, useEffect, useState } from "react";
 import axios from "axios";
 import {
   AllCategoryAPI,
@@ -44,6 +44,12 @@ const PressRelease = ({ data }) => {
     }
     return element;
   };
+
+  useEffect(() => {
+    if (router.query.search) {
+      setSearchValue("");
+    }
+  }, [router]);
 
   const [currentTab, setCurrentTab] = useState(null);
   const [searchvalue, setSearchValue] = useState(
