@@ -195,6 +195,9 @@
     height: 17px;
     width: 17px;
   }
+  .HeadingCol {
+    height: 14rem;
+  }
 }
 /* tablet */
 @media (min-width: 768px) and (max-width: 1080px) {
