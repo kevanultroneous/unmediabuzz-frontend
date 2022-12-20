@@ -73,16 +73,14 @@ const Header = ({ commonchecked }) => {
       <Toaster position="top-center" reverseOrder={false} />
       <Row className={styles.MainMenuRow}>
         <Col xs={6} md={6} lg={3} xl={3} className={`ColPaddingRemove`}>
-          <div className={styles.MobileLogoWrraper}>
-            <Link href={"/"}>
-              <Image
-                src="/assets/icons/unmb.svg"
-                alt="Logo"
-                fluid
-                draggable={false}
-              />
-            </Link>
-          </div>
+          <Link href={"/"} className={styles.MobileLogoWrraper}>
+            <Image
+              src="/assets/icons/unmb.svg"
+              alt="Logo"
+              fluid
+              draggable={false}
+            />
+          </Link>
         </Col>
 
         <Col xs={6} md={6} lg={6} xl={6} className={`ColPaddingRemove`}>

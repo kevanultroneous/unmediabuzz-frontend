@@ -57,6 +57,12 @@ const PressRelease = ({ data }) => {
     return element;
   };
 
+  useEffect(() => {
+    if (router.query.search) {
+      setSearchValue("");
+    }
+  }, [router]);
+
   const [currentTab, setCurrentTab] = useState(null);
   const [searchvalue, setSearchValue] = useState(
     router.query.search ? router.query.search : ""
