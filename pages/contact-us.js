@@ -55,26 +55,42 @@ const ContactUs = () => {
 
   const handleformsubmit = () => {
     if (validator.isEmpty(firstname)) {
-      toast.error("Firstname is required !");
+      toast.error("Firstname is required!", {
+        duration: 400,
+      });
     } else if (validator.isNumeric(firstname)) {
-      toast.error("Firstname not accepted number !");
+      toast.error("Firstname not accepted number!", {
+        duration: 400,
+      });
     } else if (validator.isEmpty(lastname)) {
-      toast.error("Lastname is required !");
+      toast.error("Lastname is required!", {
+        duration: 400,
+      });
     } else if (validator.isNumeric(lastname)) {
-      toast.error("Lastname not accepted number !");
+      toast.error("Lastname not accepted number!");
     } else if (!validator.isEmail(mail)) {
-      toast.error("Enter valid email !");
+      toast.error("Enter valid email!", {
+        duration: 400,
+      });
     } else if (
-      phone.length > 0 &&
-      !validator.isMobilePhone(phone, phoneValidator)
+      (phone.length > 0 && !validator.isMobilePhone(phone, phoneValidator)) ||
+      isNaN(phone)
     ) {
-      toast.error("Enter valid phone number !");
+      toast.error("Enter valid phone number!", {
+        duration: 400,
+      });
     } else if (radioButton === null) {
-      toast.error("Please select post !");
+      toast.error("Please select post!", {
+        duration: 400,
+      });
     } else if (validator.isEmpty(topicsame)) {
-      toast.error("Topic same is required !");
+      toast.error("Topic same is required!", {
+        duration: 400,
+      });
     } else if (validator.isEmpty(message)) {
-      toast.error("Message is required !");
+      toast.error("Message is required!", {
+        duration: 400,
+      });
     } else {
       console.log("here");
       axios
@@ -91,7 +107,7 @@ const ContactUs = () => {
           router.push("/thankyou");
         })
         .catch((e) => {
-          toast.error("Enquiry submition failed !");
+          toast.error("Enquiry submition failed!");
         });
     }
   };

@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useState } from "react";
 import { forallschema } from "utils/schemas";
 import Footer from "./Footer";
 import Header from "./Header";

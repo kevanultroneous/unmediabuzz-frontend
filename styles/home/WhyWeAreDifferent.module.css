@@ -98,7 +98,8 @@
     text-align: justify;
   }
   .GradiantText {
-    display: none;
+    font-size: 14px;
+    font-weight: 600;
   }
   .SpanImage {
     right: -4.5rem;

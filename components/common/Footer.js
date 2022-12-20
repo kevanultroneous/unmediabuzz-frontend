@@ -85,7 +85,7 @@ const Footer = () => {
               target={"_blank"}
               rel="noreferrer"
             >
-              <Image src="/assets/icons/in-icon.svg" alt="facebook" fluid />
+              <Image src="/assets/icons/instagram.png" alt="facebook" fluid />
             </a>
           </div>
         </Col>

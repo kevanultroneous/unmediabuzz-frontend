@@ -36,7 +36,12 @@ export const CardModel = ({
           {date}
           {badge && (
             <span className={styles.Badge}>
-              <Image src="/assets/icons/l-speaker.svg" alt="badge" /> Buzzed
+              <Image
+                src="/assets/icons/l-speaker.svg"
+                alt="badge"
+                style={{ marginRight: "0.2rem" }}
+              />{" "}
+              Buzzed
             </span>
           )}
         </p>

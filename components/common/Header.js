@@ -57,7 +57,7 @@ const Header = ({ commonchecked }) => {
   const handlesearch = () => {
     if (search) {
       if (!searchInput.length > 0) {
-        toast.error("Search field is required !", { duration: 400 });
+        toast.error("Search field is required!", { duration: 400 });
       }
       // else if (specialcharacter.test(searchInput)) {
       //   toast.error("Special character is not allowed !");

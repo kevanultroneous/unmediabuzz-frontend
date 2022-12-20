@@ -82,6 +82,7 @@
     flex-direction: row;
     overflow: hidden;
     overflow-x: scroll;
+    scrollbar-width: 0px;
     padding: 0%;
     list-style: none;
     width: 100%;

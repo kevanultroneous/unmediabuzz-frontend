@@ -45,7 +45,7 @@
   --textGradiantFourth: linear-gradient(180deg, #f65d61 0%, #fb9c64 100%);
   /* mobile */
   --mobileLayout: 2rem 2rem;
-  --mainMobHeading: 26px;
+  --mainMobHeading: 32px;
   --mainMobHeadingCopy: 30px;
   /* tablet  */
   --tabLayout: 2.5rem 1.5rem;

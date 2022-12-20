@@ -91,6 +91,9 @@
   height: 8rem;
 }
 @media screen and (max-width: 600px) {
+  .IntroContainerWrraper {
+    padding-top: 4rem;
+  }
   .TitleIntro {
     width: 100%;
   }
@@ -134,6 +137,9 @@
   }
   .MobileProcessList {
     display: block;
+  }
+  .animationSection {
+    height: 9rem;
   }
 }
 @media (min-width: 768px) and (max-width: 1080px) {

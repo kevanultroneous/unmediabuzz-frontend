@@ -89,6 +89,16 @@
 .ImageCenter {
   overflow: hidden;
 }
+.loading {
+  color: palevioletred;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.editorContent {
+  text-align: justify;
+}
 @media screen and (max-width: 600px) {
   .ArrowIcon {
     display: none;
@@ -133,6 +143,10 @@
   }
   .InterestedContainerWrraper {
     margin-bottom: 0%;
+  }
+  .IconsWrraper {
+    width: 35%;
+    justify-content: space-around;
   }
 }
 @media (min-width: 768px) and (max-width: 1080px) {

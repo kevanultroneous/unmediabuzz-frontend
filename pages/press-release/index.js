@@ -3,12 +3,12 @@ import GettingStarted from "@/components/common/GettingStarted";
 import Layout from "@/components/common/Layout";
 import { CardModel } from "@/components/common/RecentItems";
 import HeroSection from "@/components/PR/HeroSection";
-import { Accordion, Col, Row } from "react-bootstrap";
+import { Accordion, Col, Row, Spinner } from "react-bootstrap";
 import styles from "@/styles/PR/index.module.css";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import Pagination from "rc-pagination";
 import CategorySidebar from "@/components/common/CategorySidebar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import {
   AllCategoryAPI,
@@ -16,12 +16,24 @@ import {
   PressReleaseListAPI,
 } from "utils/API";
 import { MAIN_URL, specialcharacter, timestampToDate } from "utils/Anonymous";
-import { useRouter } from "next/router";
+import { Router, useRouter } from "next/router";
 import toast, { Toaster } from "react-hot-toast";
 
 const PressRelease = ({ data }) => {
   const router = useRouter();
+  // const [isLoading, setIsLoading] = useState(false);
 
+  // useEffect(() => {
+  //   Router.events.on("routeChangeStart", () => {
+  //     setIsLoading(true);
+  //   });
+  //   Router.events.on("routeChangeComplete", () => {
+  //     setIsLoading(false);
+  //   });
+  //   // Router.events.on("routeChangeError", () => {
+  //   //   setIsLoading(false);
+  //   // });
+  // }, [Router]);
   const textItemRender = (current, type, element) => {
     if (type === "page") {
       return (
@@ -52,7 +64,7 @@ const PressRelease = ({ data }) => {
 
   const searchaction = () => {
     if (!searchvalue.length > 0) {
-      toast.error("Search field is required !", { duration: 400 });
+      toast.error("Search field is required!", { duration: 400 });
     }
     // else if (specialcharacter.test(searchvalue)) {
     //   toast.error("Special character is not allowed !");
@@ -61,8 +73,11 @@ const PressRelease = ({ data }) => {
       router.push(`/press-release?search=${searchvalue}`);
     }
   };
-
   return (
+    // <>
+    //   {isLoading ? (
+    //     <Spinner animation="border" />
+    //   ) : (
     <Layout
       title={"All Press Releases | News Releases | Submit Press Release Now"}
       description={
@@ -131,7 +146,7 @@ const PressRelease = ({ data }) => {
                     }
                     customtitleclass={`${styles.ParagraphSize}`}
                     key={index}
-                    companyname={value.companyName}
+                    companyname={"By," + " " + value.companyName}
                     title={value.title}
                     date={timestampToDate(value.releaseDate)}
                   />
@@ -227,6 +242,8 @@ const PressRelease = ({ data }) => {
       </ContainerWrraper>
       <GettingStarted />
     </Layout>
+    //   )}
+    // </>
   );
 };
 
