@@ -133,6 +133,20 @@ const Subcategory = ({ data }) => {
           </Col>
           <Col xs={12} sm={12} md={6}>
             <div className={styles.TabsLayer}>
+              <div>
+                <div
+                  className={`${styles.CurrentTab} ${
+                    router.query.subcategory
+                      ? null
+                      : router.pathname == "/[category]/[subcategory]"
+                      ? styles.SelectedTab
+                      : null
+                  }`}
+                  onClick={() => router.push(`/${router.query.category}`)}
+                >
+                  All
+                </div>
+              </div>
               {currentSubcategory[1]?.map((tab, index) => (
                 <div key={index}>
                   <div

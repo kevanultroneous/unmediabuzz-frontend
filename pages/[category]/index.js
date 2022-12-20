@@ -17,8 +17,10 @@ import { AllCategoryAPI, CategoryWisePostApi } from "utils/API";
 
 const Category = ({ data }) => {
   const arry = [1, 2, 3, 4, 5];
-  const [currentTab, setCurrentTab] = useState(0);
   const router = useRouter();
+  const [currentTab, setCurrentTab] = useState(
+    router.query.subcategory ? 0 : null
+  );
   const [currentSubcategory, setCurrentSubcategory] = useState([]);
   const [preDataforSeo, setPreDataforSeo] = useState({});
   useEffect(() => {
@@ -35,7 +37,7 @@ const Category = ({ data }) => {
     if (!precatchdata) {
       router.push("/404");
     }
-    setCurrentTab(findsubcategoryindex);
+    router.query.subcategory ? setCurrentTab(findsubcategoryindex) : null;
     setCurrentSubcategory([precatchdata?.title, precatchdata?.subcategories]);
     setPreDataforSeo(precatchdata);
   }, [data.allcategories?.data, router]);
@@ -126,6 +128,15 @@ const Category = ({ data }) => {
           </Col>
           <Col xs={12} sm={12} md={6}>
             <div className={styles.TabsLayer}>
+              <div>
+                <div
+                  className={`${styles.CurrentTab} ${
+                    router.pathname == "/[category]" ? styles.SelectedTab : null
+                  }`}
+                >
+                  All
+                </div>
+              </div>
               {currentSubcategory[1]?.map((tab, index) => (
                 <div key={index}>
                   <div
