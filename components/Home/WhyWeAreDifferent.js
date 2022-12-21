@@ -37,7 +37,7 @@ const WhyWeAreDifferent = () => {
               data-aos="fade-up"
               data-aos-duration="2000"
             >
-              <Image src="/assets/images/brush-3.svg" alt="brush-img" />
+              {/* <Image src="/assets/images/brush-3.svg" alt="brush-img" /> */}
             </div>
           </div>
           <p className={styles.MainParagraph}>
@@ -64,12 +64,12 @@ const WhyWeAreDifferent = () => {
             <ToggleUiButton
               text={
                 <span>
-                  <Image
+                  {/* <Image
                     src={"/assets/icons/send-icon.svg"}
                     alt="press-release"
                     fluid
-                  />
-                  &nbsp; Submit Now!
+                  /> */}
+                  &nbsp; Submit Now
                 </span>
               }
               url={"/contact-us"}
@@ -85,7 +85,7 @@ const WhyWeAreDifferent = () => {
           className={`${styles.LastBigImage} ColPaddingRemove`}
         >
           <div className={styles.BigImage}>
-            <Image
+            {/* <Image
               src={
                 isMobile
                   ? "/assets/images/mobile-diff-img.svg"
@@ -95,7 +95,7 @@ const WhyWeAreDifferent = () => {
               fluid
               data-aos="fade-up"
               data-aos-duration="1500"
-            />
+            /> */}
           </div>
         </Col>
       </Row>

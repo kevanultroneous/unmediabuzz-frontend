@@ -79,7 +79,7 @@
 } */
 @media screen and (max-width: 600px) {
   .brushImage {
-    width: 70%;
+    width: 80%;
   }
   .HighlightHeading {
     font-size: var(--mainMobHeading);

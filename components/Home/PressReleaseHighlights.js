@@ -28,11 +28,11 @@ const PressReleaseHighlights = () => {
             Your
             <label className={styles.UniqueLabel}>
               <span className={styles.BrushSetup}>
-                <Image
+                {/* <Image
                   src="/assets/images/brush-2.svg"
                   alt="brush"
                   className={styles.brushImage}
-                />
+                /> */}
               </span>
               &nbsp;&nbsp;&nbsp; Press Release
             </label>
@@ -49,11 +49,11 @@ const PressReleaseHighlights = () => {
               Your
               <label className={styles.UniqueLabel}>
                 <span className={styles.BrushSetup}>
-                  <Image
+                  {/* <Image
                     src="/assets/images/brush-h-01.svg"
                     alt="brush"
                     className={styles.brushImage}
-                  />
+                  /> */}
                 </span>
                 &nbsp;&nbsp;&nbsp; Press Release
               </label>
@@ -71,12 +71,12 @@ const PressReleaseHighlights = () => {
           <div className={styles.HighlightsWrraper}>
             {imagedata?.map((image, index) => (
               <div key={index + 1} className={styles.HighlightImage}>
-                <Image
+                {/* <Image
                   src={image}
                   alt="highlight-image"
                   fluid
                   className={styles.marqueeImage}
-                />
+                /> */}
               </div>
             ))}
           </div>

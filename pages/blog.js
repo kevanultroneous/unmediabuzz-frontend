@@ -18,11 +18,11 @@ const ComingSoon = () => {
             className={styles.ImageCol}
           >
             <div className={styles.ImageWrraper}>
-              <Image
+              {/* <Image
                 src="/assets/images/big-speaker.svg"
                 alt="coming-soon"
                 fluid
-              />
+              /> */}
             </div>
             <h4 className={styles.ComingSoonText}>Coming Soon...</h4>
           </Col>

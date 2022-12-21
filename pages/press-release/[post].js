@@ -52,216 +52,210 @@ const ViewPost = ({ data }) => {
 
   return (
     <>
-      {isLoading ? (
+      {/* {isLoading ? (
         <div className={styles.loading}>
           <Spinner animation="border" />
         </div>
-      ) : (
-        <Layout
-          title={`${
-            Object.keys(data.PressReleaseList).length < 1
-              ? "UNmedia Buzz"
-              : data?.PressReleaseList.seoTitle
-          }`}
-          description={
-            Object.keys(data.PressReleaseList).length < 1
-              ? ""
-              : data?.PressReleaseList.seoDescription
-          }
-          keywords={
-            Object.keys(data.PressReleaseList).length < 1
-              ? ""
-              : data?.PressReleaseList.seoKeywords
-          }
-          ogtitle={
-            Object.keys(data.PressReleaseList).length < 1
-              ? ""
-              : data?.PressReleaseList.seoTitle
-          }
-          ogimage={
-            Object.keys(data.PressReleaseList).length < 1
-              ? ""
-              : MAIN_URL + data?.PressReleaseList.featuredImage
-          }
-        >
-          <ContainerWrraper customClass={`${styles.ViewPostContainerWrraper}`}>
-            <IoIosArrowRoundBack
-              size={40}
-              className={styles.ArrowIcon}
-              onClick={() => router.back()}
-            />
-            <Row className={styles.HeroSectionRow}>
-              <Col
-                xs={12}
-                sm={12}
-                md={12}
-                lg={12}
-                xl={12}
-                className={styles.DetailSectionCol}
-              >
-                <p className={styles.BreadCumb}>
-                  <Link href="/">Home</Link>/{" "}
-                  <Link href="/press-release">Press Release</Link>/{" "}
-                  <Link
-                    href={`/${data?.PressReleaseList?.selectedCategory
-                      ?.replace(/\s+/g, "-")
-                      .toLowerCase()}`}
-                  >
-                    {data?.PressReleaseList?.selectedCategory}
-                  </Link>
-                  {data?.PressReleaseList?.selectedSubCategory && (
-                    <>
-                      /{" "}
-                      <Link
-                        href={`/${data?.PressReleaseList?.selectedCategory
-                          ?.replace(/\s+/g, "-")
-                          .toLowerCase()}/${
-                          data?.PressReleaseList?.selectedSubCategory
-                            ? data?.PressReleaseList?.selectedSubCategory
-                                .replace(/\s+/g, "-")
-                                .toLowerCase()
-                            : null
-                        }`}
-                      >
-                        {data?.PressReleaseList?.selectedSubCategory}
-                      </Link>
-                    </>
-                  )}
-                </p>
-                <h1 className={styles.PostTitle}>
-                  {data?.PressReleaseList.title}
-                </h1>
-                <p className={styles.CreatedAt}>{`On ${timestampToDate(
-                  data?.PressReleaseList.releaseDate
-                )} By, ${data?.PressReleaseList.companyName}`}</p>
-                <div className={styles.IconsWrraper}>
-                  <a
-                    href={`https://www.facebook.com/sharer/sharer.php?u=${
-                      POST_URL + router.query.post
-                    }`}
-                    class="fb-xfbml-parse-ignore"
-                    target="_blank"
-                    style={{ color: "rgba(0, 0, 0, 0.6)" }}
-                  >
-                    <AiFillFacebook
-                      size={30}
-                      className={styles.IconSpace}
-                      onClick={linkForPlatform}
-                    />
-                  </a>
-                  <a
-                    href={`https://www.linkedin.com/shareArticle?mini=true&url={${
-                      POST_URL + router.query.post
-                    }}&title={${data?.PressReleaseList.title}}&summary={${
-                      data?.PressReleaseList.summary
-                    }}&source={${data?.PressReleaseList.content}}`}
-                    target="_blank"
-                    style={{ color: "rgba(0, 0, 0, 0.6)" }}
-                  >
-                    <AiFillLinkedin
-                      size={30}
-                      className={styles.IconSpace}
-                      onClick={linkForPlatform}
-                    />
-                  </a>
+      ) : ( */}
+      <Layout
+        title={`${
+          Object.keys(data.PressReleaseList).length < 1
+            ? "UNmedia Buzz"
+            : data?.PressReleaseList.seoTitle
+        }`}
+        description={
+          Object.keys(data.PressReleaseList).length < 1
+            ? ""
+            : data?.PressReleaseList.seoDescription
+        }
+        keywords={
+          Object.keys(data.PressReleaseList).length < 1
+            ? ""
+            : data?.PressReleaseList.seoKeywords
+        }
+        ogtitle={
+          Object.keys(data.PressReleaseList).length < 1
+            ? ""
+            : data?.PressReleaseList.seoTitle
+        }
+        ogimage={
+          Object.keys(data.PressReleaseList).length < 1
+            ? ""
+            : MAIN_URL + data?.PressReleaseList.featuredImage
+        }
+      >
+        <ContainerWrraper customClass={`${styles.ViewPostContainerWrraper}`}>
+          <IoIosArrowRoundBack
+            size={40}
+            className={styles.ArrowIcon}
+            onClick={() => router.back()}
+          />
+          <Row className={styles.HeroSectionRow}>
+            <Col
+              xs={12}
+              sm={12}
+              md={12}
+              lg={12}
+              xl={12}
+              className={styles.DetailSectionCol}
+            >
+              <p className={styles.BreadCumb}>
+                <Link href="/">Home</Link>/{" "}
+                <Link href="/press-release">Press Release</Link>/{" "}
+                <Link
+                  href={`/${data?.PressReleaseList?.selectedCategory
+                    ?.replace(/\s+/g, "-")
+                    .toLowerCase()}`}
+                >
+                  {data?.PressReleaseList?.selectedCategory}
+                </Link>
+                {data?.PressReleaseList?.selectedSubCategory && (
+                  <>
+                    /{" "}
+                    <Link
+                      href={`/${data?.PressReleaseList?.selectedCategory
+                        ?.replace(/\s+/g, "-")
+                        .toLowerCase()}/${
+                        data?.PressReleaseList?.selectedSubCategory
+                          ? data?.PressReleaseList?.selectedSubCategory
+                              .replace(/\s+/g, "-")
+                              .toLowerCase()
+                          : null
+                      }`}
+                    >
+                      {data?.PressReleaseList?.selectedSubCategory}
+                    </Link>
+                  </>
+                )}
+              </p>
+              <h1 className={styles.PostTitle}>
+                {data?.PressReleaseList.title}
+              </h1>
+              <p className={styles.CreatedAt}>{`On ${timestampToDate(
+                data?.PressReleaseList.releaseDate
+              )} By, ${data?.PressReleaseList.companyName}`}</p>
+              <div className={styles.IconsWrraper}>
+                <a
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${
+                    POST_URL + router.query.post
+                  }`}
+                  class="fb-xfbml-parse-ignore"
+                  target="_blank"
+                  style={{ color: "rgba(0, 0, 0, 0.6)" }}
+                >
+                  <AiFillFacebook
+                    size={30}
+                    className={styles.IconSpace}
+                    onClick={linkForPlatform}
+                  />
+                </a>
+                <a
+                  href={`https://www.linkedin.com/shareArticle?mini=true&url={${
+                    POST_URL + router.query.post
+                  }}&title={${data?.PressReleaseList.title}}&summary={${
+                    data?.PressReleaseList.summary
+                  }}&source={${data?.PressReleaseList.content}}`}
+                  target="_blank"
+                  style={{ color: "rgba(0, 0, 0, 0.6)" }}
+                >
+                  <AiFillLinkedin
+                    size={30}
+                    className={styles.IconSpace}
+                    onClick={linkForPlatform}
+                  />
+                </a>
 
-                  <a
-                    href={`https://twitter.com/sharer/sharer.php?u=${
-                      POST_URL + router.query.post
-                    }`}
-                    target="_blank"
-                    style={{ color: "rgba(0, 0, 0, 0.6)" }}
-                  >
-                    <AiOutlineTwitter
-                      size={30}
-                      className={styles.IconSpace}
-                      onClick={linkForPlatform}
-                    />
-                  </a>
-                </div>
-              </Col>
-            </Row>
-          </ContainerWrraper>
-          <ContainerWrraper customClass={styles.ContentWrraper}>
-            <Row>
-              <Col
-                xs={12}
-                sm={12}
-                md={12}
-                lg={12}
-                xl={12}
-                className={`ColPaddingRemove `}
-              >
-                <p className={styles.editorContent}>
-                  {data?.PressReleaseList.summary}
-                </p>
-                {data?.PressReleaseList.featuredImage && (
-                  <center className={styles.ImageCenter}>
-                    <div className={styles.FeaturedImage}>
-                      <Image
+                <a
+                  href={`https://twitter.com/sharer/sharer.php?u=${
+                    POST_URL + router.query.post
+                  }`}
+                  target="_blank"
+                  style={{ color: "rgba(0, 0, 0, 0.6)" }}
+                >
+                  <AiOutlineTwitter
+                    size={30}
+                    className={styles.IconSpace}
+                    onClick={linkForPlatform}
+                  />
+                </a>
+              </div>
+            </Col>
+          </Row>
+        </ContainerWrraper>
+        <ContainerWrraper customClass={styles.ContentWrraper}>
+          <Row>
+            <Col
+              xs={12}
+              sm={12}
+              md={12}
+              lg={12}
+              xl={12}
+              className={`ColPaddingRemove `}
+            >
+              <p className={styles.editorContent}>
+                {data?.PressReleaseList.summary}
+              </p>
+              {data?.PressReleaseList.featuredImage && (
+                <center className={styles.ImageCenter}>
+                  <div className={styles.FeaturedImage}>
+                    {/* <Image
                         src={MAIN_URL + data?.PressReleaseList.featuredImage}
                         alt="featured-image"
                         fluid
-                        // className={styles.FeaturedImageFluid}
-                      />
-                    </div>
-                  </center>
-                )}
-                <div id="htmlcontent" className={styles.editorContent}></div>
-              </Col>
-            </Row>
-          </ContainerWrraper>
+                        
+                      /> */}
+                  </div>
+                </center>
+              )}
+              <div id="htmlcontent" className={styles.editorContent}></div>
+            </Col>
+          </Row>
+        </ContainerWrraper>
 
-          <ContainerWrraper
-            customClass={`${styles.InterestedContainerWrraper}`}
-          >
-            <Row>
-              <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-                <h6 className={styles.InterestedMainHeading}>
-                  You might be Interested
-                  <span className={styles.InterstedMainHeadingBrush}>
-                    <Image
+        <ContainerWrraper customClass={`${styles.InterestedContainerWrraper}`}>
+          <Row>
+            <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+              <h6 className={styles.InterestedMainHeading}>
+                You might be Interested
+                <span className={styles.InterstedMainHeadingBrush}>
+                  {/* <Image
                       src="/assets/icons/brush-4.svg"
                       alt="brush"
                       className={styles.BrushMobImage}
-                    />
-                  </span>
-                </h6>
+                    /> */}
+                </span>
+              </h6>
+            </Col>
+            {data?.InterestedPost?.map((posts, index) => (
+              <Col
+                xs={12}
+                sm={12}
+                md={6}
+                lg={6}
+                xl={6}
+                key={index}
+                className={`${
+                  index === 1 ? `${styles.BetweenSpace} ColPaddingRemove` : ""
+                }`}
+              >
+                <CardModel
+                  url={posts.slugUrl ? `/press-release/${posts.slugUrl}` : "#"}
+                  coverimg={
+                    posts.featuredImage ? MAIN_URL + posts.featuredImage : null
+                  }
+                  badge={posts.paidStatus}
+                  hide={true}
+                  date={timestampToDate(posts.releaseDate)}
+                  title={posts.title}
+                  companyname={"By," + " " + posts.companyName}
+                />
               </Col>
-              {data?.InterestedPost?.map((posts, index) => (
-                <Col
-                  xs={12}
-                  sm={12}
-                  md={6}
-                  lg={6}
-                  xl={6}
-                  key={index}
-                  className={`${
-                    index === 1 ? `${styles.BetweenSpace} ColPaddingRemove` : ""
-                  }`}
-                >
-                  <CardModel
-                    url={
-                      posts.slugUrl ? `/press-release/${posts.slugUrl}` : "#"
-                    }
-                    coverimg={
-                      posts.featuredImage
-                        ? MAIN_URL + posts.featuredImage
-                        : null
-                    }
-                    badge={posts.paidStatus}
-                    hide={true}
-                    date={timestampToDate(posts.releaseDate)}
-                    title={posts.title}
-                    companyname={"By," + " " + posts.companyName}
-                  />
-                </Col>
-              ))}
-            </Row>
-          </ContainerWrraper>
-          <GettingStarted />
-        </Layout>
-      )}
+            ))}
+          </Row>
+        </ContainerWrraper>
+        <GettingStarted />
+      </Layout>
+      {/* )} */}
     </>
   );
 };
