@@ -63,11 +63,11 @@ const Footer = () => {
               target={"_blank"}
               rel="noreferrer"
             >
-              <Image
+              {/* <Image
                 src="/assets/icons/twitter-icon.svg"
                 alt="facebook"
                 fluid
-              />
+              /> */}
             </a>
           </div>
           <div className={styles.IconCover}>
@@ -76,7 +76,7 @@ const Footer = () => {
               target={"_blank"}
               rel="noreferrer"
             >
-              <Image src="/assets/icons/fb-icon.svg" alt="facebook" fluid />
+              {/* <Image src="/assets/icons/fb-icon.svg" alt="facebook" fluid /> */}
             </a>
           </div>
           <div className={styles.IconCover}>
@@ -85,7 +85,7 @@ const Footer = () => {
               target={"_blank"}
               rel="noreferrer"
             >
-              <Image src="/assets/icons/instagram.png" alt="facebook" fluid />
+              {/* <Image src="/assets/icons/instagram.png" alt="facebook" fluid /> */}
             </a>
           </div>
         </Col>

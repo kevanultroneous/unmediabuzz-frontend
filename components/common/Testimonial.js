@@ -11,7 +11,7 @@ import Aos from "aos";
 const RatingStar = ({ num }) => {
   return (
     <>
-      {num == 1 ? (
+      {/* {num == 1 ? (
         <>
           <Image src="/assets/icons/full-star.svg" alt="filled" />
           <Image src="/assets/icons/unfilledstar.svg" alt="filled" />
@@ -51,7 +51,7 @@ const RatingStar = ({ num }) => {
           <Image src="/assets/icons/full-star.svg" alt="filled" />
           <Image src="/assets/icons/full-star.svg" alt="filled" />
         </>
-      ) : null}
+      ) : null} */}
     </>
   );
 };
@@ -123,7 +123,7 @@ const Testimonial = () => {
     },
     {
       name: "Kelly Davis",
-      img: "/assets/images/avt3.jpg",
+      img: "/assets/images/avt4.jpg",
       designation: "Vice president",
       rate: 4,
       message:
@@ -131,7 +131,7 @@ const Testimonial = () => {
     },
     {
       name: "James Pearson",
-      img: "/assets/images/avt4.jpg",
+      img: "/assets/images/avt3.jpg",
       designation: "Chief Marketing Officer",
       rate: 4,
       message:
@@ -173,13 +173,13 @@ const Testimonial = () => {
             <div className={styles.TestimonialCard}>
               <div className={styles.Profile}>
                 <div>
-                  <Image
+                  {/* <Image
                     src={value.img}
                     alt="filled"
                     height={"69px"}
                     width="69px"
                     style={{ borderRadius: "100%" }}
-                  />
+                  /> */}
                 </div>
                 <div className={styles.ProfileDetails}>
                   <p className={styles.UserName}>{value.name}</p>

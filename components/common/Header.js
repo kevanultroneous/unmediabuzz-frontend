@@ -17,11 +17,14 @@ import { HeaderMenu } from "utils/Navigation.utils";
 import useResponsiveViewer from "hooks/ResponsiveViewer";
 import toast, { Toaster } from "react-hot-toast";
 import { specialcharacter } from "utils/Anonymous";
+import SearchModel from "./SearchModel";
 
 const Header = ({ commonchecked }) => {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState(false);
+  const [searchMob, setSearchMob] = useState(false);
+  const [inputsearch, setInputSearch] = useState("");
   const [searchInput, setSearchInput] = useState(
     router.query.searching ? router.query.searching : ""
   );
@@ -70,16 +73,33 @@ const Header = ({ commonchecked }) => {
   const selectedcustom = ["/press-release/[post]"];
   return (
     <ContainerWrraper customClass={`${styles.HeaderContainer} headerforscroll`}>
+      <SearchModel
+        show={searchMob}
+        onHide={() => setSearchMob(false)}
+        value={inputsearch}
+        change={(e) => setInputSearch(e.target.value)}
+        keydown={(e) => {
+          if (e.key == "Enter") {
+            if (!inputsearch.length > 0) {
+              toast.error("Search field is required!", { duration: 400 });
+            } else {
+              router.push(`/search?searching=${inputsearch}`);
+              setInputSearch("");
+              setSearchMob(false);
+            }
+          }
+        }}
+      />
       <Toaster position="top-center" reverseOrder={false} />
       <Row className={styles.MainMenuRow}>
         <Col xs={6} md={6} lg={3} xl={3} className={`ColPaddingRemove`}>
           <Link href={"/"} className={styles.MobileLogoWrraper}>
-            <Image
+            {/* <Image
               src="/assets/icons/unmb.svg"
               alt="Logo"
               fluid
               draggable={false}
-            />
+            /> */}
           </Link>
         </Col>
 
@@ -89,7 +109,7 @@ const Header = ({ commonchecked }) => {
             <FiSearch
               size={18}
               className={styles.SearchIcon}
-              onClick={() => router.push("/search-result")}
+              onClick={() => setSearchMob(true)}
             />
             <div
               id="nav-icon3"

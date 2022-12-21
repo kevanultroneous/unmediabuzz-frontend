@@ -18,11 +18,11 @@ export default function Thankyou() {
               <br />
               to you soon.
             </h3>
-            <Image
+            {/* <Image
               src="/assets/images/brush-3.svg"
               alt="brush-img"
               className={styles.Brushwidth}
-            />
+            /> */}
           </Col>
           <Col
             xs={12}

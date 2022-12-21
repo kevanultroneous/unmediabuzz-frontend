@@ -27,15 +27,16 @@ const Process = ({ ProcessList, title, icon, desc, index }) => {
           {!(
             ProcessList.indexOf(ProcessList[ProcessList.length - 1]) === index
           ) && (
-            <Image
-              src={
-                index % 2 == 0
-                  ? "/assets/images/left-down-arrow.svg"
-                  : "/assets/images/right-down-arrow.svg"
-              }
-              className={index % 2 == 0 ? " " : styles.RightArrowMob}
-              alt="arrow"
-            />
+            <></>
+            // <Image
+            //   src={
+            //     index % 2 == 0
+            //       ? "/assets/images/left-down-arrow.svg"
+            //       : "/assets/images/right-down-arrow.svg"
+            //   }
+            //   className={index % 2 == 0 ? " " : styles.RightArrowMob}
+            //   alt="arrow"
+            // />
           )}
         </div>
       </div>
@@ -47,14 +48,14 @@ const Process = ({ ProcessList, title, icon, desc, index }) => {
             index % 2 == 0 ? styles.ArrowWrraper : styles.ArrowWrraperUp
           }
         >
-          <Image
+          {/* <Image
             src={
               index % 2 == 0
                 ? "/assets/icons/up-brown.svg"
                 : "/assets/icons/down-brown.svg"
             }
             alt="arrow"
-          />
+          /> */}
         </div>
       )}
     </div>
@@ -86,11 +87,11 @@ const Introduction = () => {
               >
                 Globally with
                 <span className={styles.TitleSpan}>
-                  <Image
+                  {/* <Image
                     src="/assets/images/brush-2.svg"
                     alt="span-text"
                     className={styles.BrushImage}
-                  />
+                  /> */}
                   &nbsp;&nbsp;UNmedia Buzz
                 </span>
               </h1>
