@@ -8,12 +8,23 @@ import PressReleaseHighlights from "@/components/Home/PressReleaseHighlights";
 import WhyWeAreDifferent from "@/components/Home/WhyWeAreDifferent";
 import axios from "axios";
 import useResponsiveViewer from "hooks/ResponsiveViewer";
+import { Router } from "next/router";
 import { useEffect, useState } from "react";
+import { Spinner } from "react-bootstrap";
 import { RecentPrAPI, TopBuzzListAPI } from "utils/API";
 
 export default function Home({ data }) {
   const checkResponsive = useResponsiveViewer();
+  const [isLoading, setIsLoading] = useState(false);
 
+  useEffect(() => {
+    Router.events.on("routeChangeStart", () => {
+      setIsLoading(true);
+    });
+    Router.events.on("routeChangeComplete", () => {
+      setIsLoading(false);
+    });
+  }, [Router]);
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) =>
@@ -62,39 +73,47 @@ export default function Home({ data }) {
   }, []);
 
   return (
-    <Layout
-      title={
-        "Press Release Distribution | Submit Press Release Today | UNmedia Buzz"
-      }
-      description={
-        "UNmedia Buzz helps you with distributing and reaching new audiences around the globe. Submit a Press Release on the thriving digital news distribution network."
-      }
-    >
-      {checkResponsive ? (
-        <>
-          <Introduction />
-          <WhyWeAreDifferent />
-        </>
-      ) : (
-        <div className={`wrapper`}>
-          <div className={`section`} data-bg="white">
-            <Introduction />
-          </div>
-          <div className={`section`} data-bg="black">
-            <WhyWeAreDifferent />
-          </div>
+    <>
+      {isLoading ? (
+        <div className={"loading"}>
+          <Spinner animation="border" />
         </div>
-      )}
+      ) : (
+        <Layout
+          title={
+            "Press Release Distribution | Submit Press Release Today | UNmedia Buzz"
+          }
+          description={
+            "UNmedia Buzz helps you with distributing and reaching new audiences around the globe. Submit a Press Release on the thriving digital news distribution network."
+          }
+        >
+          {checkResponsive ? (
+            <>
+              <Introduction />
+              <WhyWeAreDifferent />
+            </>
+          ) : (
+            <div className={`wrapper`}>
+              <div className={`section`} data-bg="white">
+                <Introduction />
+              </div>
+              <div className={`section`} data-bg="black">
+                <WhyWeAreDifferent />
+              </div>
+            </div>
+          )}
 
-      <RecentItems
-        postList={data.topbuzz?.data}
-        blogList={data.recentitem?.data}
-      />
-      <Faq />
-      <PressReleaseHighlights />
-      <Testimonial />
-      <GettingStarted />
-    </Layout>
+          <RecentItems
+            postList={data.topbuzz?.data}
+            blogList={data.recentitem?.data}
+          />
+          <Faq />
+          <PressReleaseHighlights />
+          <Testimonial />
+          <GettingStarted />
+        </Layout>
+      )}
+    </>
   );
 }
 export async function getServerSideProps() {

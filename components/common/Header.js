@@ -34,14 +34,11 @@ const Header = ({ commonchecked }) => {
       setSearch(true);
     }
     window.scrollTo(0, 0);
+    let timeout = setTimeout(() => {
+      document.getElementsByClassName("headerforscroll")[0].style.top = "0";
+      clearTimeout(timeout);
+    }, 10);
   }, [router]);
-
-  // useEffect(() => {
-  //   let timeout = setTimeout(() => {
-  //     document.getElementsByClassName("headerforscroll").style.top = "0";
-  //     clearTimeout(timeout);
-  //   }, 100);
-  // }, [router]);
 
   useEffect(() => {
     var prevScrollpos = window.pageYOffset;
@@ -94,12 +91,12 @@ const Header = ({ commonchecked }) => {
       <Row className={styles.MainMenuRow}>
         <Col xs={6} md={6} lg={3} xl={3} className={`ColPaddingRemove`}>
           <Link href={"/"} className={styles.MobileLogoWrraper}>
-            {/* <Image
+            <Image
               src="/assets/icons/unmb.svg"
               alt="Logo"
               fluid
               draggable={false}
-            /> */}
+            />
           </Link>
         </Col>
 

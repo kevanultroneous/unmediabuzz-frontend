@@ -11,7 +11,7 @@ import Aos from "aos";
 const RatingStar = ({ num }) => {
   return (
     <>
-      {/* {num == 1 ? (
+      {num == 1 ? (
         <>
           <Image src="/assets/icons/full-star.svg" alt="filled" />
           <Image src="/assets/icons/unfilledstar.svg" alt="filled" />
@@ -51,7 +51,7 @@ const RatingStar = ({ num }) => {
           <Image src="/assets/icons/full-star.svg" alt="filled" />
           <Image src="/assets/icons/full-star.svg" alt="filled" />
         </>
-      ) : null} */}
+      ) : null}
     </>
   );
 };

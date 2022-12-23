@@ -64,12 +64,12 @@ export const CardModel = ({
       >
         {coverimg == null ? null : (
           <div className={styles.PostImage}>
-            {/* <Image
+            <Image
               src={coverimg}
               alt="coverimage"
               width={"100%"}
               className={styles.PostImageS}
-            /> */}
+            />
           </div>
         )}
       </Col>
@@ -102,7 +102,7 @@ export const BlogsCardModel = ({
             {date}
             {badge && (
               <span className={styles.Badge}>
-                {/* <Image src="/assets/icons/l-speaker.svg" alt="badge" />  */}
+                <Image src="/assets/icons/l-speaker.svg" alt="badge" />
                 Buzzed
               </span>
             )}

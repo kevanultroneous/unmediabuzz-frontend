@@ -18,12 +18,12 @@ const GettingStarted = () => {
         >
           <div className={styles.LeftSideMainWrraper}>
             <div>
-              {/* <Image
+              <Image
                 src="/assets/icons/right-curve.svg"
                 alt="right-curve"
                 className={styles.RightCurve}
                 fluid
-              /> */}
+              />
             </div>
             <div className={styles.DiscriptionWrapper}>
               <p className={styles.SimpleHeading}>Ready To Start Getting</p>
@@ -51,11 +51,11 @@ const GettingStarted = () => {
           className={`${styles.WorldImage} ColPaddingRemove`}
         >
           <div className={styles.WorldImageCover}>
-            {/* <Image
+            <Image
               src="/assets/images/globenet2.png"
               alt="world"
               className={styles.WorldImageFluid}
-            /> */}
+            />
           </div>
           {/* <div className={styles.earth}></div> */}
         </Col>

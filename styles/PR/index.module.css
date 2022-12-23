@@ -7,6 +7,13 @@
   border-radius: 9.63573px;
   overflow: hidden;
 }
+.loading {
+  color: palevioletred;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 .CategoryHeadingWrrap {
   padding-top: 2.5rem;
   padding-left: 2.5rem;

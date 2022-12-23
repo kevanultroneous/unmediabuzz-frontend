@@ -92,7 +92,7 @@ const ContactUs = () => {
         duration: 400,
       });
     } else {
-      console.log("here");
+      // console.log("here");
       axios
         .post(ContactusApi, {
           name: firstname + " " + lastname,
@@ -134,12 +134,12 @@ const ContactUs = () => {
             <p className={styles.Heading}>
               Connect to start your Journey with UNmedia Buzz
             </p>
-            {/* <Image
+            <Image
               src="/assets/images/brush-3.svg"
               alt="brush"
               loading="lazy"
               className={styles.BrushImage}
-            /> */}
+            />
           </Col>
         </Row>
       </ContainerWrraper>
@@ -154,12 +154,12 @@ const ContactUs = () => {
             className={`ColPaddingRemove ${styles.RemoveSideImageBar}`}
           >
             <div className={styles.BoardContainer}>
-              {/* <Image
+              <Image
                 src="/assets/images/speakr-lady.svg"
                 alt="speaker-lady"
                 className={styles.ImageSizes}
                 fluid
-              /> */}
+              />
             </div>
           </Col>
           <Col

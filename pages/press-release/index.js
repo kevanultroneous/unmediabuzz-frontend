@@ -21,19 +21,16 @@ import toast, { Toaster } from "react-hot-toast";
 
 const PressRelease = ({ data }) => {
   const router = useRouter();
-  // const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  // useEffect(() => {
-  //   Router.events.on("routeChangeStart", () => {
-  //     setIsLoading(true);
-  //   });
-  //   Router.events.on("routeChangeComplete", () => {
-  //     setIsLoading(false);
-  //   });
-  //   // Router.events.on("routeChangeError", () => {
-  //   //   setIsLoading(false);
-  //   // });
-  // }, [Router]);
+  useEffect(() => {
+    Router.events.on("routeChangeStart", () => {
+      setIsLoading(true);
+    });
+    Router.events.on("routeChangeComplete", () => {
+      setIsLoading(false);
+    });
+  }, [Router]);
   const textItemRender = (current, type, element) => {
     if (type === "page") {
       return (
@@ -80,176 +77,189 @@ const PressRelease = ({ data }) => {
     }
   };
   return (
-    // <>
-    //   {isLoading ? (
-    //     <Spinner animation="border" />
-    //   ) : (
-    <Layout
-      title={"All Press Releases | News Releases | Submit Press Release Now"}
-      description={
-        "Explore all the latest news releases and press releases distributed by UNmedia Buzz. Submit Press Release and news release today."
-      }
-    >
-      <Toaster position="top-center" reverseOrder={false} />
-      <HeroSection
-        keydown={(e) => {
-          if (e.code === "Enter") {
-            searchaction();
-          }
-        }}
-        onchangesearch={(e) => setSearchValue(e.target.value)}
-        searchButtonAction={searchaction}
-        searchvalue={searchvalue}
-      />
-      <ContainerWrraper customClass={`${styles.TabsMainContainer}`}>
-        <div className={styles.TabsLayer}>
-          <div>
-            <div
-              className={`${styles.CurrentTab} ${
-                router.pathname == "/press-release" ? styles.SelectedTab : null
-              }`}
-            >
-              All Press Release
-            </div>
-          </div>
-
-          {data.allcategories?.data.map((tab, index) => (
-            <div key={index}>
-              <div
-                className={`${styles.CurrentTab} ${
-                  index == currentTab ? styles.SelectedTab : null
-                }`}
-                onClick={() => {
-                  setCurrentTab(index);
-                  router.push(
-                    `${`/${tab.title.replace(/\s+/g, "-").toLowerCase()}`}`
-                  );
-                }}
-              >
-                {tab.title}
-              </div>
-            </div>
-          ))}
+    <>
+      {isLoading ? (
+        <div className={styles.loading}>
+          <Spinner animation="border" />
         </div>
-      </ContainerWrraper>
-      <ContainerWrraper customClass={`${styles.CardModelContainerWrraper}`}>
-        <Row>
-          <Col xs={12} sm={12} md={12} lg={8} xl={9} className={`pe-0`}>
-            {router.query.search ? (
-              data?.internalSearch?.data[0]?.mainDoc.length == 0 ? (
-                <h3>No data found</h3>
-              ) : (
-                data?.internalSearch?.data[0]?.mainDoc.map((value, index) => (
-                  <CardModel
-                    badge={value.paidStatus}
-                    url={
-                      value.slugUrl ? `/press-release/${value.slugUrl}` : `#`
-                    }
-                    coverimg={
-                      value.featuredImage
-                        ? MAIN_URL + value.featuredImage
-                        : null
-                    }
-                    customtitleclass={`${styles.ParagraphSize}`}
-                    key={index}
-                    companyname={"By," + " " + value.companyName}
-                    title={value.title}
-                    date={timestampToDate(value.releaseDate)}
-                  />
-                ))
-              )
-            ) : (
-              data?.fetchlistOfPressReleaseList?.data[0]?.mainDoc.map(
-                (value, index) => (
-                  <CardModel
-                    badge={value.paidStatus}
-                    url={
-                      value.slugUrl ? `/press-release/${value.slugUrl}` : `#`
-                    }
-                    coverimg={
-                      value.featuredImage
-                        ? MAIN_URL + value.featuredImage
-                        : null
-                    }
-                    customtitleclass={`${styles.ParagraphSize}`}
-                    key={index}
-                    companyname={"By," + " " + value.companyName}
-                    title={value.title}
-                    date={timestampToDate(value.releaseDate)}
-                  />
-                )
-              )
-            )}
-          </Col>
-          <Col
-            xs={12}
-            sm={12}
-            md={5}
-            lg={4}
-            xl={3}
-            className={`ColPaddingRemove`}
-          >
-            <CategorySidebar categorylist={data.allcategories?.data} />
-          </Col>
-
-          <Col
-            xs={12}
-            sm={12}
-            md={12}
-            lg={12}
-            xl={12}
-            className={`ColPaddingRemove ${styles.CenterPagination}`}
-          >
-            {router.query.search ? (
-              data.internalSearch.data[0]?.totalCount > 30 ? (
-                <div className={styles.PaginationWrraper}>
-                  <Pagination
-                    showTitle={false}
-                    defaultCurrent={router.query.page}
-                    onChange={(v) => {
-                      router.query.search
-                        ? router.push(
-                            `/press-release?search=${router.query.search}&page=${v}`
-                          )
-                        : "";
-                    }}
-                    total={
-                      router.query.search
-                        ? data.internalSearch.data[0]?.totalCount
-                        : null
-                    }
-                    itemRender={textItemRender}
-                    pageSize={30}
-                  />
+      ) : (
+        <Layout
+          title={
+            "All Press Releases | News Releases | Submit Press Release Now"
+          }
+          description={
+            "Explore all the latest news releases and press releases distributed by UNmedia Buzz. Submit Press Release and news release today."
+          }
+        >
+          <Toaster position="top-center" reverseOrder={false} />
+          <HeroSection
+            keydown={(e) => {
+              if (e.code === "Enter") {
+                searchaction();
+              }
+            }}
+            onchangesearch={(e) => setSearchValue(e.target.value)}
+            searchButtonAction={searchaction}
+            searchvalue={searchvalue}
+          />
+          <ContainerWrraper customClass={`${styles.TabsMainContainer}`}>
+            <div className={styles.TabsLayer}>
+              <div>
+                <div
+                  className={`${styles.CurrentTab} ${
+                    router.pathname == "/press-release"
+                      ? styles.SelectedTab
+                      : null
+                  }`}
+                >
+                  All Press Release
                 </div>
-              ) : null
-            ) : (
-              <>
-                {data.fetchlistOfPressReleaseList.data[0]?.totalCount > 30 ? (
-                  <div className={styles.PaginationWrraper}>
-                    <Pagination
-                      showTitle={false}
-                      defaultCurrent={router.query.page}
-                      onChange={(v) => {
-                        router.push(`/press-release?page=${v}`);
-                      }}
-                      total={
-                        data.fetchlistOfPressReleaseList.data[0]?.totalCount
-                      }
-                      itemRender={textItemRender}
-                      pageSize={30}
-                    />
+              </div>
+
+              {data.allcategories?.data.map((tab, index) => (
+                <div key={index}>
+                  <div
+                    className={`${styles.CurrentTab} ${
+                      index == currentTab ? styles.SelectedTab : null
+                    }`}
+                    onClick={() => {
+                      setCurrentTab(index);
+                      router.push(
+                        `${`/${tab.title.replace(/\s+/g, "-").toLowerCase()}`}`
+                      );
+                    }}
+                  >
+                    {tab.title}
                   </div>
-                ) : null}
-              </>
-            )}
-          </Col>
-        </Row>
-      </ContainerWrraper>
-      <GettingStarted />
-    </Layout>
-    //   )}
-    // </>
+                </div>
+              ))}
+            </div>
+          </ContainerWrraper>
+          <ContainerWrraper customClass={`${styles.CardModelContainerWrraper}`}>
+            <Row>
+              <Col xs={12} sm={12} md={12} lg={8} xl={9} className={`pe-0`}>
+                {router.query.search ? (
+                  data?.internalSearch?.data[0]?.mainDoc.length == 0 ? (
+                    <h3>No data found</h3>
+                  ) : (
+                    data?.internalSearch?.data[0]?.mainDoc.map(
+                      (value, index) => (
+                        <CardModel
+                          badge={value.paidStatus}
+                          url={
+                            value.slugUrl
+                              ? `/press-release/${value.slugUrl}`
+                              : `#`
+                          }
+                          coverimg={
+                            value.featuredImage
+                              ? MAIN_URL + value.featuredImage
+                              : null
+                          }
+                          customtitleclass={`${styles.ParagraphSize}`}
+                          key={index}
+                          companyname={"By," + " " + value.companyName}
+                          title={value.title}
+                          date={timestampToDate(value.releaseDate)}
+                        />
+                      )
+                    )
+                  )
+                ) : (
+                  data?.fetchlistOfPressReleaseList?.data[0]?.mainDoc.map(
+                    (value, index) => (
+                      <CardModel
+                        badge={value.paidStatus}
+                        url={
+                          value.slugUrl
+                            ? `/press-release/${value.slugUrl}`
+                            : `#`
+                        }
+                        coverimg={
+                          value.featuredImage
+                            ? MAIN_URL + value.featuredImage
+                            : null
+                        }
+                        customtitleclass={`${styles.ParagraphSize}`}
+                        key={index}
+                        companyname={"By," + " " + value.companyName}
+                        title={value.title}
+                        date={timestampToDate(value.releaseDate)}
+                      />
+                    )
+                  )
+                )}
+              </Col>
+              <Col
+                xs={12}
+                sm={12}
+                md={5}
+                lg={4}
+                xl={3}
+                className={`ColPaddingRemove`}
+              >
+                <CategorySidebar categorylist={data.allcategories?.data} />
+              </Col>
+
+              <Col
+                xs={12}
+                sm={12}
+                md={12}
+                lg={12}
+                xl={12}
+                className={`ColPaddingRemove ${styles.CenterPagination}`}
+              >
+                {router.query.search ? (
+                  data.internalSearch.data[0]?.totalCount > 30 ? (
+                    <div className={styles.PaginationWrraper}>
+                      <Pagination
+                        showTitle={false}
+                        defaultCurrent={router.query.page}
+                        onChange={(v) => {
+                          router.query.search
+                            ? router.push(
+                                `/press-release?search=${router.query.search}&page=${v}`
+                              )
+                            : "";
+                        }}
+                        total={
+                          router.query.search
+                            ? data.internalSearch.data[0]?.totalCount
+                            : null
+                        }
+                        itemRender={textItemRender}
+                        pageSize={30}
+                      />
+                    </div>
+                  ) : null
+                ) : (
+                  <>
+                    {data.fetchlistOfPressReleaseList.data[0]?.totalCount >
+                    30 ? (
+                      <div className={styles.PaginationWrraper}>
+                        <Pagination
+                          showTitle={false}
+                          defaultCurrent={router.query.page}
+                          onChange={(v) => {
+                            router.push(`/press-release?page=${v}`);
+                          }}
+                          total={
+                            data.fetchlistOfPressReleaseList.data[0]?.totalCount
+                          }
+                          itemRender={textItemRender}
+                          pageSize={30}
+                        />
+                      </div>
+                    ) : null}
+                  </>
+                )}
+              </Col>
+            </Row>
+          </ContainerWrraper>
+          <GettingStarted />
+        </Layout>
+      )}
+    </>
   );
 };
 

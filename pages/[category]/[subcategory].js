@@ -254,7 +254,7 @@ export async function getServerSideProps(context) {
   let findsubcategoryseo = seoData.subcategories.find(
     (i) => i.title.toLowerCase() == context.query.subcategory.replace(/-/g, " ")
   );
-  console.log(findsubcategoryseo);
+  // console.log(findsubcategoryseo);
   return {
     props: {
       data: {

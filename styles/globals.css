@@ -24,7 +24,13 @@ a {
 .wrapper {
   transition: all 2s ease;
 }
-
+.loading {
+  color: palevioletred;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 .section {
   height: auto;
   transition: all 2s ease;
