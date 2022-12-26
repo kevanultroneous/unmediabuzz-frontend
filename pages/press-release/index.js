@@ -22,15 +22,51 @@ import toast, { Toaster } from "react-hot-toast";
 const PressRelease = ({ data }) => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
+  const [fetchedpost, setFetchedPost] = useState({});
+  const [searchedpost, setSearchedPost] = useState({});
 
-  // useEffect(() => {
-  //   Router.events.on("routeChangeStart", () => {
-  //     setIsLoading(true);
-  //   });
-  //   Router.events.on("routeChangeComplete", () => {
-  //     setIsLoading(false);
-  //   });
-  // }, [Router]);
+  useEffect(() => {
+    if (router.query.search) {
+      searchwisepost();
+    }
+    fetchpost();
+  }, [router]);
+
+  const fetchpost = async () => {
+    setIsLoading(true);
+    await axios
+      .post(PressReleaseListAPI, {
+        limit: 30,
+        page: router.query.page ? router.query.page : 1,
+      })
+      .then((res) => {
+        setIsLoading(false);
+        setFetchedPost(res.data?.data);
+      })
+      .catch((e) => {
+        setIsLoading(false);
+        console.log(e);
+      });
+  };
+
+  const searchwisepost = async () => {
+    setIsLoading(true);
+    await axios
+      .post(InternalSearchAPI, {
+        searchTerm: router.query.search,
+        limit: 30,
+        page: router.query.page ? router.query.page : 1,
+      })
+      .then((res) => {
+        setIsLoading(false);
+        setSearchedPost(res.data?.data);
+      })
+      .catch((e) => {
+        setIsLoading(false);
+        console.log(e);
+      });
+  };
+
   const textItemRender = (current, type, element) => {
     if (type === "page") {
       return (
@@ -53,12 +89,6 @@ const PressRelease = ({ data }) => {
     }
     return element;
   };
-
-  useEffect(() => {
-    if (router.query.search) {
-      setSearchValue("");
-    }
-  }, [router]);
 
   const [currentTab, setCurrentTab] = useState(null);
   const [searchvalue, setSearchValue] = useState(
@@ -133,31 +163,12 @@ const PressRelease = ({ data }) => {
           <Row>
             <Col xs={12} sm={12} md={12} lg={8} xl={9} className={`pe-0`}>
               {router.query.search ? (
-                data?.internalSearch?.data[0]?.mainDoc.length == 0 ? (
-                  <h3>No data found</h3>
+                isLoading ? (
+                  <div className={styles.loading}>
+                    <Spinner animation="border" />
+                  </div>
                 ) : (
-                  data?.internalSearch?.data[0]?.mainDoc.map((value, index) => (
-                    <CardModel
-                      badge={value.paidStatus}
-                      url={
-                        value.slugUrl ? `/press-release/${value.slugUrl}` : `#`
-                      }
-                      coverimg={
-                        value.featuredImage
-                          ? MAIN_URL + value.featuredImage
-                          : null
-                      }
-                      customtitleclass={`${styles.ParagraphSize}`}
-                      key={index}
-                      companyname={"By," + " " + value.companyName}
-                      title={value.title}
-                      date={timestampToDate(value.releaseDate)}
-                    />
-                  ))
-                )
-              ) : (
-                data?.fetchlistOfPressReleaseList?.data[0]?.mainDoc.map(
-                  (value, index) => (
+                  searchedpost[0]?.mainDoc.map((value, index) => (
                     <CardModel
                       badge={value.paidStatus}
                       url={
@@ -172,8 +183,29 @@ const PressRelease = ({ data }) => {
                       title={value.title}
                       date={timestampToDate(value.releaseDate)}
                     />
-                  )
+                  ))
                 )
+              ) : isLoading ? (
+                <div className={styles.loading}>
+                  <Spinner animation="border" />
+                </div>
+              ) : (
+                fetchedpost[0]?.mainDoc.map((value, index) => (
+                  <CardModel
+                    badge={value.paidStatus}
+                    url={
+                      value.slugUrl ? `/press-release/${value.slugUrl}` : `#`
+                    }
+                    coverimg={
+                      value.thumbnailImage ? value.thumbnailImage : null
+                    }
+                    customtitleclass={`${styles.ParagraphSize}`}
+                    key={index}
+                    companyname={"By," + " " + value.companyName}
+                    title={value.title}
+                    date={timestampToDate(value.releaseDate)}
+                  />
+                ))
               )}
             </Col>
             <Col
@@ -196,7 +228,7 @@ const PressRelease = ({ data }) => {
               className={`ColPaddingRemove ${styles.CenterPagination}`}
             >
               {router.query.search ? (
-                data.internalSearch.data[0]?.totalCount > 30 ? (
+                searchedpost[0]?.totalCount > 30 ? (
                   <div className={styles.PaginationWrraper}>
                     <Pagination
                       showTitle={false}
@@ -209,35 +241,27 @@ const PressRelease = ({ data }) => {
                           : "";
                       }}
                       total={
-                        router.query.search
-                          ? data.internalSearch.data[0]?.totalCount
-                          : null
+                        router.query.search ? searchedpost[0]?.totalCount : null
                       }
                       itemRender={textItemRender}
                       pageSize={30}
                     />
                   </div>
                 ) : null
-              ) : (
-                <>
-                  {data.fetchlistOfPressReleaseList.data[0]?.totalCount > 30 ? (
-                    <div className={styles.PaginationWrraper}>
-                      <Pagination
-                        showTitle={false}
-                        defaultCurrent={router.query.page}
-                        onChange={(v) => {
-                          router.push(`/press-release?page=${v}`);
-                        }}
-                        total={
-                          data.fetchlistOfPressReleaseList.data[0]?.totalCount
-                        }
-                        itemRender={textItemRender}
-                        pageSize={30}
-                      />
-                    </div>
-                  ) : null}
-                </>
-              )}
+              ) : fetchedpost[0]?.totalCount > 30 ? (
+                <div className={styles.PaginationWrraper}>
+                  <Pagination
+                    showTitle={false}
+                    defaultCurrent={router.query.page}
+                    onChange={(v) => {
+                      router.push(`/press-release?page=${v}`);
+                    }}
+                    total={fetchedpost[0]?.totalCount}
+                    itemRender={textItemRender}
+                    pageSize={30}
+                  />
+                </div>
+              ) : null}
             </Col>
           </Row>
         </ContainerWrraper>
@@ -249,32 +273,15 @@ const PressRelease = ({ data }) => {
 };
 
 export async function getServerSideProps(context) {
-  const fetchlistOfPressReleaseList = await axios
-    .post(PressReleaseListAPI, {
-      limit: 30,
-      page: context.query.page ? context.query.page : 1,
-    })
-    .then((res) => res.data)
-    .catch((e) => console.log(e));
   const allcategories = await axios
     .get(AllCategoryAPI)
-    .then((res) => res.data)
-    .catch((e) => e);
-  const internalSearch = await axios
-    .post(InternalSearchAPI, {
-      searchTerm: context.query.search,
-      limit: 30,
-      page: context.query.page ? context.query.page : 1,
-    })
     .then((res) => res.data)
     .catch((e) => e);
 
   return {
     props: {
       data: {
-        fetchlistOfPressReleaseList,
         allcategories,
-        internalSearch,
       },
     },
   };
