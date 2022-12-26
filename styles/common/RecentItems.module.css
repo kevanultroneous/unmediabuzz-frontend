@@ -143,9 +143,9 @@
   overflow: hidden;
 }
 .PostImageS {
-  width: 150px;
+  /* width: 150px; */
   object-fit: cover;
-  height: 150px;
+  /* height: 150px; */
   object-position: 50% 50%;
 }
 @media screen and (max-width: 600px) {

@@ -35,9 +35,7 @@ const RecentPressRelease = ({ blogList, hideclass }) => {
               key={index}
               date={`${timestampToDate(value.releaseDate)}`}
               title={value.title}
-              coverimg={
-                value.featuredImage ? MAIN_URL + value.featuredImage : null
-              }
+              coverimg={value.thumbnailImage ? value.thumbnailImage : null}
             />
           ))}
         </ContainerWrraper>

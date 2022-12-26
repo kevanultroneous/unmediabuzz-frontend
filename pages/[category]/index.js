@@ -169,9 +169,7 @@ const Category = ({ data }) => {
                 <CardModel
                   badge={value.paidStatus}
                   url={value.slugUrl ? `/press-release/${value.slugUrl}` : `#`}
-                  coverimg={
-                    value.featuredImage ? MAIN_URL + value.featuredImage : null
-                  }
+                  coverimg={value.featuredImage ? value.featuredImage : null}
                   customtitleclass={`${styles.ParagraphSize}`}
                   key={index}
                   companyname={"By," + " " + value.companyName}

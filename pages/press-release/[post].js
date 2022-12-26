@@ -22,17 +22,15 @@ const ViewPost = ({ data }) => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    Router.events.on("routeChangeStart", () => {
-      setIsLoading(true);
-    });
-    Router.events.on("routeChangeComplete", () => {
-      setIsLoading(false);
-    });
-    // Router.events.on("routeChangeError", () => {
-    //   setIsLoading(false);
-    // });
-  }, [Router]);
+  // useEffect(() => {
+  //   Router.events.on("routeChangeStart", () => {
+  //     setIsLoading(true);
+  //   });
+  //   Router.events.on("routeChangeComplete", () => {
+  //     setIsLoading(false);
+  //   });
+
+  // }, [Router]);
   useEffect(() => {
     if (Object.keys(data.PressReleaseList).length < 1) {
       router.push("/");
@@ -81,7 +79,7 @@ const ViewPost = ({ data }) => {
           ogimage={
             Object.keys(data.PressReleaseList).length < 1
               ? ""
-              : MAIN_URL + data?.PressReleaseList.featuredImage
+              : data?.PressReleaseList.featuredImage
           }
         >
           <ContainerWrraper customClass={`${styles.ViewPostContainerWrraper}`}>
@@ -199,7 +197,7 @@ const ViewPost = ({ data }) => {
                   <center className={styles.ImageCenter}>
                     <div className={styles.FeaturedImage}>
                       <Image
-                        src={MAIN_URL + data?.PressReleaseList.featuredImage}
+                        src={data?.PressReleaseList.featuredImage}
                         alt="featured-image"
                         fluid
                       />
@@ -243,11 +241,7 @@ const ViewPost = ({ data }) => {
                     url={
                       posts.slugUrl ? `/press-release/${posts.slugUrl}` : "#"
                     }
-                    coverimg={
-                      posts.featuredImage
-                        ? MAIN_URL + posts.featuredImage
-                        : null
-                    }
+                    coverimg={posts.featuredImage ? posts.featuredImage : null}
                     badge={posts.paidStatus}
                     hide={true}
                     date={timestampToDate(posts.releaseDate)}

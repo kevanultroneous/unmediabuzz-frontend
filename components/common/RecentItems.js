@@ -170,9 +170,7 @@ const RecentItems = ({ postList, blogList }) => {
                         value.slugUrl ? `press-release/${value.slugUrl}` : `#`
                       }
                       coverimg={
-                        value?.featuredImage
-                          ? MAIN_URL + value?.featuredImage
-                          : null
+                        value?.thumbnailImage ? value?.thumbnailImage : null
                       }
                       badge={value.paidStatus}
                       companyname={`By, ${value?.companyName}`}

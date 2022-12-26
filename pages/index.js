@@ -17,14 +17,14 @@ export default function Home({ data }) {
   const checkResponsive = useResponsiveViewer();
   const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    Router.events.on("routeChangeStart", () => {
-      setIsLoading(true);
-    });
-    Router.events.on("routeChangeComplete", () => {
-      setIsLoading(false);
-    });
-  }, [Router]);
+  // useEffect(() => {
+  //   Router.events.on("routeChangeStart", () => {
+  //     setIsLoading(true);
+  //   });
+  //   Router.events.on("routeChangeComplete", () => {
+  //     setIsLoading(false);
+  //   });
+  // }, [Router]);
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) =>
@@ -74,45 +74,45 @@ export default function Home({ data }) {
 
   return (
     <>
-      {isLoading ? (
+      {/* {isLoading ? (
         <div className={"loading"}>
           <Spinner animation="border" />
         </div>
-      ) : (
-        <Layout
-          title={
-            "Press Release Distribution | Submit Press Release Today | UNmedia Buzz"
-          }
-          description={
-            "UNmedia Buzz helps you with distributing and reaching new audiences around the globe. Submit a Press Release on the thriving digital news distribution network."
-          }
-        >
-          {checkResponsive ? (
-            <>
+      ) : ( */}
+      <Layout
+        title={
+          "Press Release Distribution | Submit Press Release Today | UNmedia Buzz"
+        }
+        description={
+          "UNmedia Buzz helps you with distributing and reaching new audiences around the globe. Submit a Press Release on the thriving digital news distribution network."
+        }
+      >
+        {checkResponsive ? (
+          <>
+            <Introduction />
+            <WhyWeAreDifferent />
+          </>
+        ) : (
+          <div className={`wrapper`}>
+            <div className={`section`} data-bg="white">
               <Introduction />
-              <WhyWeAreDifferent />
-            </>
-          ) : (
-            <div className={`wrapper`}>
-              <div className={`section`} data-bg="white">
-                <Introduction />
-              </div>
-              <div className={`section`} data-bg="black">
-                <WhyWeAreDifferent />
-              </div>
             </div>
-          )}
+            <div className={`section`} data-bg="black">
+              <WhyWeAreDifferent />
+            </div>
+          </div>
+        )}
 
-          <RecentItems
-            postList={data.topbuzz?.data}
-            blogList={data.recentitem?.data}
-          />
-          <Faq />
-          <PressReleaseHighlights />
-          <Testimonial />
-          <GettingStarted />
-        </Layout>
-      )}
+        <RecentItems
+          postList={data.topbuzz?.data}
+          blogList={data.recentitem?.data}
+        />
+        <Faq />
+        <PressReleaseHighlights />
+        <Testimonial />
+        <GettingStarted />
+      </Layout>
+      {/* )} */}
     </>
   );
 }

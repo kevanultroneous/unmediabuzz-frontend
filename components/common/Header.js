@@ -52,7 +52,7 @@ const Header = ({ commonchecked }) => {
       }
       prevScrollpos = currentScrollPos;
     };
-  });
+  }, []);
 
   const handlesearch = () => {
     if (search) {
