@@ -29,25 +29,7 @@ const PressRelease = ({ data }) => {
     if (router.query.search) {
       searchwisepost();
     }
-    fetchpost();
   }, [router]);
-
-  const fetchpost = async () => {
-    setIsLoading(true);
-    await axios
-      .post(PressReleaseListAPI, {
-        limit: 30,
-        page: router.query.page ? router.query.page : 1,
-      })
-      .then((res) => {
-        setIsLoading(false);
-        setFetchedPost(res.data?.data);
-      })
-      .catch((e) => {
-        setIsLoading(false);
-        console.log(e);
-      });
-  };
 
   const searchwisepost = async () => {
     setIsLoading(true);
@@ -104,11 +86,6 @@ const PressRelease = ({ data }) => {
   };
   return (
     <>
-      {/* {isLoading ? (
-        <div className={styles.loading}>
-          <Spinner animation="border" />
-        </div>
-      ) : ( */}
       <Layout
         title={"All Press Releases | News Releases | Submit Press Release Now"}
         description={
@@ -190,22 +167,24 @@ const PressRelease = ({ data }) => {
                   <Spinner animation="border" />
                 </div>
               ) : (
-                fetchedpost[0]?.mainDoc.map((value, index) => (
-                  <CardModel
-                    badge={value.paidStatus}
-                    url={
-                      value.slugUrl ? `/press-release/${value.slugUrl}` : `#`
-                    }
-                    coverimg={
-                      value.thumbnailImage ? value.thumbnailImage : null
-                    }
-                    customtitleclass={`${styles.ParagraphSize}`}
-                    key={index}
-                    companyname={"By," + " " + value.companyName}
-                    title={value.title}
-                    date={timestampToDate(value.releaseDate)}
-                  />
-                ))
+                data?.fetchlistOfPressReleaseList?.data[0]?.mainDoc.map(
+                  (value, index) => (
+                    <CardModel
+                      badge={value.paidStatus}
+                      url={
+                        value.slugUrl ? `/press-release/${value.slugUrl}` : `#`
+                      }
+                      coverimg={
+                        value.thumbnailImage ? value.thumbnailImage : null
+                      }
+                      customtitleclass={`${styles.ParagraphSize}`}
+                      key={index}
+                      companyname={value.companyName}
+                      title={value.title}
+                      date={timestampToDate(value.releaseDate)}
+                    />
+                  )
+                )
               )}
             </Col>
             <Col
@@ -248,7 +227,7 @@ const PressRelease = ({ data }) => {
                     />
                   </div>
                 ) : null
-              ) : fetchedpost[0]?.totalCount > 30 ? (
+              ) : data.fetchlistOfPressReleaseList.data[0]?.totalCount > 30 ? (
                 <div className={styles.PaginationWrraper}>
                   <Pagination
                     showTitle={false}
@@ -256,7 +235,7 @@ const PressRelease = ({ data }) => {
                     onChange={(v) => {
                       router.push(`/press-release?page=${v}`);
                     }}
-                    total={fetchedpost[0]?.totalCount}
+                    total={data.fetchlistOfPressReleaseList.data[0]?.totalCount}
                     itemRender={textItemRender}
                     pageSize={30}
                   />
@@ -278,9 +257,18 @@ export async function getServerSideProps(context) {
     .then((res) => res.data)
     .catch((e) => e);
 
+  const fetchlistOfPressReleaseList = await axios
+    .post(PressReleaseListAPI, {
+      limit: 30,
+      page: context.query.page ? context.query.page : 1,
+    })
+    .then((res) => res.data)
+    .catch((e) => console.log(e));
+
   return {
     props: {
       data: {
+        fetchlistOfPressReleaseList,
         allcategories,
       },
     },
