@@ -4,7 +4,7 @@ export const ButtonsList = {
   letsStart: {
     source: (
       <span>
-        {/* <Image src="/assets/icons/send-icon.svg" alt="press-release" fluid /> */}
+        <Image src="/assets/icons/send-icon.svg" alt="press-release" fluid />
         &nbsp; Let’s Start Now
       </span>
     ),
@@ -13,11 +13,11 @@ export const ButtonsList = {
   pressReleaseCommon: {
     source: (
       <span>
-        {/* <Image
+        <Image
           src="/assets/icons/white-pr-icon.svg"
           alt="press-release"
           fluid
-        /> */}
+        />
         &nbsp;&nbsp; &nbsp; Press Release
       </span>
     ),
@@ -26,11 +26,11 @@ export const ButtonsList = {
   viewCommon: {
     source: (
       <span>
-        {/* <Image
+        <Image
           src="/assets/icons/white-pr-icon.svg"
           alt="press-release"
           fluid
-        /> */}
+        />
         &nbsp;&nbsp;View All
       </span>
     ),
@@ -39,11 +39,11 @@ export const ButtonsList = {
   blogpostCommon: {
     source: (
       <span>
-        {/* <Image
+        <Image
           src="/assets/icons/white-blog-icon.svg"
           alt="press-release"
           fluid
-        /> */}
+        />
         &nbsp; &nbsp; &nbsp; &nbsp; Post Blogs
       </span>
     ),
@@ -53,11 +53,11 @@ export const ButtonsList = {
     {
       source: (
         <span>
-          {/* <Image
+          <Image
             src="/assets/icons/press-release.svg"
             alt="press-release"
             fluid
-          /> */}
+          />
           &nbsp;&nbsp;Press Release
         </span>
       ),
@@ -66,12 +66,12 @@ export const ButtonsList = {
     {
       source: (
         <span>
-          {/* <Image
+          <Image
             src="/assets/icons/blog-post.svg"
             alt="press-release"
             height={25}
             fluid
-          /> */}
+          />
           &nbsp;Post Blogs
         </span>
       ),
@@ -82,11 +82,11 @@ export const ButtonsList = {
     {
       source: (
         <span style={{ display: "flex", alignItem: "center" }}>
-          {/* <Image
+          <Image
             src="/assets/icons/white-pr-icon.svg"
             alt="press-release"
             fluid
-          /> */}
+          />
           &nbsp;&nbsp;&nbsp;Press Release
         </span>
       ),
@@ -95,11 +95,11 @@ export const ButtonsList = {
     {
       source: (
         <span style={{ display: "flex", alignItem: "center" }}>
-          {/* <Image
+          <Image
             src="/assets/icons/white-blog-icon.svg"
             alt="press-release"
             fluid
-          /> */}
+          />
           &nbsp;&nbsp;Post Blogs
         </span>
       ),

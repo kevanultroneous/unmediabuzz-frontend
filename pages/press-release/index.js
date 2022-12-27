@@ -179,7 +179,7 @@ const PressRelease = ({ data }) => {
                       }
                       customtitleclass={`${styles.ParagraphSize}`}
                       key={index}
-                      companyname={value.companyName}
+                      companyname={"By," + " " + value.companyName}
                       title={value.title}
                       date={timestampToDate(value.releaseDate)}
                     />

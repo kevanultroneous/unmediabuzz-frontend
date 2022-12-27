@@ -173,13 +173,13 @@ const Testimonial = () => {
             <div className={styles.TestimonialCard}>
               <div className={styles.Profile}>
                 <div>
-                  {/* <Image
+                  <Image
                     src={value.img}
                     alt="filled"
                     height={"69px"}
                     width="69px"
                     style={{ borderRadius: "100%" }}
-                  /> */}
+                  />
                 </div>
                 <div className={styles.ProfileDetails}>
                   <p className={styles.UserName}>{value.name}</p>
