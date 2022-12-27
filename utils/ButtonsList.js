@@ -4,7 +4,7 @@ export const ButtonsList = {
   letsStart: {
     source: (
       <span>
-        <Image src="/assets/icons/send-icon.svg" alt="press-release" fluid />
+        <Image src="/assets/icons/send-icon.png" alt="press-release" fluid />
         &nbsp; Let’s Start Now
       </span>
     ),
@@ -14,7 +14,7 @@ export const ButtonsList = {
     source: (
       <span>
         <Image
-          src="/assets/icons/white-pr-icon.svg"
+          src="/assets/icons/white-pr-icon.png"
           alt="press-release"
           fluid
         />
@@ -27,7 +27,7 @@ export const ButtonsList = {
     source: (
       <span>
         <Image
-          src="/assets/icons/white-pr-icon.svg"
+          src="/assets/icons/white-pr-icon.png"
           alt="press-release"
           fluid
         />
@@ -83,7 +83,7 @@ export const ButtonsList = {
       source: (
         <span style={{ display: "flex", alignItem: "center" }}>
           <Image
-            src="/assets/icons/white-pr-icon.svg"
+            src="/assets/icons/white-pr-icon.png"
             alt="press-release"
             fluid
           />

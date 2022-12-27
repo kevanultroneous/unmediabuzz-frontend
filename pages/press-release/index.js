@@ -144,6 +144,8 @@ const PressRelease = ({ data }) => {
                   <div className={styles.loading}>
                     <Spinner animation="border" />
                   </div>
+                ) : searchedpost[0]?.mainDoc.length <= 0 ? (
+                  <h3>Not Found</h3>
                 ) : (
                   searchedpost[0]?.mainDoc.map((value, index) => (
                     <CardModel
@@ -166,6 +168,9 @@ const PressRelease = ({ data }) => {
                 <div className={styles.loading}>
                   <Spinner animation="border" />
                 </div>
+              ) : data?.fetchlistOfPressReleaseList?.data[0].mainDoc.length <=
+                0 ? (
+                <h3>Not Found</h3>
               ) : (
                 data?.fetchlistOfPressReleaseList?.data[0]?.mainDoc.map(
                   (value, index) => (
@@ -207,7 +212,8 @@ const PressRelease = ({ data }) => {
               className={`ColPaddingRemove ${styles.CenterPagination}`}
             >
               {router.query.search ? (
-                searchedpost[0]?.totalCount > 30 ? (
+                searchedpost[0]?.mainDoc.length <= 0 ? null : searchedpost[0]
+                    ?.totalCount > 30 ? (
                   <div className={styles.PaginationWrraper}>
                     <Pagination
                       showTitle={false}
@@ -227,7 +233,9 @@ const PressRelease = ({ data }) => {
                     />
                   </div>
                 ) : null
-              ) : data.fetchlistOfPressReleaseList.data[0]?.totalCount > 30 ? (
+              ) : data?.fetchlistOfPressReleaseList?.data[0].mainDoc.length <=
+                0 ? null : data.fetchlistOfPressReleaseList.data[0]
+                  ?.totalCount > 30 ? (
                 <div className={styles.PaginationWrraper}>
                   <Pagination
                     showTitle={false}

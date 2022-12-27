@@ -147,12 +147,11 @@ const ViewPost = ({ data }) => {
                       onClick={linkForPlatform}
                     />
                   </a>
+
                   <a
-                    href={`https://www.linkedin.com/shareArticle?mini=true&url={${
+                    href={`http://www.linkedin.com/shareArticle?url=${
                       POST_URL + router.query.post
-                    }}&title={${data?.PressReleaseList.title}}&summary={${
-                      data?.PressReleaseList.summary
-                    }}&source={${data?.PressReleaseList.content}}`}
+                    }&title={title}&summary={text}&source={provider}`}
                     target="_blank"
                     style={{ color: "rgba(0, 0, 0, 0.6)" }}
                   >

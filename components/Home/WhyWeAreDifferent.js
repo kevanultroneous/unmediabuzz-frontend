@@ -65,7 +65,7 @@ const WhyWeAreDifferent = () => {
               text={
                 <span>
                   <Image
-                    src={"/assets/icons/send-icon.svg"}
+                    src={"/assets/icons/send-icon.png"}
                     alt="press-release"
                     fluid
                   />

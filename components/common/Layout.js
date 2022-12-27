@@ -11,6 +11,7 @@ const Layout = ({
   children,
   ogtitle,
   ogimage,
+  schema = false,
   robots = "index,follow",
 }) => {
   return (
@@ -31,10 +32,13 @@ const Layout = ({
         <meta name="robots" content={robots} />
         <meta property="og:title" content={ogtitle} />
         <meta property="og:image" content={ogimage} />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(forallschema) }}
-        ></script>
+        {schema === true && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(forallschema) }}
+          ></script>
+        )}
+
         <script
           async
           defer
@@ -54,6 +58,8 @@ Layout.defaultProps = {
   title: "UNmedia Buzz",
   description: "",
   keywords: "",
+  ogtitle: "",
+  ogimage: "",
 };
 
 export default Layout;

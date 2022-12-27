@@ -86,6 +86,7 @@ export default function Home({ data }) {
         description={
           "UNmedia Buzz helps you with distributing and reaching new audiences around the globe. Submit a Press Release on the thriving digital news distribution network."
         }
+        schema={true}
       >
         {checkResponsive ? (
           <>
