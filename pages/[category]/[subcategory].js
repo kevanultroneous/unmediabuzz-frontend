@@ -183,7 +183,7 @@ const Subcategory = ({ data }) => {
                   coverimg={value.featuredImage ? value.featuredImage : null}
                   customtitleclass={`${styles.ParagraphSize}`}
                   key={index}
-                  companyname={"By," + " " + value.companyName}
+                  companyname={"By" + " " + value.companyName}
                   title={value.title}
                   date={timestampToDate(value.releaseDate)}
                 />

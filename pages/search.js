@@ -90,7 +90,7 @@ const SearchResult = ({ data }) => {
                 }
                 coverimg={item.featuredImage ? item.featuredImage : null}
                 badge={item.paidStatus}
-                companyname={`By, ${item.companyName}`}
+                companyname={`By ${item.companyName}`}
                 date={timestampToDate(item.releaseDate)}
                 title={item.title}
               />

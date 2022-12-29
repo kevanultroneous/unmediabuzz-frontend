@@ -131,7 +131,7 @@ const ViewPost = ({ data }) => {
                 </h1>
                 <p className={styles.CreatedAt}>{`On ${timestampToDate(
                   data?.PressReleaseList.releaseDate
-                )} By, ${data?.PressReleaseList.companyName}`}</p>
+                )} By ${data?.PressReleaseList.companyName}`}</p>
                 <div className={styles.IconsWrraper}>
                   <a
                     href={`https://www.facebook.com/sharer/sharer.php?u=${
@@ -149,9 +149,7 @@ const ViewPost = ({ data }) => {
                   </a>
 
                   <a
-                    href={`http://www.linkedin.com/shareArticle?url=${
-                      POST_URL + router.query.post
-                    }&title={title}&summary={text}&source={provider}`}
+                    href="https://www.linkedin.com/shareArticle?mini=true&url=http://developer.linkedin.com&title=LinkedIn%20Developer%20Network&summary=My%20favorite%20developer%20program&source=LinkedIn"
                     target="_blank"
                     style={{ color: "rgba(0, 0, 0, 0.6)" }}
                   >
@@ -161,11 +159,23 @@ const ViewPost = ({ data }) => {
                       onClick={linkForPlatform}
                     />
                   </a>
+                  {/* <a
+                    href={`http://www.linkedin.com/shareArticle?url=${
+                      POST_URL + router.query.post
+                    }&title=${"test"}&summary=${"review"}&source=${"hello this is for testing"}`}
+                    target="_blank"
+                    style={{ color: "rgba(0, 0, 0, 0.6)" }}
+                  >
+                    <AiFillLinkedin
+                      size={30}
+                      className={styles.IconSpace}
+                      onClick={linkForPlatform}
+                    />
+                  </a> */}
 
                   <a
-                    href={`https://twitter.com/sharer/sharer.php?u=${
-                      POST_URL + router.query.post
-                    }`}
+                    className="twitter-share-button"
+                    href={`https://twitter.com/intent/tweet?text=${data?.PressReleaseList.title}`}
                     target="_blank"
                     style={{ color: "rgba(0, 0, 0, 0.6)" }}
                   >
@@ -245,7 +255,7 @@ const ViewPost = ({ data }) => {
                     hide={true}
                     date={timestampToDate(posts.releaseDate)}
                     title={posts.title}
-                    companyname={"By," + " " + posts.companyName}
+                    companyname={"By" + " " + posts.companyName}
                   />
                 </Col>
               ))}

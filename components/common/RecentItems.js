@@ -112,7 +112,7 @@ export const BlogsCardModel = ({
               {title}
             </Link>
           </p>
-          <p className={styles.CompanyName}>By, {companyName}</p>
+          <p className={styles.CompanyName}>By {companyName}</p>
         </Col>
         <Col
           xs={12}
@@ -173,7 +173,7 @@ const RecentItems = ({ postList, blogList }) => {
                         value?.thumbnailImage ? value?.thumbnailImage : null
                       }
                       badge={value.paidStatus}
-                      companyname={`By, ${value?.companyName}`}
+                      companyname={`By ${value?.companyName}`}
                       date={`${timestampToDate(value?.releaseDate)}`}
                       title={value?.title}
                     />
