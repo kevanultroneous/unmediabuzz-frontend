@@ -120,6 +120,7 @@ a {
 .CategoriesAccordion .accordion-button::after {
   background-size: 60% !important;
   transition: none !important;
+  margin-top: 6px;
 }
 
 /*  ---------------------- hamburger menu -------------------- */

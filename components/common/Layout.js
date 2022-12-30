@@ -30,8 +30,13 @@ const Layout = ({
         />
         <link rel="icon" href="/assets/icons/mainlogo.svg" />
         <meta name="robots" content={robots} />
+        {/* <meta
+          property="og:url"
+          content="https://unmediabuzz.com/press-release/looking-for-places-to-have-a-retirement-party"
+        /> */}
         <meta property="og:title" content={ogtitle} />
         <meta property="og:image" content={ogimage} />
+        {/* <meta property="og:description" content="bakasur" /> */}
         {schema === true && (
           <script
             type="application/ld+json"

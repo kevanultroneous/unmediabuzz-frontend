@@ -41,12 +41,12 @@ const ViewPost = ({ data }) => {
     }
   }, []);
 
-  const linkForPlatform = () => {
-    navigator.clipboard.writeText(window?.location?.href);
-    toast.success("Link is copied!", {
-      duration: 400,
-    });
-  };
+  // const linkForPlatform = () => {
+  //   navigator.clipboard.writeText(window?.location?.href);
+  //   toast.success("Link is copied!", {
+  //     duration: 400,
+  //   });
+  // };
 
   return (
     <>
@@ -144,19 +144,19 @@ const ViewPost = ({ data }) => {
                     <AiFillFacebook
                       size={30}
                       className={styles.IconSpace}
-                      onClick={linkForPlatform}
+                      // onClick={linkForPlatform}
                     />
                   </a>
 
                   <a
-                    href="https://www.linkedin.com/shareArticle?mini=true&url=http://developer.linkedin.com&title=LinkedIn%20Developer%20Network&summary=My%20favorite%20developer%20program&source=LinkedIn"
+                    href="https://www.linkedin.com/shareArticle?mini=true&url=https://unmediabuzz.com/press-release/looking-for-places-to-have-a-retirement-party&title=Looking for Places to Have a Retirement Party?&summary=All-Inclusive pricing, VIP areas and shaded acre make TEC the most popular of retirement party venues in Fort Worth"
                     target="_blank"
                     style={{ color: "rgba(0, 0, 0, 0.6)" }}
                   >
                     <AiFillLinkedin
                       size={30}
                       className={styles.IconSpace}
-                      onClick={linkForPlatform}
+                      // onClick={linkForPlatform}
                     />
                   </a>
                   {/* <a
@@ -182,7 +182,7 @@ const ViewPost = ({ data }) => {
                     <AiOutlineTwitter
                       size={30}
                       className={styles.IconSpace}
-                      onClick={linkForPlatform}
+                      // onClick={linkForPlatform}
                     />
                   </a>
                 </div>
