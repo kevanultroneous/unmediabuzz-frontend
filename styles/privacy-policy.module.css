@@ -1,0 +1,53 @@
+.GuidlinesContainerWrraper {
+  padding: 4rem 16rem !important;
+}
+.GuidlinesContainerWrraper p {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: justify;
+}
+.guidlineTitle {
+  font-size: 22px;
+  font-weight: 900;
+  padding: 4rem 0 1rem;
+  text-transform: uppercase;
+  line-height: 30px;
+}
+.termTitle {
+  font-size: 16px;
+  font-weight: 900;
+  padding: 0rem 0 1rem;
+  text-transform: uppercase;
+  line-height: 30px;
+}
+.subTitle {
+  font-size: 18px;
+  font-weight: 700;
+  padding: 1rem 0;
+}
+.image {
+  margin-right: 8px;
+}
+.italicTitlePrivacy {
+  font-size: 16px;
+  font-weight: 500;
+  font-style: italic;
+  margin: 0rem 0 1rem;
+}
+.italicTitle {
+  font-size: 16px;
+  font-weight: 500;
+  font-style: italic;
+  margin: 0rem 0 1rem;
+}
+.GradiantHeading {
+  background: var(--textGradiant);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media screen and (max-width: 999px) {
+  .GuidlinesContainerWrraper {
+    padding: 4rem 1.5rem !important;
+  }
+}

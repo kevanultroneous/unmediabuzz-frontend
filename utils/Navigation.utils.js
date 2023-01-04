@@ -9,7 +9,7 @@ export const HeaderMenu = [
   },
   {
     name: "Writing Guideline",
-    link: "/#",
+    link: "/pressreleaseguidelines",
   },
   {
     name: "Contact us",
@@ -32,14 +32,14 @@ export const FooterMenu = [
   },
   {
     name: "Writing Guideline",
-    link: "/#",
+    link: "/pressreleaseguidelines",
   },
   {
     name: "Privacy Policy",
-    link: "/#",
+    link: "/privacy-policy",
   },
   {
     name: "Terms & Condition",
-    link: "/#",
+    link: "/termsandconditions",
   },
 ];
