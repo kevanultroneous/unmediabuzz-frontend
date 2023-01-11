@@ -87,6 +87,25 @@ export default function Home({ data }) {
           "UNmedia Buzz helps you with distributing and reaching new audiences around the globe. Submit a Press Release on the thriving digital news distribution network."
         }
         schema={true}
+        uniqueschema={
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org/",
+                "@type": "WebSite",
+                name: "UNmedia Buzz",
+                url: "https://unmediabuzz.com/",
+                potentialAction: {
+                  "@type": "SearchAction",
+                  target:
+                    "https://unmediabuzz.com/search?searching={search_term_string}",
+                  "query-input": "required name=search_term_string",
+                },
+              }),
+            }}
+          ></script>
+        }
       >
         {checkResponsive ? (
           <>

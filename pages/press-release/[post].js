@@ -39,6 +39,8 @@ const ViewPost = ({ data }) => {
       document.getElementById("htmlcontent").innerHTML =
         data?.PressReleaseList.content;
     }
+
+    console.log(data?.PressReleaseList, "selected");
   }, []);
 
   // const linkForPlatform = () => {
@@ -101,9 +103,11 @@ const ViewPost = ({ data }) => {
                   <Link href="/">Home</Link>/{" "}
                   <Link href="/press-release">Press Release</Link>/{" "}
                   <Link
-                    href={`/${data?.PressReleaseList?.selectedCategory
-                      ?.replace(/\s+/g, "-")
-                      .toLowerCase()}`}
+                    href={`/${
+                      data?.PressReleaseList?.selectedCategorySlug
+                      // ?.replace(/\s+/g, "-")
+                      // .toLowerCase()
+                    }`}
                   >
                     {data?.PressReleaseList?.selectedCategory}
                   </Link>
@@ -111,14 +115,16 @@ const ViewPost = ({ data }) => {
                     <>
                       /{" "}
                       <Link
-                        href={`/${data?.PressReleaseList?.selectedCategory
-                          ?.replace(/\s+/g, "-")
-                          .toLowerCase()}/${
-                          data?.PressReleaseList?.selectedSubCategory
-                            ? data?.PressReleaseList?.selectedSubCategory
-                                .replace(/\s+/g, "-")
-                                .toLowerCase()
-                            : null
+                        href={`/${
+                          data?.PressReleaseList?.selectedCategorySlug
+                          // ?.replace(/\s+/g, "-")
+                          // .toLowerCase()
+                        }/${
+                          data?.PressReleaseList?.selectedSubCategorySlug
+                            ? data?.PressReleaseList?.selectedSubCategorySlug
+                            : // .replace(/\s+/g, "-")
+                              // .toLowerCase()
+                              null
                         }`}
                       >
                         {data?.PressReleaseList?.selectedSubCategory}
@@ -148,8 +154,21 @@ const ViewPost = ({ data }) => {
                     />
                   </a>
 
+                  {/* <a
+                    href="https://www.linkedin.com/shareArticle?mini=true&url=articleUrl&title=YourarticleTitle&summary=YourarticleSummary&source=YourarticleSource"
+                    target="_blank"
+                    style={{ color: "rgba(0, 0, 0, 0.6)" }}
+                  >
+                    <AiFillLinkedin
+                      size={30}
+                      className={styles.IconSpace}
+                      // onClick={linkForPlatform}
+                    />
+                  </a> */}
                   <a
-                    href="https://www.linkedin.com/shareArticle?mini=true&url=https://unmediabuzz.com/press-release/looking-for-places-to-have-a-retirement-party&title=Looking for Places to Have a Retirement Party?&summary=All-Inclusive pricing, VIP areas and shaded acre make TEC the most popular of retirement party venues in Fort Worth"
+                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${
+                      POST_URL + router.query.post
+                    }`}
                     target="_blank"
                     style={{ color: "rgba(0, 0, 0, 0.6)" }}
                   >
@@ -159,19 +178,6 @@ const ViewPost = ({ data }) => {
                       // onClick={linkForPlatform}
                     />
                   </a>
-                  {/* <a
-                    href={`http://www.linkedin.com/shareArticle?url=${
-                      POST_URL + router.query.post
-                    }&title=${"test"}&summary=${"review"}&source=${"hello this is for testing"}`}
-                    target="_blank"
-                    style={{ color: "rgba(0, 0, 0, 0.6)" }}
-                  >
-                    <AiFillLinkedin
-                      size={30}
-                      className={styles.IconSpace}
-                      onClick={linkForPlatform}
-                    />
-                  </a> */}
 
                   <a
                     className="twitter-share-button"
@@ -273,12 +279,14 @@ export async function getServerSideProps(context) {
     .post(PressReleaseListAPI, { url: context.params?.post })
     .then((res) => (res.data.success ? res.data?.data : null))
     .catch((e) => e.response.data.data);
+
   var interestedPostdata;
   if (Object.keys(pressreleaseview).length > 0) {
     interestedPostdata = await axios
       .post(InterestedPostAPI, { postId: pressreleaseview?._id })
       .then((res) => res.data.data)
       .catch((e) => e);
+
     return {
       props: {
         data: {

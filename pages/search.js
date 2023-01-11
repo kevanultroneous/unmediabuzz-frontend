@@ -40,7 +40,10 @@ const SearchResult = ({ data }) => {
   };
 
   return (
-    <Layout robots={"noindex,nofollow"}>
+    <Layout
+      // robots={"noindex,nofollow"}
+      canonical={<link rel="canonical" href="https://unmediabuzz.com/" />}
+    >
       <ContainerWrraper customClass={`${styles.HeaderContainerWrraper}`}>
         <Row>
           <Col

@@ -22,15 +22,18 @@ const Category = ({ data }) => {
     router.query.subcategory ? 0 : null
   );
   const [currentSubcategory, setCurrentSubcategory] = useState([]);
-  const [preDataforSeo, setPreDataforSeo] = useState({});
+  const [preDataforSeo, setPreDataforSeo] = useState({
+    title: "",
+  });
   useEffect(() => {
     let precatchdata = data.allcategories?.data.find(
-      (i) => i.title.toLowerCase() == router.query.category.replace(/-/g, " ")
+      (i) => i.slugUrl == router.query.category
     );
+
     let findsubcategoryindex = 0;
 
     precatchdata?.subcategories.map((value, index) =>
-      value.title.toLowerCase() === router.query.subcategory
+      value.slugUrl === router.query.subcategory
         ? (findsubcategoryindex = index)
         : (findsubcategoryindex = 0)
     );
@@ -40,6 +43,8 @@ const Category = ({ data }) => {
     router.query.subcategory ? setCurrentTab(findsubcategoryindex) : null;
     setCurrentSubcategory([precatchdata?.title, precatchdata?.subcategories]);
     setPreDataforSeo(precatchdata);
+
+    console.log(preDataforSeo, "predataforSEO");
   }, [data.allcategories?.data, router]);
 
   const textItemRender = (current, type, element) => {
@@ -72,19 +77,22 @@ const Category = ({ data }) => {
     >
       <CategoryHero
         heading={
-          router.query.category.charAt(0).toUpperCase() +
-          router.query.category.slice(1).replace(/-/g, " ")
+          preDataforSeo.title
+          // router.query.category.charAt(0).toUpperCase() +
+          // router.query.category.slice(1).replace(/-/g, " ")
         }
         breadcumb={
           <>
             <Link href={"/"}>Home</Link>/{" "}
             <Link href={"/press-release"}>Press Release</Link>/{" "}
-            <Link href={`/${router.query.category.replace(/\s+/g, "-")}`}>
-              {router.query.category
-                .replace(/\s+/g, "-")
-                .charAt(0)
-                .toUpperCase() +
-                router.query.category.replace(/\s+/g, "-").slice(1)}
+            <Link href={`/${router.query.category}`}>
+              {
+                preDataforSeo.title
+                // .replace(/\s+/g, "-")
+                // .charAt(0)
+                // .toUpperCase() +
+                // preDataforSeo.title.replace(/\s+/g, "-").slice(1)
+              }
             </Link>
           </>
         }
@@ -228,7 +236,8 @@ export async function getServerSideProps(context) {
 
   const categorywisepost = await axios
     .post(CategoryWisePostApi, {
-      categoryID: context.params.category.replace(/-/g, " "),
+      categoryID: context.params.category,
+      // categoryID: context.params.category.replace(/-/g, " "),
       limit: 30,
       page: context.query.page ? context.query.page : 1,
     })
@@ -236,7 +245,7 @@ export async function getServerSideProps(context) {
     .catch((e) => e);
 
   let seoData = allcategories?.data.find(
-    (i) => i.title.toLowerCase() == context.query.category.replace(/-/g, " ")
+    (i) => i.slugUrl == context.query.category
   );
   return {
     props: {

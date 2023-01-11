@@ -20,23 +20,39 @@ const Subcategory = ({ data }) => {
   const arry = [1, 2, 3, 4];
   const [currentTab, setCurrentTab] = useState(0);
   const [currentSubcategory, setCurrentSubcategory] = useState([]);
+  const [categoryData, setCategoryData] = useState({
+    categoryData: {},
+    subCategoryData: {},
+  });
 
   useEffect(() => {
     let precatchdata = data.allcategories?.data.find(
-      (i) => i.title.toLowerCase() == router.query.category.replace(/-/g, " ")
+      (i) => i.slugUrl == router.query.category
     );
+
+    let subCategory = precatchdata?.subcategories.find(
+      (value) => value.slugUrl == router.query.subcategory
+    );
+
+    setCategoryData({
+      categoryData: precatchdata,
+      subCategoryData: subCategory,
+    });
     let findsubcategoryindex = 0;
 
     precatchdata?.subcategories.map((value, index) =>
-      value.title.toLowerCase() === router.query.subcategory.replace(/-/g, " ")
+      value.slugUrl === router.query.subcategory
         ? (findsubcategoryindex = index)
         : null
     );
+
     if (!precatchdata) {
       router.push("/404");
     }
     setCurrentTab(findsubcategoryindex);
     setCurrentSubcategory([precatchdata?.title, precatchdata?.subcategories]);
+
+    console.log(subCategory, "seo Dta");
   }, [data.allcategories?.data, router]);
   const textItemRender = (current, type, element) => {
     if (type === "page") {
@@ -68,29 +84,36 @@ const Subcategory = ({ data }) => {
     >
       <CategoryHero
         heading={
-          router.query?.subcategory.charAt(0).toUpperCase() +
-          router.query?.subcategory.slice(1).replace(/-/g, " ")
+          categoryData.subCategoryData.title
+          // router.query?.subcategory.charAt(0).toUpperCase() +
+          // router.query?.subcategory.slice(1).replace(/-/g, " ")
         }
         breadcumb={
           <>
             <Link href={"/"}>Home</Link>/{" "}
             <Link href={"/press-release"}>Press Release</Link>/{" "}
-            <Link href={`/${router.query.category}`}>
-              {router.query.category
-                .replace(/\s+/g, "-")
-                .charAt(0)
-                .toUpperCase() +
-                router.query.category.replace(/\s+/g, "-").slice(1)}
+            <Link href={`/${categoryData.categoryData.slugUrl}`}>
+              {
+                categoryData.categoryData.title
+                // router.query.category
+                //   .replace(/\s+/g, "-")
+                //   .charAt(0)
+                //   .toUpperCase() +
+                //   router.query.category.replace(/\s+/g, "-").slice(1)
+              }
             </Link>
             /{" "}
             <Link
-              href={`/${router.query.category}/${router.query.subcategory}`}
+              href={`/${categoryData.categoryData.slugUrl}/${categoryData.subCategoryData.slugUrl}`}
             >
-              {router.query.subcategory
-                .replace(/\s+/g, "-")
-                .charAt(0)
-                .toUpperCase() +
-                router.query.subcategory.replace(/\s+/g, "-").slice(1)}
+              {
+                categoryData.subCategoryData.title
+                // router.query.subcategory
+                //   .replace(/\s+/g, "-")
+                //   .charAt(0)
+                //   .toUpperCase() +
+                //   router.query.subcategory.replace(/\s+/g, "-").slice(1)
+              }
             </Link>
           </>
         }
@@ -240,17 +263,19 @@ export async function getServerSideProps(context) {
     .catch((e) => e);
   const categorywisepost = await axios
     .post(CategoryWisePostApi, {
-      categoryID: context.params.subcategory.replace(/-/g, " "),
+      categoryID: context.params.subcategory,
+      // categoryID: context.params.subcategory.replace(/-/g, " "),
       limit: 30,
       page: 1,
     })
     .then((res) => res?.data)
     .catch((e) => e);
+
   let seoData = allcategories?.data.find(
-    (i) => i.title.toLowerCase() == context.query.category.replace(/-/g, " ")
+    (i) => i.slugUrl == context.query.category
   );
   let findsubcategoryseo = seoData.subcategories.find(
-    (i) => i.title.toLowerCase() == context.query.subcategory.replace(/-/g, " ")
+    (i) => i.slugUrl == context.query.subcategory
   );
   // console.log(findsubcategoryseo);
   return {

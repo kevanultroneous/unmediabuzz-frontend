@@ -13,6 +13,8 @@ const Layout = ({
   ogimage,
   schema = false,
   robots = "index,follow",
+  uniqueschema,
+  canonical,
 }) => {
   return (
     <div>
@@ -29,6 +31,7 @@ const Layout = ({
           key="UNmedia Buzz-key-keywords"
         />
         <link rel="icon" href="/assets/icons/mainlogo.svg" />
+        {canonical}
         <meta name="robots" content={robots} />
         {/* <meta
           property="og:url"
@@ -51,6 +54,7 @@ const Layout = ({
           src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v15.0"
           nonce="mkOQUy2T"
         ></script>
+        {uniqueschema}
       </Head>
       <Header />
       <div>{children}</div>
