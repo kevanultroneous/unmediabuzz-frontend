@@ -9,10 +9,9 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  // env: {
-  //   NEXT_PUBLIC_UA_ID: "UA-221098859-1",
-  //   NEXT_PUBLIC_GA_ID: "G-Q1P00W81DB",
-  // },
+  env: {
+    NEXT_PUBLIC_GA_ID: "G-3G54ZP5NJK",
+  },
 };
 
 module.exports = nextConfig;

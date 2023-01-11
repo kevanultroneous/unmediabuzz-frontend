@@ -40,7 +40,7 @@ const ViewPost = ({ data }) => {
         data?.PressReleaseList.content;
     }
 
-    console.log(data?.PressReleaseList, "selected");
+    // console.log(data?.PressReleaseList, "selected");
   }, []);
 
   // const linkForPlatform = () => {

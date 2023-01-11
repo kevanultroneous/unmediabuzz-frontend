@@ -44,7 +44,7 @@ const Category = ({ data }) => {
     setCurrentSubcategory([precatchdata?.title, precatchdata?.subcategories]);
     setPreDataforSeo(precatchdata);
 
-    console.log(preDataforSeo, "predataforSEO");
+    // console.log(preDataforSeo, "predataforSEO");
   }, [data.allcategories?.data, router]);
 
   const textItemRender = (current, type, element) => {

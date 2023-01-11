@@ -1,5 +1,5 @@
-export const MAIN_URL = `http://192.168.0.34:6000/`;
-// export const MAIN_URL = `https://unmediabuzz.com:8000/`;
+// export const MAIN_URL = `http://192.168.0.34:6000/`;
+export const MAIN_URL = `https://unmediabuzz.com:8000/`;
 export const POST_URL = `https://unmediabuzz.com/press-release/`;
 // export const MAIN_URL = `https://eb13-124-123-177-175.in.ngrok.io/`;
 // `http://52.64.42.139:8000/`
