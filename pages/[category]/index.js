@@ -207,7 +207,7 @@ const Category = ({ data }) => {
             xl={12}
             className={`ColPaddingRemove ${styles.CenterPagination}`}
           >
-            {data.categorywisepost.data[0]?.totalCount > 30 && (
+            {data.categorywisepost.data[0]?.totalCount > 50 && (
               <div className={styles.PaginationWrraper}>
                 <Pagination
                   showTitle={false}
@@ -217,7 +217,7 @@ const Category = ({ data }) => {
                   }
                   total={data.categorywisepost.data[0]?.totalCount}
                   itemRender={textItemRender}
-                  pageSize={30}
+                  pageSize={50}
                 />
               </div>
             )}
@@ -238,7 +238,7 @@ export async function getServerSideProps(context) {
     .post(CategoryWisePostApi, {
       categoryID: context.params.category,
       // categoryID: context.params.category.replace(/-/g, " "),
-      limit: 30,
+      limit: 50,
       page: context.query.page ? context.query.page : 1,
     })
     .then((res) => res?.data)

@@ -233,7 +233,7 @@ const Subcategory = ({ data }) => {
             xl={12}
             className={`ColPaddingRemove ${styles.CenterPagination}`}
           >
-            {data.categorywisepost.data[0]?.totalCount > 30 && (
+            {data.categorywisepost.data[0]?.totalCount > 50 && (
               <div className={styles.PaginationWrraper}>
                 <Pagination
                   showTitle={false}
@@ -245,7 +245,7 @@ const Subcategory = ({ data }) => {
                   }
                   total={data.categorywisepost.data[0]?.totalCount}
                   itemRender={textItemRender}
-                  pageSize={30}
+                  pageSize={50}
                 />
               </div>
             )}
@@ -265,7 +265,7 @@ export async function getServerSideProps(context) {
     .post(CategoryWisePostApi, {
       categoryID: context.params.subcategory,
       // categoryID: context.params.subcategory.replace(/-/g, " "),
-      limit: 30,
+      limit: 50,
       page: 1,
     })
     .then((res) => res?.data)

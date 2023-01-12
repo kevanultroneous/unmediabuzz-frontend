@@ -36,8 +36,12 @@ const ViewPost = ({ data }) => {
       router.push("/");
     } else {
       // target div which is help to convert string to html without interweave package
+
       document.getElementById("htmlcontent").innerHTML =
-        data?.PressReleaseList.content;
+        // data?.PressReleaseList.content;
+        data?.PressReleaseList.content.substring(0, 3) +
+        "(UNmedia Buzz)&nbsp;&nbsp;" +
+        data?.PressReleaseList.content.substring(3);
     }
 
     // console.log(data?.PressReleaseList, "selected");
@@ -146,6 +150,7 @@ const ViewPost = ({ data }) => {
                     class="fb-xfbml-parse-ignore"
                     target="_blank"
                     style={{ color: "rgba(0, 0, 0, 0.6)" }}
+                    rel="noreferrer"
                   >
                     <AiFillFacebook
                       size={30}
@@ -171,6 +176,7 @@ const ViewPost = ({ data }) => {
                     }`}
                     target="_blank"
                     style={{ color: "rgba(0, 0, 0, 0.6)" }}
+                    rel="noreferrer"
                   >
                     <AiFillLinkedin
                       size={30}
@@ -184,6 +190,7 @@ const ViewPost = ({ data }) => {
                     href={`https://twitter.com/intent/tweet?text=${data?.PressReleaseList.title}`}
                     target="_blank"
                     style={{ color: "rgba(0, 0, 0, 0.6)" }}
+                    rel="noreferrer"
                   >
                     <AiOutlineTwitter
                       size={30}
@@ -219,6 +226,7 @@ const ViewPost = ({ data }) => {
                     </div>
                   </center>
                 )}
+
                 <div id="htmlcontent" className={styles.editorContent}></div>
               </Col>
             </Row>

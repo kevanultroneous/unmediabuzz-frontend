@@ -213,7 +213,7 @@ const PressRelease = ({ data }) => {
             >
               {router.query.search ? (
                 searchedpost[0]?.mainDoc.length <= 0 ? null : searchedpost[0]
-                    ?.totalCount > 30 ? (
+                    ?.totalCount > 50 ? (
                   <div className={styles.PaginationWrraper}>
                     <Pagination
                       showTitle={false}
@@ -229,13 +229,13 @@ const PressRelease = ({ data }) => {
                         router.query.search ? searchedpost[0]?.totalCount : null
                       }
                       itemRender={textItemRender}
-                      pageSize={30}
+                      pageSize={50}
                     />
                   </div>
                 ) : null
               ) : data?.fetchlistOfPressReleaseList?.data[0].mainDoc.length <=
                 0 ? null : data.fetchlistOfPressReleaseList.data[0]
-                  ?.totalCount > 30 ? (
+                  ?.totalCount > 50 ? (
                 <div className={styles.PaginationWrraper}>
                   <Pagination
                     showTitle={false}
@@ -245,7 +245,7 @@ const PressRelease = ({ data }) => {
                     }}
                     total={data.fetchlistOfPressReleaseList.data[0]?.totalCount}
                     itemRender={textItemRender}
-                    pageSize={30}
+                    pageSize={50}
                   />
                 </div>
               ) : null}
@@ -267,7 +267,7 @@ export async function getServerSideProps(context) {
 
   const fetchlistOfPressReleaseList = await axios
     .post(PressReleaseListAPI, {
-      limit: 30,
+      limit: 50,
       page: context.query.page ? context.query.page : 1,
     })
     .then((res) => res.data)
